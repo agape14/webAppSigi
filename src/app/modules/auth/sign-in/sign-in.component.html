@@ -1,0 +1,143 @@
+<div class="flex flex-col flex-auto items-center sm:justify-center min-w-0 relative">
+    <!-- Background Image
+    <div class="flex flex-col flex-auto items-center sm:justify-center min-w-0">
+    <div class="w-full sm:w-auto py-8 px-4 sm:p-12 sm:rounded-2xl sm:shadow sm:bg-card">
+    -->
+    <div class="absolute inset-0 z-0">
+        <img
+            class="w-full h-full object-cover"
+            src="assets/images/pages/auth/centrohistoricodelima.jpg"
+            alt="Cover image">
+    </div>
+
+    <div class="relative z-10 w-full sm:w-auto py-8 px-4 sm:p-12 sm:rounded-2xl sm:shadow bg-card bg-opacity-80">
+        <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
+            <!-- Logo
+    <div class="relative z-10 w-full sm:w-auto py-8 px-4 sm:p-12 sm:rounded-2xl sm:shadow bg-card bg-opacity-80">
+                 -->
+            <div class="w-60 flex w-full items-center justify-center">
+                <img src="assets/images/logo/logo.svg">
+            </div>
+            
+
+            <!-- Title -->
+            <div class="mt-4 text-3xl font-extrabold tracking-tight leading-tight text-primary-500">Sistema Integral de Gestion Inmobiliaria</div>
+            <div class="flex items-baseline mt-0.5 font-md">
+                <span class="text-sm text-secondary font-md truncate">¿No tienes una cuenta?</span>
+                <a
+                    class="ml-1 hover:underline text-sm font-md truncate" style="color: #1b347d;"
+                    [routerLink]="['/sign-up']">Solicitar usuario
+                </a>
+            </div>
+
+            <!-- Alert -->
+            <fuse-alert
+                class="mt-4"
+                *ngIf="showAlert"
+                [appearance]="'outline'"
+                [showIcon]="false"
+                [type]="alert.type"
+                [@shake]="alert.type === 'error'">
+                {{alert.message}}
+            </fuse-alert>
+
+            <!-- Sign in form -->
+            <form
+                class="mt-4 mb-0"
+                [formGroup]="signInForm"
+                #signInNgForm="ngForm">
+
+                <!-- Email field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Usuario</mat-label>
+                    <input
+                        id="email"
+                        matInput
+                        [formControlName]="'email'">
+                    <mat-error *ngIf="signInForm.get('email').hasError('required')">
+                        Se requiere Usuario
+                    </mat-error>
+                    <mat-error *ngIf="signInForm.get('email').hasError('email')">
+                        Por favor, introduce un Usuario válido
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Password field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Contraseña</mat-label>
+                    <input
+                        id="password"
+                        matInput
+                        type="password"
+                        [formControlName]="'password'"
+                        #passwordField>
+                    <button
+                        mat-icon-button
+                        type="button"
+                        (click)="passwordField.type === 'password' ? passwordField.type = 'text' : passwordField.type = 'password'"
+                        matSuffix>
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField.type === 'password'"
+                            [svgIcon]="'heroicons_solid:eye'"></mat-icon>
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField.type === 'text'"
+                            [svgIcon]="'heroicons_solid:eye-slash'"></mat-icon>
+                    </button>
+                    <mat-error>
+                        se requiere contraseña
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Actions -->
+                <div class="inline-flex items-center justify-between w-full mt-1">
+                    <mat-checkbox
+                        class="-ml-2"
+                        [color]="'primary'"
+                        [formControlName]="'rememberMe'">
+                        <span class="text-sm font-md truncate">Recordarme</span> 
+                    </mat-checkbox>
+                    <a
+                        class="text-sm font-md truncate font-md hover:underline" style="color: #1b347d;"
+                        [routerLink]="['/forgot-password']">¿Has olvidado tu contraseña?
+                    </a>
+                </div>
+
+                
+                <!-- Separator -->
+                <div class="flex items-center mt-4 space-x-4">
+                    <!-- Submit button -->
+                    <button
+                        class="flex-auto fuse-mat-button-large w-full"
+                        mat-flat-button
+                        [color]="'primary'"
+                        [disabled]="signInForm.disabled"
+                        (click)="signIn()">
+                        <span *ngIf="!signInForm.disabled">
+                            Iniciar sesión
+                        </span>
+                        <mat-icon
+                            [svgIcon]="'heroicons_mini:user'" class="icon-size-4 mr-2"></mat-icon>
+                        <mat-progress-spinner
+                            *ngIf="signInForm.disabled"
+                            [diameter]="24"
+                            [mode]="'indeterminate'"></mat-progress-spinner>
+                    </button>
+                    <button
+                        mat-button
+                        class="flex-auto"
+                        [color]="'warn'"
+                        [matTooltip]="'Google'"
+                        >
+                        <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'feather:mail'"></mat-icon>
+                    </button>
+                </div>
+
+                <!-- Single sign-on buttons -->
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<!-- Button -->
+<button mat-icon-button 
+    [matMenuTriggerFor]="schemaMenu"
+    [matTooltip]="tooltip || 'Cambiar Modo(Claro/Oscuro)'">
+    <mat-icon>palette</mat-icon>
+</button>
+
+<!-- Schema menu -->
+<mat-menu #schemaMenu="matMenu">
+    <button mat-menu-item (click)="setScheme('light')">
+        <span class="flex items-center">
+            <mat-icon class="mr-2">light_mode</mat-icon>
+            <span>Modo Claro</span>
+        </span>
+    </button>
+    <button mat-menu-item (click)="setScheme('dark')">
+        <span class="flex items-center">
+            <mat-icon class="mr-2">dark_mode</mat-icon>
+            <span>Modo Oscuro</span>
+        </span>
+    </button>
+</mat-menu>
