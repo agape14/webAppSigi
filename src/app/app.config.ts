@@ -76,7 +76,7 @@ export const appConfig: ApplicationConfig = {
             multi     : true,
         },
 
-        // Fuse
+        // Fuse - cambiar de tema: light dark
         provideAuth(),
         provideIcons(),
         provideFuse({

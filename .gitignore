@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /favicones
+/.angular
 
 # dependencies
 /node_modules

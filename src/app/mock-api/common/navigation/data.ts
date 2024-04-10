@@ -10,11 +10,11 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon    : 'heroicons_outline:home',
         children: [
             {
-                id   : 'inmobiliaria.academy',
+                id   : 'inmobiliaria.incorporacion',
                 title: 'Incorporacion',
                 type : 'basic',
                 icon : 'heroicons_outline:arrow-down-on-square-stack',
-                link : '/inmobiliaria/academy',
+                link : '/inmobiliaria/incorporacion',
             },
             {
                 id   : 'inmobiliaria.margesi',
