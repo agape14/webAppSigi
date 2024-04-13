@@ -15,6 +15,8 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
 import { InventoryService } from '../inventory.service';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { FinanceService } from '../finance.service';
 import { InventoryBrand, InventoryCategory, InventoryPagination, InventoryProduct, InventoryTag, InventoryVendor } from 'app/modules/admin/inmobiliaria/incorporacion/inventory.types';
 import { debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } from 'rxjs';
 
@@ -45,13 +47,15 @@ import { debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } f
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations     : fuseAnimations,
     standalone     : true,
-    imports        : [NgIf, MatProgressBarModule, MatFormFieldModule, MatIconModule, MatInputModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatSortModule, NgFor, NgTemplateOutlet, MatPaginatorModule, NgClass, MatSlideToggleModule, MatSelectModule, MatOptionModule, MatCheckboxModule, MatRippleModule, AsyncPipe, CurrencyPipe],
+    imports        : [NgIf, MatProgressBarModule, MatFormFieldModule, MatIconModule, MatInputModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatSortModule, NgFor, NgTemplateOutlet, MatPaginatorModule, NgClass, MatSlideToggleModule, MatSelectModule, MatOptionModule, MatCheckboxModule, MatRippleModule, AsyncPipe, CurrencyPipe,MatTableModule,],
 })
 export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
 {
     @ViewChild(MatPaginator) private _paginator: MatPaginator;
     @ViewChild(MatSort) private _sort: MatSort;
-
+    data: any;
+    recentTransactionsDataSource: MatTableDataSource<any> = new MatTableDataSource();
+    recentTransactionsTableColumns: string[] = ['transactionId', 'date', 'name', 'amount', 'status'];
     products$: Observable<InventoryProduct[]>;
     iconSize: string = 'icon-size-8';
     contactsCount: number = 0;
@@ -77,6 +81,7 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
         private _inventoryService: InventoryService,
+        private _financeService: FinanceService,
     )
     {
     }
@@ -195,6 +200,19 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
                 }),
             )
             .subscribe();
+
+            // Get the data
+        this._financeService.data$
+        .pipe(takeUntil(this._unsubscribeAll))
+        .subscribe((data) =>
+        {
+            // Store the data
+            this.data = data;
+
+            // Store the table data
+            this.recentTransactionsDataSource.data = data.recentTransactions;
+
+        });
     }
 
     /**
