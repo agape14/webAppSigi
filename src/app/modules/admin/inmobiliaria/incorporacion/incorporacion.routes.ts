@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { IncorporacionComponent } from './incorporacion.component';
 import { InventoryService } from './inventory.service';
 import { InventoryListComponent } from './list/inventory.component';
+import { DetalleIncorporacionComponent } from './detalle-incorporacion/detalle-incorporacion.component';
 
 export default [
     {
@@ -24,6 +25,10 @@ export default [
                     tags      : () => inject(InventoryService).getTags(),
                     vendors   : () => inject(InventoryService).getVendors(),
                 },
+            },
+            {
+                path     : 'detalle',
+                component: DetalleIncorporacionComponent,
             },
         ],
     },

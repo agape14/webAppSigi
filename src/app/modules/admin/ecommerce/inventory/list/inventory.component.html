@@ -15,7 +15,7 @@
             <!-- Search -->
             <mat-form-field
                 class="fuse-mat-dense fuse-mat-rounded min-w-64"
-                [subscriptSizing]="'dynamic'">
+                >
                 <mat-icon
                     class="icon-size-5"
                     matPrefix
@@ -414,7 +414,7 @@
                                                         <ng-container *ngFor="let tag of filteredTags; trackBy: trackByFn">
                                                             <mat-form-field
                                                                 class="fuse-mat-dense w-full"
-                                                                [subscriptSizing]="'dynamic'">
+                                                                >
                                                                 <input
                                                                     matInput
                                                                     [value]="tag.title"

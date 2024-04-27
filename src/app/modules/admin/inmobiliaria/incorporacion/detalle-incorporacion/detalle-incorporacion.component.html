@@ -1,0 +1,394 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">Incorporacion </a>
+                </div>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <mat-icon
+                        class="icon-size-5 text-secondary"
+                        [svgIcon]="'heroicons_mini:chevron-right'"></mat-icon>
+                    <a class="ml-1 text-primary-500">Detalle </a>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    Detalle Incorporacion
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-auto p-4 sm:p-2">
+
+        <div class="max-w-8xl">
+            <div class="example-viewer">
+
+                <div class="title">
+                    <h6>Datos de identificación del ITL</h6>
+                </div>
+
+                <div class="flex flex-col p-8 pt-0">
+
+                    <form class="flex flex-col items-start">
+                        <!-- ITL -->
+                        <div class="flex flex-wrap w-full"
+                            [formGroupName]="'datos_itl'">
+                            <div class="flex items-center w-full ">
+                                <mat-form-field
+                                    class="w-1/6 sm:w-1/5 pr-2"
+                                    >
+                                    <mat-label>N° de ITL</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'nro_itl'">
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-1/6 sm:w-1/5  pr-2"
+                                    >
+                                    <mat-label>Nro. ITL</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'desc_nro_itl'">
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-1/6 sm:w-1/5  pr-2"
+                                    >
+                                    <mat-label>Cód. Prov. Inmueble</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'cod_prov_inm'">
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-2/6 sm:w-1/5 pr-2"
+                                    >
+                                    <mat-label>Dirección</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'dir_prov_inm'">
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-1/6 sm:w-1/5 pr-2"
+                                    >
+                                    <mat-label>Area </mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'area'">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div  class="flex flex-col w-full mt-4"
+                            [formGroupName]="'datos_itl_2'">
+                            <div class="flex items-center w-full">
+                                <mat-form-field
+                                    class="w-1/4 pr-2"
+                                    [ngClass]="formFieldHelpers"
+                                    
+                                    >
+                                    <mat-label>Fecha Creación</mat-label>
+                                    <input
+                                        matInput
+                                        [matDatepicker]="fechaCreacion">
+                                    <mat-datepicker-toggle
+                                        matSuffix
+                                        [for]="fechaCreacion"></mat-datepicker-toggle>
+                                    <mat-datepicker #fechaCreacion></mat-datepicker>
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-2/4 pr-2"
+                                    >
+                                    <mat-label>De :</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'dato_de_itl'">
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-3/4 pr-2"
+                                    >
+                                    <mat-label>Para :</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'dato_para_itl'">
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-4/4 pr-2"
+                                    >
+                                    <mat-label>Estado ITL</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'dato_estado_itl'">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col w-full mt-4"
+                            [formGroupName]="'asuntos_itl'">
+                            <div class="flex items-center w-full">
+                                <mat-form-field
+                                    class="w-4/5 pr-2"
+                                    >
+                                    <mat-label>Asunto (*)</mat-label>
+                                    <input
+                                        matInput
+                                        [formControlName]="'asunto_itl'">
+                                </mat-form-field>
+                                <mat-form-field
+                                    class="w-1/5 pr-2"
+                                    [ngClass]="formFieldHelpers"
+                                    
+                                    >
+                                    <mat-label>Aprobado</mat-label>
+                                    <input
+                                        matInput
+                                        [matDatepicker]="fechaAprobado">
+                                    <mat-datepicker-toggle
+                                        matSuffix
+                                        [for]="fechaAprobado"></mat-datepicker-toggle>
+                                    <mat-datepicker #fechaAprobado></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Title -->
+                        <mat-form-field
+                            class="w-full mt-4"
+                            >
+                            <mat-label>Referencias</mat-label>
+                            <input
+                                matInput
+                                [formControlName]="'referencias'">
+                        </mat-form-field>
+                        <!-- Divider -->
+                        <div class="w-full mt-8 mb-7 border-b"></div>
+                    </form>
+                    <!-- Botones de acciones -->
+                    <div class="mt-2">
+                        <button
+                            mat-flat-button
+                            [color]="'primary'"
+                            >
+                            <mat-icon [svgIcon]="'heroicons_outline:inbox-arrow-down'"></mat-icon>
+                            <span class="ml-2 mr-1">Grabar</span>
+                        </button>
+                        <button
+                            mat-flat-button
+                            [color]="'accent'"
+                            class="ml-4"
+                            >
+                            <mat-icon [svgIcon]="'heroicons_outline:printer'"></mat-icon>
+                            <span class="ml-2 mr-1">Imprimir</span>
+                        </button>
+                        <button
+                            mat-flat-button
+                            [color]="'on-warn'"
+                            class="ml-4"
+                            >
+                            <mat-icon [svgIcon]="'heroicons_outline:document-check'"></mat-icon>
+                            <span class="ml-2 mr-1">Aprobar</span>
+                        </button>
+                        <mat-slide-toggle
+                            class="sm:mt-0 sm:ml-auto"
+                            [color]="'primary'"
+                            >
+                            Inmueble Genera Renta
+                        </mat-slide-toggle>
+                        <button
+                            mat-flat-button
+                            [color]="'on-warn'"
+                            class="ml-4"
+                            >
+                            <mat-icon [svgIcon]="'heroicons_outline:check-circle'"></mat-icon>
+                            <span class="ml-2 mr-1">Habilitar</span>
+                        </button>
+                        <button
+                            mat-flat-button
+                            [color]="'warn'"
+                            class="ml-4"
+                            >
+                            <mat-icon [svgIcon]="'heroicons_outline:x-circle'"></mat-icon>
+                            <span class="ml-2 mr-1">Deshabilitar</span>
+                        </button>
+                        <button
+                            mat-flat-button
+                            [color]="'onsuccessc'"
+                            class="ml-4"
+                            >
+                            <mat-icon [svgIcon]="'heroicons_outline:pencil-square'"></mat-icon>
+                            <span class="ml-2 mr-1">Administrar Inmueble</span>
+                        </button>
+                        <button
+                            mat-flat-button
+                            [color]="'on-warn'"
+                            class="ml-4"
+                            >
+                            <mat-icon [svgIcon]="'heroicons_outline:arrow-uturn-left'"></mat-icon>
+                            <span class="ml-2 mr-1">Regresar</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
+                    <div class="w-full max-w-screen-xl mx-auto">
+                        <!-- Tabs -->
+                        <mat-tab-group
+                            class="sm:px-2"
+                            mat-stretch-tabs="false"
+                            [animationDuration]="'0'">
+            
+                            <!-- Home -->
+                            <mat-tab label="I. Antecedentes">
+                                <ng-template matTabContent>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
+                                        <div class="flex flex-col w-full min-w-0 sm:absolute sm:inset-0 sm:overflow-hidden">
+
+                                            <mat-drawer-container class="flex-auto sm:h-full">
+                                        
+                                                <!-- Drawer -->
+                                                <mat-drawer
+                                                    class="sm:w-96 dark:bg-gray-900"
+                                                    [autoFocus]="false"
+                                                    [mode]="drawerMode"
+                                                    [opened]="drawerOpened"
+                                                    #drawer>
+                                                    <!-- Header -->
+                                                    <div class="flex items-center justify-between m-8 mr-6 sm:my-10">
+                                                        <!-- Title -->
+                                                        <div class="text-4xl font-extrabold tracking-tight leading-none">Settings</div>
+                                                        <!-- Close button -->
+                                                        <div class="lg:hidden">
+                                                            <button
+                                                                mat-icon-button
+                                                                (click)="drawer.close()">
+                                                                <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Panel links -->
+                                                    <div class="flex flex-col divide-y border-t border-b">
+                                                        <ng-container *ngFor="let panel of panels; trackBy: trackByFn">
+                                                            <div
+                                                                class="flex px-8 py-5 cursor-pointer"
+                                                                [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel || selectedPanel !== panel.id,
+                                                                            'bg-primary-50 dark:bg-hover': selectedPanel && selectedPanel === panel.id}"
+                                                                (click)="goToPanel(panel.id)">
+                                                                <mat-icon
+                                                                    [ngClass]="{'text-hint': !selectedPanel || selectedPanel !== panel.id,
+                                                                                'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}"
+                                                                    [svgIcon]="panel.icon"></mat-icon>
+                                                                <div class="ml-3">
+                                                                    <div
+                                                                        class="font-medium leading-6"
+                                                                        [ngClass]="{'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}">
+                                                                        {{panel.title}}
+                                                                    </div>
+                                                                    <div class="mt-0.5 text-secondary">
+                                                                        {{panel.description}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ng-container>
+                                                    </div>
+                                                </mat-drawer>
+                                        
+                                                <!-- Drawer content -->
+                                                <mat-drawer-content class="flex flex-col">
+                                        
+                                                    <!-- Main -->
+                                                    <div class="flex-auto px-6 pt-9 pb-12 md:p-8 md:pb-12 lg:p-12">
+                                        
+                                                        <!-- Panel header -->
+                                                        <div class="flex items-center">
+                                        
+                                                            <!-- Drawer toggle -->
+                                                            <button
+                                                                class="lg:hidden -ml-2"
+                                                                mat-icon-button
+                                                                (click)="drawer.toggle()">
+                                                                <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+                                                            </button>
+                                        
+                                                            <!-- Panel title -->
+                                                            <div class="ml-2 lg:ml-0 text-3xl font-bold tracking-tight leading-none">
+                                                                {{getPanelInfo(selectedPanel).title}}
+                                                            </div>
+                                                        </div>
+                                        
+                                                        <!-- Load settings panel -->
+                                                        <div class="mt-8">
+                                                            <ng-container [ngSwitch]="selectedPanel">
+                                                                <!-- Account -->
+                                                                <ng-container *ngSwitchCase="'delpredio'">
+                                                                    <settings-account></settings-account>
+                                                                </ng-container>
+                                                                <!-- Security -->
+                                                                <ng-container *ngSwitchCase="'delosdatoslegales'">
+                                                                    <settings-security></settings-security>
+                                                                </ng-container>
+                                                                <!-- Plan & Billing -->
+                                                                <ng-container *ngSwitchCase="'delosdatostecnicos'">
+                                                                    <settings-plan-billing></settings-plan-billing>
+                                                                </ng-container>
+                                                                <!-- Notifications -->
+                                                                <ng-container *ngSwitchCase="'delasunidadesinmobiliarias'">
+                                                                    <settings-notifications></settings-notifications>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </div>
+                                        
+                                                    </div>
+                                        
+                                                </mat-drawer-content>
+                                        
+                                            </mat-drawer-container>
+                                        
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </mat-tab>
+            
+                            <!-- Budget -->
+                            <mat-tab label="II. Análisis">
+                                <ng-template matTabContent>
+                                    <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+                                        Budget
+                                    </div>
+                                </ng-template>
+                            </mat-tab>
+            
+                            <!-- Team -->
+                            <mat-tab>
+                                <ng-template mat-tab-label>
+                                    <span class="inline-flex items-center space-x-2">
+                                        <span class="">III. Conclusiones / Recomendaciones</span>
+                                    </span>
+                                </ng-template>
+                                <ng-template matTabContent>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full min-w-0">
+                                        Team
+                                    </div>
+                                </ng-template>
+                            </mat-tab>
+
+                            <!-- Budget -->
+                            <mat-tab label="IV. Aprobaciones">
+                                <ng-template matTabContent>
+                                    <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0">
+                                        Aprobaciones
+                                    </div>
+                                </ng-template>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

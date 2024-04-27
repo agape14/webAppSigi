@@ -1,6 +1,6 @@
 import { AsyncPipe, CurrencyPipe, NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators, FormGroup } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
@@ -16,9 +16,10 @@ import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
 import { InventoryService } from '../inventory.service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { FinanceService } from '../finance.service';
+import { FinanceService } from 'app/modules/admin/finance/finance.service';
 import { InventoryBrand, InventoryCategory, InventoryPagination, InventoryProduct, InventoryTag, InventoryVendor } from 'app/modules/admin/inmobiliaria/incorporacion/inventory.types';
 import { debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
     selector       : 'inventory-list',
@@ -67,12 +68,12 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
     pagination: InventoryPagination;
     searchInputControl: UntypedFormControl = new UntypedFormControl();
     selectedProduct: InventoryProduct | null = null;
-    selectedProductForm: UntypedFormGroup;
+    selectedProductForm: FormGroup;
     tags: InventoryTag[];
     tagsEditMode: boolean = false;
     vendors: InventoryVendor[];
     private _unsubscribeAll: Subject<any> = new Subject<any>();
-
+    
     /**
      * Constructor
      */
@@ -82,6 +83,7 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
         private _formBuilder: UntypedFormBuilder,
         private _inventoryService: InventoryService,
         private _financeService: FinanceService,
+        private router: Router,
     )
     {
     }
@@ -206,12 +208,23 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe((data) =>
         {
-            // Store the data
-            this.data = data;
+            // Verificar si data no es null o undefined
+            if (data) {
+                // Store the data
+                this.data = data;
 
-            // Store the table data
-            this.recentTransactionsDataSource.data = data.recentTransactions;
-
+                // Verificar si recentTransactions no es null o undefined
+                if (data.recentTransactions) {
+                    // Store the table data
+                    this.recentTransactionsDataSource.data = data.recentTransactions;
+                } else {
+                    // Si recentTransactions es null o undefined, manejar el caso adecuado aquí
+                    console.error('La propiedad recentTransactions está vacía');
+                }
+            } else {
+                // Si data es null o undefined, manejar el caso adecuado aquí
+                console.error('El objeto data está vacío');
+            }
         });
     }
 
@@ -537,6 +550,10 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
         });
     }
 
+    redirectToOtraVista(): void {
+        // Aquí defines la ruta a la que quieres redireccionar
+        this.router.navigate(['/inmobiliaria/incorporacion/detalle']);
+      }
     /**
      * Update the selected product using the form data
      */

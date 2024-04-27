@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormsModule, NgForm, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators,FormGroup, FormControl,FormBuilder } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,9 +29,9 @@ export class AuthSignInComponent implements OnInit
         type   : 'success',
         message: '',
     };
-    signInForm: UntypedFormGroup;
+    signInForm: FormGroup;
     showAlert: boolean = false;
-
+    myGroup: FormGroup;
     /**
      * Constructor
      */
@@ -39,7 +39,8 @@ export class AuthSignInComponent implements OnInit
         private _activatedRoute: ActivatedRoute,
         private _authService: AuthService,
         private _formBuilder: UntypedFormBuilder,
-        private _router: Router,
+        private _router: Router,private formBuilder: FormBuilder
+        
     )
     {
     }
@@ -54,11 +55,14 @@ export class AuthSignInComponent implements OnInit
     ngOnInit(): void
     {
         // Create the form
-        this.signInForm = this._formBuilder.group({
+        this.signInForm = this.formBuilder.group({
             email     : ['sigi@emilima.com.pe', [Validators.required, Validators.email]],
             password  : ['admin', Validators.required],
             rememberMe: [''],
         });
+        this.myGroup = new FormGroup({
+            firstName: new FormControl()
+          });
     }
 
     // -----------------------------------------------------------------------------------------------------
