@@ -1,7 +1,8 @@
 import { AcademyMockApi } from 'app/mock-api/apps/academy/api';
 import { ChatMockApi } from 'app/mock-api/apps/chat/api';
 import { ContactsMockApi } from 'app/mock-api/apps/contacts/api';
-import { ECommerceInventoryMockApi } from 'app/mock-api/apps/ecommerce/inventory/api';
+import { InmobiliariaIncorporacionMockApi } from 'app/mock-api/apps/inmobiliaria/incorporacion/api';
+import { InmobiliariaIngresosMockApi } from 'app/mock-api/apps/inmobiliaria/ingresos/api';
 import { FileManagerMockApi } from 'app/mock-api/apps/file-manager/api';
 import { HelpCenterMockApi } from 'app/mock-api/apps/help-center/api';
 import { MailboxMockApi } from 'app/mock-api/apps/mailbox/api';
@@ -30,7 +31,8 @@ export const mockApiServices = [
     ChatMockApi,
     ContactsMockApi,
     CryptoMockApi,
-    ECommerceInventoryMockApi,
+    InmobiliariaIncorporacionMockApi,
+    InmobiliariaIngresosMockApi,
     FileManagerMockApi,
     FinanceMockApi,
     HelpCenterMockApi,
