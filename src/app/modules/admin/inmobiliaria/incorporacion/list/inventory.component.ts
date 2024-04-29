@@ -1,6 +1,6 @@
 import { AsyncPipe, CurrencyPipe, NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators, FormGroup } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators, FormGroup,FormBuilder,FormControl } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
@@ -52,6 +52,10 @@ import { Router } from '@angular/router';
 })
 export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
 {
+    myForm: FormGroup;
+
+    
+
     @ViewChild(MatPaginator) private _paginator: MatPaginator;
     @ViewChild(MatSort) private _sort: MatSort;
     data: any;
@@ -84,6 +88,7 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
         private _inventoryService: InventoryService,
         private _financeService: FinanceService,
         private router: Router,
+        private fb: FormBuilder
     )
     {
     }
@@ -97,6 +102,18 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
      */
     ngOnInit(): void
     {
+
+        this.myForm = this.fb.group({
+            prov: ['', Validators.required],
+            descripcion: [''],
+            category: [''],
+            cost: [''],
+            vendor: [''],
+            brand: [''],
+            estadoprovisional: [''],
+            generarenta: ['']
+            // Agrega otros controles según sea necesario
+        });
         // Create the selected product form
         this.selectedProductForm = this._formBuilder.group({
             id               : [''],
@@ -208,7 +225,7 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe((data) =>
         {
-            // Verificar si data no es null o undefined
+            // Verificar si data no es null o undefined - inventory
             if (data) {
                 // Store the data
                 this.data = data;
@@ -219,11 +236,11 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
                     this.recentTransactionsDataSource.data = data.recentTransactions;
                 } else {
                     // Si recentTransactions es null o undefined, manejar el caso adecuado aquí
-                    console.error('La propiedad recentTransactions está vacía');
+                    console.info('La propiedad recentTransactions está vacía');
                 }
             } else {
                 // Si data es null o undefined, manejar el caso adecuado aquí
-                console.error('El objeto data está vacío');
+                console.info('El objeto data está vacío');
             }
         });
     }
