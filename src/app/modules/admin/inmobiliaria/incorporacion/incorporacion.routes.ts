@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
 import { IncorporacionComponent } from './incorporacion.component';
-import { InventoryService } from './inventory.service';
-import { InventoryListComponent } from './list/inventory.component';
+import { IncorporacionService } from './incorporacion.service';
+import { IncorporacionListComponent } from './list/incorporacion.component';
 import { DetalleIncorporacionComponent } from './detalle-incorporacion/detalle-incorporacion.component';
 
 export default [
@@ -17,13 +17,13 @@ export default [
         children : [
             {
                 path     : '',
-                component: InventoryListComponent,
+                component: IncorporacionListComponent,
                 resolve  : {
-                    brands    : () => inject(InventoryService).getBrands(),
-                    categories: () => inject(InventoryService).getCategories(),
-                    products  : () => inject(InventoryService).getProducts(),
-                    tags      : () => inject(InventoryService).getTags(),
-                    vendors   : () => inject(InventoryService).getVendors(),
+                    brands    : () => inject(IncorporacionService).getBrands(),
+                    categories: () => inject(IncorporacionService).getCategories(),
+                    products  : () => inject(IncorporacionService).getProducts(),
+                    tags      : () => inject(IncorporacionService).getTags(),
+                    vendors   : () => inject(IncorporacionService).getVendors(),
                 },
             },
             {

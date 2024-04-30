@@ -21,7 +21,11 @@ export const appConfig: ApplicationConfig = {
             withPreloading(PreloadAllModules),
             withInMemoryScrolling({scrollPositionRestoration: 'enabled'}),
         ),
-
+        /*importProvidersFrom(
+            SnackbarModule.forRoot({
+              configuration: { configA: 'abc', configB: 'xyz' },
+            })
+        ),*/
         // Material Date Adapter
         {
             provide : DateAdapter,

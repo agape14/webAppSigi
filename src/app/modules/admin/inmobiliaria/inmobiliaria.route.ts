@@ -1,8 +1,11 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
 import { IncorporacionComponent } from './incorporacion/incorporacion.component';
-import { InventoryService } from 'app/modules/admin/ecommerce/inventory/inventory.service';
-import { InventoryListComponent } from 'app/modules/admin/ecommerce/inventory/list/inventory.component';
+import { IngresosComponent } from './ingresos/ingresos.component';
+import { IncorporacionService } from 'app/modules/admin/inmobiliaria/incorporacion/incorporacion.service';
+import { IngresosService } from 'app/modules/admin/inmobiliaria/ingresos/ingresos.service';
+import { IncorporacionListComponent } from 'app/modules/admin/inmobiliaria/incorporacion/list/incorporacion.component';
+import { IngresosListComponent } from 'app/modules/admin/inmobiliaria/ingresos/list/ingresos.component';
 
 export default [
     {
@@ -16,13 +19,24 @@ export default [
         children : [
             {
                 path     : '',
-                component: InventoryListComponent,
+                component: IncorporacionListComponent,
                 resolve  : {
-                    brands    : () => inject(InventoryService).getBrands(),
-                    categories: () => inject(InventoryService).getCategories(),
-                    products  : () => inject(InventoryService).getProducts(),
-                    tags      : () => inject(InventoryService).getTags(),
-                    vendors   : () => inject(InventoryService).getVendors(),
+                    brands    : () => inject(IncorporacionService).getBrands(),
+                    categories: () => inject(IncorporacionService).getCategories(),
+                    products  : () => inject(IncorporacionService).getProducts(),
+                    tags      : () => inject(IncorporacionService).getTags(),
+                    vendors   : () => inject(IncorporacionService).getVendors(),
+                },
+            },
+            {
+                path     : '',
+                component: IngresosComponent,
+                resolve  : {
+                    brands    : () => inject(IngresosService).getBrands(),
+                    categories: () => inject(IngresosService).getCategories(),
+                    products  : () => inject(IngresosService).getProducts(),
+                    tags      : () => inject(IngresosService).getTags(),
+                    vendors   : () => inject(IngresosService).getVendors(),
                 },
             },
         ],
