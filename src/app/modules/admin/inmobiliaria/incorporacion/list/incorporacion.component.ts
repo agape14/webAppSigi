@@ -76,6 +76,7 @@ export class IncorporacionListComponent implements OnInit, AfterViewInit, OnDest
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
         private _incorporacionService: IncorporacionService,
+        private router: Router,
     )
     {
     }
