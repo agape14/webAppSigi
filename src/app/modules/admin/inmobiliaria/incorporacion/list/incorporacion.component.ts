@@ -258,6 +258,10 @@ export class IncorporacionListComponent implements OnInit, AfterViewInit, OnDest
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
+    redirectToOtraVista(): void {
+        // Aquí defines la ruta a la que quieres redireccionar
+        this.router.navigate(['/inmobiliaria/incorporacion/detalle']);
+      }
     /**
      * Toggle product details
      *
