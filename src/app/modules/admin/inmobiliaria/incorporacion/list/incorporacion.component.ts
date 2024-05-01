@@ -53,7 +53,7 @@ export class IncorporacionListComponent implements OnInit, AfterViewInit, OnDest
     @ViewChild(MatSort) private _sort: MatSort;
 
     products$: Observable<IncorporacionProduct[]>;
-
+    contactsCount: number = 0;
     brands: IncorporacionBrand[];
     categories: IncorporacionCategory[];
     filteredTags: IncorporacionTag[];

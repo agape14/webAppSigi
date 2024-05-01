@@ -85,11 +85,6 @@ export const appRoutes: Route[] = [
                     path: 'incorporacion', 
                     loadChildren: () => import('app/modules/admin/inmobiliaria/incorporacion/incorporacion.routes')
                 },
-                { 
-                    path: 'ingresos', 
-                    //component: IngresosComponent,
-                    loadChildren: () => import('app/modules/admin/inmobiliaria/ingresos/ingresos.routes')
-                },
             ]},
             {path: 'tesoreria', children: [                
                 {path: 'ingresos', loadChildren: () => import('app/modules/admin/tesoreria/ingresos/ingresos.routes')},
