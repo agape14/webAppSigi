@@ -240,7 +240,7 @@ export class IngresosListComponent implements OnInit, AfterViewInit, OnDestroy
                 }
             } else {
                 // Si data es null o undefined, manejar el caso adecuado aquí
-                console.info('El objeto data está vacío');
+                console.warn('El objeto data está vacío');
             }
         });
     }
