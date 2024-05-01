@@ -4,8 +4,8 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 export const defaultNavigation: FuseNavigationItem[] = [
     {
         id      : 'inmobiliaria',
-        title   : 'Inmobiliaria',
-        subtitle: 'Modulo de Inmobiliaria',
+        title   : 'Inmobiliaria aaaaa',
+        subtitle: 'Modulo de Inmobiliari aa',
         type    : 'group',
         icon    : 'heroicons_outline:home',
         children: [
@@ -15,6 +15,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type : 'basic',
                 icon : 'heroicons_outline:arrow-down-on-square-stack',
                 link : '/inmobiliaria/incorporacion',
+            },
+            {
+                id   : 'inmobiliaria.ingresos',
+                title: 'Ingresos',
+                type : 'basic',
+                icon : 'heroicons_outline:academic-cap',
+                link : '/inmobiliaria/ingresos',
             },
             {
                 id   : 'inmobiliaria.margesi',
@@ -29,29 +36,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type : 'basic',
                 icon : 'heroicons_outline:map',
                 link : '/inmobiliaria/contacts',
-            },
-            {
-                id      : 'inmobiliaria.ecommerce',
-                title   : 'Consultas',
-                type    : 'collapsable',
-                icon    : 'heroicons_outline:magnifying-glass',
-                children: [
-                    {
-                        id   : 'inmobiliaria.ecommerce.inventory',
-                        title: 'Inmueble',
-                        type : 'basic',
-                        icon    : 'heroicons_outline:building-office',
-                        link : '/apps/ecommerce/inventory',
-                    },
-                    {
-                        id   : 'inmobiliaria.ecommerce.inventory',
-                        title: 'ITL, actos y Contratos',
-                        type : 'basic',
-                        icon    : 'heroicons_outline:document-chart-bar',
-                        link : '/inmobiliaria/ecommerce/inventory',
-                    },
-                ],
-            },
+            },            
             {
                 id   : 'inmobiliaria.file-manager',
                 title: 'Autoriza anulacion rentas',
@@ -406,7 +391,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         children: [],
     },
     {
-        id   : 'legal',
+        id   : 'legalaa',
         title: 'Legal',
         tooltip : 'Legal',
         type    : 'aside',
@@ -445,7 +430,7 @@ export const futuristicNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'legal',
-        title: 'Legal',
+        title: 'Legal aa',
         type    : 'group',
         children: [], 
     },
@@ -479,7 +464,7 @@ export const horizontalNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'legal',
-        title: 'Legal',
+        title: 'Legal  sss',
         type    : 'group',
         icon    : 'mat_outline:file_download_done',
         children: [],
