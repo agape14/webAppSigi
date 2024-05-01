@@ -1,8 +1,11 @@
-import { Route } from '@angular/router';
+import { Route,RouterModule,Routes  } from '@angular/router';
 import { initialDataResolver } from 'app/app.resolvers';
 import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
+import { NgModule } from '@angular/core';
+//import {IncorporacionComponent } from 'app/modules/admin/inmobiliaria/incorporacion/incorporacion.routes';
+//import { IngresosComponent } from 'app/modules/admin/tesoreria/ingresos/ingresos.component';
 
 // @formatter:off
 /* eslint-disable max-len */
@@ -78,8 +81,15 @@ export const appRoutes: Route[] = [
 
             // Apps
             {path: 'inmobiliaria', children: [
-                {path: 'incorporacion', loadChildren: () => import('app/modules/admin/inmobiliaria/incorporacion/incorporacion.routes')},
+                {
+                    path: 'incorporacion', 
+                    loadChildren: () => import('app/modules/admin/inmobiliaria/incorporacion/incorporacion.routes')
+                },
             ]},
+            {path: 'tesoreria', children: [                
+                {path: 'ingresos', loadChildren: () => import('app/modules/admin/tesoreria/ingresos/ingresos.routes')},
+            ]},
+            
         ]
     }
 ];
