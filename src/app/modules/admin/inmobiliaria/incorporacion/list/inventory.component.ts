@@ -1,6 +1,6 @@
 import { AsyncPipe, CurrencyPipe, NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators, FormGroup } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators, FormGroup,FormControl } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
@@ -223,9 +223,24 @@ export class InventoryListComponent implements OnInit, AfterViewInit, OnDestroy
                 }
             } else {
                 // Si data es null o undefined, manejar el caso adecuado aquí
-                console.error('El objeto data está vacío');
+                console.warn('El objeto data está vacío');
             }
         });
+
+        this.selectedProductForm = new FormGroup({
+            firstName: new FormControl(''),
+            prov: new FormControl(''),
+            descripcion: new FormControl(''),
+            category: new FormControl(''),
+            cost: new FormControl(''),
+            brand: new FormControl(''),
+            estadoprovisional: new FormControl(''),
+            generarenta: new FormControl(''),
+            vendor: new FormControl(''),
+            /*estadoprovisional: new FormControl(''),            
+            estadoprovisional: new FormControl(''),
+            estadoprovisional: new FormControl(''),*/
+          });
     }
 
     /**

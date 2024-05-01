@@ -78,8 +78,12 @@ export const appRoutes: Route[] = [
 
             // Apps
             {path: 'inmobiliaria', children: [
-                {path: 'incorporacion', loadChildren: () => import('app/modules/admin/inmobiliaria/incorporacion/incorporacion.routes')},
+                {path: 'incorporacion', loadChildren: () => import('app/modules/admin/inmobiliaria/incorporacion/incorporacion.routes')},                
             ]},
+            {path: 'tesoreria', children: [                
+                {path: 'ingresos', loadChildren: () => import('app/modules/admin/tesoreria/ingresos/ingresos.routes')},
+            ]},
+            
         ]
     }
 ];
