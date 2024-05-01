@@ -33,7 +33,7 @@ export class DetalleIncorporacionComponent implements OnInit{
   ngOnInit(): void
     {
       // Setup available panels
-      this.panels = [
+      /*this.panels = [
         {
             id         : 'delpredio',
             icon       : 'heroicons_outline:user-circle',
@@ -58,7 +58,7 @@ export class DetalleIncorporacionComponent implements OnInit{
             title      : 'De las unidades Inmobiliarias',
             description: 'Ver el listado de las unidades inmobiliariasy datos de la unidad inmobiliaria',
         },
-      ];
+      ];*/
 
       this.myForm = this.formBuilder.group({
         datos_itl: this.formBuilder.group({
@@ -86,9 +86,9 @@ export class DetalleIncorporacionComponent implements OnInit{
         // Otros grupos de formulario y controles aquí...
       });
     }
-    getPanelInfo(id: string): any
+    /*getPanelInfo(id: string): any
     {
         return this.panels.find(panel => panel.id === id);
-    }
+    }*/
 
 }
