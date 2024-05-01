@@ -26,13 +26,13 @@
                             <mat-label>Prov.</mat-label>
                             <input
                                 matInput
-                                [formControlName]="'prov'">
+                                formControlName="prov">
                         </mat-form-field>
                         <mat-form-field class="w-2/3 pl-2">
                             <mat-label>Descripción del predio</mat-label>
                             <input
                                 matInput
-                                [formControlName]="'descripcion'">
+                                formControlName="descripcion">
                         </mat-form-field>
                     </div>
 
@@ -40,7 +40,7 @@
                     <div class="flex">
                         <mat-form-field class="w-1/3 pr-2">
                             <mat-label>Tipo Inmueble</mat-label>
-                            <mat-select [formControlName]="'category'">
+                            <mat-select formControlName="category">
                                 <ng-container *ngFor="let category of categories">
                                     <mat-option [value]="category.id">
                                         {{category.name}}
@@ -53,11 +53,11 @@
                             <span matPrefix>$</span>
                             <input
                                 matInput
-                                [formControlName]="'cost'">
+                                formControlName="cost">
                         </mat-form-field>
                         <mat-form-field class="w-1/3 pl-2">
                             <mat-label>Uso Especifico</mat-label>
-                            <mat-select [formControlName]="'vendor'">
+                            <mat-select formControlName="vendor">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
                                         {{vendor.name}}
@@ -73,7 +73,7 @@
                 <div class="flex flex-col w-full lg:w-1/4 sm:pl-8">
                     <mat-form-field class="w-full">
                         <mat-label>Distrito</mat-label>
-                        <mat-select [formControlName]="'brand'">
+                        <mat-select formControlName="brand">
                             <ng-container *ngFor="let brand of brands">
                                 <mat-option [value]="brand.id">
                                     {{brand.name}}
@@ -84,7 +84,7 @@
                     <div class="flex">
                         <mat-form-field class="w-2/3 pl-2">
                             <mat-label>Habilitación </mat-label>
-                            <mat-select [formControlName]="'estadoprovisional'">
+                            <mat-select formControlName="estadoprovisional">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
                                         {{vendor.name}}
@@ -94,7 +94,7 @@
                         </mat-form-field>
                         <mat-form-field class="w-1/3 pl-2">
                             <mat-label>Descripcion </mat-label>
-                            <mat-select [formControlName]="'generarenta'">
+                            <mat-select formControlName="generarenta">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
                                         {{vendor.name}}
@@ -110,7 +110,7 @@
                     <div class="flex">
                         <mat-form-field class="w-2/3 pl-2">
                             <mat-label>Estado </mat-label>
-                            <mat-select [formControlName]="'estadoprovisional'">
+                            <mat-select formControlName="estadoprovisional">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
                                         {{vendor.name}}
@@ -120,7 +120,7 @@
                         </mat-form-field>
                         <mat-form-field class="w-1/3 pl-2">
                             <mat-label>Genera Renta </mat-label>
-                            <mat-select [formControlName]="'generarenta'">
+                            <mat-select formControlName="generarenta">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
                                         {{vendor.name}}
@@ -132,7 +132,7 @@
                     <div class="flex">
                         <mat-form-field class="w-2/3 pl-2">
                             <mat-label>Vía  </mat-label>
-                            <mat-select [formControlName]="'estadoprovisional'">
+                            <mat-select formControlName="estadoprovisional">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
                                         {{vendor.name}}
@@ -142,7 +142,7 @@
                         </mat-form-field>
                         <!--<mat-form-field class="w-1/3 pl-2">
                             <mat-label>Descripcion </mat-label>
-                            <mat-select [formControlName]="'generarenta'">
+                            <mat-select formControlName="'generarenta'">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
                                         {{vendor.name}}
@@ -361,7 +361,7 @@
                                     <div class="flex flex-col mt-8">
                                         <span class="font-semibold mb-2">Product status</span>
                                         <mat-slide-toggle
-                                            [formControlName]="'active'"
+                                            formControlName="active"
                                             [color]="'primary'">
                                             {{selectedProductForm.get('active').value === true ? 'Active' : 'Disabled'}}
                                         </mat-slide-toggle>
@@ -377,7 +377,7 @@
                                             <mat-label>Name</mat-label>
                                             <input
                                                 matInput
-                                                [formControlName]="'name'">
+                                                formControlName="name">
                                         </mat-form-field>
 
                                         <!-- SKU and Barcode -->
@@ -386,13 +386,13 @@
                                                 <mat-label>SKU</mat-label>
                                                 <input
                                                     matInput
-                                                    [formControlName]="'sku'">
+                                                    formControlName="sku">
                                             </mat-form-field>
                                             <mat-form-field class="w-2/3 pl-2">
                                                 <mat-label>Barcode</mat-label>
                                                 <input
                                                     matInput
-                                                    [formControlName]="'barcode'">
+                                                    formControlName="barcode">
                                             </mat-form-field>
                                         </div>
 
@@ -400,7 +400,7 @@
                                         <div class="flex">
                                             <mat-form-field class="w-1/3 pr-2">
                                                 <mat-label>Category</mat-label>
-                                                <mat-select [formControlName]="'category'">
+                                                <mat-select formControlName="category">
                                                     <ng-container *ngFor="let category of categories">
                                                         <mat-option [value]="category.id">
                                                             {{category.name}}
@@ -410,7 +410,7 @@
                                             </mat-form-field>
                                             <mat-form-field class="w-1/3 px-2">
                                                 <mat-label>Brand</mat-label>
-                                                <mat-select [formControlName]="'brand'">
+                                                <mat-select formControlName="brand">
                                                     <ng-container *ngFor="let brand of brands">
                                                         <mat-option [value]="brand.id">
                                                             {{brand.name}}
@@ -420,7 +420,7 @@
                                             </mat-form-field>
                                             <mat-form-field class="w-1/3 pl-2">
                                                 <mat-label>Vendor</mat-label>
-                                                <mat-select [formControlName]="'vendor'">
+                                                <mat-select formControlName="vendor">
                                                     <ng-container *ngFor="let vendor of vendors">
                                                         <mat-option [value]="vendor.id">
                                                             {{vendor.name}}
@@ -437,14 +437,14 @@
                                                 <input
                                                     type="number"
                                                     matInput
-                                                    [formControlName]="'stock'">
+                                                    formControlName="stock">
                                             </mat-form-field>
                                             <mat-form-field class="w-1/3 pl-2">
                                                 <mat-label>Reserved</mat-label>
                                                 <input
                                                     type="number"
                                                     matInput
-                                                    [formControlName]="'reserved'">
+                                                    formControlName="reserved">
                                             </mat-form-field>
                                         </div>
                                     </div>
@@ -456,14 +456,14 @@
                                             <span matPrefix>$</span>
                                             <input
                                                 matInput
-                                                [formControlName]="'cost'">
+                                                formControlName="cost">
                                         </mat-form-field>
                                         <mat-form-field class="w-full">
                                             <mat-label>Base Price</mat-label>
                                             <span matPrefix>$</span>
                                             <input
                                                 matInput
-                                                [formControlName]="'basePrice'">
+                                                formControlName="basePrice">
                                         </mat-form-field>
                                         <mat-form-field class="w-full">
                                             <mat-label>Tax</mat-label>
@@ -471,14 +471,14 @@
                                             <input
                                                 type="number"
                                                 matInput
-                                                [formControlName]="'taxPercent'">
+                                                formControlName="taxPercent">
                                         </mat-form-field>
                                         <mat-form-field class="w-full">
                                             <mat-label>Price</mat-label>
                                             <span matSuffix>$</span>
                                             <input
                                                 matInput
-                                                [formControlName]="'price'">
+                                                formControlName="price">
                                         </mat-form-field>
                                     </div>
 
@@ -489,7 +489,7 @@
                                             <span matSuffix>lbs.</span>
                                             <input
                                                 matInput
-                                                [formControlName]="'weight'">
+                                                formControlName="weight">
                                         </mat-form-field>
 
                                         <!-- Tags -->

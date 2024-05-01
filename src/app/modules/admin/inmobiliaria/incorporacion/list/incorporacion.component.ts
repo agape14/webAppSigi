@@ -17,6 +17,7 @@ import { FuseConfirmationService } from '@fuse/services/confirmation';
 import { IncorporacionService } from 'app/modules/admin/inmobiliaria/incorporacion/incorporacion.service';
 import { IncorporacionBrand, IncorporacionCategory, IncorporacionPagination, IncorporacionProduct, IncorporacionTag, IncorporacionVendor } from 'app/modules/admin/inmobiliaria/incorporacion/incorporacion.types';
 import { debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
     selector       : 'incorporacion-list',
@@ -196,7 +197,19 @@ export class IncorporacionListComponent implements OnInit, AfterViewInit, OnDest
             )
             .subscribe();
             this.myGroup = new FormGroup({
-                firstName: new FormControl()
+                prov: new FormControl(),
+                descripcion: new FormControl(),
+                category: new FormControl(),
+                cost: new FormControl(),
+                vendor: new FormControl(),
+                brand: new FormControl(),
+                stock: new FormControl(),
+                estadoprovisional: new FormControl(),
+                generarenta: new FormControl(),
+                active: new FormControl(),
+                name: new FormControl(),
+                sku: new FormControl(),
+                barcode: new FormControl()
               });
     }
 
