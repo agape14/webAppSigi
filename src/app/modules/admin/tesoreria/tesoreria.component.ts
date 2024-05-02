@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-inmobiliaria',
+  selector: 'app-tesoreria',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './inmobiliaria.component.html',
-  styleUrl: './inmobiliaria.component.scss'
+  templateUrl: './tesoreria.component.html',
+  styleUrl: './tesoreria.component.scss'
 })
-export class InmobiliariaComponent {
+export class TesoreriaComponent {
 
 }

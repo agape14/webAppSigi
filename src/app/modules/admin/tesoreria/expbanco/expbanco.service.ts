@@ -1,19 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ImportardatosbancoBrand, ImportardatosbancoCategory, ImportardatosbancoPagination, ImportardatosbancoProduct, ImportardatosbancoTag, ImportardatosbancoVendor } from 'app/modules/admin/tesoreria/importardatosbanco/importardatosbanco.types';
+import { ExpbancoBrand, ExpbancoCategory, ExpbancoPagination, ExpbancoProduct, ExpbancoTag, ExpbancoVendor } from 'app/modules/admin/tesoreria/expbanco/expbanco.types';
 import { BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
-export class ImportardatosbancoService
+export class ExpbancoService
 {
     // Private
-    private _brands: BehaviorSubject<ImportardatosbancoBrand[] | null> = new BehaviorSubject(null);
-    private _categories: BehaviorSubject<ImportardatosbancoCategory[] | null> = new BehaviorSubject(null);
-    private _pagination: BehaviorSubject<ImportardatosbancoPagination | null> = new BehaviorSubject(null);
-    private _product: BehaviorSubject<ImportardatosbancoProduct | null> = new BehaviorSubject(null);
-    private _products: BehaviorSubject<ImportardatosbancoProduct[] | null> = new BehaviorSubject(null);
-    private _tags: BehaviorSubject<ImportardatosbancoTag[] | null> = new BehaviorSubject(null);
-    private _vendors: BehaviorSubject<ImportardatosbancoVendor[] | null> = new BehaviorSubject(null);
+    private _brands: BehaviorSubject<ExpbancoBrand[] | null> = new BehaviorSubject(null);
+    private _categories: BehaviorSubject<ExpbancoCategory[] | null> = new BehaviorSubject(null);
+    private _pagination: BehaviorSubject<ExpbancoPagination | null> = new BehaviorSubject(null);
+    private _product: BehaviorSubject<ExpbancoProduct | null> = new BehaviorSubject(null);
+    private _products: BehaviorSubject<ExpbancoProduct[] | null> = new BehaviorSubject(null);
+    private _tags: BehaviorSubject<ExpbancoTag[] | null> = new BehaviorSubject(null);
+    private _vendors: BehaviorSubject<ExpbancoVendor[] | null> = new BehaviorSubject(null);
 
     /**
      * Constructor
@@ -29,7 +29,7 @@ export class ImportardatosbancoService
     /**
      * Getter for brands
      */
-    get brands$(): Observable<ImportardatosbancoBrand[]>
+    get brands$(): Observable<ExpbancoBrand[]>
     {
         return this._brands.asObservable();
     }
@@ -37,7 +37,7 @@ export class ImportardatosbancoService
     /**
      * Getter for categories
      */
-    get categories$(): Observable<ImportardatosbancoCategory[]>
+    get categories$(): Observable<ExpbancoCategory[]>
     {
         return this._categories.asObservable();
     }
@@ -45,7 +45,7 @@ export class ImportardatosbancoService
     /**
      * Getter for pagination
      */
-    get pagination$(): Observable<ImportardatosbancoPagination>
+    get pagination$(): Observable<ExpbancoPagination>
     {
         return this._pagination.asObservable();
     }
@@ -53,7 +53,7 @@ export class ImportardatosbancoService
     /**
      * Getter for product
      */
-    get product$(): Observable<ImportardatosbancoProduct>
+    get product$(): Observable<ExpbancoProduct>
     {
         return this._product.asObservable();
     }
@@ -61,7 +61,7 @@ export class ImportardatosbancoService
     /**
      * Getter for products
      */
-    get products$(): Observable<ImportardatosbancoProduct[]>
+    get products$(): Observable<ExpbancoProduct[]>
     {
         return this._products.asObservable();
     }
@@ -69,7 +69,7 @@ export class ImportardatosbancoService
     /**
      * Getter for tags
      */
-    get tags$(): Observable<ImportardatosbancoTag[]>
+    get tags$(): Observable<ExpbancoTag[]>
     {
         return this._tags.asObservable();
     }
@@ -77,7 +77,7 @@ export class ImportardatosbancoService
     /**
      * Getter for vendors
      */
-    get vendors$(): Observable<ImportardatosbancoVendor[]>
+    get vendors$(): Observable<ExpbancoVendor[]>
     {
         return this._vendors.asObservable();
     }
@@ -89,9 +89,9 @@ export class ImportardatosbancoService
     /**
      * Get brands
      */
-    getBrands(): Observable<ImportardatosbancoBrand[]>
+    getBrands(): Observable<ExpbancoBrand[]>
     {
-        return this._httpClient.get<ImportardatosbancoBrand[]>('api/apps/tesoreria/importardatosbanco/brands').pipe(
+        return this._httpClient.get<ExpbancoBrand[]>('api/apps/tesoreria/expbanco/brands').pipe(
             tap((brands) =>
             {
                 this._brands.next(brands);
@@ -102,9 +102,9 @@ export class ImportardatosbancoService
     /**
      * Get categories
      */
-    getCategories(): Observable<ImportardatosbancoCategory[]>
+    getCategories(): Observable<ExpbancoCategory[]>
     {
-        return this._httpClient.get<ImportardatosbancoCategory[]>('api/apps/tesoreria/importardatosbanco/categories').pipe(
+        return this._httpClient.get<ExpbancoCategory[]>('api/apps/tesoreria/expbanco/categories').pipe(
             tap((categories) =>
             {
                 this._categories.next(categories);
@@ -123,9 +123,9 @@ export class ImportardatosbancoService
      * @param search
      */
     getProducts(page: number = 0, size: number = 10, sort: string = 'name', order: 'asc' | 'desc' | '' = 'asc', search: string = ''):
-        Observable<{ pagination: ImportardatosbancoPagination; products: ImportardatosbancoProduct[] }>
+        Observable<{ pagination: ExpbancoPagination; products: ExpbancoProduct[] }>
     {
-        return this._httpClient.get<{ pagination: ImportardatosbancoPagination; products: ImportardatosbancoProduct[] }>('api/apps/tesoreria/importardatosbanco/products', {
+        return this._httpClient.get<{ pagination: ExpbancoPagination; products: ExpbancoProduct[] }>('api/apps/tesoreria/expbanco/products', {
             params: {
                 page: '' + page,
                 size: '' + size,
@@ -145,7 +145,7 @@ export class ImportardatosbancoService
     /**
      * Get product by id
      */
-    getProductById(id: string): Observable<ImportardatosbancoProduct>
+    getProductById(id: string): Observable<ExpbancoProduct>
     {
         return this._products.pipe(
             take(1),
@@ -175,11 +175,11 @@ export class ImportardatosbancoService
     /**
      * Create product
      */
-    createProduct(): Observable<ImportardatosbancoProduct>
+    createProduct(): Observable<ExpbancoProduct>
     {
         return this.products$.pipe(
             take(1),
-            switchMap(products => this._httpClient.post<ImportardatosbancoProduct>('api/apps/tesoreria/importardatosbanco/product', {}).pipe(
+            switchMap(products => this._httpClient.post<ExpbancoProduct>('api/apps/tesoreria/expbanco/product', {}).pipe(
                 map((newProduct) =>
                 {
                     // Update the products with the new product
@@ -198,11 +198,11 @@ export class ImportardatosbancoService
      * @param id
      * @param product
      */
-    updateProduct(id: string, product: ImportardatosbancoProduct): Observable<ImportardatosbancoProduct>
+    updateProduct(id: string, product: ExpbancoProduct): Observable<ExpbancoProduct>
     {
         return this.products$.pipe(
             take(1),
-            switchMap(products => this._httpClient.patch<ImportardatosbancoProduct>('api/apps/tesoreria/importardatosbanco/product', {
+            switchMap(products => this._httpClient.patch<ExpbancoProduct>('api/apps/tesoreria/expbanco/product', {
                 id,
                 product,
             }).pipe(
@@ -245,7 +245,7 @@ export class ImportardatosbancoService
     {
         return this.products$.pipe(
             take(1),
-            switchMap(products => this._httpClient.delete('api/apps/tesoreria/importardatosbanco/product', {params: {id}}).pipe(
+            switchMap(products => this._httpClient.delete('api/apps/tesoreria/expbanco/product', {params: {id}}).pipe(
                 map((isDeleted: boolean) =>
                 {
                     // Find the index of the deleted product
@@ -267,9 +267,9 @@ export class ImportardatosbancoService
     /**
      * Get tags
      */
-    getTags(): Observable<ImportardatosbancoTag[]>
+    getTags(): Observable<ExpbancoTag[]>
     {
-        return this._httpClient.get<ImportardatosbancoTag[]>('api/apps/tesoreria/importardatosbanco/tags').pipe(
+        return this._httpClient.get<ExpbancoTag[]>('api/apps/tesoreria/expbanco/tags').pipe(
             tap((tags) =>
             {
                 this._tags.next(tags);
@@ -282,11 +282,11 @@ export class ImportardatosbancoService
      *
      * @param tag
      */
-    createTag(tag: ImportardatosbancoTag): Observable<ImportardatosbancoTag>
+    createTag(tag: ExpbancoTag): Observable<ExpbancoTag>
     {
         return this.tags$.pipe(
             take(1),
-            switchMap(tags => this._httpClient.post<ImportardatosbancoTag>('api/apps/tesoreria/importardatosbanco/tag', {tag}).pipe(
+            switchMap(tags => this._httpClient.post<ExpbancoTag>('api/apps/tesoreria/expbanco/tag', {tag}).pipe(
                 map((newTag) =>
                 {
                     // Update the tags with the new tag
@@ -305,11 +305,11 @@ export class ImportardatosbancoService
      * @param id
      * @param tag
      */
-    updateTag(id: string, tag: ImportardatosbancoTag): Observable<ImportardatosbancoTag>
+    updateTag(id: string, tag: ExpbancoTag): Observable<ExpbancoTag>
     {
         return this.tags$.pipe(
             take(1),
-            switchMap(tags => this._httpClient.patch<ImportardatosbancoTag>('api/apps/tesoreria/importardatosbanco/tag', {
+            switchMap(tags => this._httpClient.patch<ExpbancoTag>('api/apps/tesoreria/expbanco/tag', {
                 id,
                 tag,
             }).pipe(
@@ -340,7 +340,7 @@ export class ImportardatosbancoService
     {
         return this.tags$.pipe(
             take(1),
-            switchMap(tags => this._httpClient.delete('api/apps/tesoreria/importardatosbanco/tag', {params: {id}}).pipe(
+            switchMap(tags => this._httpClient.delete('api/apps/tesoreria/expbanco/tag', {params: {id}}).pipe(
                 map((isDeleted: boolean) =>
                 {
                     // Find the index of the deleted tag
@@ -383,9 +383,9 @@ export class ImportardatosbancoService
     /**
      * Get vendors
      */
-    getVendors(): Observable<ImportardatosbancoVendor[]>
+    getVendors(): Observable<ExpbancoVendor[]>
     {
-        return this._httpClient.get<ImportardatosbancoVendor[]>('api/apps/tesoreria/importardatosbanco/vendors').pipe(
+        return this._httpClient.get<ExpbancoVendor[]>('api/apps/tesoreria/expbanco/vendors').pipe(
             tap((vendors) =>
             {
                 this._vendors.next(vendors);

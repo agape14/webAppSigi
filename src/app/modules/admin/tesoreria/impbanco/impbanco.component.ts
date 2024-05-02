@@ -14,20 +14,20 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { ExportardatosbancoService } from './exportardatosbanco.service';
+import { ImportardatosbancoService } from './impbanco.service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { FinanceService } from 'app/modules/admin/finance/finance.service';
-import { ExportardatosbancoBrand, ExportardatosbancoCategory, ExportardatosbancoPagination, ExportardatosbancoProduct, ExportardatosbancoTag, ExportardatosbancoVendor } from 'app/modules/admin/tesoreria/exportardatosbanco/exportardatosbanco.types';
+import { ImpbancoBrand, ImpbancoCategory, ImpbancoPagination, ImpbancoProduct, ImpbancoTag, ImpbancoVendor } from 'app/modules/admin/tesoreria/impbanco/impbanco.types';
 import { debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
-    selector       : 'Exportardatosbanco-list',
-    templateUrl    : './Exportardatosbanco.component.html',
+    selector       : 'Importardatosbanco-list',
+    templateUrl    : './impbanco.component.html',
     styles         : [
         /* language=SCSS */
         `
-            .Exportardatosbanco-grid {
+            .Importardatosbanco-grid {
                 grid-template-columns: 48px auto 40px;
 
                 @screen sm {
@@ -50,7 +50,7 @@ import { Router } from '@angular/router';
     standalone     : true,
     imports        : [NgIf, MatProgressBarModule, MatFormFieldModule, MatIconModule, MatInputModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatSortModule, NgFor, NgTemplateOutlet, MatPaginatorModule, NgClass, MatSlideToggleModule, MatSelectModule, MatOptionModule, MatCheckboxModule, MatRippleModule, AsyncPipe, CurrencyPipe,MatTableModule,],
 })
-export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDestroy
+export class ImportardatosbancoComponent implements OnInit, AfterViewInit, OnDestroy
 {
     myForm: FormGroup;
 
@@ -61,21 +61,21 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
     data: any;
     recentTransactionsDataSource: MatTableDataSource<any> = new MatTableDataSource();
     recentTransactionsTableColumns: string[] = ['transactionId', 'date', 'name', 'amount', 'status'];
-    products$: Observable<ExportardatosbancoProduct[]>;
+    products$: Observable<ImpbancoProduct[]>;
     iconSize: string = 'icon-size-8';
     contactsCount: number = 0;
-    brands: ExportardatosbancoBrand[];
-    categories: ExportardatosbancoCategory[];
-    filteredTags: ExportardatosbancoTag[];
+    brands: ImpbancoBrand[];
+    categories: ImpbancoCategory[];
+    filteredTags: ImpbancoTag[];
     flashMessage: 'success' | 'error' | null = null;
     isLoading: boolean = false;
-    pagination: ExportardatosbancoPagination;
+    pagination: ImpbancoPagination;
     searchInputControl: UntypedFormControl = new UntypedFormControl();
-    selectedProduct: ExportardatosbancoProduct | null = null;
+    selectedProduct: ImpbancoProduct | null = null;
     selectedProductForm: FormGroup;
-    tags: ExportardatosbancoTag[];
+    tags: ImpbancoTag[];
     tagsEditMode: boolean = false;
-    vendors: ExportardatosbancoVendor[];
+    vendors: ImpbancoVendor[];
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     
     /**
@@ -85,7 +85,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _ExportardatosbancoService: ExportardatosbancoService,
+        private _importardatosbancoService: ImportardatosbancoService,
         private _financeService: FinanceService,
         private router: Router,
         private fb: FormBuilder
@@ -139,9 +139,9 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
         });
 
         // Get the brands
-        this._ExportardatosbancoService.brands$
+        this._importardatosbancoService.brands$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((brands: ExportardatosbancoBrand[]) =>
+            .subscribe((brands: ImpbancoBrand[]) =>
             {
                 // Update the brands
                 this.brands = brands;
@@ -151,9 +151,9 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
             });
 
         // Get the categories
-        this._ExportardatosbancoService.categories$
+        this._importardatosbancoService.categories$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((categories: ExportardatosbancoCategory[]) =>
+            .subscribe((categories: ImpbancoCategory[]) =>
             {
                 // Update the categories
                 this.categories = categories;
@@ -163,9 +163,9 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
             });
 
         // Get the pagination
-        this._ExportardatosbancoService.pagination$
+        this._importardatosbancoService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((pagination: ExportardatosbancoPagination) =>
+            .subscribe((pagination: ImpbancoPagination) =>
             {
                 // Update the pagination
                 this.pagination = pagination;
@@ -175,12 +175,12 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
             });
 
         // Get the products
-        this.products$ = this._ExportardatosbancoService.products$;
+        this.products$ = this._importardatosbancoService.products$;
 
         // Get the tags
-        this._ExportardatosbancoService.tags$
+        this._importardatosbancoService.tags$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((tags: ExportardatosbancoTag[]) =>
+            .subscribe((tags: ImpbancoTag[]) =>
             {
                 // Update the tags
                 this.tags = tags;
@@ -191,9 +191,9 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
             });
 
         // Get the vendors
-        this._ExportardatosbancoService.vendors$
+        this._importardatosbancoService.vendors$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((vendors: ExportardatosbancoVendor[]) =>
+            .subscribe((vendors: ImpbancoVendor[]) =>
             {
                 // Update the vendors
                 this.vendors = vendors;
@@ -211,7 +211,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
                 {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._ExportardatosbancoService.getProducts(0, 10, 'name', 'asc', query);
+                    return this._importardatosbancoService.getProducts(0, 10, 'name', 'asc', query);
                 }),
                 map(() =>
                 {
@@ -225,7 +225,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe((data) =>
         {
-            // Verificar si data no es null o undefined - Exportardatosbanco
+            // Verificar si data no es null o undefined - Importardatosbanco
             if (data) {
                 // Store the data
                 this.data = data;
@@ -280,7 +280,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
                 {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._ExportardatosbancoService.getProducts(this._paginator.pageIndex, this._paginator.pageSize, this._sort.active, this._sort.direction);
+                    return this._importardatosbancoService.getProducts(this._paginator.pageIndex, this._paginator.pageSize, this._sort.active, this._sort.direction);
                 }),
                 map(() =>
                 {
@@ -320,7 +320,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
         }
 
         // Get the product by id
-        this._ExportardatosbancoService.getProductById(productId)
+        this._importardatosbancoService.getProductById(productId)
             .subscribe((product) =>
             {
                 // Set the selected product
@@ -444,7 +444,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
         };
 
         // Create tag on the server
-        this._ExportardatosbancoService.createTag(tag)
+        this._importardatosbancoService.createTag(tag)
             .subscribe((response) =>
             {
                 // Add the tag to the product
@@ -458,13 +458,13 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
      * @param tag
      * @param event
      */
-    updateTagTitle(tag: ExportardatosbancoTag, event): void
+    updateTagTitle(tag: ImpbancoTag, event): void
     {
         // Update the title on the tag
         tag.title = event.target.value;
 
         // Update the tag on the server
-        this._ExportardatosbancoService.updateTag(tag.id, tag)
+        this._importardatosbancoService.updateTag(tag.id, tag)
             .pipe(debounceTime(300))
             .subscribe();
 
@@ -477,10 +477,10 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
      *
      * @param tag
      */
-    deleteTag(tag: ExportardatosbancoTag): void
+    deleteTag(tag: ImpbancoTag): void
     {
         // Delete the tag from the server
-        this._ExportardatosbancoService.deleteTag(tag.id).subscribe();
+        this._importardatosbancoService.deleteTag(tag.id).subscribe();
 
         // Mark for check
         this._changeDetectorRef.markForCheck();
@@ -491,7 +491,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
      *
      * @param tag
      */
-    addTagToProduct(tag: ExportardatosbancoTag): void
+    addTagToProduct(tag: ImpbancoTag): void
     {
         // Add the tag
         this.selectedProduct.tags.unshift(tag.id);
@@ -508,7 +508,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
      *
      * @param tag
      */
-    removeTagFromProduct(tag: ExportardatosbancoTag): void
+    removeTagFromProduct(tag: ImpbancoTag): void
     {
         // Remove the tag
         this.selectedProduct.tags.splice(this.selectedProduct.tags.findIndex(item => item === tag.id), 1);
@@ -526,7 +526,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
      * @param tag
      * @param change
      */
-    toggleProductTag(tag: ExportardatosbancoTag, change: MatCheckboxChange): void
+    toggleProductTag(tag: ImpbancoTag, change: MatCheckboxChange): void
     {
         if ( change.checked )
         {
@@ -554,7 +554,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
     createProduct(): void
     {
         // Create the product
-        this._ExportardatosbancoService.createProduct().subscribe((newProduct) =>
+        this._importardatosbancoService.createProduct().subscribe((newProduct) =>
         {
             // Go to new product
             this.selectedProduct = newProduct;
@@ -583,7 +583,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
         delete product.currentImageIndex;
 
         // Update the product on the server
-        this._ExportardatosbancoService.updateProduct(product.id, product).subscribe(() =>
+        this._importardatosbancoService.updateProduct(product.id, product).subscribe(() =>
         {
             // Show a success message
             this.showFlashMessage('success');
@@ -616,7 +616,7 @@ export class ExportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
                 const product = this.selectedProductForm.getRawValue();
 
                 // Delete the product on the server
-                this._ExportardatosbancoService.deleteProduct(product.id).subscribe(() =>
+                this._importardatosbancoService.deleteProduct(product.id).subscribe(() =>
                 {
                     // Close the details
                     this.closeDetails();

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { FuseMockApiService, FuseMockApiUtils } from '@fuse/lib/mock-api';
-import { brands as brandsData, categories as categoriesData, products as productsData, tags as tagsData, vendors as vendorsData } from 'app/mock-api/apps/tesoreria/importardatosbanco/data';
+import { brands as brandsData, categories as categoriesData, products as productsData, tags as tagsData, vendors as vendorsData } from 'app/mock-api/apps/tesoreria/expbanco/data';
 import { assign, cloneDeep } from 'lodash-es';
 
 @Injectable({providedIn: 'root'})
-export class TesoreriaImportardatosbancoMockApi
+export class TesoreriaExpbancoMockApi
 {
     private _categories: any[] = categoriesData;
     private _brands: any[] = brandsData;
@@ -34,21 +34,21 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Categories - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/tesoreria/Importardatosbanco/categories')
+            .onGet('api/apps/tesoreria/expbanco/categories')
             .reply(() => [200, cloneDeep(this._categories)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Brands - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/tesoreria/Importardatosbanco/brands')
+            .onGet('api/apps/tesoreria/expbanco/brands')
             .reply(() => [200, cloneDeep(this._brands)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Products - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/tesoreria/Importardatosbanco/products', 300)
+            .onGet('api/apps/tesoreria/expbanco/products', 300)
             .reply(({request}) =>
             {
                 // Get available queries
@@ -135,7 +135,7 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Product - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/tesoreria/Importardatosbanco/product')
+            .onGet('api/apps/tesoreria/expbanco/product')
             .reply(({request}) =>
             {
                 // Get the id from the params
@@ -155,7 +155,7 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Product - POST
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPost('api/apps/tesoreria/Importardatosbanco/product')
+            .onPost('api/apps/tesoreria/expbanco/product')
             .reply(() =>
             {
                 // Generate a new product
@@ -192,7 +192,7 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Product - PATCH
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPatch('api/apps/tesoreria/Importardatosbanco/product')
+            .onPatch('api/apps/tesoreria/expbanco/product')
             .reply(({request}) =>
             {
                 // Get the id and product
@@ -223,7 +223,7 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Product - DELETE
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onDelete('api/apps/tesoreria/Importardatosbanco/product')
+            .onDelete('api/apps/tesoreria/expbanco/product')
             .reply(({request}) =>
             {
                 // Get the id
@@ -246,14 +246,14 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Tags - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/tesoreria/Importardatosbanco/tags')
+            .onGet('api/apps/tesoreria/expbanco/tags')
             .reply(() => [200, cloneDeep(this._tags)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Tags - POST
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPost('api/apps/tesoreria/Importardatosbanco/tag')
+            .onPost('api/apps/tesoreria/expbanco/tag')
             .reply(({request}) =>
             {
                 // Get the tag
@@ -273,7 +273,7 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Tags - PATCH
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPatch('api/apps/tesoreria/Importardatosbanco/tag')
+            .onPatch('api/apps/tesoreria/expbanco/tag')
             .reply(({request}) =>
             {
                 // Get the id and tag
@@ -304,7 +304,7 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Tag - DELETE
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onDelete('api/apps/tesoreria/Importardatosbanco/tag')
+            .onDelete('api/apps/tesoreria/expbanco/tag')
             .reply(({request}) =>
             {
                 // Get the id
@@ -336,7 +336,7 @@ export class TesoreriaImportardatosbancoMockApi
         // @ Vendors - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/tesoreria/Importardatosbanco/vendors')
+            .onGet('api/apps/tesoreria/expbanco/vendors')
             .reply(() => [200, cloneDeep(this._vendors)]);
     }
 }

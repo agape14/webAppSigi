@@ -127,16 +127,16 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon    : 'heroicons_outline:shopping-cart',
                 children: [
                     {
-                        id   : 'tesoreria.impoexpo.impbanco',
+                        id   : 'tesoreria.impbanco',
                         title: 'Importar datos del Banco',
                         type : 'basic',
-                        link : '/apps/impoexpo/impbanco',
+                        link : '/tesoreria/impbanco',
                     },
                     {
-                        id   : 'tesoreria.impoexpo.expbanco',
+                        id   : 'tesoreria.expbanco',
                         title: 'Exportar datos al Banco',
                         type : 'basic',
-                        link : '/tesoreria/impoexpo/expbanco',
+                        link : '/tesoreria/expbanco',
                     },
                     {
                         id   : 'tesoreria.impoexpo.expconta',

@@ -1,4 +1,4 @@
-export interface ImportardatosbancoProduct
+export interface ImpbancoProduct
 {
     id: string;
     category?: string;
@@ -21,7 +21,7 @@ export interface ImportardatosbancoProduct
     active: boolean;
 }
 
-export interface ImportardatosbancoPagination
+export interface ImpbancoPagination
 {
     length: number;
     size: number;
@@ -31,7 +31,7 @@ export interface ImportardatosbancoPagination
     endIndex: number;
 }
 
-export interface ImportardatosbancoCategory
+export interface ImpbancoCategory
 {
     id: string;
     parentId: string;
@@ -39,20 +39,20 @@ export interface ImportardatosbancoCategory
     slug: string;
 }
 
-export interface ImportardatosbancoBrand
+export interface ImpbancoBrand
 {
     id: string;
     name: string;
     slug: string;
 }
 
-export interface ImportardatosbancoTag
+export interface ImpbancoTag
 {
     id?: string;
     title?: string;
 }
 
-export interface ImportardatosbancoVendor
+export interface ImpbancoVendor
 {
     id: string;
     name: string;

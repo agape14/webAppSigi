@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { ImportardatosbancoComponent } from './importardatosbanco.component';
-import { ImportardatosbancoService } from './importardatosbanco.service';
+import { ImportardatosbancoComponent } from './impbanco.component';
+import { ImportardatosbancoService } from './impbanco.service';
 //import { ImportardatosbancoListComponent } from './list/Importardatosbanco.component';
 //import { DetalleImportardatosbancoComponent } from './detalle-Importardatosbanco/detalle-Importardatosbanco.component';
 
