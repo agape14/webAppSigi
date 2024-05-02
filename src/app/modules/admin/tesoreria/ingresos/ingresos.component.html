@@ -1,680 +1,1078 @@
-
-
-<div class="flex">
-
-    
-
-    <!-- Aquí comienza el mat-tab-group -->
-    <mat-tab-group>
-        <mat-tab label="Pagos de arrendamiento">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Num Contrato</mat-label>
-                        <input matInput maxlength="10" placeholder="Ex. Nougat" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
-        <mat-tab label="Pagos varios">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Nro Doc</mat-label>
-                        <mat-select>
-                            <mat-option value="Ruc">Ruc</mat-option>
-                            <mat-option value="Dni">Dni</mat-option>
-                            <mat-option value="Carnet">Carnet</mat-option>
-                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                            <mat-option value="P">P</mat-option>
-                            <mat-option value="Otros">Otros</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>NDOC</mat-label>
-                        <input matInput maxlength="10" placeholder="nrodoc" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
-        <mat-tab label="Pagos por ticket">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Nro Doc</mat-label>
-                        <mat-select>
-                            <mat-option value="Ruc">Ruc</mat-option>
-                            <mat-option value="Dni">Dni</mat-option>
-                            <mat-option value="Carnet">Carnet</mat-option>
-                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                            <mat-option value="P">P</mat-option>
-                            <mat-option value="Otros">Otros</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>NDOC</mat-label>
-                        <input matInput maxlength="10" placeholder="nrodoc" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
-        <mat-tab label="Planilla de Cobranzas">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Nro Doc</mat-label>
-                        <mat-select>
-                            <mat-option value="Ruc">Ruc</mat-option>
-                            <mat-option value="Dni">Dni</mat-option>
-                            <mat-option value="Carnet">Carnet</mat-option>
-                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                            <mat-option value="P">P</mat-option>
-                            <mat-option value="Otros">Otros</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>NDOC</mat-label>
-                        <input matInput maxlength="10" placeholder="nrodoc" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
-        <mat-tab label="Planilla de Depositos">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Nro Doc</mat-label>
-                        <mat-select>
-                            <mat-option value="Ruc">Ruc</mat-option>
-                            <mat-option value="Dni">Dni</mat-option>
-                            <mat-option value="Carnet">Carnet</mat-option>
-                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                            <mat-option value="P">P</mat-option>
-                            <mat-option value="Otros">Otros</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>NDOC</mat-label>
-                        <input matInput maxlength="10" placeholder="nrodoc" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
-        <mat-tab label="Nota de Credito/Debito">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Nro Doc</mat-label>
-                        <mat-select>
-                            <mat-option value="Ruc">Ruc</mat-option>
-                            <mat-option value="Dni">Dni</mat-option>
-                            <mat-option value="Carnet">Carnet</mat-option>
-                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                            <mat-option value="P">P</mat-option>
-                            <mat-option value="Otros">Otros</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>NDOC</mat-label>
-                        <input matInput maxlength="10" placeholder="nrodoc" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
-
-        <mat-tab label="Guia de Remision">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Nro Doc</mat-label>
-                        <mat-select>
-                            <mat-option value="Ruc">Ruc</mat-option>
-                            <mat-option value="Dni">Dni</mat-option>
-                            <mat-option value="Carnet">Carnet</mat-option>
-                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                            <mat-option value="P">P</mat-option>
-                            <mat-option value="Otros">Otros</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>NDOC</mat-label>
-                        <input matInput maxlength="10" placeholder="nrodoc" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
-        <mat-tab label="Listados">
-            <ng-template matTabContent>
-
-                <fieldset>
-                    <legend>Datos del ingreso</legend>
-
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Nro Doc</mat-label>
-                        <mat-select>
-                            <mat-option value="Ruc">Ruc</mat-option>
-                            <mat-option value="Dni">Dni</mat-option>
-                            <mat-option value="Carnet">Carnet</mat-option>
-                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                            <mat-option value="P">P</mat-option>
-                            <mat-option value="Otros">Otros</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>NDOC</mat-label>
-                        <input matInput maxlength="10" placeholder="nrodoc" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>CUIM</mat-label>
-                        <input matInput maxlength="10" placeholder="CUIM" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Uso</mat-label>
-                        <input matInput maxlength="10" placeholder="Uso" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Direccion del Inmueble</mat-label>
-                        <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Arrendatario</mat-label>
-                        <input matInput maxlength="10" placeholder="Arrendatario" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Domicilio Fiscal</mat-label>
-                        <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-
-                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                        <mat-label>Observaciones</mat-label>
-                        <input matInput maxlength="10" placeholder="Observaciones" />
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" fxFill>
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option</mat-option>
-                        </mat-select>
-                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                    </mat-form-field>
-            
-                </fieldset>
-                <!-- Contenido de la pestaña 1 -->
-                <h2>Pagos de arrendamiento</h2>
-                <p>Este es el contenido de la primera pestaña.</p>
-                <button mat-raised-button color="primary">Botón de la pestaña 1</button>
-              </ng-template>
-            
-        </mat-tab>
+<div class="sm:absolute sm:inset-0 flex flex-col flex-auto min-w-0 sm:overflow-hidden bg-card dark:bg-transparent">
+    <div class="flex flex-col sm:flex-row md:flex-col flex-auto justify-between py-8 px-6 md:px-8 border-b">
+
+        <div class="container overflow-y-auto" style="max-height: 400px;">
+            <mat-tab-group>
+                <mat-tab label="Pagos de arrendamiento">
+                    <ng-template matTabContent>
         
-    </mat-tab-group>
-    <!-- Fin del mat-tab-group -->
+                        <fieldset>
+                            <legend>Datos del ingreso</legend>
+                    
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Num Contrato</mat-label>
+                                <input matInput maxlength="10" placeholder="Ex. Nougat" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>CUM</mat-label>
+                                <input matInput maxlength="10" placeholder="CUM" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>CUIM</mat-label>
+                                <input matInput maxlength="10" placeholder="CUIM" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Uso</mat-label>
+                                <input matInput maxlength="10" placeholder="Uso" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Direccion del Inmueble</mat-label>
+                                <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Arrendatario</mat-label>
+                                <input matInput maxlength="10" placeholder="Arrendatario" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Domicilio Fiscal</mat-label>
+                                <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Observaciones</mat-label>
+                                <input matInput maxlength="10" placeholder="Observaciones" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+                    
+                            <mat-form-field appearance="outline" fxFill>
+                                <mat-label>Select me</mat-label>
+                                <mat-select>
+                                    <mat-option value="option">Option</mat-option>
+                                </mat-select>
+                                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                            </mat-form-field>
+                    
+                        </fieldset>
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                        </ng-template>
+                    
+                </mat-tab>
+                <mat-tab label="Pagos varios">
+                    <ng-template matTabContent>
+        
+                        <fieldset>
+                            <legend>Datos del ingreso</legend>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Nro Doc</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Ruc">Ruc</mat-option>
+                                        <mat-option value="Dni">Dni</mat-option>
+                                        <mat-option value="Carnet">Carnet</mat-option>
+                                        <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                        <mat-option value="P">P</mat-option>
+                                        <mat-option value="Otros">Otros</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>NDOC</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+            
+                                <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
+            
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Ruc</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Tipo</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Electronico">Electronico</mat-option>
+                                        <mat-option value="Fisico">Fisico</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>NOMBRE COMPLETO</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Comprobante</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Factura">Factura</mat-option>
+                                        <mat-option value="Boleta">Boleta</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>DOMICILIO FISCALs</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Serie</mat-label>
+                                    <mat-select>                            
+                                        <mat-option value="Serie">Serie</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Numero</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
+                                    <mat-label>Emisión</mat-label>
+                                    <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            
+        
+                            
+        
+                            
+        
+                            
+        
+        
+                    
+                        </fieldset>
+        
+                        <div class="container mx-auto">
+                            <div class="flex mb-4">
+                                <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                <div class="flex space-x-4">
+                                    <button mat-raised-button color="primary">Agregar</button>
+                                    <button mat-raised-button color="warn">Retirar</button>
+                                </div>
+                            </div>
+                            <table class="w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-4 py-2">Motivo</th>
+                                        <th class="border border-gray-300 px-4 py-2">Detalle</th>
+                                        <th class="border border-gray-300 px-4 py-2">Importe</th>
+                                        <th class="border border-gray-300 px-4 py-2">IGV</th>
+                                        <th class="border border-gray-300 px-4 py-2">Total</th>
+                                        <th class="border border-gray-300 px-4 py-2">Afecto IGV</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                                    <tr>
+                                        <td class="border border-gray-300 px-4 py-2">Motivo 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">100.00</td>
+                                        <td class="border border-gray-300 px-4 py-2">18.00</td>
+                                        <td class="border border-gray-300 px-4 py-2">118.00</td>
+                                        <td class="border border-gray-300 px-4 py-2">Si</td>
+                                    </tr>
+                                    <!-- Puedes agregar más filas según sea necesario -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                        </ng-template>
+                    
+                </mat-tab>
+                <mat-tab label="Pagos por ticket">
+                    <ng-template matTabContent>
+        
+                        <fieldset>
+                            <legend>Datos del ingreso</legend>
+        
+                            <mat-form-field appearance="outline" fxFill>
+                                <mat-label>Nro Doc</mat-label>
+                                <mat-select>
+                                    <mat-option value="Ruc">Ruc</mat-option>
+                                    <mat-option value="Dni">Dni</mat-option>
+                                    <mat-option value="Carnet">Carnet</mat-option>
+                                    <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                    <mat-option value="P">P</mat-option>
+                                    <mat-option value="Otros">Otros</mat-option>
+                                </mat-select>
+                                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                            </mat-form-field>
+                    
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>NDOC</mat-label>
+                                <input matInput maxlength="10" placeholder="nrodoc" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>CUM</mat-label>
+                                <input matInput maxlength="10" placeholder="CUM" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>CUIM</mat-label>
+                                <input matInput maxlength="10" placeholder="CUIM" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Uso</mat-label>
+                                <input matInput maxlength="10" placeholder="Uso" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Direccion del Inmueble</mat-label>
+                                <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Arrendatario</mat-label>
+                                <input matInput maxlength="10" placeholder="Arrendatario" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Domicilio Fiscal</mat-label>
+                                <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+        
+                            <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-label>Observaciones</mat-label>
+                                <input matInput maxlength="10" placeholder="Observaciones" />
+                                <mat-hint align="end"></mat-hint>
+                            </mat-form-field>
+                    
+                            <mat-form-field appearance="outline" fxFill>
+                                <mat-label>Select me</mat-label>
+                                <mat-select>
+                                    <mat-option value="option">Option</mat-option>
+                                </mat-select>
+                                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                            </mat-form-field>
+                    
+                        </fieldset>
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                        </ng-template>
+                    
+                </mat-tab>
+                <mat-tab label="Planilla de Cobranzas">
+                    <ng-template matTabContent>
+        
+                        <fieldset>
+                            <legend>Datos del ingreso</legend>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Nro Doc</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Ruc">Ruc</mat-option>
+                                        <mat-option value="Dni">Dni</mat-option>
+                                        <mat-option value="Carnet">Carnet</mat-option>
+                                        <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                        <mat-option value="P">P</mat-option>
+                                        <mat-option value="Otros">Otros</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>NDOC</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+            
+                                <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
+            
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Ruc</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
+        
+                                <div class="flex mb-4">
+                                    <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                    <div class="flex space-x-4">
+                                        <button mat-button  mat-raised-button color="primary" type="reset" (click)="resetDetails()"  class="push-right-xs" [disabled]>Crear planilla</button>
+                                        <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]>Cierre de planillas</button>
+                                        <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]>Imprimir</button>
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Tipo</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Electronico">Electronico</mat-option>
+                                        <mat-option value="Fisico">Fisico</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>NOMBRE COMPLETO</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Comprobante</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Factura">Factura</mat-option>
+                                        <mat-option value="Boleta">Boleta</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>DOMICILIO FISCALs</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Serie</mat-label>
+                                    <mat-select>                            
+                                        <mat-option value="Serie">Serie</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Numero</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
+                                    <mat-label>Emisión</mat-label>
+                                    <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                        </fieldset>
+        
+                        <div class="container mx-auto">
+                            <div class="flex mb-4">
+                                <h2>Ingresos del dia</h2>
+                            </div>
+                            <div class="flex mb-4">
+                                <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                <div class="flex space-x-4">
+                                    <button mat-raised-button color="primary">Validar</button>
+                                    <button mat-raised-button color="warn">Ajuste automatico</button>
+                                </div>
+                            </div>
+                            <table class="w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-4 py-2">Detalle</th>
+                                        <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
+                                        <th class="border border-gray-300 px-4 py-2">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                                    <tr>
+                                        <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Importe 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Si</td>
+                                    </tr>
+                                    <!-- Puedes agregar más filas según sea necesario -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                    </ng-template>
+                    
+                </mat-tab>
+                <mat-tab label="Planilla de Depositos">
+                    <ng-template matTabContent>
+        
+                        <fieldset class="border border-gray-300 rounded-md">
+                            <legend class="text-sm text-gray-600 px-2">Datos del ingreso</legend>
+                            
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Nro Doc</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Ruc">Ruc</mat-option>
+                                        <mat-option value="Dni">Dni</mat-option>
+                                        <mat-option value="Carnet">Carnet</mat-option>
+                                        <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                        <mat-option value="P">P</mat-option>
+                                        <mat-option value="Otros">Otros</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>NDOC</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+            
+                                <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
+            
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Ruc</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
+                                    <mat-icon>search</mat-icon>
+                                    Buscar
+                                </button>
+                                    
+        
+                                <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
+        
+                                <div class="flex mb-4">
+                                    <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                    <div class="flex space-x-4">
+                                        <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
+                                            <mat-icon>save</mat-icon>
+                                            Grabar fecha
+                                        </button>
+                                            
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Tipo</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Electronico">Electronico</mat-option>
+                                        <mat-option value="Fisico">Fisico</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>NOMBRE COMPLETO</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Comprobante</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Factura">Factura</mat-option>
+                                        <mat-option value="Boleta">Boleta</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>DOMICILIO FISCALs</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Serie</mat-label>
+                                    <mat-select>                            
+                                        <mat-option value="Serie">Serie</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Numero</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
+                                    <mat-label>Emisión</mat-label>
+                                    <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                        </fieldset>
+        
+                        <div class="container mx-auto">
+                            <div class="flex mb-4">
+                                <h2>Depositos</h2>
+                            </div>
+                            <div class="flex mb-4">
+                                <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                <div class="flex space-x-4">
+                                    <button mat-raised-button color="primary">
+                                        <mat-icon>add</mat-icon>
+                                        Nuevo
+                                        </button>
+                                        
+                                        <button mat-raised-button color="warn">
+                                        <mat-icon>delete</mat-icon>
+                                        Eliminar
+                                        </button>
+                                </div>
+                            </div>
+                            <table class="w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-4 py-2">Detalle</th>
+                                        <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
+                                        <th class="border border-gray-300 px-4 py-2">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                                    <tr>
+                                        <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Importe 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Si</td>
+                                    </tr>
+                                    <!-- Puedes agregar más filas según sea necesario -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                    </ng-template>
+                    
+                </mat-tab>
+                <mat-tab label="Nota de Credito/Debito">
+                    <ng-template matTabContent>
+        
+                        <fieldset class="border border-gray-300 rounded-md">
+                            <legend class="text-sm text-gray-600 px-2">Datos del ingreso</legend>
+                            
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Nro Doc</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Ruc">Ruc</mat-option>
+                                        <mat-option value="Dni">Dni</mat-option>
+                                        <mat-option value="Carnet">Carnet</mat-option>
+                                        <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                        <mat-option value="P">P</mat-option>
+                                        <mat-option value="Otros">Otros</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>NDOC</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+            
+                                <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
+            
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Ruc</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
+                                    <mat-icon>search</mat-icon>
+                                    Buscar
+                                </button>
+                                    
+        
+                                <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
+        
+                                <div class="flex mb-4">
+                                    <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                    <div class="flex space-x-4">
+                                        <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
+                                            <mat-icon>save</mat-icon>
+                                            Grabar fecha
+                                        </button>
+                                            
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Tipo</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Electronico">Electronico</mat-option>
+                                        <mat-option value="Fisico">Fisico</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>NOMBRE COMPLETO</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Comprobante</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Factura">Factura</mat-option>
+                                        <mat-option value="Boleta">Boleta</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>DOMICILIO FISCALs</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Serie</mat-label>
+                                    <mat-select>                            
+                                        <mat-option value="Serie">Serie</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Numero</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
+                                    <mat-label>Emisión</mat-label>
+                                    <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                        </fieldset>
+        
+                        <div class="container mx-auto">
+                            <div class="flex mb-4">
+                                <h2>Depositos</h2>
+                            </div>
+                            <div class="flex mb-4">
+                                <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                <div class="flex space-x-4">
+                                    <button mat-raised-button color="primary">
+                                        <mat-icon>add</mat-icon>
+                                        Nuevo
+                                        </button>
+                                        
+                                        <button mat-raised-button color="warn">
+                                        <mat-icon>delete</mat-icon>
+                                        Eliminar
+                                        </button>
+                                </div>
+                            </div>
+                            <table class="w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-4 py-2">Detalle</th>
+                                        <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
+                                        <th class="border border-gray-300 px-4 py-2">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                                    <tr>
+                                        <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Importe 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Si</td>
+                                    </tr>
+                                    <!-- Puedes agregar más filas según sea necesario -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                    </ng-template>
+                    
+                </mat-tab>
+        
+                <mat-tab label="Guia de Remision">
+                    <ng-template matTabContent>
+        
+                        <fieldset class="border border-gray-300 rounded-md">
+                            <legend class="text-sm text-gray-600 px-2">Datos del ingreso</legend>
+                            
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Nro Doc</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Ruc">Ruc</mat-option>
+                                        <mat-option value="Dni">Dni</mat-option>
+                                        <mat-option value="Carnet">Carnet</mat-option>
+                                        <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                        <mat-option value="P">P</mat-option>
+                                        <mat-option value="Otros">Otros</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>NDOC</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+            
+                                <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
+            
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Ruc</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
+                                    <mat-icon>search</mat-icon>
+                                    Buscar
+                                </button>
+                                    
+        
+                                <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
+        
+                                <div class="flex mb-4">
+                                    <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                    <div class="flex space-x-4">
+                                        <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
+                                            <mat-icon>save</mat-icon>
+                                            Grabar fecha
+                                        </button>
+                                            
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Tipo</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Electronico">Electronico</mat-option>
+                                        <mat-option value="Fisico">Fisico</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>NOMBRE COMPLETO</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Comprobante</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Factura">Factura</mat-option>
+                                        <mat-option value="Boleta">Boleta</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <mat-label>DOMICILIO FISCALs</mat-label>
+                                    <input matInput maxlength="50" placeholder="CUM" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" fxFill>
+                                    <mat-label>Serie</mat-label>
+                                    <mat-select>                            
+                                        <mat-option value="Serie">Serie</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Numero</mat-label>
+                                    <input matInput maxlength="10" placeholder="nrodoc" />
+                                    <mat-hint align="end"></mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
+                                    <mat-label>Emisión</mat-label>
+                                    <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                </mat-form-field>
+                            </div>
+        
+                        </fieldset>
+        
+                        <div class="container mx-auto">
+                            <div class="flex mb-4">
+                                <h2>Depositos</h2>
+                            </div>
+                            <div class="flex mb-4">
+                                <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
+                                <div class="flex space-x-4">
+                                    <button mat-raised-button color="primary">
+                                        <mat-icon>add</mat-icon>
+                                        Nuevo
+                                        </button>
+                                        
+                                        <button mat-raised-button color="warn">
+                                        <mat-icon>delete</mat-icon>
+                                        Eliminar
+                                        </button>
+                                </div>
+                            </div>
+                            <table class="w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-4 py-2">Detalle</th>
+                                        <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
+                                        <th class="border border-gray-300 px-4 py-2">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                                    <tr>
+                                        <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Importe 1</td>
+                                        <td class="border border-gray-300 px-4 py-2">Si</td>
+                                    </tr>
+                                    <!-- Puedes agregar más filas según sea necesario -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                    </ng-template>
+                    
+                </mat-tab>
+                <mat-tab label="Listados">
+                    <ng-template matTabContent>
+        
+                        <fieldset class="border border-gray-300 rounded-md p-4">
+                            <legend class="text-sm text-gray-600 font-semibold">Datos del ingreso</legend>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                                <!-- Primer bloque de contenido -->
+                                <mat-form-field appearance="outline" class="w-full">
+                                    <mat-label>Nro Doc</mat-label>
+                                    <mat-select>
+                                        <mat-option value="Ruc">Ruc</mat-option>
+                                        <mat-option value="Dni">Dni</mat-option>
+                                        <mat-option value="Carnet">Carnet</mat-option>
+                                        <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                        <mat-option value="P">P</mat-option>
+                                        <mat-option value="Otros">Otros</mat-option>
+                                    </mat-select>
+                                    <mat-hint align="end">Aquí va la indicación</mat-hint>
+                                </mat-form-field>
+                        
+                                <mat-form-field appearance="outline" class="w-full">
+                                    <mat-label>NDOC</mat-label>
+                                    <input matInput maxlength="10" placeholder="Nro. de Documento" />
+                                    <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                </mat-form-field>
+                        
+                                <button mat-button mat-raised-button color="primary" (click)="resetDetails()" [disabled]="busy">Buscar</button>
+                        
+                                <mat-form-field appearance="outline" class="w-full">
+                                    <mat-label>Ruc</mat-label>
+                                    <input matInput maxlength="10" placeholder="RUC" />
+                                    <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                </mat-form-field>
+                        
+                                <!-- Segundo bloque de contenido -->
+                                <div class="flex items-center space-x-4 md:col-span-2">
+                                    <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
+                        
+                                    <button mat-raised-button color="primary" (click)="resetDetails()" [disabled]="true">
+                                        <mat-icon>save</mat-icon>
+                                        Grabar fecha
+                                    </button>
+                                </div>
+                            </div>
+                        
+                            <!-- Otros bloques de contenido... -->
+                        </fieldset>
+        
+                        <div class="container mx-auto">
+                            <div class="flex items-center mb-4">
+                                <h2 class="text-lg font-semibold">Depósitos</h2>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <div></div> <!-- Espacio en blanco para alinear los botones a la izquierda -->
+                                <div class="flex space-x-4">
+                                    <button mat-raised-button color="primary" class="flex items-center">
+                                        <mat-icon>add</mat-icon>
+                                        <span>Nuevo</span>
+                                    </button>
+                                    <button mat-raised-button color="warn" class="flex items-center">
+                                        <mat-icon>delete</mat-icon>
+                                        <span>Eliminar</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full border-collapse border border-gray-300">
+                                    <thead>
+                                        <tr>
+                                            <th class="border border-gray-300 px-4 py-2">Detalle</th>
+                                            <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
+                                            <th class="border border-gray-300 px-4 py-2">Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                                        <tr>
+                                            <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
+                                            <td class="border border-gray-300 px-4 py-2">Importe 1</td>
+                                            <td class="border border-gray-300 px-4 py-2">Si</td>
+                                        </tr>
+                                        <!-- Puedes agregar más filas según sea necesario -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                    </ng-template>
+                    
+                </mat-tab>
+    
+                <mat-tab label="Listadosaa">
+                    <ng-template matTabContent>
+        
+                        <div class="overflow-y-auto max-h-[400px]"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                            <fieldset class="border border-gray-300 rounded-md">
+                                <!-- Contenido del fieldset -->
+                            </fieldset>
+        
+                            <div class="container mx-auto">
+                                <!-- Contenido del contenedor -->
+                            </div>
+                            
+                            <!-- Más contenido del tab... -->
+        
+                        </div>
+        
+                    </ng-template>
+                </mat-tab>
+                
+            </mat-tab-group>
+        </div>
+        
+            
+        
+    </div>
+
 </div>
+
