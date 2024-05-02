@@ -14,16 +14,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { ExpbancoService } from './expbanco.service';
+import { ExpcontaService } from './expconta.service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { FinanceService } from 'app/modules/admin/finance/finance.service';
-import { ExpbancoBrand, ExpbancoCategory, ExpbancoPagination, ExpbancoProduct, ExpbancoTag, ExpbancoVendor } from 'app/modules/admin/tesoreria/expbanco/expbanco.types';
+import { ExpcontaBrand, ExpcontaCategory, ExpcontaPagination, ExpcontaProduct, ExpcontaTag, ExpcontaVendor } from 'app/modules/admin/tesoreria/expconta/expconta.types';
 import { debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
-    selector       : 'Exportardatosbanco-list',
-    templateUrl    : './expbanco.component.html',
+    selector       : 'Expconta-list',
+    templateUrl    : './expconta.component.html',
     styles         : [
         /* language=SCSS */
         `
@@ -50,7 +50,7 @@ import { Router } from '@angular/router';
     standalone     : true,
     imports        : [NgIf, MatProgressBarModule, MatFormFieldModule, MatIconModule, MatInputModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatSortModule, NgFor, NgTemplateOutlet, MatPaginatorModule, NgClass, MatSlideToggleModule, MatSelectModule, MatOptionModule, MatCheckboxModule, MatRippleModule, AsyncPipe, CurrencyPipe,MatTableModule,],
 })
-export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
+export class ExpcontaComponent implements OnInit, AfterViewInit, OnDestroy
 {
     myForm: FormGroup;
 
@@ -61,21 +61,21 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
     data: any;
     recentTransactionsDataSource: MatTableDataSource<any> = new MatTableDataSource();
     recentTransactionsTableColumns: string[] = ['transactionId', 'date', 'name', 'amount', 'status'];
-    products$: Observable<ExpbancoProduct[]>;
+    products$: Observable<ExpcontaProduct[]>;
     iconSize: string = 'icon-size-8';
     contactsCount: number = 0;
-    brands: ExpbancoBrand[];
-    categories: ExpbancoCategory[];
-    filteredTags: ExpbancoTag[];
+    brands: ExpcontaBrand[];
+    categories: ExpcontaCategory[];
+    filteredTags: ExpcontaTag[];
     flashMessage: 'success' | 'error' | null = null;
     isLoading: boolean = false;
-    pagination: ExpbancoPagination;
+    pagination: ExpcontaPagination;
     searchInputControl: UntypedFormControl = new UntypedFormControl();
-    selectedProduct: ExpbancoProduct | null = null;
+    selectedProduct: ExpcontaProduct | null = null;
     selectedProductForm: FormGroup;
-    tags: ExpbancoTag[];
+    tags: ExpcontaTag[];
     tagsEditMode: boolean = false;
-    vendors: ExpbancoVendor[];
+    vendors: ExpcontaVendor[];
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     
     /**
@@ -85,7 +85,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _expbancoService: ExpbancoService,
+        private _ExpcontaService: ExpcontaService,
         private _financeService: FinanceService,
         private router: Router,
         private fb: FormBuilder
@@ -139,9 +139,9 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
         });
 
         // Get the brands
-        this._expbancoService.brands$
+        this._ExpcontaService.brands$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((brands: ExpbancoBrand[]) =>
+            .subscribe((brands: ExpcontaBrand[]) =>
             {
                 // Update the brands
                 this.brands = brands;
@@ -151,9 +151,9 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
             });
 
         // Get the categories
-        this._expbancoService.categories$
+        this._ExpcontaService.categories$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((categories: ExpbancoCategory[]) =>
+            .subscribe((categories: ExpcontaCategory[]) =>
             {
                 // Update the categories
                 this.categories = categories;
@@ -163,9 +163,9 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
             });
 
         // Get the pagination
-        this._expbancoService.pagination$
+        this._ExpcontaService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((pagination: ExpbancoPagination) =>
+            .subscribe((pagination: ExpcontaPagination) =>
             {
                 // Update the pagination
                 this.pagination = pagination;
@@ -175,12 +175,12 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
             });
 
         // Get the products
-        this.products$ = this._expbancoService.products$;
+        this.products$ = this._ExpcontaService.products$;
 
         // Get the tags
-        this._expbancoService.tags$
+        this._ExpcontaService.tags$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((tags: ExpbancoTag[]) =>
+            .subscribe((tags: ExpcontaTag[]) =>
             {
                 // Update the tags
                 this.tags = tags;
@@ -191,9 +191,9 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
             });
 
         // Get the vendors
-        this._expbancoService.vendors$
+        this._ExpcontaService.vendors$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((vendors: ExpbancoVendor[]) =>
+            .subscribe((vendors: ExpcontaVendor[]) =>
             {
                 // Update the vendors
                 this.vendors = vendors;
@@ -211,7 +211,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
                 {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._expbancoService.getProducts(0, 10, 'name', 'asc', query);
+                    return this._ExpcontaService.getProducts(0, 10, 'name', 'asc', query);
                 }),
                 map(() =>
                 {
@@ -280,7 +280,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
                 {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._expbancoService.getProducts(this._paginator.pageIndex, this._paginator.pageSize, this._sort.active, this._sort.direction);
+                    return this._ExpcontaService.getProducts(this._paginator.pageIndex, this._paginator.pageSize, this._sort.active, this._sort.direction);
                 }),
                 map(() =>
                 {
@@ -320,7 +320,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
         }
 
         // Get the product by id
-        this._expbancoService.getProductById(productId)
+        this._ExpcontaService.getProductById(productId)
             .subscribe((product) =>
             {
                 // Set the selected product
@@ -444,7 +444,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
         };
 
         // Create tag on the server
-        this._expbancoService.createTag(tag)
+        this._ExpcontaService.createTag(tag)
             .subscribe((response) =>
             {
                 // Add the tag to the product
@@ -458,13 +458,13 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
      * @param tag
      * @param event
      */
-    updateTagTitle(tag: ExpbancoTag, event): void
+    updateTagTitle(tag: ExpcontaTag, event): void
     {
         // Update the title on the tag
         tag.title = event.target.value;
 
         // Update the tag on the server
-        this._expbancoService.updateTag(tag.id, tag)
+        this._ExpcontaService.updateTag(tag.id, tag)
             .pipe(debounceTime(300))
             .subscribe();
 
@@ -477,10 +477,10 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
      *
      * @param tag
      */
-    deleteTag(tag: ExpbancoTag): void
+    deleteTag(tag: ExpcontaTag): void
     {
         // Delete the tag from the server
-        this._expbancoService.deleteTag(tag.id).subscribe();
+        this._ExpcontaService.deleteTag(tag.id).subscribe();
 
         // Mark for check
         this._changeDetectorRef.markForCheck();
@@ -491,7 +491,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
      *
      * @param tag
      */
-    addTagToProduct(tag: ExpbancoTag): void
+    addTagToProduct(tag: ExpcontaTag): void
     {
         // Add the tag
         this.selectedProduct.tags.unshift(tag.id);
@@ -508,7 +508,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
      *
      * @param tag
      */
-    removeTagFromProduct(tag: ExpbancoTag): void
+    removeTagFromProduct(tag: ExpcontaTag): void
     {
         // Remove the tag
         this.selectedProduct.tags.splice(this.selectedProduct.tags.findIndex(item => item === tag.id), 1);
@@ -526,7 +526,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
      * @param tag
      * @param change
      */
-    toggleProductTag(tag: ExpbancoTag, change: MatCheckboxChange): void
+    toggleProductTag(tag: ExpcontaTag, change: MatCheckboxChange): void
     {
         if ( change.checked )
         {
@@ -554,7 +554,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
     createProduct(): void
     {
         // Create the product
-        this._expbancoService.createProduct().subscribe((newProduct) =>
+        this._ExpcontaService.createProduct().subscribe((newProduct) =>
         {
             // Go to new product
             this.selectedProduct = newProduct;
@@ -583,7 +583,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
         delete product.currentImageIndex;
 
         // Update the product on the server
-        this._expbancoService.updateProduct(product.id, product).subscribe(() =>
+        this._ExpcontaService.updateProduct(product.id, product).subscribe(() =>
         {
             // Show a success message
             this.showFlashMessage('success');
@@ -616,7 +616,7 @@ export class ExpbancoComponent implements OnInit, AfterViewInit, OnDestroy
                 const product = this.selectedProductForm.getRawValue();
 
                 // Delete the product on the server
-                this._expbancoService.deleteProduct(product.id).subscribe(() =>
+                this._ExpcontaService.deleteProduct(product.id).subscribe(() =>
                 {
                     // Close the details
                     this.closeDetails();

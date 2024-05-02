@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { ExpbancoComponent } from './expbanco.component';
-import { ExpbancoService } from './expbanco.service';
+import { ReptelecreditoComponent } from './reptelecredito.component';
+import { ReptelecreditoService } from './reptelecredito.service';
 //import { ExportardatosbancoListComponent } from './list/Exportardatosbanco.component';
 //import { DetalleExportardatosbancoComponent } from './detalle-Exportardatosbanco/detalle-Exportardatosbanco.component';
 
@@ -13,13 +13,13 @@ export default [
     },
     {
         path     : '',
-        component: ExpbancoComponent,
+        component: ReptelecreditoComponent,
         resolve  : {
-            brands    : () => inject(ExpbancoService).getBrands(),
-            categories: () => inject(ExpbancoService).getCategories(),
-            products  : () => inject(ExpbancoService).getProducts(),
-            tags      : () => inject(ExpbancoService).getTags(),
-            vendors   : () => inject(ExpbancoService).getVendors(),
+            brands    : () => inject(ReptelecreditoService).getBrands(),
+            categories: () => inject(ReptelecreditoService).getCategories(),
+            products  : () => inject(ReptelecreditoService).getProducts(),
+            tags      : () => inject(ReptelecreditoService).getTags(),
+            vendors   : () => inject(ReptelecreditoService).getVendors(),
         },
         /*children : [
             {

@@ -7,6 +7,8 @@ import { TesoreriaIngresosMockApi } from 'app/mock-api/apps/tesoreria/ingresos/a
 import { TesoreriaMotivosMockApi } from 'app/mock-api/apps/tesoreria/motivos/api';
 import { TesoreriaImpbancoMockApi } from 'app/mock-api/apps/tesoreria/impbanco/api';
 import { TesoreriaExpbancoMockApi } from 'app/mock-api/apps/tesoreria/expbanco/api';
+import { TesoreriaExpcontaMockApi } from 'app/mock-api/apps/tesoreria/expconta/api';
+import { TesoreriaBancosMockApi } from 'app/mock-api/apps/tesoreria/bancos/api';
 import { FileManagerMockApi } from 'app/mock-api/apps/file-manager/api';
 import { HelpCenterMockApi } from 'app/mock-api/apps/help-center/api';
 import { MailboxMockApi } from 'app/mock-api/apps/mailbox/api';
@@ -37,7 +39,10 @@ export const mockApiServices = [
     CryptoMockApi,
     InmobiliariaIncorporacionMockApi,
     //InmobiliariaIngresosMockApi,
-    TesoreriaIngresosMockApi,TesoreriaMotivosMockApi,TesoreriaImpbancoMockApi,TesoreriaExpbancoMockApi,
+    TesoreriaIngresosMockApi,TesoreriaMotivosMockApi,TesoreriaImpbancoMockApi,
+    TesoreriaExpbancoMockApi,
+    TesoreriaBancosMockApi,
+    TesoreriaExpcontaMockApi,
     FileManagerMockApi,
     FinanceMockApi,
     HelpCenterMockApi,

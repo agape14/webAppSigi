@@ -89,8 +89,11 @@ export const appRoutes: Route[] = [
             {path: 'tesoreria', children: [                
                 {path: 'ingresos', loadChildren: () => import('app/modules/admin/tesoreria/ingresos/ingresos.routes')},
                 {path: 'motivos', loadChildren: () => import('app/modules/admin/tesoreria/motivos/motivos.routes')},
+                {path: 'bancos', loadChildren: () => import('app/modules/admin/tesoreria/bancos/bancos.routes')},
                 {path: 'impbanco', loadChildren: () => import('app/modules/admin/tesoreria/impbanco/impbanco.routes')},
                 {path: 'expbanco', loadChildren: () => import('app/modules/admin/tesoreria/expbanco/expbanco.routes')},
+                {path: 'expconta', loadChildren: () => import('app/modules/admin/tesoreria/expconta/expconta.routes')},
+                {path: 'reptelecredito', loadChildren: () => import('app/modules/admin/tesoreria/reptelecredito/reptelecredito.routes')},
             ]},
             
         ]

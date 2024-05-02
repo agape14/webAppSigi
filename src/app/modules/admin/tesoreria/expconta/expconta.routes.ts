@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { ExpbancoComponent } from './expbanco.component';
-import { ExpbancoService } from './expbanco.service';
+import { ExpcontaComponent } from './expconta.component';
+import { ExpcontaService } from './expconta.service';
 //import { ExportardatosbancoListComponent } from './list/Exportardatosbanco.component';
 //import { DetalleExportardatosbancoComponent } from './detalle-Exportardatosbanco/detalle-Exportardatosbanco.component';
 
@@ -13,13 +13,13 @@ export default [
     },
     {
         path     : '',
-        component: ExpbancoComponent,
+        component: ExpcontaComponent,
         resolve  : {
-            brands    : () => inject(ExpbancoService).getBrands(),
-            categories: () => inject(ExpbancoService).getCategories(),
-            products  : () => inject(ExpbancoService).getProducts(),
-            tags      : () => inject(ExpbancoService).getTags(),
-            vendors   : () => inject(ExpbancoService).getVendors(),
+            brands    : () => inject(ExpcontaService).getBrands(),
+            categories: () => inject(ExpcontaService).getCategories(),
+            products  : () => inject(ExpcontaService).getProducts(),
+            tags      : () => inject(ExpcontaService).getTags(),
+            vendors   : () => inject(ExpcontaService).getVendors(),
         },
         /*children : [
             {
