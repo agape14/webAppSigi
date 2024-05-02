@@ -1,5 +1,5 @@
-import { CommonModule,NgClass } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AsyncPipe, CurrencyPipe, NgClass, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase  } from '@angular/common';
+import { Component, OnInit, ViewEncapsulation,ViewChild, ChangeDetectorRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators,FormBuilder, FormGroup } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -14,26 +14,39 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { Subject, takeUntil } from 'rxjs';
+import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 
 @Component({
   selector: 'app-detalle-incorporacion',
   templateUrl: './detalle-incorporacion.component.html',
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule],
+  imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe, CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase ],
 })
 export class DetalleIncorporacionComponent implements OnInit{
   formFieldHelpers: string[] = [''];
   panels: any[] = [];
   myForm: FormGroup;
-  constructor(private _formBuilder: UntypedFormBuilder,private formBuilder: FormBuilder)
+
+  @ViewChild('drawer') drawer: MatDrawer;
+    drawerMode: 'over' | 'side' = 'side';
+    drawerOpened: boolean = true;
+    selectedPanel: string = 'delpredio';
+  private _unsubscribeAll: Subject<any> = new Subject<any>();
+
+  constructor(private _formBuilder: UntypedFormBuilder,private formBuilder: FormBuilder,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _fuseMediaWatcherService: FuseMediaWatcherService,
+  )
   {
   }
 
   ngOnInit(): void
     {
       // Setup available panels
-      /*this.panels = [
+      this.panels = [
         {
             id         : 'delpredio',
             icon       : 'heroicons_outline:user-circle',
@@ -58,7 +71,27 @@ export class DetalleIncorporacionComponent implements OnInit{
             title      : 'De las unidades Inmobiliarias',
             description: 'Ver el listado de las unidades inmobiliariasy datos de la unidad inmobiliaria',
         },
-      ];*/
+      ];
+
+      this._fuseMediaWatcherService.onMediaChange$
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(({matchingAliases}) =>
+            {
+                // Set the drawerMode and drawerOpened
+                if ( matchingAliases.includes('lg') )
+                {
+                    this.drawerMode = 'side';
+                    this.drawerOpened = true;
+                }
+                else
+                {
+                    this.drawerMode = 'over';
+                    this.drawerOpened = false;
+                }
+
+                // Mark for check
+                this._changeDetectorRef.markForCheck();
+            });
 
       this.myForm = this.formBuilder.group({
         datos_itl: this.formBuilder.group({
@@ -85,9 +118,32 @@ export class DetalleIncorporacionComponent implements OnInit{
       });
       
     }
-    /*getPanelInfo(id: string): any
+
+    ngOnDestroy(): void
+    {
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+
+    goToPanel(panel: string): void
+    {
+        this.selectedPanel = panel;
+
+        // Close the drawer on 'over' mode
+        if ( this.drawerMode === 'over' )
+        {
+            this.drawer.close();
+        }
+    }
+
+    getPanelInfo(id: string): any
     {
         return this.panels.find(panel => panel.id === id);
-    }*/
+    }
 
+    trackByFn(index: number, item: any): any
+    {
+        return item.id || index;
+    }
 }
