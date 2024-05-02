@@ -1,0 +1,80 @@
+<div class="sm:absolute sm:inset-0 flex flex-col flex-auto min-w-0 sm:overflow-hidden bg-card dark:bg-transparent">
+    <div class="flex flex-col sm:flex-row md:flex-col flex-auto justify-between py-8 px-6 md:px-8 border-b">
+
+        <div class="container overflow-y-auto" style="max-height: 400px;">
+           
+                        <div class="overflow-y-auto max-h-[400px]"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                            
+                            <div class="container mx-auto">
+                                <div class="flex items-center mb-4">
+                                    <h2 class="text-lg font-semibold">Depósitos</h2>
+                                </div>
+                                <div class="flex items-center mb-4">
+                                    <div></div> <!-- Espacio en blanco para alinear los botones a la izquierda -->
+                                    <div class="flex space-x-4">
+                                        <button mat-raised-button color="primary" class="flex items-center">
+                                            <mat-icon>add</mat-icon>
+                                            <span>Agregar</span>
+                                        </button>
+                                        <button mat-raised-button color="warn" class="flex items-center">
+                                            <mat-icon>delete</mat-icon>
+                                            <span>Editar</span>
+                                        </button>
+                                        <button mat-raised-button color="warn" class="flex items-center">
+                                            <mat-icon>delete</mat-icon>
+                                            <span>Activar/desactivar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full border-collapse border border-gray-300">
+                                        <thead>
+                                            <tr>
+                                                <th class="border border-gray-300 px-4 py-2">Motivo</th>
+                                                <th class="border border-gray-300 px-4 py-2">Tipo</th>
+                                                <th class="border border-gray-300 px-4 py-2">CC. Cuentas por Cobrar</th>
+                                                <th class="border border-gray-300 px-4 py-2">CC. Ventas</th>
+                                                <th class="border border-gray-300 px-4 py-2">CC. Ventas IGV</th>
+                                                <th class="border border-gray-300 px-4 py-2">CC. Rem. Transito</th>
+                                                <th class="border border-gray-300 px-4 py-2">CC. Rem. Trans. Detrac.</th>
+                                                <th class="border border-gray-300 px-4 py-2">Estado</th>
+                                                <th class="border border-gray-300 px-4 py-2">Cod.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                                            <tr>
+                                                <td class="border border-gray-300 px-4 py-2">Motivo</td>
+                                                <td class="border border-gray-300 px-4 py-2">Tipo</td>
+                                                <td class="border border-gray-300 px-4 py-2">CC. Cuentas por Cobrar</td>
+                                                <td class="border border-gray-300 px-4 py-2">CC. Ventas</td>
+                                                <td class="border border-gray-300 px-4 py-2">CC. Ventas IGV</td>
+                                                <td class="border border-gray-300 px-4 py-2">CC. Rem. Transito</td>
+                                                <td class="border border-gray-300 px-4 py-2">CC. Rem. Trans. Detrac.</td>
+                                                <td class="border border-gray-300 px-4 py-2">Estado</td>
+                                                <td class="border border-gray-300 px-4 py-2">Cod.</td>                                              
+                                            </tr>
+                                            <!-- Puedes agregar más filas según sea necesario -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Más contenido del tab... -->
+        
+                        </div>
+        
+                        
+                        <!-- Contenido de la pestaña 1 -->
+                        <h2>Pagos de arrendamiento</h2>
+                        <p>Este es el contenido de la primera pestaña.</p>
+                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                  
+        </div>
+        
+            
+        
+    </div>
+
+</div>
+
