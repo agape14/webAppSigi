@@ -62,29 +62,28 @@ export class DetalleIncorporacionComponent implements OnInit{
 
       this.myForm = this.formBuilder.group({
         datos_itl: this.formBuilder.group({
-          // Agrega aquí tus controles de formulario
           nro_itl: [''],
           desc_nro_itl: [''],
           cod_prov_inm: [''],
           dir_prov_inm: [''],
           area: ['']
         }),
-
+      
         datos_itl_2: this.formBuilder.group({
-          // Agrega aquí tus controles de formulario
           fechaCreacion: [''],
           dato_de_itl: [''],
           dato_para_itl: [''],
           dato_estado_itl: ['']
         }),
-
+      
         asuntos_itl: this.formBuilder.group({
-          // Agrega aquí tus controles de formulario
           asunto_itl: [''],
           fechaAprobado: ['']
         }),
-        // Otros grupos de formulario y controles aquí...
+      
+        referencias: [''] // Agrega el control de formulario 'referencias' aquí
       });
+      
     }
     /*getPanelInfo(id: string): any
     {

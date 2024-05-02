@@ -391,7 +391,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         children: [],
     },
     {
-        id   : 'legalaa',
+        id   : 'legal',
         title: 'Legal',
         tooltip : 'Legal',
         type    : 'aside',
@@ -430,7 +430,7 @@ export const futuristicNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'legal',
-        title: 'Legal aa',
+        title: 'Legal',
         type    : 'group',
         children: [], 
     },
@@ -464,7 +464,7 @@ export const horizontalNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'legal',
-        title: 'Legal  sss',
+        title: 'Legal',
         type    : 'group',
         icon    : 'mat_outline:file_download_done',
         children: [],

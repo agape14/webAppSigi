@@ -36,7 +36,7 @@
 
                 <div class="flex flex-col p-8 pt-0">
 
-                    <form class="flex flex-col items-start">
+                    <form class="flex flex-col items-start" [formGroup]="myForm">
                         <!-- ITL -->
                         <div class="flex flex-wrap w-full"
                             [formGroupName]="'datos_itl'">
@@ -233,294 +233,30 @@
                     </div>
                 </div>
                 <div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
-                    <div class="w-full max-w-screen-xl mx-auto">
+                    <div class="container overflow-y-auto">
                         <!-- Tabs -->
 
                         <mat-tab-group>
                             <mat-tab label="I. Antecedentes">
                                 <ng-template matTabContent>
-                    
-                                    <fieldset>
-                                        <legend>Datos del ingreso</legend>
-                                
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Num Contrato</mat-label>
-                                            <input matInput maxlength="10" placeholder="Ex. Nougat" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUIM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUIM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Uso</mat-label>
-                                            <input matInput maxlength="10" placeholder="Uso" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Direccion del Inmueble</mat-label>
-                                            <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Arrendatario</mat-label>
-                                            <input matInput maxlength="10" placeholder="Arrendatario" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Domicilio Fiscal</mat-label>
-                                            <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Observaciones</mat-label>
-                                            <input matInput maxlength="10" placeholder="Observaciones" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                                
-                                        <mat-form-field appearance="outline" fxFill>
-                                            <mat-label>Select me</mat-label>
-                                            <mat-select>
-                                                <mat-option value="option">Option</mat-option>
-                                            </mat-select>
-                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                        </mat-form-field>
-                                
-                                    </fieldset>
-                                    <!-- Contenido de la pestaña 1 -->
-                                    <h2>Pagos de arrendamiento</h2>
-                                    <p>Este es el contenido de la primera pestaña.</p>
-                                    <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                                    <h2>Antecedentes de Antecedentes</h2>
                                 </ng-template>
                                 
                             </mat-tab>
                             <mat-tab label="II. Análisis">
                                 <ng-template matTabContent>
-                    
-                                    <fieldset>
-                                        <legend>Datos del ingreso</legend>
-                                
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Num Contrato</mat-label>
-                                            <input matInput maxlength="10" placeholder="Ex. Nougat" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUIM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUIM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Uso</mat-label>
-                                            <input matInput maxlength="10" placeholder="Uso" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Direccion del Inmueble</mat-label>
-                                            <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Arrendatario</mat-label>
-                                            <input matInput maxlength="10" placeholder="Arrendatario" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Domicilio Fiscal</mat-label>
-                                            <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Observaciones</mat-label>
-                                            <input matInput maxlength="10" placeholder="Observaciones" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                                
-                                        <mat-form-field appearance="outline" fxFill>
-                                            <mat-label>Select me</mat-label>
-                                            <mat-select>
-                                                <mat-option value="option">Option</mat-option>
-                                            </mat-select>
-                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                        </mat-form-field>
-                                
-                                    </fieldset>
-                                    <!-- Contenido de la pestaña 1 -->
-                                    <h2>Pagos de arrendamiento</h2>
-                                    <p>Este es el contenido de la primera pestaña.</p>
-                                    <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                                    <h2>Análisis de Análisis</h2>
                                 </ng-template>
                             </mat-tab>
                             <mat-tab label="III. Conclusiones / Recomendaciones">
                                 <ng-template matTabContent>
-                    
-                                    <fieldset>
-                                        <legend>Datos del ingreso</legend>
-                                
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Num Contrato</mat-label>
-                                            <input matInput maxlength="10" placeholder="Ex. Nougat" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUIM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUIM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Uso</mat-label>
-                                            <input matInput maxlength="10" placeholder="Uso" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Direccion del Inmueble</mat-label>
-                                            <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Arrendatario</mat-label>
-                                            <input matInput maxlength="10" placeholder="Arrendatario" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Domicilio Fiscal</mat-label>
-                                            <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Observaciones</mat-label>
-                                            <input matInput maxlength="10" placeholder="Observaciones" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                                
-                                        <mat-form-field appearance="outline" fxFill>
-                                            <mat-label>Select me</mat-label>
-                                            <mat-select>
-                                                <mat-option value="option">Option</mat-option>
-                                            </mat-select>
-                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                        </mat-form-field>
-                                
-                                    </fieldset>
-                                    <!-- Contenido de la pestaña 1 -->
-                                    <h2>Pagos de arrendamiento</h2>
-                                    <p>Este es el contenido de la primera pestaña.</p>
-                                    <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                                    <h2>Conclusiones de Conclusiones</h2>
                                 </ng-template>
                             </mat-tab>
 
                             <mat-tab label="IV. Aprobaciones">
                                 <ng-template matTabContent>
-                    
-                                    <fieldset>
-                                        <legend>Datos del ingreso</legend>
-                                
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Num Contrato</mat-label>
-                                            <input matInput maxlength="10" placeholder="Ex. Nougat" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>CUIM</mat-label>
-                                            <input matInput maxlength="10" placeholder="CUIM" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Uso</mat-label>
-                                            <input matInput maxlength="10" placeholder="Uso" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Direccion del Inmueble</mat-label>
-                                            <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Arrendatario</mat-label>
-                                            <input matInput maxlength="10" placeholder="Arrendatario" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Domicilio Fiscal</mat-label>
-                                            <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                    
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                            <mat-label>Observaciones</mat-label>
-                                            <input matInput maxlength="10" placeholder="Observaciones" />
-                                            <mat-hint align="end"></mat-hint>
-                                        </mat-form-field>
-                                
-                                        <mat-form-field appearance="outline" fxFill>
-                                            <mat-label>Select me</mat-label>
-                                            <mat-select>
-                                                <mat-option value="option">Option</mat-option>
-                                            </mat-select>
-                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                        </mat-form-field>
-                                
-                                    </fieldset>
-                                    <!-- Contenido de la pestaña 1 -->
-                                    <h2>Pagos de arrendamiento</h2>
-                                    <p>Este es el contenido de la primera pestaña.</p>
-                                    <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                                    <h2>Aprobaciones de Aprobaciones</h2>
                                 </ng-template>
                             </mat-tab>
 
