@@ -4,8 +4,8 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 export const defaultNavigation: FuseNavigationItem[] = [
     {
         id      : 'inmobiliaria',
-        title   : 'Inmobiliaria aaaaa',
-        subtitle: 'Modulo de Inmobiliari aa',
+        title   : 'Inmobiliaria',
+        subtitle: 'Modulo de Inmobiliaria',
         type    : 'group',
         icon    : 'heroicons_outline:home',
         children: [
@@ -16,13 +16,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon : 'heroicons_outline:arrow-down-on-square-stack',
                 link : '/inmobiliaria/incorporacion',
             },
-            {
+            /*{
                 id   : 'inmobiliaria.ingresos',
                 title: 'Ingresos',
                 type : 'basic',
                 icon : 'heroicons_outline:academic-cap',
                 link : '/inmobiliaria/ingresos',
-            },
+            },*/
             {
                 id   : 'inmobiliaria.margesi',
                 title: 'Margesi',
@@ -30,13 +30,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon : 'heroicons_outline:building-office-2',
                 link : '/inmobiliaria/margesi',
             },
-            {
+            /*{
                 id   : 'inmobiliaria.contacts',
                 title: 'Margesi Mapa',
                 type : 'basic',
                 icon : 'heroicons_outline:map',
                 link : '/inmobiliaria/contacts',
-            },            
+            },*/            
             {
                 id   : 'inmobiliaria.file-manager',
                 title: 'Autoriza anulacion rentas',

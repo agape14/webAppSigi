@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation, HostListener  } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,7 +28,14 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class IngresosComponent {
+  maxHeight: number;
   constructor()
     {
+      this.maxHeight = window.innerHeight;
+    }
+  
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+      this.maxHeight = window.innerHeight;
     }
 }
