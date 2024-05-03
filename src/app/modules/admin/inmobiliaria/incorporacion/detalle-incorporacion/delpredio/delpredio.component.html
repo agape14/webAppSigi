@@ -1,0 +1,436 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="accountForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos Generales</div>
+            <div class="text-secondary">Descripcion de los datos generales</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> Cód. Prov. Inmueble</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:qr-code'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'codprovinmueble'"
+                        matInput>
+                </mat-form-field>
+            </div>
+             <!-- Estado Provisional -->
+             <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Estado Provisional</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'estadoprovisional'">
+                        <mat-option [value]="'porsanear'">POR SANEAR</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            
+            <!-- Tipo Inmueble-->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo Inmueble</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'tipoinmueble'">
+                        <mat-option [value]="'unico'">Unico</mat-option>
+                        <mat-option [value]="'matriz'">Matriz</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div> 
+
+            
+
+            <!-- Denominación del predio -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Denominación del predio</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'denominacionpredio'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Descripción del predio -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripción del predio</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'descripcionpredio'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Denominación Registral -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Denominación Registral</mat-label>
+                    <textarea
+                        matInput
+                        [formControlName]="'denominacionregistral'"
+                        cdkTextareaAutosize
+                        [cdkAutosizeMinRows]="5"></textarea>
+                </mat-form-field>
+                <div class="mt-1 text-md text-hint">Denominación Registral.</div>
+            </div>
+
+
+            <!-- Username
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Username</mat-label>
+                    <div
+                        class="text-secondary"
+                        matPrefix>
+                        fusetheme.com/
+                    </div>
+                    <input
+                        [formControlName]="'username'"
+                        matInput>
+                </mat-form-field>
+            </div> -->
+            <!-- Title 
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Title</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:briefcase'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'title'"
+                        matInput>
+                </mat-form-field>
+            </div>-->
+            <!-- Company 
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Company</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'company'"
+                        matInput>
+                </mat-form-field>
+            </div>-->
+            <!-- About 
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>About</mat-label>
+                    <textarea
+                        matInput
+                        [formControlName]="'about'"
+                        cdkTextareaAutosize
+                        [cdkAutosizeMinRows]="5"></textarea>
+                </mat-form-field>
+                <div class="mt-1 text-md text-hint">Brief description for your profile. Basic HTML and Emoji are allowed.</div>
+            </div>-->
+        </div>
+
+        <!-- Divider -->
+        <div class="my-10 border-t"></div>
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Ubicacion</div>
+            <div class="text-secondary">Datos de la ubicacion.</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Habilitación -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Habilitación</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'habilitacion'">
+                        <mat-option [value]="'area1'">Area de via</mat-option>
+                        <mat-option [value]="'otros'">Otros</mat-option>
+                        <mat-option [value]="'area12'">Area de Evitamiento</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-3">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripcion Habilitación</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'deschabilitacion'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Tipo de vía (*) -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo de vía (*)</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'tipovia'">
+                        <mat-option [value]="'area1'">Area de via</mat-option>
+                        <mat-option [value]="'otros'">Otros</mat-option>
+                        <mat-option [value]="'area12'">Area de Evitamiento</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-3">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripcion Tipo de vía</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'desctipovia'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Num. Municipal -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Num. Municipal</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'numeromunicipal'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Manzana -->
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Manzana</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:envelope'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'manzana'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Lote (s) -->
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Lote (s)</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'lotes'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Nro. Interior -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nro. Interior</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'numerointerior'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+
+            <!-- Distrito (*) -->
+            <div class="sm:col-span-3">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Distrito (*)</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'distrito'">
+                        <mat-option [value]="'lima'">Lima</mat-option>
+                        <mat-option [value]="'comas'">Comas</mat-option>
+                        <mat-option [value]="'sanborja'">San Borja</mat-option>
+                        <mat-option [value]="'sanisidro'">San Isidro</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!-- Zona -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Zona</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'zona'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+
+
+
+            <!-- Abcisa (E) -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Abcisa (E)</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'abcisae'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Norte  -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Norte </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'norte'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Altitud -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Altitud</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'altitud'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Latitud  -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Latitud </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'latitud'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <!-- Divider -->
+        <div class="mt-11 mb-10 border-t"></div>
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Mapa</div>
+            <div class="text-secondary">Visualizacion de la ubicacion del predio en el mapa.</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            Datos del mapa
+        </div>
+
+        <!-- Divider -->
+        <div class="mt-11 mb-10 border-t"></div>
+
+        <!-- Actions 
+        <div class="flex items-center justify-end">
+            <button
+                mat-stroked-button
+                type="button">
+                Cancel
+            </button>
+            <button
+                class="ml-4"
+                mat-flat-button
+                type="button"
+                [color]="'primary'">Save
+            </button>
+        </div>-->
+    </form>
+
+</div>

@@ -251,7 +251,7 @@
                                             <!-- Header -->
                                             <div class="flex items-center justify-between m-8 mr-6 sm:my-10">
                                                 <!-- Title -->
-                                                <div class="text-4xl font-extrabold tracking-tight leading-none">Settings</div>
+                                                <div class="font-extrabold tracking-tight leading-none">Detalle Antecedentes</div>
                                                 <!-- Close button -->
                                                 <div class="lg:hidden">
                                                     <button
@@ -315,25 +315,25 @@
                                                 <div class="mt-8">
                                                     <ng-container [ngSwitch]="selectedPanel">
                                                         <!-- Account -->
-                                                        <ng-container *ngSwitchCase="'account'">
-                                                            <settings-account></settings-account>
+                                                        <ng-container *ngSwitchCase="'delpredio'">
+                                                            <incorporacion-delpredio></incorporacion-delpredio>
                                                         </ng-container>
-                                                        <!-- Security -->
+                                                        <!-- Security 
                                                         <ng-container *ngSwitchCase="'security'">
                                                             <settings-security></settings-security>
-                                                        </ng-container>
-                                                        <!-- Plan & Billing -->
+                                                        </ng-container>-->
+                                                        <!-- Plan & Billing 
                                                         <ng-container *ngSwitchCase="'plan-billing'">
                                                             <settings-plan-billing></settings-plan-billing>
-                                                        </ng-container>
-                                                        <!-- Notifications -->
+                                                        </ng-container>-->
+                                                        <!-- Notifications 
                                                         <ng-container *ngSwitchCase="'notifications'">
                                                             <settings-notifications></settings-notifications>
-                                                        </ng-container>
-                                                        <!-- Team -->
+                                                        </ng-container>-->
+                                                        <!-- Team 
                                                         <ng-container *ngSwitchCase="'team'">
                                                             <settings-team></settings-team>
-                                                        </ng-container>
+                                                        </ng-container>-->
                                                     </ng-container>
                                                 </div>
                                 
