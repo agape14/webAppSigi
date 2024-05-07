@@ -1,0 +1,495 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delosdatoslegalesForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos Generales</div>
+            <div class="text-secondary">Descripcion de los datos generales</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Forma de adquisición -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> Forma de adquisición</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'formaadquisicion'">
+                        <mat-option [value]="'adjudicacion'">Adjudicacion</mat-option>
+                        <mat-option [value]="'aportecapital'">Aporte de Capital</mat-option>
+                        <mat-option [value]="'compraventa'">Compra venta</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-3">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Detalle  </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'detformaadquisicion'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Titulo Registral -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> Titulo Registral</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'tituloregistral'">
+                        <mat-option [value]="'acuerdoconsejo'">Acuerdo de Consejo</mat-option>
+                        <mat-option [value]="'escriturapublica'">Escritura Publica</mat-option>
+                        <mat-option [value]="'ley'">Ley</mat-option>
+                        <mat-option [value]="'ninguno'">Ninguno</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-3 flex sm:flex-row sm:items-center">
+                <div class="w-full">
+                    <mat-form-field class="fuse-mat-emphasized-affix w-full" [subscriptSizing]="'dynamic'">
+                        <mat-label>Dispositivo Legal</mat-label>
+                        <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:building-office-2'" matPrefix></mat-icon>
+                        <input [formControlName]="'dispositivolegal'" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            
+
+             <!-- Antecedentes registrales - #Tomo-Foja -->
+             <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> Antecedentes registrales - #Tomo-Foja</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'antregtomofoja'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Ficha -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> # Ficha</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                        <input
+                        [formControlName]="'antregficha'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- Partida  -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> # Partida </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                        <input
+                        [formControlName]="'antregpartida'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Botones Acciones  -->
+            <div class="sm:col-span-1">
+                <!-- Descargar -->
+                <button
+                    class="m-2"
+                    mat-stroked-button
+                    [color]="'primary'"
+                    >
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_outline:inbox-arrow-down'"></mat-icon>
+                    <span class="ml-2">Descargar</span>
+                </button>
+                <!-- Adjuntar -->
+                <button
+                    class="m-2"
+                    mat-stroked-button
+                    [color]="'primary'"
+                    >
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_outline:paper-clip'"></mat-icon>
+                    <span class="ml-2">Adjuntar</span>
+                </button>
+            </div>
+
+
+            <!-- Titular registral actual -->
+            <div class="sm:col-span-3">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> Titular registral actual</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'titregactual'">
+                        <mat-option [value]="'cajamet'">Caja Metropolitana</mat-option>
+                        <mat-option [value]="'corporacion'">Corporacion Financiera de Desarrollo S.A</mat-option>
+                        <mat-option [value]="'estado'">El Estado</mat-option>
+                        <mat-option [value]="'elimima'">EMILIMA</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Fecha Inscripción -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [ngClass]="formFieldFechaInsc"
+                    >
+                    <mat-label>Fecha Inscripción </mat-label>
+                    <input
+                        matInput
+                        [matDatepicker]="fechaInscripcion">
+                    <mat-datepicker-toggle
+                        matSuffix
+                        [for]="fechaInscripcion"></mat-datepicker-toggle>
+                    <mat-datepicker #fechaInscripcion></mat-datepicker>
+                </mat-form-field>
+            </div>
+                       
+            <!-- Area registral -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Area registral</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'arearegistral'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!-- m2 Fabrica Inscrita  -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>m2 Fabrica Inscrita </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                        <mat-select [formControlName]="'fabinscrita'">
+                            <mat-option [value]="''"></mat-option>
+                            <mat-option [value]="'si'">Si</mat-option>
+                            <mat-option [value]="'no'">No</mat-option>
+                        </mat-select>
+                </mat-form-field>
+            </div>
+            <!-- Fecha Fabrica -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [ngClass]="formFieldFecFabrica"
+                    >
+                    <mat-label>Fecha Fabrica  </mat-label>
+                    <input
+                        matInput
+                        [matDatepicker]="fechaFabrica">
+                    <mat-datepicker-toggle
+                        matSuffix
+                        [for]="fechaFabrica"></mat-datepicker-toggle>
+                    <mat-datepicker #fechaFabrica></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <!-- Latitud  -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Dominio  </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'dominio'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Entidad Administradora  -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Entidad Administradora </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:phone'"
+                        matPrefix></mat-icon>
+                        <mat-select [formControlName]="'entadministradora'">
+                            <mat-option [value]="'cajametropolitana'">Caja Metropolitana</mat-option>
+                            <mat-option [value]="'corporacionfindes'">Corporacion Financiera de Desarrollo S.A</mat-option>
+                            <mat-option [value]="'estado'">El estado</mat-option>
+                        </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Observaciones -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Observaciones </mat-label>
+                    <textarea
+                        matInput
+                        [formControlName]="'observaciones'"
+                        cdkTextareaAutosize
+                        [cdkAutosizeMinRows]="5"></textarea>
+                </mat-form-field>
+                <div class="mt-1 text-md text-hint">Observaciones.</div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="my-10 border-t"></div>
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Aspecto Culturales</div>
+            <div class="text-secondary">Datos de la aspecto culturales.</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Tipo de bien cultural -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo de bien cultural</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'tipobiencultural'">
+                        <mat-option [value]="'ambiente'">Ambiente Urbano Monumental</mat-option>
+                        <mat-option [value]="'centro'">Centro Historico</mat-option>
+                        <mat-option [value]="'monumento'">Monumento</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Adjunto  -->
+            <div class="sm:col-span-3">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label> Adjunto </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                        <input
+                        [formControlName]="'nameadjunto'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Botones Acciones  -->
+            <div class="sm:col-span-1">
+                <!-- Descargar -->
+                <button
+                    class="m-2"
+                    mat-stroked-button
+                    [color]="'primary'"
+                    >
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_outline:inbox-arrow-down'"></mat-icon>
+                    <span class="ml-2">Descargar</span>
+                </button>
+                <!-- Adjuntar -->
+                <button
+                    class="m-2"
+                    mat-stroked-button
+                    [color]="'primary'"
+                    >
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_outline:paper-clip'"></mat-icon>
+                    <span class="ml-2">Adjuntar</span>
+                </button>
+            </div>
+
+            <!-- Microzona -->
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Microzona</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'microzona'">
+                        <mat-option [value]="'Microzonaa1'">Microzona AI</mat-option>
+                        <mat-option [value]="'Microzonaa2'">Microzona AII</mat-option>
+                        <mat-option [value]="'Microzonaa3'">Microzona AIII</mat-option>
+                        <mat-option [value]="'Microzonab1'">Microzona BI</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Tipo de intervención -->
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo de intervención</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'tipointerv'">
+                        <mat-option [value]="'ampliacion'">Ampliacion</mat-option>
+                        <mat-option [value]="'anastylosis'">Anastylosis</mat-option>
+                        <mat-option [value]="'conservacion'">Conservacion</mat-option>
+                        <mat-option [value]="'consolidacion'">Consolidacion</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            
+        </div>
+
+        <!-- Divider -->
+        <div class="mt-11 mb-10 border-t"></div>
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Cargas</div>
+            <div class="text-secondary">Datos de la carga.</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <div class="sm:col-span-4">
+                <!--<div class="flex space-x-4">
+                    <button mat-raised-button color="primary" class="flex items-center">
+                        <mat-icon>add</mat-icon>
+                        <span>Carga Nueva</span>
+                    </button>
+                    <button mat-raised-button color="warn" class="flex items-center">
+                        <mat-icon>delete</mat-icon>
+                        <span>Eliminar</span>
+                    </button>
+                    <button mat-raised-button color="warn" class="flex items-center">
+                        <mat-icon>delete</mat-icon>
+                        <span>Cambiar Vigencia</span>
+                    </button>
+                </div>
+                 Carga Nueva -->
+                <button
+                    class="m-2"
+                    mat-stroked-button
+                    [color]="'primary'"
+                    >
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_outline:document'"></mat-icon>
+                    <span class="ml-2">Carga Nueva</span>
+                </button>
+                <!-- Eliminar-->
+                <button
+                    class="m-2"
+                    mat-raised-button
+                    [color]="'warn'"
+                    >
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_outline:trash'"></mat-icon>
+                    <span class="ml-2">Eliminar</span>
+                </button>
+
+                <!-- Cambiar Vigencia -->
+                <button
+                    class="m-2"
+                    mat-raised-button
+                    [color]="'primary'"
+                    >
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_outline:arrow-path-rounded-square'"></mat-icon>
+                    <span class="ml-2">Cambiar Vigencia</span>
+                </button>
+                
+            </div>
+            <div class="sm:col-span-4">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-gray-300">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2">Fecha</th>
+                                <th class="border border-gray-300 px-4 py-2">Carga</th>
+                                <th class="border border-gray-300 px-4 py-2">Entidad</th>
+                                <th class="border border-gray-300 px-4 py-2">Vigencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2">Fecha</th>
+                                <th class="border border-gray-300 px-4 py-2">Carga</th>
+                                <th class="border border-gray-300 px-4 py-2">Entidad</th>
+                                <th class="border border-gray-300 px-4 py-2">Vigencia</th>                                             
+                            </tr>
+                            <!-- Puedes agregar más filas según sea necesario -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Divider -->
+        <div class="mt-11 mb-10 border-t"></div>
+
+        <!-- Actions 
+        <div class="flex items-center justify-end">
+            <button
+                mat-stroked-button
+                type="button">
+                Cancel
+            </button>
+            <button
+                class="ml-4"
+                mat-flat-button
+                type="button"
+                [color]="'primary'">Save
+            </button>
+        </div>-->
+    </form>
+
+</div>

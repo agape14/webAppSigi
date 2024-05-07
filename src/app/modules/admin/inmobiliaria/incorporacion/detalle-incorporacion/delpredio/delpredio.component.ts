@@ -1,13 +1,13 @@
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'incorporacion-delpredio',
@@ -15,10 +15,11 @@ import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/sl
   encapsulation  : ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule],
+  imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
+            MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule],
 })
 export class DelpredioComponent  implements OnInit{
-  accountForm: UntypedFormGroup;
+  delpredioForm: UntypedFormGroup;
 
   /**
    * Constructor
@@ -39,7 +40,7 @@ export class DelpredioComponent  implements OnInit{
   ngOnInit(): void
   {
       // Create the form
-      this.accountForm = this._formBuilder.group({
+      this.delpredioForm = this._formBuilder.group({
           codprovinmueble       : ['245'],
           estadoprovisional     : ['porsanear'],
           tipoinmueble          : ['matriz'],

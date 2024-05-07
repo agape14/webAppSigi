@@ -18,12 +18,19 @@ import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { Subject, takeUntil } from 'rxjs';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { DelpredioComponent } from './delpredio/delpredio.component';
+import { DelosdatoslegalesComponent } from './delosdatoslegales/delosdatoslegales.component';
+import { DelosdatostecnicosComponent } from './delosdatostecnicos/delosdatostecnicos.component';
+import { DelasunidadesComponent } from './delasunidades/delasunidades.component';
+
+
 @Component({
   selector: 'app-detalle-incorporacion',
   templateUrl: './detalle-incorporacion.component.html',
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe, CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase,DelpredioComponent ],
+  imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, 
+    MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe, 
+    CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase,DelpredioComponent, DelosdatoslegalesComponent,DelosdatostecnicosComponent,DelasunidadesComponent ],
 })
 export class DetalleIncorporacionComponent implements OnInit{
   formFieldHelpers: string[] = [''];

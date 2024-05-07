@@ -314,22 +314,22 @@
                                                 <!-- Load settings panel -->
                                                 <div class="mt-8">
                                                     <ng-container [ngSwitch]="selectedPanel">
-                                                        <!-- Account -->
+                                                        <!-- Del Predio -->
                                                         <ng-container *ngSwitchCase="'delpredio'">
                                                             <incorporacion-delpredio></incorporacion-delpredio>
                                                         </ng-container>
-                                                        <!-- Security 
-                                                        <ng-container *ngSwitchCase="'security'">
-                                                            <settings-security></settings-security>
-                                                        </ng-container>-->
-                                                        <!-- Plan & Billing 
+                                                        <!-- De los Datos Legales -->
+                                                        <ng-container *ngSwitchCase="'delosdatoslegales'">
+                                                            <incorporacion-delosdatoslegales></incorporacion-delosdatoslegales>
+                                                        </ng-container>
+                                                        <!-- Plan & Billing -->
                                                         <ng-container *ngSwitchCase="'plan-billing'">
-                                                            <settings-plan-billing></settings-plan-billing>
-                                                        </ng-container>-->
-                                                        <!-- Notifications 
+                                                            <incorporacion-delosdatostecnicos></incorporacion-delosdatostecnicos>
+                                                        </ng-container>
+                                                        <!-- Notifications -->
                                                         <ng-container *ngSwitchCase="'notifications'">
-                                                            <settings-notifications></settings-notifications>
-                                                        </ng-container>-->
+                                                            <incorporacion-delasunidades></incorporacion-delasunidades>
+                                                        </ng-container>
                                                         <!-- Team 
                                                         <ng-container *ngSwitchCase="'team'">
                                                             <settings-team></settings-team>
