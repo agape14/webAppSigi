@@ -90,7 +90,7 @@
                                 <mat-form-field
                                     class="w-1/4 pr-2"
                                     [ngClass]="formFieldHelpers"
-                                    
+
                                     >
                                     <mat-label>Fecha Creación</mat-label>
                                     <input
@@ -142,7 +142,7 @@
                                 <mat-form-field
                                     class="w-1/5 pr-2"
                                     [ngClass]="formFieldHelpers"
-                                    
+
                                     >
                                     <mat-label>Aprobado</mat-label>
                                     <input
@@ -287,16 +287,16 @@
                                                 </ng-container>
                                             </div>
                                         </mat-drawer>
-                                
+
                                         <!-- Drawer content -->
                                         <mat-drawer-content class="flex flex-col">
-                                
+
                                             <!-- Main -->
                                             <div class="flex-auto px-6 pt-9 pb-12 md:p-8 md:pb-12 lg:p-12">
-                                
+
                                                 <!-- Panel header -->
                                                 <div class="flex items-center">
-                                
+
                                                     <!-- Drawer toggle -->
                                                     <button
                                                         class="lg:hidden -ml-2"
@@ -304,13 +304,13 @@
                                                         (click)="drawer.toggle()">
                                                         <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
                                                     </button>
-                                
+
                                                     <!-- Panel title -->
                                                     <div class="ml-2 lg:ml-0 text-3xl font-bold tracking-tight leading-none">
                                                         {{getPanelInfo(selectedPanel).title}}
                                                     </div>
                                                 </div>
-                                
+
                                                 <!-- Load settings panel -->
                                                 <div class="mt-8">
                                                     <ng-container [ngSwitch]="selectedPanel">
@@ -323,27 +323,27 @@
                                                             <incorporacion-delosdatoslegales></incorporacion-delosdatoslegales>
                                                         </ng-container>
                                                         <!-- Plan & Billing -->
-                                                        <ng-container *ngSwitchCase="'plan-billing'">
+                                                        <ng-container *ngSwitchCase="'delosdatostecnicos'">
                                                             <incorporacion-delosdatostecnicos></incorporacion-delosdatostecnicos>
                                                         </ng-container>
                                                         <!-- Notifications -->
                                                         <ng-container *ngSwitchCase="'notifications'">
                                                             <incorporacion-delasunidades></incorporacion-delasunidades>
                                                         </ng-container>
-                                                        <!-- Team 
+                                                        <!-- Team
                                                         <ng-container *ngSwitchCase="'team'">
                                                             <settings-team></settings-team>
                                                         </ng-container>-->
                                                     </ng-container>
                                                 </div>
-                                
+
                                             </div>
-                                
+
                                         </mat-drawer-content>
-                                
+
                                     </mat-drawer-container>
                                 </ng-template>
-                                
+
                             </mat-tab>
                             <mat-tab label="II. Análisis">
                                 <ng-template matTabContent>

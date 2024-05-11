@@ -28,8 +28,8 @@ import { DelasunidadesComponent } from './delasunidades/delasunidades.component'
   templateUrl: './detalle-incorporacion.component.html',
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, 
-    MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe, 
+  imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule,
+    MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe,
     CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase,DelpredioComponent, DelosdatoslegalesComponent,DelosdatostecnicosComponent,DelasunidadesComponent ],
 })
 export class DetalleIncorporacionComponent implements OnInit{
@@ -108,22 +108,22 @@ export class DetalleIncorporacionComponent implements OnInit{
           dir_prov_inm: [''],
           area: ['']
         }),
-      
+
         datos_itl_2: this.formBuilder.group({
           fechaCreacion: [''],
           dato_de_itl: [''],
           dato_para_itl: [''],
           dato_estado_itl: ['']
         }),
-      
+
         asuntos_itl: this.formBuilder.group({
           asunto_itl: [''],
           fechaAprobado: ['']
         }),
-      
+
         referencias: [''] // Agrega el control de formulario 'referencias' aquí
       });
-      
+
     }
 
     ngOnDestroy(): void
