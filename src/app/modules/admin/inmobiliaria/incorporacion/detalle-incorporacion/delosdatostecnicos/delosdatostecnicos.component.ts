@@ -84,20 +84,17 @@ export class DelosdatostecnicosComponent {
     configListLinderos():void {
         const linderos = this.delosdatostecnicosForm.get('linderos') as FormArray;
 
-        // Configurar los controles de horarios según los datos proporcionados
-        for (let i = 0; i < 4; i++) {
-          let lindeross = '';
-          let horaFin = '';
 
-          // Verificar si el horario tiene atención
-          if (i >= 0 && i <= 4) {
-            lindeross = '09:00';
-            horaFin = '23:00';
+        while (linderos.length !== 0) {
+            linderos.removeAt(0);
           }
+
+
+          for (let i = 0; i < 3; i++) {
 
           linderos.push(
             this._formBuilder.group({
-              linder_user: [lindeross],
+              linder_user: [''],
               colidancia_registral: [''],
               tramos: [''],
               distancia: [''],
@@ -114,15 +111,17 @@ export class DelosdatostecnicosComponent {
             this._formBuilder.group({
                 nombre_de_la_via: [],
                 proximidad_a_esquina: [],
+                ml_orientacion_hacia_esquina: [],
                 nombre_de_la_via_2: [],
                 distancia_a_la_via_principal: [],
+                ml_orientacion_hacia_esquina2: [],
                 acceso: []
             })
         )
     }
 
     configOcupacion():void {
-        const ocupacion = this.delosdatostecnicosForm.get('ocuapcion') as FormArray;
+        const ocupacion = this.delosdatostecnicosForm.get('ocupacion') as FormArray;
 
         ocupacion.push(
             this._formBuilder.group({

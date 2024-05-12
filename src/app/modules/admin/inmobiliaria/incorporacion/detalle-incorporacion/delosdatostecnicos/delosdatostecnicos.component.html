@@ -1,1 +1,518 @@
-<h1>Bienvenido De los datos tecnicos</h1>
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delosdatostecnicosForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl"><b>Datos Generales</b></div>
+            <div class="text-secondary">Descripcion de los datos generales</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Forma de adquisición -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+
+                    <mat-label>Fecha de última inspección</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="fecha_ultima_expedicion">
+                    <mat-hint>Dia/Mes/Año</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <div class="w-full">
+                    <mat-form-field class="fuse-mat-emphasized-affix w-full" [subscriptSizing]="'dynamic'">
+                        <mat-label>Codigo Catastral</mat-label>
+                        <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:building-office-2'" matPrefix></mat-icon>
+                        <input matInput formControlName="codigo_catastral">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Zonificación  </mat-label>
+
+                    <input formControlName="zonificacion"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>M² Area Total  </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input formControlName="area_total"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>M² Area Tachada  </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                    formControlName="area_techada"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>M² Area Libre  </mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix></mat-icon>
+                    <input
+                    formControlName="area_libre"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+
+        <!-- linderos -->
+            <!-- Section -->
+
+                <br><br><br>
+
+                <div class="w-full">
+
+                    <div class="text-xl"><b>Linderos</b></div>
+
+                </div>
+                <section  formArrayName="linderos" >
+                    <section *ngFor="let item of linderos.controls; let i = index" [formGroupName]="i">
+                <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                    <!-- Forma de adquisición -->
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Linderos</mat-label>
+                            <input matInput  formControlName="linder_user">
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <div class="w-full">
+                            <mat-form-field class="fuse-mat-emphasized-affix w-full" [subscriptSizing]="'dynamic'">
+                                <mat-label>Colindancia Registral</mat-label>
+                                <input matInput formControlName="colidancia_registral">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Tramos  </mat-label>
+
+                            <input formControlName="tramos"
+                                matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Distancia (ml) </mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:building-office-2'"
+                                matPrefix></mat-icon>
+                            <input formControlName="distancia"
+                                matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Nro. Municipal  </mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:building-office-2'"
+                                matPrefix></mat-icon>
+                            <input
+                            formControlName="nro_municipal"
+                                matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- referencias -->
+        <br><br><br>
+
+        <div class="w-full">
+
+            <div class="text-xl"><b>Referencias</b></div>
+            <section formArrayName="referencias">
+                <section *ngFor="let item_referencias of referencias.controls; let i = index" [formGroupName]="i">
+                    <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+
+                    <div class="sm:col-span-1">
+                        <div class="w-full">
+                            <mat-form-field class="fuse-mat-emphasized-affix w-full" >
+                                <mat-label>Nombre de la vía</mat-label>
+                                <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:building-office-2'" matPrefix></mat-icon>
+                                <input matInput formControlName="nombre_de_la_via">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Proximidad a la Esquina  </mat-label>
+
+                            <input formControlName="proximidad_a_esquina"
+                                matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Ml Orientación a la esquina</mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:map-pin'"
+                                matPrefix></mat-icon>
+                            <mat-select [formControlName]="'ml_orientacion_hacia_esquina'">
+                                <mat-option [value]="'derecha'">Derecha</mat-option>
+                                <mat-option [value]="'izquierda'">Izquierda</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Nombre de la vía </mat-label>
+
+                            <input formControlName="nombre_de_la_via_2"
+                                matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Distancia de la vía proporcional </mat-label>
+
+                            <input formControlName="distancia_a_la_via_principal"
+                                matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Ml Orientación a la esquina</mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:map-pin'"
+                                matPrefix></mat-icon>
+                            <mat-select [formControlName]="'ml_orientacion_hacia_esquina2'">
+                                <mat-option [value]="'derecha'">Derecha</mat-option>
+                                <mat-option [value]="'izquierda'">Izquierda</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Acceso</mat-label>
+
+                            <textarea matInput formControlName="acceso" rows="4" cols="50"></textarea>
+
+                        </mat-form-field>
+                    </div>
+                    </div>
+                </section>
+            </section>
+            </div>
+
+
+        <!-- ocupación -->
+        <br><br><br>
+
+        <div class="w-full">
+
+            <div class="text-xl"><b>Ocupación</b></div>
+            <section formArrayName="ocupacion">
+                <section *ngFor="let item_ocupacion of ocupacion.controls; let i = index" [formGroupName]="i">
+                    <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Ocupacion</mat-label>
+
+                                <mat-select [formControlName]="'oocupacion'">
+                                    <mat-option [value]="'disponible'">Disponible</mat-option>
+                                    <mat-option [value]="'ocupado'">Ocupado</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Situación Legal</mat-label>
+
+                                <mat-select [formControlName]="'situacion_legal'">
+                                    <mat-option [value]="'disponible'">Con Contrato</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Nivel Ocupación</mat-label>
+
+                                <mat-select [formControlName]="'situacion_legal'">
+                                    <mat-option [value]="'total'">Total</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>% Area Ocupada</mat-label>
+                                <input
+                                maxlength="3"
+                                formControlName="porcentaje_area_ocupada"
+                                matInput>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Antiguedad Desde</mat-label>
+                                <input
+                                matInput
+                                [matDatepicker]="antiguedad_desde">
+                            <mat-datepicker-toggle
+                                matSuffix
+                                [for]="antiguedad_desde"></mat-datepicker-toggle>
+                            <mat-datepicker #antiguedad_desde></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Antiguedad Hasta</mat-label>
+                                <input
+                                matInput
+                                [matDatepicker]="antiguedad_hasta">
+                            <mat-datepicker-toggle
+                                matSuffix
+                                [for]="antiguedad_hasta"></mat-datepicker-toggle>
+                            <mat-datepicker #antiguedad_hasta></mat-datepicker>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Años</mat-label>
+                                <input
+                                matInput
+                                formControlName="anos">
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Meses</mat-label>
+                                <input
+                                matInput
+                                formControlName="meses">
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Días</mat-label>
+                                <input
+                                matInput
+                                formControlName="dias">
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Ocupante</mat-label>
+                                <input
+                                matInput
+                                formControlName="ocupante">
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Tipo de doc</mat-label>
+
+                                <mat-select [formControlName]="'tipo_de_doc'">
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>N Documento</mat-label>
+                                <input
+                                matInput
+                                formControlName="numero_de_doc">
+
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </section>
+            </section>
+        </div>
+             <!-- caracteristicias y uso del suelo -->
+             <br><br><br>
+
+             <div class="w-full">
+                <div class="text-xl"><b>Caracteristicas y usos del suelo</b></div>
+                <section formArrayName="caracteristicas_uso_del_suelo">
+                    <section *ngFor="let item_caracteristicas_uso_del_suelo of caracteristicas_uso_del_suelo.controls; let i = index" [formGroupName]="i">
+                        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Topografía</mat-label>
+                                <mat-select [formControlName]="'topografia'">
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Tipo de suelo</mat-label>
+                                <mat-select [formControlName]="'tipo_de_suelo'">
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Tipo de predio</mat-label>
+                                <mat-select [formControlName]="'tipo_de_predio'">
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Detalle</mat-label>
+                                <mat-select [formControlName]="'detalle'">
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Nivel de uso</mat-label>
+                                <mat-select [formControlName]="'nivel_de_uso'">
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Uso generico</mat-label>
+                                <mat-select [formControlName]="'uso_generico'">
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Uso especifico</mat-label>
+                                <mat-select [formControlName]="'uso_especifico'">
+                                    <mat-option [value]="'Restaurante'">Restaurante</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Otra información</mat-label>
+
+                                    <textarea matInput formControlName="otra_informacion" rows="4" cols="50"></textarea>
+
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+    </form>
+
+</div>
