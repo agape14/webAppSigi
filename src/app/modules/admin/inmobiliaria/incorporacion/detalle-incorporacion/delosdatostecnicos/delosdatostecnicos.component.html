@@ -513,6 +513,317 @@
                     </section>
                 </section>
             </div>
+
+            <!-- caracteristicias y uso del suelo -->
+            <br><br><br>
+
+            <div class="w-full">
+            <div class="text-xl"><b>Edificación y Valorización</b></div>
+            <section formArrayName="edificacion_y_valorizacion">
+                <section *ngFor="let item_edificacion_y_valorizacion of edificacion_y_valorizacion.controls; let i = index" [formGroupName]="i">
+                    <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Tipo edificación</mat-label>
+                            <mat-select [formControlName]="'tipo_edificacion'">
+                                <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>N pisos</mat-label>
+                            <mat-select [formControlName]="'n_piso'">
+                                <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Construcción Mes:</mat-label>
+                            <input
+                            matInput
+                            formControlName="construccion_mes">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Construcción Año:</mat-label>
+                            <input
+                            matInput
+                            formControlName="construccion_ano">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Material Predominante:</mat-label>
+                            <input
+                            matInput
+                            formControlName="material_predominante">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Estado Conservación:</mat-label>
+                            <input
+                            matInput
+                            formControlName="estado_de_conservacion">
+                            </mat-form-field>
+                        </div>
+                        <hr class="sm:col-span-4">
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Moneda:</mat-label>
+                            <input
+                            matInput
+                            formControlName="moneda">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Tipo de Cambio:</mat-label>
+                            <input
+                            matInput
+                            formControlName="tipo_de_cambio">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Valor de terreno:</mat-label>
+                            <input
+                            matInput
+                            formControlName="valor_de_terreno">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Valor de edificación:</mat-label>
+                            <input
+                            matInput
+                            formControlName="valor_de_edificacion">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Valor Comerical:</mat-label>
+                            <input
+                            matInput
+                            formControlName="valor_comercial">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Valor Dolares:</mat-label>
+                            <input
+                            matInput
+                            formControlName="valor_dolares">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Valor por m2 Terreno:</mat-label>
+                            <input
+                            matInput
+                            formControlName="valor_por_m2_terreno">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Valor de Arrendamiento:</mat-label>
+                            <input
+                            matInput
+                            formControlName="valor_de_arrendamiento">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Fecha valorización:</mat-label>
+                            <input
+                            matInput
+                            [matDatepicker]="fecha_valorizacion">
+                        <mat-datepicker-toggle
+                            matSuffix
+                            [for]="fecha_valorizacion"></mat-datepicker-toggle>
+                        <mat-datepicker #fecha_valorizacion></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Informe de valorización:</mat-label>
+                            <input
+                            matInput
+                            formControlName="informe_valorizacion">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            </div>
+
+
+        <!-- Servicios Básicos -->
+        <br><br><br>
+        <div class="w-full">
+            <div class="text-xl"><b>Servicios Básicos</b></div>
+            <section formArrayName="servicios_basicos">
+                <section *ngFor="let item_servicios_basicos of servicios_basicos.controls; let i = index" [formGroupName]="i">
+                    <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Desague ¿Instalado?:</mat-label>
+                            <mat-select [formControlName]="'desague_instalado'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Desague ¿Fact. Servicios:</mat-label>
+                            <mat-select [formControlName]="'desague_factura_servicios'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Agua ¿Instalado?:</mat-label>
+                            <mat-select [formControlName]="'agua_instalada'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Agua ¿Fact. Servicios:</mat-label>
+                            <mat-select [formControlName]="'agua_factura_servicios'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Agua Suministro:</mat-label>
+                            <input
+                            matInput
+                            formControlName="agua_suministro">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Luz ¿Instalado?:</mat-label>
+                            <mat-select [formControlName]="'luz_instalada'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Luz ¿Fact. Servicios:</mat-label>
+                            <mat-select [formControlName]="'luz_factura_servicios'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Luz Suministro:</mat-label>
+                            <input
+                            matInput
+                            formControlName="luz_suministro">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Proveedor:</mat-label>
+                            <textarea matInput formControlName="proveedr" rows="4" cols="50"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <hr class="sm:col-span-4">
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Observaciones técnicas Agua:</mat-label>
+                            <input
+                            matInput
+                            formControlName="agua_observacion_tecnica">
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Observaciones técnicas Luz:</mat-label>
+                            <input
+                            matInput
+                            formControlName="luz_observacion_tecnica">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            </div>
     </form>
 
 </div>

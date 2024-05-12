@@ -199,7 +199,7 @@ export class DelosdatostecnicosComponent {
                 luz_suministro: [],
                 proveedor: [],
                 agua_observacion_tecnica: [],
-                luz_observacion_tenica: []
+                luz_observacion_tecnica: []
             })
         )
     }
