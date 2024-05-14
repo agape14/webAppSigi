@@ -37,6 +37,7 @@ export class DelosdatostecnicosComponent {
             fecha_ultima_expedicion: [''],
             codigo_catastral: [''],
             zonificacion: [''],
+            zonificacion_combo: [''],
             area_total: [''],
             area_techada: [''],
             area_libre: [''],
@@ -90,7 +91,7 @@ export class DelosdatostecnicosComponent {
           }
 
 
-          for (let i = 0; i < 3; i++) {
+          for (let i = 0; i < 4; i++) {
 
           linderos.push(
             this._formBuilder.group({
@@ -169,6 +170,21 @@ export class DelosdatostecnicosComponent {
                 construccion_ano: [],
                 material_predominante: [],
                 estado_de_conservacion: [],
+                piso: [],
+                estructura_muro: [],
+                estructura_techo: [],
+
+                acabados_pisos: [],
+                acabados_puertas: [],
+
+                acabados_revest: [],
+
+                acabados_bano: [],
+
+                instalacion_elect_y_sanit: [],
+                area_const_veri:[],
+                valor_estimado: [],
+                valor_total_area: [],
 
                 moneda: [],
                 tipo_de_cambio: [],
