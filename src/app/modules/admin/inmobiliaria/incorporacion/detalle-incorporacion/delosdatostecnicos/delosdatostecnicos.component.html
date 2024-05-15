@@ -608,146 +608,163 @@
                             </mat-select>
                             </mat-form-field>
                         </div>
+                        </div>
                         <hr class="sm:col-span-4">
 
-                        <h1 class="sm:col-span-4">Estructura</h1>
+                        <div formArrayName="cantidad_estructur_piso_etc">
+                            <h1 class="sm:col-span-4">Estructura</h1>
 
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Piso:</mat-label>
-                            <input
-                            matInput
-                            formControlName="piso">
-                            </mat-form-field>
-                        </div>
+                            <div
+                            class="grid sm:grid-cols-4 gap-6 w-full mt-8"
 
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Estructura Muro:</mat-label>
-                            <input
-                            matInput
-                            formControlName="estructura_muro">
-                            </mat-form-field>
-                        </div>
-                        <div class="sm:col-span-2">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Estructura Techo:</mat-label>
-                            <input
-                            matInput
-                            formControlName="estructura_techo">
-                            </mat-form-field>
-                        </div>
+                            *ngFor="let cantidad of item_edificacion_y_valorizacion.get('cantidad_estructur_piso_etc').controls; let j = index" [formGroupName]="j">
 
 
-                        <h1 class="sm:col-span-4">Acabados</h1>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Piso:</mat-label>
+                                    <input
+                                    matInput
+                                    id="piso_{{j}}" formControlName="piso">
+                                    </mat-form-field>
+                                </div>
 
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Acabados Pisos:</mat-label>
-                            <input
-                            matInput
-                            formControlName="acabados_pisos">
-                            </mat-form-field>
-                        </div>
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Acabados Puertas:</mat-label>
-                            <input
-                            matInput
-                            formControlName="acabados_puertas">
-                            </mat-form-field>
-                        </div>
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Acabados Revest:</mat-label>
-                            <input
-                            matInput
-                            formControlName="acabados_revest">
-                            </mat-form-field>
-                        </div>
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Acabados Baño:</mat-label>
-                            <input
-                            matInput
-                            formControlName="acabados_bano">
-                            </mat-form-field>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Estructura Muro:</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="estructura_muro">
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Estructura Techo:</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="estructura_techo">
+                                    </mat-form-field>
+                                </div>
+
+
+                                <h1 class="sm:col-span-4">Acabados</h1>
+
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Acabados Pisos:</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="acabados_pisos">
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Acabados Puertas:</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="acabados_puertas">
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Acabados Revest:</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="acabados_revest">
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Acabados Baño:</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="acabados_bano">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Inst. Elect y Sanit.</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="instalacion_elect_y_sanit">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Inst. Elect y Sanit.</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="instalacion_elect_y_sanit">
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Area const. Verifi</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="area_const_veri">
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Valor estimado</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="area_const_veri">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1">
+                                    <mat-form-field
+                                    class="w-full"
+                                    [subscriptSizing]="'dynamic'">
+                                    <mat-label>Valor Total Area</mat-label>
+                                    <input
+                                    matInput
+                                    formControlName="valor_total_area">
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <button (click)="addEstructura()" mat-flat-button color="success">
+                                        <mat-icon>add</mat-icon>
+
+                                    </button>
+
+                                    <button (click)="deleteEstructura(index)"  mat-flat-button color="warn">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Inst. Elect y Sanit.</mat-label>
-                            <input
-                            matInput
-                            formControlName="instalacion_elect_y_sanit">
-                            </mat-form-field>
-                        </div>
 
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Inst. Elect y Sanit.</mat-label>
-                            <input
-                            matInput
-                            formControlName="instalacion_elect_y_sanit">
-                            </mat-form-field>
-                        </div>
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Area const. Verifi</mat-label>
-                            <input
-                            matInput
-                            formControlName="area_const_veri">
-                            </mat-form-field>
-                        </div>
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Valor estimado</mat-label>
-                            <input
-                            matInput
-                            formControlName="area_const_veri">
-                            </mat-form-field>
-                        </div>
 
-                        <div class="sm:col-span-1">
-                            <mat-form-field
-                            class="w-full"
-                            [subscriptSizing]="'dynamic'">
-                            <mat-label>Valor Total Area</mat-label>
-                            <input
-                            matInput
-                            formControlName="valor_total_area">
-                            </mat-form-field>
-                        </div>
-                        <div class="sm:col-span-1">
-                            <button mat-button color="warn">Add</button>
 
-                            <button mat-flat-button color="warn">
-                                <mat-icon>delete</mat-icon>
-                            </button>
-                        </div>
-
+                        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
 
 
 
@@ -797,7 +814,7 @@
                             <mat-form-field
                             class="w-full"
                             [subscriptSizing]="'dynamic'">
-                            <mat-label>Valor Comerical:</mat-label>
+                            <mat-label>Valor Comercial:</mat-label>
                             <input
                             matInput
                             formControlName="valor_comercial">
@@ -858,6 +875,7 @@
                             </mat-form-field>
                         </div>
                     </div>
+
                 </section>
             </section>
             </div>
@@ -992,6 +1010,9 @@
                 </section>
             </section>
             </div>
+
+
+
     </form>
 
 </div>

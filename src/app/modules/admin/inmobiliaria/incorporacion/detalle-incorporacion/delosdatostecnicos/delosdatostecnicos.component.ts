@@ -57,6 +57,7 @@ export class DelosdatostecnicosComponent {
         this.configServiciosBasicos();
     }
 
+
     get linderos(): FormArray {
         return this.delosdatostecnicosForm.get('linderos') as FormArray;
     }
@@ -76,6 +77,10 @@ export class DelosdatostecnicosComponent {
     get edificacion_y_valorizacion(): FormArray {
         return this.delosdatostecnicosForm.get('edificacion_y_valorizacion') as FormArray;
     }
+
+    get cantidad_estructur_piso_etc(): FormArray {
+        return this.delosdatostecnicosForm.get('cantidad_estructur_piso_etc') as FormArray;
+      }
 
     get servicios_basicos(): FormArray {
         return this.delosdatostecnicosForm.get('servicios_basicos') as FormArray;
@@ -170,22 +175,9 @@ export class DelosdatostecnicosComponent {
                 construccion_ano: [],
                 material_predominante: [],
                 estado_de_conservacion: [],
-                piso: [],
-                estructura_muro: [],
-                estructura_techo: [],
-
-                acabados_pisos: [],
-                acabados_puertas: [],
-
-                acabados_revest: [],
-
-                acabados_bano: [],
-
-                instalacion_elect_y_sanit: [],
-                area_const_veri:[],
-                valor_estimado: [],
-                valor_total_area: [],
-
+                cantidad_estructur_piso_etc: this._formBuilder.array([
+                    this.configCantidad_estructur_piso_etc()
+                  ]),
                 moneda: [],
                 tipo_de_cambio: [],
                 valor_de_terreno: [],
@@ -197,7 +189,24 @@ export class DelosdatostecnicosComponent {
                 fecha_valorización: [],
                 informe_valorizacion: []
             })
-        )
+        );
+    }
+
+    configCantidad_estructur_piso_etc(){
+
+            return this._formBuilder.group({
+            piso: [],
+            estructura_muro: [],
+            estructura_techo: [],
+            acabados_pisos: [],
+            acabados_puertas: [],
+            acabados_revest: [],
+            acabados_bano: [],
+            instalacion_elect_y_sanit: [],
+            area_const_veri:[],
+            valor_estimado: [],
+            valor_total_area: [],
+            })
     }
 
     configServiciosBasicos(){
@@ -220,6 +229,38 @@ export class DelosdatostecnicosComponent {
         )
     }
 
+
+
+
+    deleteEstructura(index: number) {
+        const edificacion_y_valorizacion = this.delosdatostecnicosForm.get('edificacion_y_valorizacion') as FormArray;
+        const cantidad_estructur_piso_etc = edificacion_y_valorizacion.at(0).get('cantidad_estructur_piso_etc') as FormArray;
+        cantidad_estructur_piso_etc.removeAt(index);
+      }
+
+    addEstructura(){
+        const edificacion = this.delosdatostecnicosForm.get('edificacion_y_valorizacion') as FormArray;
+        const firstControl = edificacion.controls[0];
+        const idx = edificacion.controls.indexOf(firstControl);
+
+        const cantidad_estructur_piso_etc = edificacion.controls[idx].get('cantidad_estructur_piso_etc') as FormArray;
+
+        cantidad_estructur_piso_etc.push(
+            this._formBuilder.group({
+            piso: [],
+            estructura_muro: [],
+            estructura_techo: [],
+            acabados_pisos: [],
+            acabados_puertas: [],
+            acabados_revest: [],
+            acabados_bano: [],
+            instalacion_elect_y_sanit: [],
+            area_const_veri:[],
+            valor_estimado: [],
+            valor_total_area: [],
+        })
+        )
+    }
 
 
 }
