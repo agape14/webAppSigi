@@ -235,7 +235,7 @@ export class DelosdatostecnicosComponent {
     deleteEstructura(index: number) {
         const edificacion_y_valorizacion = this.delosdatostecnicosForm.get('edificacion_y_valorizacion') as FormArray;
         const cantidad_estructur_piso_etc = edificacion_y_valorizacion.at(0).get('cantidad_estructur_piso_etc') as FormArray;
-        cantidad_estructur_piso_etc.removeAt(index);
+        index > 0 ? cantidad_estructur_piso_etc.removeAt(index) : '';
       }
 
     addEstructura(){
@@ -262,5 +262,7 @@ export class DelosdatostecnicosComponent {
         )
     }
 
-
+    submit(){
+        console.log(this.delosdatostecnicosForm.value)
+    }
 }

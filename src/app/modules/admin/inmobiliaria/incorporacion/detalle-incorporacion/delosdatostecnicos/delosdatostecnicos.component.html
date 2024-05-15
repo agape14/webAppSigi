@@ -619,7 +619,6 @@
 
                             *ngFor="let cantidad of item_edificacion_y_valorizacion.get('cantidad_estructur_piso_etc').controls; let j = index" [formGroupName]="j">
 
-
                                 <div class="sm:col-span-1">
                                     <mat-form-field
                                     class="w-full"
@@ -748,13 +747,12 @@
                                     formControlName="valor_total_area">
                                     </mat-form-field>
                                 </div>
-                                <div class="sm:col-span-1">
+                                <div class="sm:col-span-1 flexbox-parent">
                                     <button (click)="addEstructura()" mat-flat-button color="success">
                                         <mat-icon>add</mat-icon>
-
                                     </button>
 
-                                    <button (click)="deleteEstructura(index)"  mat-flat-button color="warn">
+                                    <button [disabled]="j === 0" (click)="deleteEstructura(j)"  mat-flat-button color="warn">
                                         <mat-icon>delete</mat-icon>
                                     </button>
                                 </div>
@@ -864,7 +862,7 @@
                         <mat-datepicker #fecha_valorizacion></mat-datepicker>
                             </mat-form-field>
                         </div>
-                        <div class="sm:col-span-2">
+                        <div class="sm:col-span-1">
                             <mat-form-field
                             class="w-full"
                             [subscriptSizing]="'dynamic'">
@@ -873,6 +871,30 @@
                             matInput
                             formControlName="informe_valorizacion">
                             </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <!-- Descargar -->
+                            <button
+                                class="m-2"
+                                mat-stroked-button
+                                [color]="'primary'"
+                                >
+                                <mat-icon
+                                    class="icon-size-5"
+                                    [svgIcon]="'heroicons_outline:inbox-arrow-down'"></mat-icon>
+                                <span class="ml-2">Descargar</span>
+                            </button>
+                            <!-- Adjuntar -->
+                            <button
+                                class="m-2"
+                                mat-stroked-button
+                                [color]="'primary'"
+                                >
+                                <mat-icon
+                                    class="icon-size-5"
+                                    [svgIcon]="'heroicons_outline:paper-clip'"></mat-icon>
+                                <span class="ml-2">Adjuntar</span>
+                            </button>
                         </div>
                     </div>
 
@@ -985,25 +1007,28 @@
                             <textarea matInput formControlName="proveedor" rows="4" cols="50"></textarea>
                             </mat-form-field>
                         </div>
-                        <hr class="sm:col-span-4">
                         <div class="sm:col-span-2">
+
                             <mat-form-field
                             class="w-full"
-                            [subscriptSizing]="'dynamic'">
+                            [subscriptSizing]=" 'dynamic'">
                             <mat-label>Observaciones técnicas Agua:</mat-label>
-                            <input
-                            matInput
-                            formControlName="agua_observacion_tecnica">
+                            <mat-select [formControlName]="'agua_observacion_tecnica'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
                             </mat-form-field>
                         </div>
                         <div class="sm:col-span-2">
+
                             <mat-form-field
                             class="w-full"
-                            [subscriptSizing]="'dynamic'">
+                            [subscriptSizing]=" 'dynamic'">
                             <mat-label>Observaciones técnicas Luz:</mat-label>
-                            <input
-                            matInput
-                            formControlName="luz_observacion_tecnica">
+                            <mat-select [formControlName]="'luz_observacion_tecnica'">
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
                             </mat-form-field>
                         </div>
                     </div>
