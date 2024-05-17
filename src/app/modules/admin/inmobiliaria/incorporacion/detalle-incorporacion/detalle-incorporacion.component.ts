@@ -30,7 +30,7 @@ import { DelasunidadesComponent } from './delasunidades/delasunidades.component'
   standalone: true,
   imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule,
     MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe,
-    CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase,DelpredioComponent, DelosdatoslegalesComponent,DelosdatostecnicosComponent,DelasunidadesComponent ],
+    CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase,DelpredioComponent, DelosdatoslegalesComponent,DelosdatostecnicosComponent ,DelasunidadesComponent ],
 })
 export class DetalleIncorporacionComponent implements OnInit{
   formFieldHelpers: string[] = [''];
@@ -73,7 +73,7 @@ export class DetalleIncorporacionComponent implements OnInit{
             description: 'Ver datos generales, linderos, referencias, ocupacion, uso del suelo, edificacion y valorizacion, servicios basicos',
         },
         {
-            id         : 'delasunidadesinmobiliarias',
+            id         : 'delasunidades',
             icon       : 'heroicons_outline:bell',
             title      : 'De las unidades Inmobiliarias',
             description: 'Ver el listado de las unidades inmobiliariasy datos de la unidad inmobiliaria',
