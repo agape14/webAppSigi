@@ -1,89 +1,316 @@
 <div class="sm:absolute sm:inset-0 flex flex-col flex-auto min-w-0 sm:overflow-hidden bg-card dark:bg-transparent">
-    <div class="flex flex-col sm:flex-row md:flex-col flex-auto justify-between py-8 px-6 md:px-8 border-b">
+    <div class="flex flex-col sm:flex-row md:flex-col flex-auto justify-between py-0 px-6 md:px-0 border-b">
 
-        <div class="container overflow-y-auto" [style.max-height.px]="maxHeight">
-            <mat-tab-group style="flex-grow: 1;">
+        <div class="container overflow-y-auto py-12" [style.max-height.px]="maxHeight">
+
+            <mat-tab-group style="flex-grow: 1;" style="overflow-x: auto; overflow-y: visible; height: 100%">
                 <mat-tab label="Pagos de arrendamiento">
                     <ng-template matTabContent>
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset>
                                 <legend>Datos del ingreso</legend>
-                        
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <div class="grid sm:grid-cols-5 gap-6  mt-8">
+
+                                
+
+                                    <div class="sm:col-span-1">
+                                            <mat-form-field  hintLabel="Max 10 characters" class="w-full"  appearance="outline"  >
                                     <mat-label>Num Contrato</mat-label>
-                                    <input matInput maxlength="10" placeholder="Ex. Nougat" />
-                                    <mat-hint align="end"></mat-hint>
+                                    <input matInput type="text" [(ngModel)]="value">
+                                    <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>search</mat-icon>
+                                    </button>
                                 </mat-form-field>
-            
-                                <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>CUM</mat-label>
-                                    <input matInput maxlength="10" placeholder="CUM" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>CUIM</mat-label>
-                                    <input matInput maxlength="10" placeholder="CUIM" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                </div>
+
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field  hintLabel="Max 10 characters"  class="w-full" appearance="outline">
+                                        <mat-label>CUM</mat-label>
+                                        <input matInput maxlength="10" placeholder="CUM" />
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+                                
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" class="w-full" appearance="outline">
+                                        <mat-label>CUIM</mat-label>
+                                        <input matInput maxlength="10" placeholder="CUIM" />
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1">
+
+                                <mat-form-field class="w-full"  appearance="outline" class="w-full"  >
                                     <mat-label>Uso</mat-label>
-                                    <input matInput maxlength="10" placeholder="Uso" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Direccion del Inmueble</mat-label>
-                                    <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Arrendatario</mat-label>
-                                    <input matInput maxlength="10" placeholder="Arrendatario" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Domicilio Fiscal</mat-label>
-                                    <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Observaciones</mat-label>
-                                    <input matInput maxlength="10" placeholder="Observaciones" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-                        
-                                <mat-form-field appearance="outline" fxFill>
-                                    <mat-label>Select me</mat-label>
                                     <mat-select>
-                                        <mat-option value="option">Option</mat-option>
-                                    </mat-select>
-                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                        <mat-option [value]="'Comercio'">Comercio</mat-option>
+                                    </mat-select>                                    
+                                    <mat-hint align="end"></mat-hint>
                                 </mat-form-field>
-                        
+                                </div>
+                                
+                                <div class="sm:col-span-1">
+                                    <mat-form-field cclass="w-full" appearance="outline" class="w-full">
+                                        <mat-label>Tipo</mat-label>
+                                        <mat-select>
+                                            <mat-option [value]="'Electronico'">Electrónico </mat-option>
+                                        </mat-select>                                    
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-5 gap-6  mt-8">
+
+
+                                <div class="sm:col-span-4" >
+                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" >
+                                        <mat-label>Direccion del Inmueble</mat-label>
+                                        <input matInput maxlength="10" placeholder="Arrendatario" />
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+                
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field class="w-full"  appearance="outline" >
+                                        <mat-label>Comprobante</mat-label>
+                                        <mat-select>
+                                            <mat-option [value]="'Factura'">Factura</mat-option>
+                                        </mat-select>                                    
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+                
+                            </div>
+                            <div class="grid sm:grid-cols-5 gap-6  mt-8">
+
+                                <div class="sm:col-span-3" >
+
+                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" >
+                                        <mat-label>Arrendatario</mat-label>
+                                        <input matInput maxlength="10" placeholder="Observaciones" />
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+    
+                                <div class="sm:col-span-1">
+    
+                                    <mat-form-field  class="w-full" hintLabel="Max 10 characters" appearance="outline" >
+                                        <mat-label>Serie</mat-label>
+                                        <input matInput maxlength="10" placeholder="" />
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+    
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field class="w-full"  hintLabel="Max 10 characters" appearance="outline">
+                                        <mat-label> Numero </mat-label>
+    
+                                        <input matInput maxlength="10" placeholder="" />
+    
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-5 gap-6  mt-8">
+                                <div class="sm:col-span-1" >
+
+                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline">
+                                        <mat-label> RUC </mat-label>
+    
+                                        <input matInput maxlength="10" placeholder="RUC" />
+    
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+    
+    
+                                <div class="sm:col-span-1" >
+    
+                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline">
+                                        <mat-label>RUC Numero </mat-label>
+    
+                                        <input matInput maxlength="10" placeholder="" />
+    
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1" >
+    
+                                    <mat-form-field class="w-full"  hintLabel="Max 10 characters" appearance="outline">
+                                        <mat-label>RUC Numero </mat-label>
+    
+                                        <input matInput maxlength="10" placeholder="" />
+    
+                                        <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1" >
+                                    <mat-checkbox class="example-margin w-full">Pago Pendiente</mat-checkbox>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <mat-form-field class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                    
+                                        <mat-label>Emision</mat-label>
+                                        <input matInput [matDatepicker]="picker">
+                                        <mat-hint>Dia/Mes/Año</mat-hint>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-5 gap-6  mt-8">
+                                <div class="sm:col-span-3" >
+                                    <mat-form-field class="w-full">
+                                        <mat-label>Domicilio FIscal</mat-label>
+    
+                                        <input matInput maxlength="10" placeholder="" />
+                                    </mat-form-field>
+                                </div>
+                                <div class="sm:col-span-1 flex"  fxLayout="row" fxLayoutAlign="center center" fxFill >
+                                    <mat-form-field class="pr-3 w-full">
+                                        <mat-label>Nota Debito nro</mat-label>
+    
+                                        <input matInput maxlength="10" placeholder="" />
+                                    </mat-form-field>
+
+                                </div>
+
+                       
+                                
+                                <div class="sm:col-span-1" >
+    
+                                    <mat-form-field class="w-full">
+                                        <mat-label>-</mat-label>
+    
+                                        <input matInput maxlength="10" placeholder="" />
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                     
+
+
+                            <h1 class="sm:col-span-6">Observaciones</h1>
+                            <div class="grid sm:grid-cols-5 gap-6  mt-8">
+                                <div class="sm:col-span-1" >
+
+                                <mat-checkbox [(ngModel)]="isChecked">Editar</mat-checkbox>
+
+                                </div>
+
+                                <div class="sm:col-span-4" >
+                                    <mat-form-field class="w-full">
+                                        <textarea matInput  rows="2" cols="30" style="    resize: none;
+                                        "></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-5 gap-6  mt-8">
+                                <hr class="sm:col-span-6" />
+                                <h1 class="sm:col-span-6 text-xl"><b>Informacion sobre el contacto</b></h1>
+    
+                                <div class="sm:col-span-2" >
+                                    <mat-form-field class="w-full">
+                                        <mat-label>Tipo de Comprobante recomendado</mat-label>
+                                        <mat-select>
+                                            <mat-option [value]="'Factura'">Factura</mat-option>
+                                        </mat-select>        
+                                    </mat-form-field>
+                                </div>
+                      
+                                <div class="sm:col-span-4" >
+                                    <mat-form-field class="w-full">
+                                        <mat-label>Concepto recomendado</mat-label>
+                                        <textarea matInput  rows="1" cols="20" style="    resize: none;
+                                        "></textarea>      
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+
+               
                             </fieldset>
-                        </div>
+
+                                       
+                            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+                    
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="position">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                </ng-container>
+                    
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="motivo">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Motivo </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="vencimiento">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Vencimiento </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.vencimiento}} </td>
+                                  </ng-container>
+                    
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="importe">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Cod UI"> Importe</th>
+                                  <td mat-cell *matCellDef="let element"> {{element.importe}} </td>
+                                </ng-container>
+                    
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="interes_dias">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior"> Interes Dias </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.interes_dias}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="dias">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior"> Dias </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.dias}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="intereses">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior"> intereses </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.intereses}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="total">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior"> Total </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                                  </ng-container>
+                    
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                              </table>
+                    
+                    
+                    
+                            <mat-paginator [length]="20"
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                            </mat-paginator>
+
                         <!-- Contenido de la pestaña 1 -->
                         <h2>Pagos de arrendamiento</h2>
                         <p>Este es el contenido de la primera pestaña.</p>
                         <button mat-raised-button color="primary">Botón de la pestaña 1</button>
                         </ng-template>
-                    
+
                 </mat-tab>
                 <mat-tab label="Pagos varios">
                     <ng-template matTabContent>
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset>
                                 <legend>Datos del ingreso</legend>
             
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
+                                <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+                                    <div class="sm:col-span-1">
+
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
                                         <mat-label>Nro Doc</mat-label>
                                         <mat-select>
                                             <mat-option value="Ruc">Ruc</mat-option>
@@ -95,43 +322,66 @@
                                         </mat-select>
                                         <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
                                     </mat-form-field>
+                                    </div>
                             
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <div class="sm:col-span-1 w-38">
+
+                                    <mat-form-field hintLabel="Max 10 characters"  class="w-full" appearance="outline" fxFill>
                                         <mat-label>NDOC</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
+
                                         <mat-hint align="end"></mat-hint>
                                     </mat-form-field>
+                                    <button mat-button mat-raised type="reset" [disabled]="busy">Buscar</button>
+
+                                    </div>
+                              
+                             
+
                 
-                                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <div class="sm:col-span-1 ">
+
+                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
                                         <mat-label>Ruc</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <mat-hint align="end"></mat-hint>
                                     </mat-form-field>
             
-                                    <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
+                                    </div>
+                                    <div class="sm:col-span-1 ">
+
+                                    <mat-checkbox [(ngModel)]="isChecked">Pago Pendiente</mat-checkbox>
+                                    </div>
+
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field appearance="outline" fxFill>
+                                            <mat-label>Tipo</mat-label>
+                                            <mat-select>
+                                                <mat-option value="Electronico">Electronico</mat-option>
+                                                <mat-option value="Fisico">Fisico</mat-option>
+                                            </mat-select>
+                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+
                                 </div>
             
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Tipo</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Electronico">Electronico</mat-option>
-                                            <mat-option value="Fisico">Fisico</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
+                           
             
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>NOMBRE COMPLETO</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    <div class="sm:col-span-2">
+
+                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="w-full inline-block mr-4">
+                                            <mat-label>NOMBRE COMPLETO</mat-label>
+                                            <input matInput maxlength="50" placeholder="CUM" />
+                                            <mat-hint align="end"></mat-hint>
+                                        </mat-form-field>
+
+
+                                    </div>
+                                    <div class="sm:col-span-1">
+
+                                    <mat-form-field appearance="outline" fxFill class="w-full">
                                         <mat-label>Comprobante</mat-label>
                                         <mat-select>
                                             <mat-option value="Factura">Factura</mat-option>
@@ -139,42 +389,55 @@
                                         </mat-select>
                                         <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
                                     </mat-form-field>
+                                    </div>
                                 </div>
             
                                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
+                                    <div class="sm:col-span-2">
+
+                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="w-full inline-block mr-4">
                                         <mat-label>DOMICILIO FISCALs</mat-label>
                                         <input matInput maxlength="50" placeholder="CUM" />
                                         <mat-hint align="end"></mat-hint>
                                     </mat-form-field>
+                                    </div>
             
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Serie</mat-label>
-                                        <mat-select>                            
-                                            <mat-option value="Serie">Serie</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Numero</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
+                                    <div class="sm:col-span-1">
+
+                                        <mat-form-field appearance="outline" fxFill class="w-full">
+                                            <mat-label>Serie</mat-label>
+                                            <mat-select>                            
+                                                <mat-option value="Serie">Serie</mat-option>
+                                            </mat-select>
+                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1">
+
+                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill class="w-full">
+                                            <mat-label>Numero</mat-label>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+                                            <mat-hint align="end"></mat-hint>
+                                        </mat-form-field>
+                                    </div>
                                 </div>
             
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
-                                        <mat-label>Emisión</mat-label>
-                                        <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
-                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker></mat-datepicker>
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                    </mat-form-field>
+                                    <div class="sm:col-span-3">
+
+                                        <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2 w-full">
+                                            <mat-label>Emisión</mat-label>
+                                            <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                            <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+                                        </mat-form-field>
+                                    </div>
                                 </div>
             
                                 
             
+
                                 
             
                                 
@@ -184,46 +447,70 @@
             
                         
                             </fieldset>
-            
-                            <div class="container mx-auto">
-                                <div class="flex mb-4">
-                                    <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
-                                    <div class="flex space-x-4">
-                                        <button mat-raised-button color="primary">Agregar</button>
-                                        <button mat-raised-button color="warn">Retirar</button>
-                                    </div>
-                                </div>
-                                <table class="w-full border-collapse border border-gray-300">
-                                    <thead>
-                                        <tr>
-                                            <th class="border border-gray-300 px-4 py-2">Motivo</th>
-                                            <th class="border border-gray-300 px-4 py-2">Detalle</th>
-                                            <th class="border border-gray-300 px-4 py-2">Importe</th>
-                                            <th class="border border-gray-300 px-4 py-2">IGV</th>
-                                            <th class="border border-gray-300 px-4 py-2">Total</th>
-                                            <th class="border border-gray-300 px-4 py-2">Afecto IGV</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
-                                        <tr>
-                                            <td class="border border-gray-300 px-4 py-2">Motivo 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">100.00</td>
-                                            <td class="border border-gray-300 px-4 py-2">18.00</td>
-                                            <td class="border border-gray-300 px-4 py-2">118.00</td>
-                                            <td class="border border-gray-300 px-4 py-2">Si</td>
-                                        </tr>
-                                        <!-- Puedes agregar más filas según sea necesario -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                            
+                            <!-- TABLE -->
+
+                            <table mat-table [dataSource]="dataSourcePagoVarios" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+                    
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="position">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                </ng-container>
+                    
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="motivo">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Motivo </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+                                </ng-container>
+                      
+                                <ng-container matColumnDef="detalle">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por detalle"> detalle </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.detalle}} </td>
+                                  </ng-container>
+                    
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="importe">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por importe"> Importe</th>
+                                  <td mat-cell *matCellDef="let element"> {{element.importe}} </td>
+                                </ng-container>
+                    
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="igv">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  igv">IGV </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.igv}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="total">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior">Total </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="afectoIGV">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  afectoIGV"> afectoIGV </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.afectoIGV}} </td>
+                                  </ng-container>
+
+                           
+                    
+                                <tr mat-header-row *matHeaderRowDef="displayedColumnsPagoVarios"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumnsPagoVarios;"></tr>
+                              </table>
+                    
+                    
+                    
+                            <mat-paginator [length]="20"
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                            </mat-paginator>
+
+                         
                         
-                        <!-- Contenido de la pestaña 1 -->
-                        <h2>Pagos de arrendamiento</h2>
-                        <p>Este es el contenido de la primera pestaña.</p>
-                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+
                         </ng-template>
                     
                 </mat-tab>
@@ -232,80 +519,258 @@
                         <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset>
                                 <legend>Datos del ingreso</legend>
-            
-                                <mat-form-field appearance="outline" fxFill>
-                                    <mat-label>Nro Doc</mat-label>
-                                    <mat-select>
-                                        <mat-option value="Ruc">Ruc</mat-option>
-                                        <mat-option value="Dni">Dni</mat-option>
-                                        <mat-option value="Carnet">Carnet</mat-option>
-                                        <mat-option value="Pasaporte">Pasaporte</mat-option>
-                                        <mat-option value="P">P</mat-option>
-                                        <mat-option value="Otros">Otros</mat-option>
-                                    </mat-select>
-                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                </mat-form-field>
+                                <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+                                    <div class="sm:col-span-1">
+
+                                        <mat-form-field  hintLabel="Max 10 characters" class="w-full"  appearance="outline"  >
+                                            <mat-label>Num Contrato</mat-label>
+                                            <input matInput type="text" [(ngModel)]="value">
+                                            <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                                <mat-icon>search</mat-icon>
+                                            </button>
+                                        </mat-form-field>
+                                    </div>
                         
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>NDOC</mat-label>
-                                    <input matInput maxlength="10" placeholder="nrodoc" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
+                                <div class="sm:col-span-1">
+
+                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                        <mat-label>Mes</mat-label>
+                                        <mat-select>
+                                            <mat-option value="Enero">Enero</mat-option>
+                                            <mat-option value="Febrero">Febrero</mat-option>
+                                            <mat-option value="Marzo">Marzo</mat-option>
+                                            <mat-option value="Abril">Abril</mat-option>
+                                            <mat-option value="Mayo">Mayo</mat-option>
+                                            <mat-option value="Junio">Junio</mat-option>
+                                            <mat-option value="Julio">Julio</mat-option>
+                                            <mat-option value="Agosto">Agosto</mat-option>
+                                            <mat-option value="Septiembre">Septiembre</mat-option>
+                                            <mat-option value="Octubre">Octubre</mat-option>
+                                            <mat-option value="Noviembre">Noviembre</mat-option>
+                                            <mat-option value="Diciembre">Diciembre</mat-option>
+                                        </mat-select>                                    
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1">
+
+                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                        <mat-label>Año</mat-label>
+                                        <mat-select>
+                                            <mat-option value="2024" >2024</mat-option>
+                 
+                                        </mat-select>                                    
+                                    </mat-form-field>
+                                </div>
             
-                                <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
             
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>CUM</mat-label>
-                                    <input matInput maxlength="10" placeholder="CUM" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
+                                <div class="sm:col-span-1 w-full">
+                                        <mat-checkbox >Pago Pendiente</mat-checkbox>
+                                        <mat-hint align="end"></mat-hint>
+                                </div>
             
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>CUIM</mat-label>
-                                    <input matInput maxlength="10" placeholder="CUIM" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Uso</mat-label>
-                                    <input matInput maxlength="10" placeholder="Uso" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Direccion del Inmueble</mat-label>
-                                    <input matInput maxlength="10" placeholder="Direccion del Inmueble" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Arrendatario</mat-label>
-                                    <input matInput maxlength="10" placeholder="Arrendatario" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Domicilio Fiscal</mat-label>
-                                    <input matInput maxlength="10" placeholder="Domicilio Fiscal" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-            
-                                <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                    <mat-label>Observaciones</mat-label>
-                                    <input matInput maxlength="10" placeholder="Observaciones" />
-                                    <mat-hint align="end"></mat-hint>
-                                </mat-form-field>
-                        
-                                <mat-form-field appearance="outline" fxFill>
-                                    <mat-label>Select me</mat-label>
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field class="w-full" hintLabel="Max 10 chracters" appearance="outline" fxFill>
+                                        <mat-label>Tipo</mat-label>
+                                        <mat-select>
+                                            <mat-option value="1">1</mat-option>
+                                        </mat-select>                                           <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+
+                                <div class="sm:col-span-3" >
+
+                                <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-label>Nombre Completo</mat-label>
                                     <mat-select>
-                                        <mat-option value="option">Option</mat-option>
-                                    </mat-select>
-                                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                        <mat-option value="1">1</mat-option>
+                                    </mat-select>                                     <mat-hint align="end"></mat-hint>
                                 </mat-form-field>
+                                </div>
+            
+                        
+                                <div class="sm:col-span-2" >
+
+                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                        <mat-label>Comprobante</mat-label>
+                                        <mat-select>
+                                            <mat-option value="1">1</mat-option>
+                                        </mat-select>                                     <mat-hint align="end"></mat-hint>
+                                    </mat-form-field>
+                                    </div>
+                                </div>
+                            <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-label>Num. Documento</mat-label>
+                                        <input matInput type="text" placeholder="DNI" [(ngModel)]="value">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-label></mat-label>
+                                        <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-label>RUC</mat-label>
+                                        <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-label>Serie</mat-label>
+                                        <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="sm:col-span-1" >
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-label>Numero</mat-label>
+                                        <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                                <div class="grid grid-cols-3 md:grid-cols-3 gap-4">
+                                    <div class="sm:col-span-2" >
+                                        <mat-form-field appearance="outline" class="w-full" >
+                                            <mat-label>Domicilio Fiscal</mat-label>
+                                            <input matInput type="text" placeholder="Jr Ignacio Seminario">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field class="w-full" appearance="outline"
+                                            [subscriptSizing]="'dynamic'">
+                        
+                                            <mat-label>Emision</mat-label>
+                                            <input matInput [matDatepicker]="picker">
+                                            <mat-hint>Dia/Mes/Año</mat-hint>
+                                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-3 md:grid-cols-3 gap-4">
+                                    <div class="sm:col-span-2">
+                                        <mat-form-field class="w-full"
+                                            [subscriptSizing]="'dynamic'">
+                        
+                                            <mat-label>Observaciones</mat-label>
+                                            <input matInput type="text" placeholder="Jr Ignacio Seminario" [(ngModel)]="value">
+
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field class="w-full"
+                                            [subscriptSizing]="'dynamic'">
+                        
+                                            <mat-label>Afecto IGV?</mat-label>
+                                            <mat-select>
+                                                <mat-option value="Si">Si</mat-option>
+                                                <mat-option value="No">No</mat-option>
+
+                                            </mat-select>   
+                                        </mat-form-field>
+                                </div>
+
+                                
+                           </div>
+
+                           
+                        <div class="grid sm:grid-cols-5 gap-6  mt-8">
+                            <hr class="sm:col-span-6" />
+                            <h1 class="sm:col-span-6 text-xl"><b>Informacion sobre el contacto</b></h1>
+
+                            <div class="sm:col-span-2" >
+                                <mat-form-field class="w-full">
+                                    <mat-label>Tipo de Comprobante recomendado</mat-label>
+                                    <mat-select>
+                                        <mat-option [value]="'Factura'">Factura</mat-option>
+                                    </mat-select>        
+                                </mat-form-field>
+                            </div>
+                  
+                            <div class="sm:col-span-4" >
+                                <mat-form-field class="w-full">
+                                    <mat-label>Concepto recomendado</mat-label>
+                                    <textarea matInput  rows="1" cols="20" style="    resize: none;
+                                    "></textarea>      
+                                </mat-form-field>
+                            </div>
+                        </div>
                         
                             </fieldset>
+
+                            
                         </div>
+
+
+                        <div >
+                            <table mat-table [dataSource]="dataSourceIngresos" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+                    
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="position">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                </ng-container>
+                    
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="motivo">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Motivo </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+                                </ng-container>
+                      
+                                <ng-container matColumnDef="detalle">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por detalle"> detalle </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.detalle}} </td>
+                                  </ng-container>
+                    
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="importe">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por importe"> Importe</th>
+                                  <td mat-cell *matCellDef="let element"> {{element.importe}} </td>
+                                </ng-container>
+                    
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="igv">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  igv">IGV </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.igv}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="total">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior">Total </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                                  </ng-container>
+
+
+                           
+                    
+                                <tr mat-header-row *matHeaderRowDef="displayedColumnsIngresos"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumnsIngresos;"></tr>
+                              </table>
+                    
+                            </div>
+                    
+                            <mat-paginator [length]="20"
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                            </mat-paginator>
+
+                         
+                        
+
                         <!-- Contenido de la pestaña 1 -->
                         <h2>Pagos de arrendamiento</h2>
                         <p>Este es el contenido de la primera pestaña.</p>
@@ -317,114 +782,113 @@
                     <ng-template matTabContent>
                         <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset>
-                                <legend>Datos del ingreso</legend>
+                                <legend>Datos de la Planilla</legend>
             
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Nro Doc</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Ruc">Ruc</mat-option>
-                                            <mat-option value="Dni">Dni</mat-option>
-                                            <mat-option value="Carnet">Carnet</mat-option>
-                                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                                            <mat-option value="P">P</mat-option>
-                                            <mat-option value="Otros">Otros</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>NDOC</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                
-                                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Ruc</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
-            
-                                    <div class="flex mb-4">
-                                        <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
-                                        <div class="flex space-x-4">
-                                            <button mat-button  mat-raised-button color="primary" type="reset" (click)="resetDetails()"  class="push-right-xs" [disabled]>Crear planilla</button>
-                                            <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]>Cierre de planillas</button>
-                                            <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]>Imprimir</button>
+                                <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                                    <div class="sm:col-span-1" >
+
+                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-label>Cod Interno Planilla</mat-label>
+                                            <input matInput maxlength="10" placeholder="1711" />
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="sm:col-span-1" >
+                                        <mat-form-field class="w-full" appearance="outline"
+                                        [subscriptSizing]="'dynamic'">
+                                            <mat-label>Fecha Cobranza</mat-label>
+                                            <input matInput [matDatepicker]="picker">
+                                            <mat-hint>Dia/Mes/Año</mat-hint>
+                                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                     
+                                    </div>
+                              
+
+                                    <div class="sm:col-span-1 flex" >
+                                        <button  matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                            <mat-icon>search</mat-icon>
+                                        </button>
+                                        <mat-form-field class="w-full" appearance="outline">
+                                            
+                               
+                                            <mat-label>Estado</mat-label>
+                                            <mat-select>
+                                                <mat-option [value]="'Cerrado'">CERRADO</mat-option>
+                                            </mat-select>        
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="sm:col-span-1" >
+                                        <button mat-button  mat-raised-button color="primary" type="reset" (click)="resetDetails()"  class="push-right-xs w-full" [disabled]>Crear planilla</button>
+
+                                    </div>
+                                    <div class="sm:col-span-1" >
+                                        <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs w-full" [disabled]>Cierre de planillas</button>
+
+                                    </div>
+                                    <div class="sm:col-span-1" >
+                                        <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs w-full" [disabled]>Imprimir</button>
+
+                                    </div>
+
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+
+                                        <div class="sm:col-span-1" >
+
+                                        <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-label>Num Planilla</mat-label>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+                                            <mat-hint align="end"></mat-hint>
+                                        </mat-form-field>
+                                        </div>
+
+                                        <div class="sm:col-span-1" >
+
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>Cobranza del Banco</mat-label>
+                                                <mat-select>
+                                                    <mat-option [value]="'Ninguno'">Ninguno</mat-option>
+                                                </mat-select>                                                 
+                                            </mat-form-field>
+                                        </div>
+                                        
+                                        <div class="sm:col-span-1" >
+
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>Total Cobranzas</mat-label>
+                                                <input matInput maxlength="10" placeholder="nrodoc" />
+                                                
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="sm:col-span-1" >
+
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>-Total Deposito</mat-label>
+                                                <input matInput maxlength="10" placeholder="nrodoc" />
+                                                
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="sm:col-span-1" >
+
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>+Ajuste</mat-label>
+                                                <input matInput maxlength="10" placeholder="nrodoc" />
+                                                
+                                            </mat-form-field>
                                         </div>
                                     </div>
-            
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Tipo</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Electronico">Electronico</mat-option>
-                                            <mat-option value="Fisico">Fisico</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>NOMBRE COMPLETO</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Comprobante</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Factura">Factura</mat-option>
-                                            <mat-option value="Boleta">Boleta</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>DOMICILIO FISCALs</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Serie</mat-label>
-                                        <mat-select>                            
-                                            <mat-option value="Serie">Serie</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Numero</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
-                                        <mat-label>Emisión</mat-label>
-                                        <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
-                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker></mat-datepicker>
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
+                     
                             </fieldset>
             
                             <div class="container mx-auto">
-                                <div class="flex mb-4">
-                                    <h2>Ingresos del dia</h2>
+                                <div class="flex mb-4 mt-8">
+                                    <h1>Ingresos del dia</h1>
                                 </div>
                                 <div class="flex mb-4">
                                     <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
@@ -433,24 +897,59 @@
                                         <button mat-raised-button color="warn">Ajuste automatico</button>
                                     </div>
                                 </div>
-                                <table class="w-full border-collapse border border-gray-300">
-                                    <thead>
-                                        <tr>
-                                            <th class="border border-gray-300 px-4 py-2">Detalle</th>
-                                            <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
-                                            <th class="border border-gray-300 px-4 py-2">Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
-                                        <tr>
-                                            <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Importe 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Si</td>
-                                        </tr>
-                                        <!-- Puedes agregar más filas según sea necesario -->
-                                    </tbody>
-                                </table>
+
+
+                                
+                        <div >
+                            <table mat-table [dataSource]="dataSourcePlanillaCobranzas" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+                    
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="position">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                </ng-container>
+                    
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="detalle">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Detalle </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.detalle}} </td>
+                                </ng-container>
+                      
+                                <ng-container matColumnDef="importe">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por detalle"> importe </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.importe}} </td>
+                                  </ng-container>
+                    
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="documento">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por importe"> Documento</th>
+                                  <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+                                </ng-container>
+                    
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="estado">
+                                  <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  igv">Estado </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+                                </ng-container>
+
+                           
+
+                           
+                    
+                                <tr mat-header-row *matHeaderRowDef="displayedColumnsPlanillaCobranzas"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumnsPlanillaCobranzas;"></tr>
+                              </table>
+                    
+                            </div>
+                    
+                            <mat-paginator [length]="20"
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                            </mat-paginator>
                             </div>
                         </div>
                         
@@ -465,116 +964,77 @@
                     <ng-template matTabContent>
                         <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md">
-                                <legend class="text-sm text-gray-600 px-2">Datos del ingreso</legend>
+                                <legend class="text-sm text-gray-600 px-2">Datos de Planilla</legend>
                                 
             
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Nro Doc</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Ruc">Ruc</mat-option>
-                                            <mat-option value="Dni">Dni</mat-option>
-                                            <mat-option value="Carnet">Carnet</mat-option>
-                                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                                            <mat-option value="P">P</mat-option>
-                                            <mat-option value="Otros">Otros</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>NDOC</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                
-                                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Ruc</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
-                                        <mat-icon>search</mat-icon>
-                                        Buscar
-                                    </button>
-                                        
-            
-                                    <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
-            
-                                    <div class="flex mb-4">
-                                        <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
-                                        <div class="flex space-x-4">
-                                            <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
-                                                <mat-icon>save</mat-icon>
-                                                Grabar fecha
-                                            </button>
-                                                
-                                        </div>
-                                    </div>
-            
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Tipo</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Electronico">Electronico</mat-option>
-                                            <mat-option value="Fisico">Fisico</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>NOMBRE COMPLETO</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Comprobante</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Factura">Factura</mat-option>
-                                            <mat-option value="Boleta">Boleta</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>DOMICILIO FISCALs</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Serie</mat-label>
-                                        <mat-select>                            
-                                            <mat-option value="Serie">Serie</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Numero</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
-                                        <mat-label>Emisión</mat-label>
-                                        <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
-                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker></mat-datepicker>
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
+
+                                    <div class="sm:col-span-1" >
+
+                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                        <mat-label>Cod Interno Planilla</mat-label>
+                                        <input matInput maxlength="10" placeholder="nrodoc" />
+                                        <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                            <mat-icon>search</mat-icon>
+                                        </button>
+                                        <mat-hint align="end"></mat-hint>
+
                                     </mat-form-field>
+                                    </div>
+
+                                    <div class="sm:col-span-1" >
+                                            <mat-form-field class="w-full" appearance="outline"
+                                            [subscriptSizing]="'dynamic'">
+                                                <mat-label>Fecha Planilla Deposito</mat-label>
+                                                <input matInput [matDatepicker]="picker">
+                                                <mat-hint>Dia/Mes/Año</mat-hint>
+                                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                            </mat-form-field>
+                                         
+                                  
+                                    </div>
+                                    
+                                    <div class="sm:col-span-1" >
+
+                                        <button mat-raised-button color="warn" class="w-full">Grabar Fecha</button>
+
+                                    </div>
+                                </div>
+
+            
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                    <div class="sm:col-span-1" >
+                                        <mat-form-field appearance="outline" class="w-full"  fxFill>
+                                            <mat-label>Num Planilla</mat-label>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+    
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1" >
+                                        <mat-form-field appearance="outline" class="w-full"  fxFill>
+                                            <mat-label>Total Cobranzas</mat-label>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+    
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1" >
+                                        <mat-form-field appearance="outline" class="w-full"  fxFill>
+                                            <mat-label>Total Deposito</mat-label>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+    
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1" >
+
+                                        <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-label>Estado</mat-label>
+                                            <mat-select>
+                                                <mat-option [value]="'Cerrado'">Cerrado</mat-option>
+                                                <mat-option [value]="'Ninguno'">Ninguno</mat-option>
+                                            </mat-select>                                                 
+                                        </mat-form-field>
+                                    </div>
                                 </div>
             
                             </fieldset>
@@ -597,24 +1057,66 @@
                                             </button>
                                     </div>
                                 </div>
-                                <table class="w-full border-collapse border border-gray-300">
-                                    <thead>
-                                        <tr>
-                                            <th class="border border-gray-300 px-4 py-2">Detalle</th>
-                                            <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
-                                            <th class="border border-gray-300 px-4 py-2">Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
-                                        <tr>
-                                            <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Importe 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Si</td>
-                                        </tr>
-                                        <!-- Puedes agregar más filas según sea necesario -->
-                                    </tbody>
-                                </table>
+                                <div >
+                                    <table mat-table [dataSource]="dataSourcePlanillaDepositos" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                            
+                                        <!--- Note that these columns can be defined in any order.
+                                              The actual rendered columns are set as a property on the row definition" -->
+                            
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="position">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                        </ng-container>
+                            
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="banco">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> banco </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.banco}} </td>
+                                        </ng-container>
+                              
+                                        <ng-container matColumnDef="numero">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por numero"> numero </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+                                          </ng-container>
+                            
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="importe">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por importe"> importe</th>
+                                          <td mat-cell *matCellDef="let element"> {{element.importe}} </td>
+                                        </ng-container>
+                            
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="fecha_deposito">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  fecha_deposito">fecha_deposito </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.fecha_deposito}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="serie_rel">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  serie_rel">serie_rel </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.serie_rel}} </td>
+                                          </ng-container>
+
+                                          <ng-container matColumnDef="nro_rel">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  nro_rel">nro_rel </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.nro_rel}} </td>
+                                          </ng-container>
+        
+                                   
+        
+                                   
+                            
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumnsPlanillaDepositos"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumnsPlanillaDepositos;"></tr>
+                                      </table>
+                            
+                                    </div>
+                            
+                                    <mat-paginator [length]="20"
+                                    [pageSize]="10"
+                                    [pageSizeOptions]="[5, 10, 25, 100]"
+                                    aria-label="Select page">
+                                    </mat-paginator>
                             </div>
                         </div>
                         
@@ -629,12 +1131,14 @@
                     <ng-template matTabContent>
                         <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md">
-                                <legend class="text-sm text-gray-600 px-2">Datos del ingreso</legend>
+                                <legend class="text-sm text-gray-600 px-2">Comprobante Afectado</legend>
                                 
             
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Nro Doc</mat-label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="sm:col-span-1" >
+
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-label>NRO DOC</mat-label>
                                         <mat-select>
                                             <mat-option value="Ruc">Ruc</mat-option>
                                             <mat-option value="Dni">Dni</mat-option>
@@ -643,116 +1147,242 @@
                                             <mat-option value="P">P</mat-option>
                                             <mat-option value="Otros">Otros</mat-option>
                                         </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
                                     </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    </div>
+                                    <div class="sm:col-span-1" >
+
+                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
                                         <mat-label>NDOC</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <mat-hint align="end"></mat-hint>
                                     </mat-form-field>
-                
-                                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Ruc</mat-label>
+                                    </div>
+
+                                    <div class="sm:col-span-1" >
+
+                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-label>Tipo</mat-label>
+                                            <mat-select>
+                                                <mat-option value="Electronico">Electronico</mat-option>
+                                   
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="sm:col-span-1" >
+
+                                        <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-label>Nombre Completo</mat-label>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+                                            <mat-hint align="end"></mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1" >
+
+                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-label>Comprobante</mat-label>
+                                            <mat-select>
+                                                <mat-option value="Boleta">Boleta</mat-option>
+                                    
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                         
+                                </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+                                <div class="sm:col-span-1" >
+
+                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-label>Domicilio Legal</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <mat-hint align="end"></mat-hint>
                                     </mat-form-field>
-            
-                                    <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
-                                        <mat-icon>search</mat-icon>
-                                        Buscar
-                                    </button>
-                                        
-            
-                                    <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
-            
-                                    <div class="flex mb-4">
-                                        <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
-                                        <div class="flex space-x-4">
-                                            <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
-                                                <mat-icon>save</mat-icon>
-                                                Grabar fecha
-                                            </button>
-                                                
-                                        </div>
-                                    </div>
-            
                                 </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Tipo</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Electronico">Electronico</mat-option>
-                                            <mat-option value="Fisico">Fisico</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>NOMBRE COMPLETO</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Comprobante</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Factura">Factura</mat-option>
-                                            <mat-option value="Boleta">Boleta</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>DOMICILIO FISCALs</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
+
+                                <div class="sm:col-span-1" >
+
+                                    <mat-form-field  appearance="outline" class="w-full" fxFill>
                                         <mat-label>Serie</mat-label>
-                                        <mat-select>                            
-                                            <mat-option value="Serie">Serie</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                        <input matInput maxlength="10" placeholder="nrodoc" />
+                                        <mat-hint align="end"></mat-hint>
                                     </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                </div>
+
+                                <div class="sm:col-span-1" >
+
+                                    <mat-form-field  appearance="outline" class="w-full" fxFill>
                                         <mat-label>Numero</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
+                                        <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                            <mat-icon>search</mat-icon>
+                                        </button>                                    
                                     </mat-form-field>
                                 </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
+                                <div class="sm:col-span-1" >
+
+                                    <mat-form-field hintLabel="Selecciona una fecha" class="w-full" appearance="outline" >
                                         <mat-label>Emisión</mat-label>
-                                        <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                        <input matInput [matDatepicker]="picker" class="text-right" (click)="picker.open()">
                                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                         <mat-datepicker #picker></mat-datepicker>
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
                                     </mat-form-field>
                                 </div>
+                            </div>
+
+                
+                      
             
                             </fieldset>
             
                             <div class="container mx-auto">
                                 <div class="flex mb-4">
-                                    <h2>Depositos</h2>
+                                    <h2>Nota de Credito</h2>
                                 </div>
+                                <table mat-table [dataSource]="dataSourcePlanillaNotadeCredito" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                    <!--- Note that these columns can be defined in any order.
+                                          The actual rendered columns are set as a property on the row definition" -->
+                        
+                                    <!-- Position Column -->
+                                    <ng-container matColumnDef="position">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                    </ng-container>
+                        
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="motivo">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Motivo </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+                                    </ng-container>
+                          
+                                    <ng-container matColumnDef="detalle">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por detalle"> detalle </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.detalle}} </td>
+                                      </ng-container>
+                        
+                                    <!-- Weight Column -->
+                                    <ng-container matColumnDef="importe">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por importe"> Importe</th>
+                                      <td mat-cell *matCellDef="let element"> {{element.importe}} </td>
+                                    </ng-container>
+                        
+                                    <!-- Symbol Column -->
+                                    <ng-container matColumnDef="igv">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  igv">IGV </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.igv}} </td>
+                                    </ng-container>
+    
+                                    <ng-container matColumnDef="total">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior">Total </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                                      </ng-container>
+    
+                                      <ng-container matColumnDef="afectoIGV">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  afectoIGV"> afectoIGV </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.afectoIGV}} </td>
+                                      </ng-container>
+    
+                               
+                        
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsPlanillaNotadeCredito"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumnsPlanillaNotadeCredito;"></tr>
+                                  </table>
+                        
+                        
+                        
+                        
+                                <mat-paginator [length]="20"
+                                [pageSize]="10"
+                                [pageSizeOptions]="[5, 10, 25, 100]"
+                                aria-label="Select page">
+                                </mat-paginator>
+    
+                        
+                                </div>
+              
+
+                                <fieldset class="border border-gray-300 rounded-md">
+                                    <legend class="text-sm text-gray-600 px-2">Nota credito/debito</legend>
+                                <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+
+                           
+                                    <div class="sm:col-span-1" >
+    
+                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-label>Tipo</mat-label>
+                                            <mat-select>
+                                                <mat-option value="Electronico">Electronico</mat-option>
+                                    
+                                            </mat-select>                                            
+                                        </mat-form-field>
+                                    </div>
+    
+                                    <div class="sm:col-span-1" >
+    
+                                        <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                            <mat-label>Tipo de Nota</mat-label>
+                                            <mat-select>
+                                                <mat-option value="Credito">Credito</mat-option>
+                                    
+                                            </mat-select>                                           
+                                        </mat-form-field>
+                                    </div>
+    
+                                    <div class="sm:col-span-1" >
+    
+                                        <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                            <mat-label>Serie</mat-label>
+                                            <mat-select>
+                                                <mat-option value="BNC1">BNC1</mat-option>
+                                    
+                                            </mat-select>                                             
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1" >
+    
+                                        <mat-form-field class="w-full" appearance="outline" >
+                                            <mat-label>Numero</mat-label>
+                                            <input matInput maxlength="10" placeholder="numero" />
+                             
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="sm:col-span-1" >
+    
+                                        <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                            <mat-label>Motivo Nota</mat-label>
+                                            <mat-select>
+                                                <mat-option value="Correcion por error en el sistema">Correcion por error en el sistema</mat-option>
+                                    
+                                            </mat-select>                                             
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="sm:col-span-1" >
+
+                                        <mat-form-field hintLabel="Selecciona una fecha" class="w-full" appearance="outline" >
+                                            <mat-label>Emisión</mat-label>
+                                            <input matInput [matDatepicker]="picker2" class="text-right" (click)="picker2.open()">
+                                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+
+                                </div>
+
+                            </fieldset>
+
+
                                 <div class="flex mb-4">
                                     <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
                                     <div class="flex space-x-4">
                                         <button mat-raised-button color="primary">
                                             <mat-icon>add</mat-icon>
-                                            Nuevo
+                                            Agregar
                                             </button>
                                             
                                             <button mat-raised-button color="warn">
@@ -761,26 +1391,68 @@
                                             </button>
                                     </div>
                                 </div>
-                                <table class="w-full border-collapse border border-gray-300">
-                                    <thead>
-                                        <tr>
-                                            <th class="border border-gray-300 px-4 py-2">Detalle</th>
-                                            <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
-                                            <th class="border border-gray-300 px-4 py-2">Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
-                                        <tr>
-                                            <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Importe 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Si</td>
-                                        </tr>
-                                        <!-- Puedes agregar más filas según sea necesario -->
-                                    </tbody>
-                                </table>
+
+
+                                
+                                <table mat-table [dataSource]="dataSourcePlanillaNotadeCredito" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                    <!--- Note that these columns can be defined in any order.
+                                          The actual rendered columns are set as a property on the row definition" -->
+                        
+                                    <!-- Position Column -->
+                                    <ng-container matColumnDef="position">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                    </ng-container>
+                        
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="motivo">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Motivo </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+                                    </ng-container>
+                          
+                                    <ng-container matColumnDef="detalle">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por detalle"> detalle </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.detalle}} </td>
+                                      </ng-container>
+                        
+                                    <!-- Weight Column -->
+                                    <ng-container matColumnDef="importe">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por importe"> Importe</th>
+                                      <td mat-cell *matCellDef="let element"> {{element.importe}} </td>
+                                    </ng-container>
+                        
+                                    <!-- Symbol Column -->
+                                    <ng-container matColumnDef="igv">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  igv">IGV </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.igv}} </td>
+                                    </ng-container>
+    
+                                    <ng-container matColumnDef="total">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior">Total </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                                      </ng-container>
+    
+                                      <ng-container matColumnDef="afectoIGV">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  afectoIGV"> afectoIGV </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.afectoIGV}} </td>
+                                      </ng-container>
+    
+                               
+                        
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsPlanillaNotadeCredito"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumnsPlanillaNotadeCredito;"></tr>
+                                  </table>
+                        
+                        
+                        
+                                <mat-paginator [length]="20"
+                                [pageSize]="10"
+                                [pageSizeOptions]="[5, 10, 25, 100]"
+                                aria-label="Select page">
+                                </mat-paginator>
+    
                             </div>
-                        </div>
                         
                         <!-- Contenido de la pestaña 1 -->
                         <h2>Pagos de arrendamiento</h2>
@@ -794,117 +1466,103 @@
                     <ng-template matTabContent>
                         <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md">
-                                <legend class="text-sm text-gray-600 px-2">Datos del ingreso</legend>
+                                <legend class="text-sm text-gray-600 px-2">Guia de Remision</legend>
                                 
             
                                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Nro Doc</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Ruc">Ruc</mat-option>
-                                            <mat-option value="Dni">Dni</mat-option>
-                                            <mat-option value="Carnet">Carnet</mat-option>
-                                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                                            <mat-option value="P">P</mat-option>
-                                            <mat-option value="Otros">Otros</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
+
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                                <mat-label>Tipo </mat-label>
+                                                <mat-select>
+                                                    <mat-option value="GUIA DE REMISION">GUIA DE REMISION</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                                <mat-label>Serie </mat-label>
+                                                <input matInput maxlength="10" placeholder="nrodoc" />
+
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                                <mat-label>Numero </mat-label>
+                                                <input matInput maxlength="10" placeholder="nrodoc" />
+
+                                            </mat-form-field>
+                                        </div>
+
+                                    
+                                        <div class="sm:col-span-1" >
+
+                                            <mat-form-field hintLabel="Selecciona una fecha" class="w-full" appearance="outline" >
+                                                <mat-label>Emisión</mat-label>
+                                                <input matInput [matDatepicker]="picker2" class="text-right" (click)="picker2.open()">
+                                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
                             
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>NDOC</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                                <mat-label>Nro Doc</mat-label>
+                                                <mat-select>
+                                                    <mat-option value="Ruc">Ruc</mat-option>
+                                                    <mat-option value="Dni">Dni</mat-option>
+                                                    <mat-option value="Carnet">Carnet</mat-option>
+                                                    <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                                    <mat-option value="P">P</mat-option>
+                                                    <mat-option value="Otros">Otros</mat-option>
+                                                </mat-select>
+                                                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                            </mat-form-field>
+                                        </div>
+                                
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>NDOC</mat-label>
+                                                <input matInput maxlength="10" placeholder="nrodoc" />
+                                                <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                                    <mat-icon>search</mat-icon>
+                                                </button>                                           
+                                            </mat-form-field>
+                                        </div>
+
                 
-                                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Ruc</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
-                                        <mat-icon>search</mat-icon>
-                                        Buscar
-                                    </button>
-                                        
-            
-                                    <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
-            
-                                    <div class="flex mb-4">
-                                        <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
-                                        <div class="flex space-x-4">
-                                            <button mat-raised-button color="primary" type="reset" (click)="resetDetails()" [disabled]="true">
-                                                <mat-icon>save</mat-icon>
-                                                Grabar fecha
-                                            </button>
-                                                
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>Ruc</mat-label>
+                                                <input matInput maxlength="10" placeholder="nrodoc" />
+                                                <mat-hint align="end"></mat-hint>
+                                            </mat-form-field>
+                                        </div>
+
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>Nombre Completo</mat-label>
+                                                <input matInput maxlength="10" />
+                                                <mat-hint align="end"></mat-hint>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                                <mat-label>Observacion</mat-label>
+                                                <input matInput maxlength="10" />
+                                                <mat-hint align="end"></mat-hint>
+                                            </mat-form-field>
                                         </div>
                                     </div>
             
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Tipo</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Electronico">Electronico</mat-option>
-                                            <mat-option value="Fisico">Fisico</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>NOMBRE COMPLETO</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Comprobante</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Factura">Factura</mat-option>
-                                            <mat-option value="Boleta">Boleta</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="inline-block mr-4">
-                                        <mat-label>DOMICILIO FISCALs</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Serie</mat-label>
-                                        <mat-select>                            
-                                            <mat-option value="Serie">Serie</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Numero</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2">
-                                        <mat-label>Emisión</mat-label>
-                                        <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
-                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker></mat-datepicker>
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                    </mat-form-field>
-                                </div>
             
                             </fieldset>
             
@@ -917,33 +1575,74 @@
                                     <div class="flex space-x-4">
                                         <button mat-raised-button color="primary">
                                             <mat-icon>add</mat-icon>
-                                            Nuevo
+                                            Agregar
                                             </button>
                                             
                                             <button mat-raised-button color="warn">
                                             <mat-icon>delete</mat-icon>
-                                            Eliminar
+                                            Retirar
                                             </button>
                                     </div>
                                 </div>
-                                <table class="w-full border-collapse border border-gray-300">
-                                    <thead>
-                                        <tr>
-                                            <th class="border border-gray-300 px-4 py-2">Detalle</th>
-                                            <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
-                                            <th class="border border-gray-300 px-4 py-2">Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
-                                        <tr>
-                                            <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Importe 1</td>
-                                            <td class="border border-gray-300 px-4 py-2">Si</td>
-                                        </tr>
-                                        <!-- Puedes agregar más filas según sea necesario -->
-                                    </tbody>
-                                </table>
+                            
+                                <table mat-table [dataSource]="dataSourcePlanillaGuiadeRemision" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                    <!--- Note that these columns can be defined in any order.
+                                          The actual rendered columns are set as a property on the row definition" -->
+                        
+                                    <!-- Position Column -->
+                                    <ng-container matColumnDef="position">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                    </ng-container>
+                        
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="motivo">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pro"> Motivo </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+                                    </ng-container>
+                          
+                                    <ng-container matColumnDef="concepto">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por detalle"> concepto </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.concepto}} </td>
+                                      </ng-container>
+                        
+                                    <!-- Weight Column -->
+                                    <ng-container matColumnDef="detalle">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por importe"> detalle</th>
+                                      <td mat-cell *matCellDef="let element"> {{element.detalle}} </td>
+                                    </ng-container>
+                        
+                                    <!-- Symbol Column -->
+                                    <ng-container matColumnDef="peso">
+                                      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  peso">peso </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.peso}} </td>
+                                    </ng-container>
+    
+                                    <ng-container matColumnDef="um">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  Interior">um </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.um}} </td>
+                                      </ng-container>
+    
+                                      <ng-container matColumnDef="bulto">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  bulto"> bulto </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.bulto}} </td>
+                                      </ng-container>
+    
+                               
+                        
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsPlanillaGuiadeRemision"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumnsPlanillaGuiadeRemision;"></tr>
+                                  </table>
+                        
+                        
+                        
+                                <mat-paginator [length]="20"
+                                [pageSize]="10"
+                                [pageSizeOptions]="[5, 10, 25, 100]"
+                                aria-label="Select page">
+                                </mat-paginator>
+    
                             </div>
                         </div>
                         
@@ -959,217 +1658,129 @@
 
                         <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md p-4">
-                                <legend class="text-sm text-gray-600 font-semibold">Datos del ingreso</legend>
+                                <legend class="text-sm text-gray-600 font-semibold">Buscador de comprobante</legend>
 
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-                                    <div class="w-full">
-                                        <mat-form-field appearance="outline" class="w-full">
-                                            <mat-label>Nro Doc</mat-label>
-                                            <mat-select>
-                                                <mat-option value="Ruc">Ruc</mat-option>
-                                                <mat-option value="Dni">Dni</mat-option>
-                                                <mat-option value="Carnet">Carnet</mat-option>
-                                                <mat-option value="Pasaporte">Pasaporte</mat-option>
-                                                <mat-option value="P">P</mat-option>
-                                                <mat-option value="Otros">Otros</mat-option>
-                                            </mat-select>
-                                            <mat-hint align="end">Aquí va la indicación</mat-hint>
-                                        </mat-form-field>
-                                    </div>
-                                    
-                                    <div class="w-full">
-                                        <mat-form-field appearance="outline" class="w-full">
-                                            <mat-label>NDOC</mat-label>
-                                            <input matInput maxlength="10" placeholder="Nro. de Documento" />
-                                            <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                        </mat-form-field>
-                                    </div>
-                                    
-                                    <div class="w-full">
-                                        <button mat-button mat-raised-button color="primary" (click)="resetDetails()" [disabled]="busy">Buscar</button>
-                                    </div>
-                                    
-                                    <div class="w-full">
-                                        <mat-form-field appearance="outline" class="w-full">
-                                            <mat-label>Ruc</mat-label>
-                                            <input matInput maxlength="10" placeholder="RUC" />
-                                            <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                        </mat-form-field>
-                                    </div>
-                                    
-                                    <!-- Segundo bloque de contenido -->
-                                    <div class="flex items-center space-x-4 md:col-span-2">
-                                        <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
-                                        
-                                        <button mat-raised-button color="primary" (click)="resetDetails()" [disabled]="true">
-                                            <mat-icon>save</mat-icon>
-                                            Grabar fecha
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Nro Doc</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Ruc">Ruc</mat-option>
-                                            <mat-option value="Dni">Dni</mat-option>
-                                            <mat-option value="Carnet">Carnet</mat-option>
-                                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                                            <mat-option value="P">P</mat-option>
-                                            <mat-option value="Otros">Otros</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>NDOC</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                
-                                    <button mat-button mat-raised type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]="busy">Buscar</button>
-                
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill>
-                                        <mat-label>Ruc</mat-label>
-                                        <input matInput maxlength="10" placeholder="nrodoc" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-            
-                                    <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
-            
-                                    <div class="flex mb-4">
-                                        <div></div> <!--  justify-between Espacio en blanco para alinear los botones a la izquierda -->
-                                        <div class="flex space-x-4">
-                                            <button mat-button  mat-raised-button color="primary" type="reset" (click)="resetDetails()"  class="push-right-xs" [disabled]>Crear planilla</button>
-                                            <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]>Cierre de planillas</button>
-                                            <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs" [disabled]>Imprimir</button>
-                                        </div>
-                                    </div>
-            
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                    <mat-form-field appearance="outline" fxFill>
-                                        <mat-label>Tipo</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Electronico">Electronico</mat-option>
-                                            <mat-option value="Fisico">Fisico</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-            
-                                <div class="grid grid-cols-1 md:grid-cols-9 gap-2">
-                                    <!-- Campo "NOMBRE COMPLETO" -->
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" class="md:col-span-6">
-                                        <mat-label>NOMBRE COMPLETO</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                                
-                                    <!-- Campo "Comprobante" -->
-                                    <mat-form-field appearance="outline" class="md:col-span-3">
-                                        <mat-label>Comprobante</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Factura">Factura</mat-option>
-                                            <mat-option value="Boleta">Boleta</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                                    </mat-form-field>
-                                </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-9 gap-2">
-                                    <!-- Campo "DOMICILIO FISCAL" -->
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" class="md:col-span-6">
-                                        <mat-label>DOMICILIO FISCAL</mat-label>
-                                        <input matInput maxlength="50" placeholder="CUM" />
-                                        <mat-hint align="end"></mat-hint>
-                                    </mat-form-field>
-                                
-                                    <!-- Campo "Serie" y "Numero" -->
-                                    <div class="md:col-span-3 grid grid-cols-2 gap-2">
-                                        <!-- Campo "Serie" -->
-                                        <mat-form-field appearance="outline">
+                                <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4 mt-4">
+                                    <div class="sm:col-span-1" >
+                                        <mat-form-field class="w-full" appearance="outline" fxFill>
                                             <mat-label>Serie</mat-label>
-                                            <mat-select>
-                                                <mat-option value="Serie">Serie</mat-option>
-                                            </mat-select>
-                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+                                            <mat-hint align="end"></mat-hint>
                                         </mat-form-field>
-                                
-                                        <!-- Campo "Numero" -->
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+                                    </div>
+
+                                    <div class="sm:col-span-1" >
+                                        <mat-form-field class="w-full" appearance="outline" fxFill>
                                             <mat-label>Numero</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
                                             <mat-hint align="end"></mat-hint>
                                         </mat-form-field>
                                     </div>
-                                </div>
+
+                                    
                                 
-                                <div class="grid grid-cols-1 md:grid-cols-9 gap-2">
-                                    <!-- Campo "NOMBRE COMPLETO" -->
-                                    <div class="md:col-span-6"></div>
-                                
-                                    <!-- Campo "Comprobante" -->
-                                    <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-3">
-                                        <mat-label>Emisión</mat-label>
-                                        <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
-                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker></mat-datepicker>
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                    </mat-form-field>
-                                </div>
-                                
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-                                    <!-- Primer bloque de contenido -->
-                                    <mat-form-field appearance="outline" class="w-full">
-                                        <mat-label>Nro Doc</mat-label>
-                                        <mat-select>
-                                            <mat-option value="Ruc">Ruc</mat-option>
-                                            <mat-option value="Dni">Dni</mat-option>
-                                            <mat-option value="Carnet">Carnet</mat-option>
-                                            <mat-option value="Pasaporte">Pasaporte</mat-option>
-                                            <mat-option value="P">P</mat-option>
-                                            <mat-option value="Otros">Otros</mat-option>
-                                        </mat-select>
-                                        <mat-hint align="end">Aquí va la indicación</mat-hint>
-                                    </mat-form-field>
+                                        <div class="sm:col-span-1" >
+                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                                <mat-label>Comprobante</mat-label>
+                                                <mat-select>
+                                                    <mat-option value="TODOS">TODOS</mat-option>
+                                        
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="sm:col-span-1">
+                                            <mat-form-field appearance="outline" class="w-full"
+                                                [subscriptSizing]="'dynamic'">
                             
-                                    <mat-form-field appearance="outline" class="w-full">
-                                        <mat-label>NDOC</mat-label>
-                                        <input matInput maxlength="10" placeholder="Nro. de Documento" />
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                    </mat-form-field>
+                                                <mat-label>Emision Desde</mat-label>
+                                                <input matInput [matDatepicker]="emisiondesdepicker">
+                                                <mat-hint>Dia/Mes/Año</mat-hint>
+                                                <mat-datepicker-toggle matIconSuffix [for]="emisiondesdepicker"></mat-datepicker-toggle>
+                                                <mat-datepicker #emisiondesdepicker></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="sm:col-span-1">
+                                            <mat-form-field appearance="outline" class="w-full"
+                                                [subscriptSizing]="'dynamic'">
                             
-                                    <button mat-button mat-raised-button color="primary" (click)="resetDetails()" [disabled]="busy">Buscar</button>
-                            
-                                    <mat-form-field appearance="outline" class="w-full">
-                                        <mat-label>Ruc</mat-label>
-                                        <input matInput maxlength="10" placeholder="RUC" />
-                                        <mat-hint align="end">Máximo 10 caracteres</mat-hint>
-                                    </mat-form-field>
-                            
-                                    <!-- Segundo bloque de contenido -->
-                                    <div class="flex items-center space-x-4 md:col-span-2">
-                                        <mat-checkbox [(ngModel)]="isChecked">Checked</mat-checkbox>
-                            
-                                        <button mat-raised-button color="primary" (click)="resetDetails()" [disabled]="true">
-                                            <mat-icon>save</mat-icon>
-                                            Grabar fecha
-                                        </button>
+                                                <mat-label>Emision Al</mat-label>
+                                                <input matInput [matDatepicker]="emisionhasta">
+                                                <mat-hint>Dia/Mes/Año</mat-hint>
+                                                <mat-datepicker-toggle matIconSuffix [for]="emisionhasta"></mat-datepicker-toggle>
+                                                <mat-datepicker #emisionhasta></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
                                     </div>
-                                </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4 mt-4">
+
+                                        <div class="sm:col-span-1">
+                                            <mat-form-field class="w-full"
+                                                [subscriptSizing]="'dynamic'">
                             
-                                <!-- Otros bloques de contenido... -->
-                            </fieldset>
-        
-                            <div class="container mx-auto">
-                                <div class="flex items-center mb-4">
-                                    <h2 class="text-lg font-semibold">Depósitos</h2>
-                                </div>
-                                <div class="flex items-center mb-4">
-                                    <div></div> <!-- Espacio en blanco para alinear los botones a la izquierda -->
+                                                <mat-label>Pagado Desde</mat-label>
+                                                <input matInput [matDatepicker]="pagadodesde">
+                                                <mat-hint>Dia/Mes/Año</mat-hint>
+                                                <mat-datepicker-toggle matIconSuffix [for]="pagadodesde"></mat-datepicker-toggle>
+                                                <mat-datepicker #pagadodesde></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="sm:col-span-1">
+                                            <mat-form-field class="w-full"
+                                                [subscriptSizing]="'dynamic'">
+                            
+                                                <mat-label>Pagado Hasta</mat-label>
+                                                <input matInput [matDatepicker]="pagadohasta">
+                                                <mat-hint>Dia/Mes/Año</mat-hint>
+                                                <mat-datepicker-toggle matIconSuffix [for]="pagadohasta"></mat-datepicker-toggle>
+                                                <mat-datepicker #pagadodesde></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="sm:col-span-1">
+
+                                            <mat-form-field class="w-full" fxFill>
+                                                <mat-label>Nro Doc</mat-label>
+                                                <mat-select>
+                                                    <mat-option value="Ruc">Ruc</mat-option>
+                                                    <mat-option value="Dni">Dni</mat-option>
+                                                    <mat-option value="Carnet">Carnet</mat-option>
+                                                    <mat-option value="Pasaporte">Pasaporte</mat-option>
+                                                    <mat-option value="P">P</mat-option>
+                                                    <mat-option value="Otros">Otros</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="sm:col-span-2">
+                                            <mat-form-field  class="w-full">
+                                                <mat-label>NDOC</mat-label>
+                                                <input matInput maxlength="10" placeholder="Nro. de Documento" />
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    
+                                  
+
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                       
+                            
+                                    <div class="sm:col-span-2">
+                                        <mat-form-field  class="w-full">
+                                            <mat-label>Nombre completo</mat-label>
+                                            <input matInput maxlength="10" placeholder="Nro. de Documento" />
+                                        </mat-form-field>
+                                    </div>
+                
+                
+                                    <div class="sm:col-span-2">
+                                        <mat-form-field class="w-full" fxFill>
+                                            <mat-label>Pagado</mat-label>
+                                            <input matInput maxlength="10" placeholder="nrodoc" />
+                                        </mat-form-field>
+                                    </div>
+
                                     <div class="flex space-x-4">
                                         <button mat-raised-button color="primary" class="flex items-center">
                                             <mat-icon>add</mat-icon>
@@ -1181,25 +1792,172 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="overflow-x-auto">
-                                    <table class="w-full border-collapse border border-gray-300">
-                                        <thead>
-                                            <tr>
-                                                <th class="border border-gray-300 px-4 py-2">Detalle</th>
-                                                <th class="border border-gray-300 px-4 py-2">Importe Documento</th>
-                                                <th class="border border-gray-300 px-4 py-2">Estado</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
-                                            <tr>
-                                                <td class="border border-gray-300 px-4 py-2">Detalle 1</td>
-                                                <td class="border border-gray-300 px-4 py-2">Importe 1</td>
-                                                <td class="border border-gray-300 px-4 py-2">Si</td>
-                                            </tr>
-                                            <!-- Puedes agregar más filas según sea necesario -->
-                                        </tbody>
-                                    </table>
+            
+            
+                              
+                            
+                                <!-- Otros bloques de contenido... -->
+                            </fieldset>
+        
+                            <div class="container mx-auto">
+                                <div class="flex items-center mb-4">
+                                    <h2 class="text-lg font-semibold">Comprobante</h2>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                    <div class="sm:col-span-1">
+
+                                    <button mat-raised-button color="primary" class="flex items-center">
+                                            <mat-icon>add</mat-icon>
+                                            <span>Imprimir Comprobante</span>
+                                        </button>
+                                    </div>
+                                    <div class="sm:col-span-1">
+
+                                        <button mat-raised-button color="warn" class="flex items-center">
+                                            <mat-icon>delete</mat-icon>
+                                            <span>Generar Comprobante Electronico</span>
+                                        </button>
+                                    </div>
+                                    <div class="sm:col-span-1">
+
+                                        <button mat-raised-button color="warn" class="flex items-center">
+                                            <mat-icon>delete</mat-icon>
+                                            <span>Imprimir comprobante electronico</span>
+                                        </button>
+                                        </div>
+                                        <div class="sm:col-span-1">
+
+                                        <button mat-raised-button color="warn" class="flex items-center">
+                                            <mat-icon>delete</mat-icon>
+                                            <span>Anular comprobante</span>
+                                        </button>
+                                        </div>
+                                        <div class="sm:col-span-1">
+                                            <button mat-raised-button color="primary" class="flex items-center">
+                                                <mat-icon>add</mat-icon>
+                                                <span>Registor de pago</span>
+                                            </button>
+                                        </div>
+                                        <div class="sm:col-span-1">
+
+                                        <button mat-raised-button color="primary" class="flex items-center">
+                                            <mat-icon>add</mat-icon>
+                                            <span>Ver fechas</span>
+                                        </button>
+                                        </div>
+                                        <div class="sm:col-span-1">
+
+                                        <button mat-raised-button color="primary" class="flex items-center">
+                                            <mat-icon>add</mat-icon>
+                                            <span>Ver Notas</span>
+                                        </button>
+                                        </div>
+                                        
+                                    <div></div> <!-- Espacio en blanco para alinear los botones a la izquierda -->
+                            
+                                </div>
+                                
+                                <div>
+                         
+                                    <table mat-table [dataSource]="dataSourcePlanillaListado" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+                    
+                                        <!--- Note that these columns can be defined in any order.
+                                              The actual rendered columns are set as a property on the row definition" -->
+                                 
+                                        <ng-container matColumnDef="position">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                        </ng-container>
+                            
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="tipo_de_comprobante">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por tipo_de_comprobante"> tipo_de_comprobante </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.tipo_de_comprobante}} </td>
+                                        </ng-container>
+                              
+                                        <ng-container matColumnDef="serie">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por serie"> serie </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.serie}} </td>
+                                          </ng-container>
+                            
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="numero">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por numero"> numero</th>
+                                          <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+                                        </ng-container>
+                            
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="fecha_emision">
+                                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  fecha_emision">fecha_emision </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.fecha_emision}} </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="documento_identidad">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  documento_identidad">documento_identidad </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.documento_identidad}} </td>
+                                          </ng-container>
+        
+                                          <ng-container matColumnDef="ruc">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  ruc"> ruc </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.ruc}} </td>
+                                          </ng-container>
+
+                                          <ng-container matColumnDef="nombre_completo">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  nombre_completo"> nombre_completo </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
+                                          </ng-container>       
+                                          
+                                          <ng-container matColumnDef="subtotal">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  subtotal"> subtotal </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.subtotal}} </td>
+                                          </ng-container>       
+                                          
+                                          <ng-container matColumnDef="igv">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  igv"> igv </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.igv}} </td>
+                                          </ng-container>       
+                                          
+                                          <ng-container matColumnDef="total">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  total"> total </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                                          </ng-container>
+
+                                          <ng-container matColumnDef="pagado">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  pagado"> pagado </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.pagado}} </td>
+                                          </ng-container>
+
+                                          <ng-container matColumnDef="fecha_pago">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  fecha_pago"> fecha_pago </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.fecha_pago}} </td>
+                                          </ng-container>
+
+                                          <ng-container matColumnDef="planilla">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  planilla"> planilla </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.planilla}} </td>
+                                          </ng-container>
+
+                                          <ng-container matColumnDef="pendiente">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  pendiente"> pendiente </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.pendiente}} </td>
+                                          </ng-container>
+                                   
+                                          <ng-container matColumnDef="observacion">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por  pendiente"> observacion </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.observacion}} </td>
+                                          </ng-container>
+                            
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumnsPlanillaListado"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumnsPlanillaListado;"></tr>
+                                      </table>
+                            
+                            
+                            
+                                    <mat-paginator [length]="20"
+                                    [pageSize]="10"
+                                    [pageSizeOptions]="[5, 10, 25, 100]"
+                                    aria-label="Select page">
+                                    </mat-paginator>
                                 </div>
                             </div>
                             
