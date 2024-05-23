@@ -136,7 +136,7 @@ const ELEMENT_DATA_PLANILLA_LISTADO: Listados[] = [
     MatIconModule,
     FormsModule,
     MatTabsModule,
-    MatPaginatorModule, MatPaginator, MatSortModule, MatSort, MatTableModule, MatIconButton,
+    MatPaginatorModule, MatSortModule, MatTableModule,
   ]
 })
 export class IngresosComponent {
