@@ -176,8 +176,8 @@ export class IngresosComponent {
     displayedColumnsPlanillaDepositos: string[] = ['position', 'banco', 'numero',  'importe', 'fecha_deposito', 'serie_rel', 'nro_rel'];
     displayedColumnsPlanillaNotadeCredito: string[] = ['position', 'motivo', 'detalle', 'importe',  'igv', 'total', 'afectoIGV'];
     displayedColumnsPlanillaGuiadeRemision: string[] = ['position', 'motivo', 'concepto', 'detalle',  'peso', 'um', 'bulto'];
-    displayedColumnsPlanillaListado: string[] = ['position', 'tipo_de_comprobante', 'serie', 'numero',  'peso', 'fecha_emision', 'documento_identidad', 'ruc', 'nombre_completo'
-      , 'subtotal', 'igv', 'total', 'pagado', 'fecha_pago', 'planilla', 'obeservacion'
+    displayedColumnsPlanillaListado: string[] = ['position', 'tipo_de_comprobante', 'serie', 'numero',  'fecha_emision', 'documento_identidad', 'ruc', 'nombre_completo'
+      , 'subtotal', 'igv', 'total', 'pagado', 'fecha_pago', 'planilla', 'observacion'
     ];
 
 
