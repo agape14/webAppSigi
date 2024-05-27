@@ -1,11 +1,13 @@
 <div class="sm:absolute sm:inset-0 flex flex-col flex-auto min-w-0 sm:overflow-hidden bg-card dark:bg-transparent">
     <div class="flex flex-col sm:flex-row md:flex-col flex-auto justify-between py-0 px-6 md:px-0 border-b">
 
-        <div class="container overflow-y-auto py-12" [style.max-height.px]="maxHeight">
+        <div class="container overflow-y-auto " [style.max-height.px]="maxHeight" >
 
-            <mat-tab-group style="flex-grow: 1;" style="overflow-x: auto; overflow-y: visible; height: 100%">
+            <mat-tab-group style="flex-grow: 1;" style="overflow-x: auto; overflow-y: visible;" >
                 <mat-tab label="Pagos de arrendamiento">
+                    
                     <ng-template matTabContent>
+                        <div class="pb-36">
                             <fieldset>
                                 <legend>Datos del ingreso</legend>
                                 <div class="grid sm:grid-cols-5 gap-6  mt-8">
@@ -13,7 +15,7 @@
                                 
 
                                     <div class="sm:col-span-1">
-                                            <mat-form-field  hintLabel="Max 10 characters" class="w-full"  appearance="outline"  >
+                                            <mat-form-field   class="w-full"  appearance="outline"  >   
                                     <mat-label>Num Contrato</mat-label>
                                     <input matInput type="text" [(ngModel)]="value">
                                     <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -23,7 +25,7 @@
                                 </div>
 
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field  hintLabel="Max 10 characters"  class="w-full" appearance="outline">
+                                    <mat-form-field    class="w-full" appearance="outline">
                                         <mat-label>CUM</mat-label>
                                         <input matInput maxlength="10" placeholder="CUM" />
                                         <mat-hint align="end"></mat-hint>
@@ -31,7 +33,7 @@
                                 </div>
                                 
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" class="w-full" appearance="outline">
+                                    <mat-form-field class="w-full"  class="w-full" appearance="outline">
                                         <mat-label>CUIM</mat-label>
                                         <input matInput maxlength="10" placeholder="CUIM" />
                                         <mat-hint align="end"></mat-hint>
@@ -63,7 +65,7 @@
 
 
                                 <div class="sm:col-span-4" >
-                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" >
+                                    <mat-form-field class="w-full"  appearance="outline" >
                                         <mat-label>Direccion del Inmueble</mat-label>
                                         <input matInput maxlength="10" placeholder="Arrendatario" />
                                         <mat-hint align="end"></mat-hint>
@@ -85,7 +87,7 @@
 
                                 <div class="sm:col-span-3" >
 
-                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" >
+                                    <mat-form-field class="w-full"  appearance="outline" >
                                         <mat-label>Arrendatario</mat-label>
                                         <input matInput maxlength="10" placeholder="Observaciones" />
                                         <mat-hint align="end"></mat-hint>
@@ -94,7 +96,7 @@
     
                                 <div class="sm:col-span-1">
     
-                                    <mat-form-field  class="w-full" hintLabel="Max 10 characters" appearance="outline" >
+                                    <mat-form-field  class="w-full"  appearance="outline" >
                                         <mat-label>Serie</mat-label>
                                         <input matInput maxlength="10" placeholder="" />
                                         <mat-hint align="end"></mat-hint>
@@ -102,7 +104,7 @@
                                 </div>
     
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field class="w-full"  hintLabel="Max 10 characters" appearance="outline">
+                                    <mat-form-field class="w-full"   appearance="outline">
                                         <mat-label> Numero </mat-label>
     
                                         <input matInput maxlength="10" placeholder="" />
@@ -114,7 +116,7 @@
                             <div class="grid sm:grid-cols-5 gap-6  mt-8">
                                 <div class="sm:col-span-1" >
 
-                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline">
+                                    <mat-form-field class="w-full"  appearance="outline">
                                         <mat-label> RUC </mat-label>
     
                                         <input matInput maxlength="10" placeholder="RUC" />
@@ -126,7 +128,7 @@
     
                                 <div class="sm:col-span-1" >
     
-                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline">
+                                    <mat-form-field class="w-full"  appearance="outline">
                                         <mat-label>RUC Numero </mat-label>
     
                                         <input matInput maxlength="10" placeholder="" />
@@ -136,7 +138,7 @@
                                 </div>
                                 <div class="sm:col-span-1" >
     
-                                    <mat-form-field class="w-full"  hintLabel="Max 10 characters" appearance="outline">
+                                    <mat-form-field class="w-full"   appearance="outline">
                                         <mat-label>RUC Numero </mat-label>
     
                                         <input matInput maxlength="10" placeholder="" />
@@ -167,7 +169,7 @@
                                         <input matInput maxlength="10" placeholder="" />
                                     </mat-form-field>
                                 </div>
-                                <div class="sm:col-span-1 flex"  fxLayout="row" fxLayoutAlign="center center" fxFill >
+                                <div class="sm:col-span-1 flex"  fxLayout="row" fxLayoutAlign="center center"  >
                                     <mat-form-field class="pr-3 w-full">
                                         <mat-label>Nota Debito nro</mat-label>
     
@@ -331,23 +333,21 @@
                             [pageSizeOptions]="[5, 10, 25, 100]"
                             aria-label="Select page">
                             </mat-paginator>
-
-                        <!-- Contenido de la pestaña 1 -->
-                        <h2>Pagos de arrendamiento</h2>
-                        <p>Este es el contenido de la primera pestaña.</p>
-                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                        </div>
                         </ng-template>
 
                 </mat-tab>
                 <mat-tab label="Pagos varios">
                     <ng-template matTabContent>
+                        <div class="pb-36">
+
                             <fieldset>
                                 <legend>Datos del ingreso</legend>
             
-                                <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+                                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
                                     <div class="sm:col-span-1">
 
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label>Nro Doc</mat-label>
                                         <mat-select>
                                             <mat-option value="Ruc">Ruc</mat-option>
@@ -357,19 +357,19 @@
                                             <mat-option value="P">P</mat-option>
                                             <mat-option value="Otros">Otros</mat-option>
                                         </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
                                     </mat-form-field>
                                     </div>
                             
-                                    <div class="sm:col-span-1 w-38">
+                                    <div class="sm:col-span-1">
 
-                                    <mat-form-field hintLabel="Max 10 characters"  class="w-full" appearance="outline" fxFill>
+                                    <mat-form-field   class="w-full" appearance="outline" >
                                         <mat-label>NDOC</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
 
-                                        <mat-hint align="end"></mat-hint>
+                                        <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                            <mat-icon>search</mat-icon>
+                                        </button>                                    
                                     </mat-form-field>
-                                    <button mat-button mat-raised type="reset" [disabled]="busy">Buscar</button>
 
                                     </div>
                               
@@ -378,7 +378,7 @@
                 
                                     <div class="sm:col-span-1 ">
 
-                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                    <mat-form-field  class="w-full" appearance="outline" class="w-full" >
                                         <mat-label>Ruc</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <mat-hint align="end"></mat-hint>
@@ -391,13 +391,12 @@
                                     </div>
 
                                     <div class="sm:col-span-1">
-                                        <mat-form-field appearance="outline" fxFill>
+                                        <mat-form-field appearance="outline"  class="w-full">
                                             <mat-label>Tipo</mat-label>
                                             <mat-select>
                                                 <mat-option value="Electronico">Electronico</mat-option>
                                                 <mat-option value="Fisico">Fisico</mat-option>
                                             </mat-select>
-                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
                                         </mat-form-field>
                                     </div>
 
@@ -408,7 +407,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     <div class="sm:col-span-2">
 
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="w-full inline-block mr-4">
+                                        <mat-form-field  appearance="outline" fxFlex  class="w-full inline-block mr-4">
                                             <mat-label>NOMBRE COMPLETO</mat-label>
                                             <input matInput maxlength="50" placeholder="CUM" />
                                             <mat-hint align="end"></mat-hint>
@@ -418,13 +417,13 @@
                                     </div>
                                     <div class="sm:col-span-1">
 
-                                    <mat-form-field appearance="outline" fxFill class="w-full">
+                                    <mat-form-field appearance="outline"  class="w-full">
                                         <mat-label>Comprobante</mat-label>
                                         <mat-select>
                                             <mat-option value="Factura">Factura</mat-option>
                                             <mat-option value="Boleta">Boleta</mat-option>
                                         </mat-select>
-                                        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                        <mat-hint align="end"></mat-hint>
                                     </mat-form-field>
                                     </div>
                                 </div>
@@ -432,7 +431,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                                     <div class="sm:col-span-2">
 
-                                    <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFlex fxFill class="w-full inline-block mr-4">
+                                    <mat-form-field  appearance="outline" fxFlex  class="w-full inline-block mr-4">
                                         <mat-label>DOMICILIO FISCALs</mat-label>
                                         <input matInput maxlength="50" placeholder="CUM" />
                                         <mat-hint align="end"></mat-hint>
@@ -441,17 +440,17 @@
             
                                     <div class="sm:col-span-1">
 
-                                        <mat-form-field appearance="outline" fxFill class="w-full">
+                                        <mat-form-field appearance="outline"  class="w-full">
                                             <mat-label>Serie</mat-label>
                                             <mat-select>                            
                                                 <mat-option value="Serie">Serie</mat-option>
                                             </mat-select>
-                                            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                            <mat-hint align="end"></mat-hint>
                                         </mat-form-field>
                                     </div>
                                     <div class="sm:col-span-1">
 
-                                        <mat-form-field hintLabel="Max 10 characters" appearance="outline" fxFill class="w-full">
+                                        <mat-form-field  appearance="outline"  class="w-full">
                                             <mat-label>Numero</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
                                             <mat-hint align="end"></mat-hint>
@@ -462,9 +461,9 @@
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <div class="sm:col-span-3">
 
-                                        <mat-form-field hintLabel="Selecciona una fecha" appearance="outline" class="md:col-span-2 w-full">
+                                        <mat-form-field hintLabel="" appearance="outline" class="md:col-span-2 w-full">
                                             <mat-label>Emisión</mat-label>
-                                            <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" class="text-right" (click)="picker.open()">
+                                            <input matInput [matDatepicker]="picker" placeholder="" class="text-right" (click)="picker.open()">
                                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                             <mat-datepicker #picker></mat-datepicker>
                                             <mat-hint align="end">Máximo 10 caracteres</mat-hint>
@@ -483,29 +482,13 @@
                                     <div class="grid sm:grid-cols-3 gap-2  mt-8">
                                         <div class="sm:col-span-1">
     
-                                            <button class="w-full" mat-raised-button color="primary">Nuevo</button>
+                                            <button class="w-full" mat-raised-button color="primary">Agregar</button>
                                         </div>
                                         <div class="sm:col-span-1">
         
-                                            <button class="w-full" mat-raised-button color="primary">Registrar Ingreso</button>
+                                            <button class="w-full" mat-raised-button color="warn">Retirar</button>
                                         </div>
-                                        <div class="sm:col-span-1">
-        
-                                            <button class="w-full" mat-raised-button color="primary">Credito y/o Detraccion</button>
-                                        </div>
-                                        <div class="sm:col-span-1">
-        
-                                            <button class="w-full"  mat-raised-button color="primary">Impr Comprobante</button>
-                                        </div>
-                         
-                                        <div class="sm:col-span-1">
-        
-                                            <button class="w-full" mat-raised-button color="primary">Generar Comprobante Electronico</button>
-                                        </div>
-                                        <div class="sm:col-span-1">
-        
-                                            <button class="w-full" mat-raised-button color="primary">Impr Comprobante Electronico</button>
-                                        </div>
+                                
                                    
                                     </div>
 
@@ -513,6 +496,35 @@
                         
                             </fieldset>
                             
+
+                            <div class="grid  sm:grid-cols-3 gap-2 mt-2">
+                                <div class="sm:col-span-1">
+
+                                    <button class="w-full" mat-raised-button color="primary">Nuevo</button>
+                                </div>
+                                <div class="sm:col-span-1">
+
+                                    <button class="w-full" mat-raised-button color="primary">Registrar Ingreso</button>
+                                </div>
+                                <div class="sm:col-span-1">
+
+                                    <button class="w-full" mat-raised-button color="primary">Credito y/o Detraccion</button>
+                                </div>
+                                <div class="sm:col-span-1">
+
+                                    <button class="w-full"  mat-raised-button color="primary">Impr Comprobante</button>
+                                </div>
+                 
+                                <div class="sm:col-span-1">
+
+                                    <button class="w-full" mat-raised-button color="primary">Generar Comprobante Electronico</button>
+                                </div>
+                                <div class="sm:col-span-1">
+
+                                    <button class="w-full" mat-raised-button color="primary">Impr Comprobante Electronico</button>
+                                </div>
+                           
+                            </div>
                             <!-- TABLE -->
 
                             <table mat-table [dataSource]="dataSourcePagoVarios" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
@@ -574,20 +586,20 @@
                             </mat-paginator>
 
                          
-                        
+                      </div>
 
                         </ng-template>
                     
                 </mat-tab>
                 <mat-tab label="Pagos por ticket">
                     <ng-template matTabContent>
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                        <div class="pb-36"  > <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset>
                                 <legend>Datos del ingreso</legend>
-                                <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+                                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
                                     <div class="sm:col-span-1">
 
-                                        <mat-form-field  hintLabel="Max 10 characters" class="w-full"  appearance="outline"  >
+                                        <mat-form-field   class="w-full"  appearance="outline"  >
                                             <mat-label>Num Contrato</mat-label>
                                             <input matInput type="text" [(ngModel)]="value">
                                             <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -598,7 +610,7 @@
                         
                                 <div class="sm:col-span-1">
 
-                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                    <mat-form-field  class="w-full" appearance="outline" >
                                         <mat-label>Mes</mat-label>
                                         <mat-select>
                                             <mat-option value="Enero">Enero</mat-option>
@@ -619,7 +631,7 @@
 
                                 <div class="sm:col-span-1">
 
-                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                    <mat-form-field  class="w-full" appearance="outline" >
                                         <mat-label>Año</mat-label>
                                         <mat-select>
                                             <mat-option value="2024" >2024</mat-option>
@@ -629,13 +641,13 @@
                                 </div>
             
             
-                                <div class="sm:col-span-1 w-full">
+                                <div class="sm:col-span-1">
                                         <mat-checkbox >Pago Pendiente</mat-checkbox>
                                         <mat-hint align="end"></mat-hint>
                                 </div>
             
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field class="w-full" hintLabel="Max 10 chracters" appearance="outline" fxFill>
+                                    <mat-form-field class="w-full" hintLabel="Max 10 chracters" appearance="outline" >
                                         <mat-label>Tipo</mat-label>
                                         <mat-select>
                                             <mat-option value="1">1</mat-option>
@@ -644,11 +656,11 @@
                                 </div>
 
                             </div>
-                            <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+                            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
 
                                 <div class="sm:col-span-3" >
 
-                                <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                <mat-form-field class="w-full"  appearance="outline" >
                                     <mat-label>Nombre Completo</mat-label>
                                     <mat-select>
                                         <mat-option value="1">1</mat-option>
@@ -659,7 +671,7 @@
                         
                                 <div class="sm:col-span-2" >
 
-                                    <mat-form-field class="w-full" hintLabel="Max 10 characters" appearance="outline" fxFill>
+                                    <mat-form-field class="w-full"  appearance="outline" >
                                         <mat-label>Comprobante</mat-label>
                                         <mat-select>
                                             <mat-option value="1">1</mat-option>
@@ -667,43 +679,43 @@
                                     </mat-form-field>
                                     </div>
                                 </div>
-                            <div class="grid grid-cols-5 md:grid-cols-5 gap-4">
+                            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label>Num. Documento</mat-label>
                                         <input matInput type="text" placeholder="DNI" [(ngModel)]="value">
                                     </mat-form-field>
                                 </div>
 
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label></mat-label>
                                         <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
                                     </mat-form-field>
                                 </div>
 
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label>RUC</mat-label>
                                         <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
                                     </mat-form-field>
                                 </div>
 
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label>Serie</mat-label>
                                         <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
                                     </mat-form-field>
                                 </div>
 
                                 <div class="sm:col-span-1" >
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label>Numero</mat-label>
                                         <input matInput type="text" placeholder="10730875" [(ngModel)]="value">
                                     </mat-form-field>
                                 </div>
                             </div>
-                                <div class="grid grid-cols-3 md:grid-cols-3 gap-4">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     <div class="sm:col-span-2" >
                                         <mat-form-field appearance="outline" class="w-full" >
                                             <mat-label>Domicilio Fiscal</mat-label>
@@ -723,7 +735,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-3 md:grid-cols-3 gap-4">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
                                     <div class="sm:col-span-2">
                                         <mat-form-field class="w-full"
                                             [subscriptSizing]="'dynamic'">
@@ -804,10 +816,8 @@
                       
                            
                             </div>
-                        </div>
 
 
-                        <div >
                             <table mat-table [dataSource]="dataSourceIngresos" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
                     
                                 <!--- Note that these columns can be defined in any order.
@@ -853,35 +863,35 @@
                                 <tr mat-header-row *matHeaderRowDef="displayedColumnsIngresos"></tr>
                                 <tr mat-row *matRowDef="let row; columns: displayedColumnsIngresos;"></tr>
                               </table>
+
+                              <mat-paginator [length]="20"
+                              [pageSize]="10"
+                              [pageSizeOptions]="[5, 10, 25, 100]"
+                              aria-label="Select page">
+                              </mat-paginator>
+  
                     
                             </div>
                     
-                            <mat-paginator [length]="20"
-                            [pageSize]="10"
-                            [pageSizeOptions]="[5, 10, 25, 100]"
-                            aria-label="Select page">
-                            </mat-paginator>
-
+                  
                          
                         
 
                         <!-- Contenido de la pestaña 1 -->
-                        <h2>Pagos de arrendamiento</h2>
-                        <p>Este es el contenido de la primera pestaña.</p>
-                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                 
                         </ng-template>
                     
                 </mat-tab>
                 <mat-tab label="Planilla de Cobranzas">
                     <ng-template matTabContent>
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                        <div class="overflow-y-auto pb-36" [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset>
                                 <legend>Datos de la Planilla</legend>
             
                                 <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
                                     <div class="sm:col-span-1" >
 
-                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-form-field appearance="outline" class="w-full" >
                                             <mat-label>Cod Interno Planilla</mat-label>
                                             <input matInput maxlength="10" placeholder="1711" />
                                         </mat-form-field>
@@ -915,15 +925,21 @@
                                     </div>
 
                                     <div class="sm:col-span-1" >
-                                        <button mat-button  mat-raised-button color="primary" type="reset" (click)="resetDetails()"  class="push-right-xs w-full" [disabled]>Crear planilla</button>
+                                        <button mat-button color="primary" type="reset" (click)="resetDetails()"  class="push-right-xs w-full" [disabled]>
+                                            <mat-icon>save</mat-icon>
+                                            Crear planilla</button>
 
                                     </div>
                                     <div class="sm:col-span-1" >
-                                        <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs w-full" [disabled]>Cierre de planillas</button>
+                                        <button mat-button  color="warn" type="reset" (click)="resetDetails()" class="push-right-xs w-full" [disabled]>
+                                            <mat-icon>check</mat-icon>
+                                            Cierre de planillas</button>
 
                                     </div>
                                     <div class="sm:col-span-1" >
-                                        <button mat-button  mat-raised-button color="warn" type="reset" (click)="resetDetails()" class="push-right-xs w-full" [disabled]>Imprimir</button>
+                                        <button mat-button  color="primary" type="reset" (click)="resetDetails()" class="push-right-xs w-full" [disabled]>
+                                            <mat-icon>search</mat-icon>
+                                             Imprimir</button>
 
                                     </div>
 
@@ -933,7 +949,7 @@
 
                                         <div class="sm:col-span-1" >
 
-                                        <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                        <mat-form-field  class="w-full" appearance="outline" >
                                             <mat-label>Num Planilla</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
                                             <mat-hint align="end"></mat-hint>
@@ -942,7 +958,7 @@
 
                                         <div class="sm:col-span-1" >
 
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>Cobranza del Banco</mat-label>
                                                 <mat-select>
                                                     <mat-option [value]="'Ninguno'">Ninguno</mat-option>
@@ -952,7 +968,7 @@
                                         
                                         <div class="sm:col-span-1" >
 
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>Total Cobranzas</mat-label>
                                                 <input matInput maxlength="10" placeholder="nrodoc" />
                                                 
@@ -961,7 +977,7 @@
 
                                         <div class="sm:col-span-1" >
 
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>-Total Deposito</mat-label>
                                                 <input matInput maxlength="10" placeholder="nrodoc" />
                                                 
@@ -970,7 +986,7 @@
 
                                         <div class="sm:col-span-1" >
 
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>+Ajuste</mat-label>
                                                 <input matInput maxlength="10" placeholder="nrodoc" />
                                                 
@@ -984,14 +1000,17 @@
                                 <div class="flex mb-4 mt-8">
                                     <h1>Ingresos del dia</h1>
                                 </div>
-                                <div class="grid sm:grid-cols-3 gap-2  mt-8">
+                                <div class="grid sm:grid-cols-2 gap-2  mt-8">
                                     <div class="sm:col-span-1">
 
-                                        <button class="w-full" mat-raised-button color="primary">Validar</button>
+                                        <button  mat-raised-button color="primary"> 
+                                            <mat-icon>check</mat-icon>
+                                            Validar</button>
                                     </div>
                                     <div class="sm:col-span-1">
     
-                                        <button class="w-full" mat-raised-button color="primary">Ajuste Automatico</button>
+                                        <button mat-raised-button color="primary">
+                                            <mat-icon>how_to_reg</mat-icon>Ajuste Automatico</button>
                                     </div>
                           
                                
@@ -1042,27 +1061,24 @@
                                 <tr mat-header-row *matHeaderRowDef="displayedColumnsPlanillaCobranzas"></tr>
                                 <tr mat-row *matRowDef="let row; columns: displayedColumnsPlanillaCobranzas;"></tr>
                               </table>
-                    
+                              <mat-paginator [length]="20"
+                              [pageSize]="10"
+                              [pageSizeOptions]="[5, 10, 25, 100]"
+                              aria-label="Select page">
+                              </mat-paginator>
                             </div>
                     
-                            <mat-paginator [length]="20"
-                            [pageSize]="10"
-                            [pageSizeOptions]="[5, 10, 25, 100]"
-                            aria-label="Select page">
-                            </mat-paginator>
+                       
                             </div>
                         </div>
                         
-                        <!-- Contenido de la pestaña 1 -->
-                        <h2>Pagos de arrendamiento</h2>
-                        <p>Este es el contenido de la primera pestaña.</p>
-                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                   
                     </ng-template>
                     
                 </mat-tab>
                 <mat-tab label="Planilla de Depositos">
                     <ng-template matTabContent>
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                        <div class="overflow-y-auto pb-36" [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md">
                                 <legend class="text-sm text-gray-600 px-2">Datos de Planilla</legend>
                                 
@@ -1071,7 +1087,7 @@
 
                                     <div class="sm:col-span-1" >
 
-                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                    <mat-form-field  class="w-full" appearance="outline" >
                                         <mat-label>Cod Interno Planilla</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -1105,21 +1121,21 @@
             
                                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                                     <div class="sm:col-span-1" >
-                                        <mat-form-field appearance="outline" class="w-full"  fxFill>
+                                        <mat-form-field appearance="outline" class="w-full"  >
                                             <mat-label>Num Planilla</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
     
                                         </mat-form-field>
                                     </div>
                                     <div class="sm:col-span-1" >
-                                        <mat-form-field appearance="outline" class="w-full"  fxFill>
+                                        <mat-form-field appearance="outline" class="w-full"  >
                                             <mat-label>Total Cobranzas</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
     
                                         </mat-form-field>
                                     </div>
                                     <div class="sm:col-span-1" >
-                                        <mat-form-field appearance="outline" class="w-full"  fxFill>
+                                        <mat-form-field appearance="outline" class="w-full"  >
                                             <mat-label>Total Deposito</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
     
@@ -1127,7 +1143,7 @@
                                     </div>
                                     <div class="sm:col-span-1" >
 
-                                        <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                        <mat-form-field  class="w-full" appearance="outline" >
                                             <mat-label>Estado</mat-label>
                                             <mat-select>
                                                 <mat-option [value]="'Cerrado'">Cerrado</mat-option>
@@ -1220,16 +1236,13 @@
                             </div>
                         </div>
                         
-                        <!-- Contenido de la pestaña 1 -->
-                        <h2>Pagos de arrendamiento</h2>
-                        <p>Este es el contenido de la primera pestaña.</p>
-                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+               
                     </ng-template>
                     
                 </mat-tab>
                 <mat-tab label="Nota de Credito/Debito">
-                    <ng-template matTabContent>
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                    <ng-template matTabContent >
+                        <div class="overflow-y-auto pb-36 " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md">
                                 <legend class="text-sm text-gray-600 px-2">Comprobante Afectado</legend>
                                 
@@ -1237,7 +1250,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <div class="sm:col-span-1" >
 
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label>NRO DOC</mat-label>
                                         <mat-select>
                                             <mat-option value="Ruc">Ruc</mat-option>
@@ -1251,7 +1264,7 @@
                                     </div>
                                     <div class="sm:col-span-1" >
 
-                                    <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                    <mat-form-field  class="w-full" appearance="outline" >
                                         <mat-label>NDOC</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <mat-hint align="end"></mat-hint>
@@ -1260,7 +1273,7 @@
 
                                     <div class="sm:col-span-1" >
 
-                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-form-field appearance="outline" class="w-full" >
                                             <mat-label>Tipo</mat-label>
                                             <mat-select>
                                                 <mat-option value="Electronico">Electronico</mat-option>
@@ -1274,7 +1287,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div class="sm:col-span-1" >
 
-                                        <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                        <mat-form-field  class="w-full" appearance="outline" >
                                             <mat-label>Nombre Completo</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
                                             <mat-hint align="end"></mat-hint>
@@ -1282,7 +1295,7 @@
                                     </div>
                                     <div class="sm:col-span-1" >
 
-                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-form-field appearance="outline" class="w-full" >
                                             <mat-label>Comprobante</mat-label>
                                             <mat-select>
                                                 <mat-option value="Boleta">Boleta</mat-option>
@@ -1296,7 +1309,7 @@
 
                                 <div class="sm:col-span-1" >
 
-                                    <mat-form-field appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field appearance="outline" class="w-full" >
                                         <mat-label>Domicilio Legal</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <mat-hint align="end"></mat-hint>
@@ -1305,7 +1318,7 @@
 
                                 <div class="sm:col-span-1" >
 
-                                    <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field  appearance="outline" class="w-full" >
                                         <mat-label>Serie</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <mat-hint align="end"></mat-hint>
@@ -1314,7 +1327,7 @@
 
                                 <div class="sm:col-span-1" >
 
-                                    <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                    <mat-form-field  appearance="outline" class="w-full" >
                                         <mat-label>Numero</mat-label>
                                         <input matInput maxlength="10" placeholder="nrodoc" />
                                         <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -1324,7 +1337,7 @@
                                 </div>
                                 <div class="sm:col-span-1" >
 
-                                    <mat-form-field hintLabel="Selecciona una fecha" class="w-full" appearance="outline" >
+                                    <mat-form-field hintLabel="" class="w-full" appearance="outline" >
                                         <mat-label>Emisión</mat-label>
                                         <input matInput [matDatepicker]="picker" class="text-right" (click)="picker.open()">
                                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -1342,6 +1355,7 @@
                                 <div class="flex mb-4">
                                     <h2>Nota de Credito</h2>
                                 </div>
+                                
                                 <table mat-table [dataSource]="dataSourcePlanillaNotadeCredito" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
                     
                                     <!--- Note that these columns can be defined in any order.
@@ -1412,7 +1426,7 @@
                            
                                     <div class="sm:col-span-1" >
     
-                                        <mat-form-field appearance="outline" class="w-full" fxFill>
+                                        <mat-form-field appearance="outline" class="w-full" >
                                             <mat-label>Tipo</mat-label>
                                             <mat-select>
                                                 <mat-option value="Electronico">Electronico</mat-option>
@@ -1423,7 +1437,7 @@
     
                                     <div class="sm:col-span-1" >
     
-                                        <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                        <mat-form-field  appearance="outline" class="w-full" >
                                             <mat-label>Tipo de Nota</mat-label>
                                             <mat-select>
                                                 <mat-option value="Credito">Credito</mat-option>
@@ -1434,7 +1448,7 @@
     
                                     <div class="sm:col-span-1" >
     
-                                        <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                        <mat-form-field  appearance="outline" class="w-full" >
                                             <mat-label>Serie</mat-label>
                                             <mat-select>
                                                 <mat-option value="BNC1">BNC1</mat-option>
@@ -1453,7 +1467,7 @@
 
                                     <div class="sm:col-span-1" >
     
-                                        <mat-form-field  appearance="outline" class="w-full" fxFill>
+                                        <mat-form-field  appearance="outline" class="w-full" >
                                             <mat-label>Motivo Nota</mat-label>
                                             <mat-select>
                                                 <mat-option value="Correcion por error en el sistema">Correcion por error en el sistema</mat-option>
@@ -1464,7 +1478,7 @@
 
                                     <div class="sm:col-span-1" >
 
-                                        <mat-form-field hintLabel="Selecciona una fecha" class="w-full" appearance="outline" >
+                                        <mat-form-field hintLabel="" class="w-full" appearance="outline" >
                                             <mat-label>Emisión</mat-label>
                                             <input matInput [matDatepicker]="picker2" class="text-right" (click)="picker2.open()">
                                             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
@@ -1551,20 +1565,46 @@
                                 [pageSizeOptions]="[5, 10, 25, 100]"
                                 aria-label="Select page">
                                 </mat-paginator>
+
+                                <div class="grid sm:grid-cols-2 gap-2  mt-8">
+                                    <div class="sm:col-span-1">
+
+                                        <button  mat-raised-button color="primary"> 
+                                            <mat-icon>description   </mat-icon>
+                                            Nuevo</button>
+                                    </div>
+                                    <div class="sm:col-span-1">
     
-                            </div>
-                        
-                        <!-- Contenido de la pestaña 1 -->
-                        <h2>Pagos de arrendamiento</h2>
-                        <p>Este es el contenido de la primera pestaña.</p>
-                        <button mat-raised-button color="primary">Botón de la pestaña 1</button>
+                                        <button mat-raised-button color="primary">
+                                            <mat-icon>save</mat-icon>Registra Nota</button>
+                                    </div>
+                                    <div class="sm:col-span-1">
+
+                                        <button mat-raised-button color="primary">
+                                            <mat-icon>save</mat-icon>Imprimir Comprobante</button>
+                                    </div>
+                                    <div class="sm:col-span-1">
+    
+                                        <button mat-raised-button color="primary">
+                                            <mat-icon>print</mat-icon>Generar nota de credito</button>
+                                    </div>
+                                    <div class="sm:col-span-1">
+    
+                                        <button mat-raised-button color="primary">
+                                            <mat-icon>print</mat-icon>Imprimir comprobante Electronico</button>
+                                    </div>  
+                                
+                                </div>
+                                
+                        </div>
+
                     </ng-template>
                     
                 </mat-tab>
         
                 <mat-tab label="Guia de Remision">
-                    <ng-template matTabContent>
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                    <ng-template matTabContent >
+                        <div class="overflow-y-auto pb-36" [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md">
                                 <legend class="text-sm text-gray-600 px-2">Guia de Remision</legend>
                                 
@@ -1572,7 +1612,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
 
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-form-field appearance="outline" class="w-full" >
                                                 <mat-label>Tipo </mat-label>
                                                 <mat-select>
                                                     <mat-option value="GUIA DE REMISION">GUIA DE REMISION</mat-option>
@@ -1580,7 +1620,7 @@
                                             </mat-form-field>
                                         </div>
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-form-field appearance="outline" class="w-full" >
                                                 <mat-label>Serie </mat-label>
                                                 <input matInput maxlength="10" placeholder="nrodoc" />
 
@@ -1588,7 +1628,7 @@
                                         </div>
 
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-form-field appearance="outline" class="w-full" >
                                                 <mat-label>Numero </mat-label>
                                                 <input matInput maxlength="10" placeholder="nrodoc" />
 
@@ -1598,7 +1638,7 @@
                                     
                                         <div class="sm:col-span-1" >
 
-                                            <mat-form-field hintLabel="Selecciona una fecha" class="w-full" appearance="outline" >
+                                            <mat-form-field hintLabel="" class="w-full" appearance="outline" >
                                                 <mat-label>Emisión</mat-label>
                                                 <input matInput [matDatepicker]="picker2" class="text-right" (click)="picker2.open()">
                                                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
@@ -1612,7 +1652,7 @@
 
                             
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-form-field appearance="outline" class="w-full" >
                                                 <mat-label>Nro Doc</mat-label>
                                                 <mat-select>
                                                     <mat-option value="Ruc">Ruc</mat-option>
@@ -1622,12 +1662,12 @@
                                                     <mat-option value="P">P</mat-option>
                                                     <mat-option value="Otros">Otros</mat-option>
                                                 </mat-select>
-                                                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                                                <mat-hint align="end"></mat-hint>
                                             </mat-form-field>
                                         </div>
                                 
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>NDOC</mat-label>
                                                 <input matInput maxlength="10" placeholder="nrodoc" />
                                                 <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -1638,7 +1678,7 @@
 
                 
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>Ruc</mat-label>
                                                 <input matInput maxlength="10" placeholder="nrodoc" />
                                                 <mat-hint align="end"></mat-hint>
@@ -1648,14 +1688,14 @@
                                     </div>
                                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>Nombre Completo</mat-label>
                                                 <input matInput maxlength="10" />
                                                 <mat-hint align="end"></mat-hint>
                                             </mat-form-field>
                                         </div>
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field hintLabel="Max 10 characters" class="w-full" appearance="outline" fxFill>
+                                            <mat-form-field  class="w-full" appearance="outline" >
                                                 <mat-label>Observacion</mat-label>
                                                 <input matInput maxlength="10" />
                                                 <mat-hint align="end"></mat-hint>
@@ -1756,13 +1796,13 @@
                 <mat-tab label="Listados">
                     <ng-template matTabContent>
 
-                        <div class="overflow-y-auto " [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
+                        <div class="overflow-y-auto pb-36" [style.max-height.px]="maxHeight"> <!-- Aplicando desbordamiento vertical y altura máxima -->
                             <fieldset class="border border-gray-300 rounded-md p-4">
                                 <legend class="text-sm text-gray-600 font-semibold">Buscador de comprobante</legend>
 
                                 <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4 mt-4">
                                     <div class="sm:col-span-1" >
-                                        <mat-form-field class="w-full" appearance="outline" fxFill>
+                                        <mat-form-field class="w-full" appearance="outline" >
                                             <mat-label>Serie</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
                                             <mat-hint align="end"></mat-hint>
@@ -1770,7 +1810,7 @@
                                     </div>
 
                                     <div class="sm:col-span-1" >
-                                        <mat-form-field class="w-full" appearance="outline" fxFill>
+                                        <mat-form-field class="w-full" appearance="outline" >
                                             <mat-label>Numero</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
                                             <mat-hint align="end"></mat-hint>
@@ -1780,7 +1820,7 @@
                                     
                                 
                                         <div class="sm:col-span-1" >
-                                            <mat-form-field appearance="outline" class="w-full" fxFill>
+                                            <mat-form-field appearance="outline" class="w-full" >
                                                 <mat-label>Comprobante</mat-label>
                                                 <mat-select>
                                                     <mat-option value="TODOS">TODOS</mat-option>
@@ -1841,7 +1881,7 @@
 
                                         <div class="sm:col-span-1">
 
-                                            <mat-form-field class="w-full" fxFill>
+                                            <mat-form-field class="w-full" >
                                                 <mat-label>Nro Doc</mat-label>
                                                 <mat-select>
                                                     <mat-option value="Ruc">Ruc</mat-option>
@@ -1875,7 +1915,7 @@
                 
                 
                                     <div class="sm:col-span-2">
-                                        <mat-form-field class="w-full" fxFill>
+                                        <mat-form-field class="w-full" >
                                             <mat-label>Pagado</mat-label>
                                             <input matInput maxlength="10" placeholder="nrodoc" />
                                         </mat-form-field>
@@ -1884,11 +1924,11 @@
                                     <div class="flex space-x-4">
                                         <button mat-raised-button color="primary" class="flex items-center">
                                             <mat-icon>add</mat-icon>
-                                            <span>Nuevo</span>
+                                            <span>Buscar</span>
                                         </button>
                                         <button mat-raised-button color="warn" class="flex items-center">
                                             <mat-icon>delete</mat-icon>
-                                            <span>Eliminar</span>
+                                            <span>Limpiar</span>
                                         </button>
                                     </div>
                                 </div>
@@ -1903,53 +1943,53 @@
                                 <div class="flex items-center mb-4">
                                     <h2 class="text-lg font-semibold">Comprobante</h2>
                                 </div>
-                                <div class="grid sm:grid-cols-3 gap-2  mt-8">
+                                <div class="grid sm:grid-cols-6 gap-2  mt-8">
                                     <div class="sm:col-span-1">                                  
 
-                                    <button mat-raised-button color="primary" class="flex items-center">
+                                    <button class="w-full" mat-raised-button color="primary">
                                             <mat-icon>add</mat-icon>
-                                            <span>Imprimir Comprobante</span>
+                                            <span class="text-sm">Impr. Comprobante</span>
                                         </button>
                                     </div>
                                     <div class="sm:col-span-1">
 
-                                        <button mat-raised-button color="warn" class="flex items-center">
+                                        <button  class="w-full" mat-raised-button color="warn">
                                             <mat-icon>delete</mat-icon>
-                                            <span>Generar Compr Electr</span>
+                                            <span class="text-sm">Gen. Compr Electr</span>
                                         </button>
                                     </div>
                                     <div class="sm:col-span-1">
 
-                                        <button mat-raised-button color="warn" class="flex items-center">
+                                        <button  class="w-full"  mat-raised-button color="warn" >
                                             <mat-icon>delete</mat-icon>
-                                            <span>Impr comprob. Electr.</span>
+                                            <span class="text-sm">Impr comprob. Electr.</span>
                                         </button>
                                         </div>
                                         <div class="sm:col-span-1">
 
-                                        <button mat-raised-button color="warn" class="flex items-center">
+                                        <button  class="w-full" mat-raised-button color="warn" >
                                             <mat-icon>delete</mat-icon>
-                                            <span>Anular comprobante</span>
+                                            <span class="text-sm">Anular comprobante</span>
                                         </button>
                                         </div>
                                         <div class="sm:col-span-1">
-                                            <button mat-raised-button color="primary" class="flex items-center">
+                                            <button  class="w-full" mat-raised-button color="primary" >
                                                 <mat-icon>add</mat-icon>
-                                                <span>Registor de pago</span>
+                                                <span class="text-sm">Registor de pago</span>
                                             </button>
                                         </div>
                                         <div class="sm:col-span-1">
 
-                                        <button mat-raised-button color="primary" class="flex items-center">
+                                        <button  class="w-full" mat-raised-button color="primary">
                                             <mat-icon>add</mat-icon>
-                                            <span>Ver fechas</span>
+                                            <span class="text-sm">Ver fechas</span>
                                         </button>
                                         </div>
                                         <div class="sm:col-span-1">
 
-                                        <button mat-raised-button color="primary" class="flex items-center">
+                                        <button  class="w-full" mat-raised-button color="primary">
                                             <mat-icon>add</mat-icon>
-                                            <span>Ver Notas</span>
+                                            <span class="text-sm">Ver Notas</span>
                                         </button>
                                         </div>
                                         
