@@ -85,6 +85,10 @@ export const appRoutes: Route[] = [
                     path: 'incorporacion', 
                     loadChildren: () => import('app/modules/admin/inmobiliaria/incorporacion/incorporacion.routes')
                 },
+                {
+                    path: 'margesi', 
+                    loadChildren: () => import('app/modules/admin/inmobiliaria/margesi/margesi.routes')
+                },
             ]},
             {path: 'tesoreria', children: [                
                 {path: 'ingresos', loadChildren: () => import('app/modules/admin/tesoreria/ingresos/ingresos.routes')},
