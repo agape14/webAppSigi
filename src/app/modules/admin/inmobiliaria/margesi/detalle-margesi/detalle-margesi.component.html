@@ -94,70 +94,7 @@
                         <!-- Divider -->
                         <div class="w-full mt-8 mb-7 border-b"></div>
                     </form>
-                    <!-- Botones de acciones -->
-                    <!-- <div class="mt-2">
-                        <button
-                            mat-flat-button
-                            [color]="'primary'"
-                            >
-                            <mat-icon [svgIcon]="'heroicons_outline:inbox-arrow-down'"></mat-icon>
-                            <span class="ml-2 mr-1">Grabar</span>
-                        </button>
-                        <button
-                            mat-flat-button
-                            [color]="'accent'"
-                            class="ml-4"
-                            >
-                            <mat-icon [svgIcon]="'heroicons_outline:printer'"></mat-icon>
-                            <span class="ml-2 mr-1">Imprimir</span>
-                        </button>
-                        <button
-                            mat-flat-button
-                            [color]="'on-warn'"
-                            class="ml-4"
-                            >
-                            <mat-icon [svgIcon]="'heroicons_outline:document-check'"></mat-icon>
-                            <span class="ml-2 mr-1">Aprobar</span>
-                        </button>
-                        <mat-slide-toggle
-                            class="sm:mt-0 sm:ml-auto"
-                            [color]="'primary'"
-                            >
-                            Inmueble Genera Renta
-                        </mat-slide-toggle>
-                        <button
-                            mat-flat-button
-                            [color]="'on-warn'"
-                            class="ml-4"
-                            >
-                            <mat-icon [svgIcon]="'heroicons_outline:check-circle'"></mat-icon>
-                            <span class="ml-2 mr-1">Habilitar</span>
-                        </button>
-                        <button
-                            mat-flat-button
-                            [color]="'warn'"
-                            class="ml-4"
-                            >
-                            <mat-icon [svgIcon]="'heroicons_outline:x-circle'"></mat-icon>
-                            <span class="ml-2 mr-1">Deshabilitar</span>
-                        </button>
-                        <button
-                            mat-flat-button
-                            [color]="'onsuccessc'"
-                            class="ml-4"
-                            >
-                            <mat-icon [svgIcon]="'heroicons_outline:pencil-square'"></mat-icon>
-                            <span class="ml-2 mr-1">Administrar Inmueble</span>
-                        </button>
-                        <button
-                            mat-flat-button
-                            [color]="'on-warn'"
-                            class="ml-4"
-                            >
-                            <mat-icon [svgIcon]="'heroicons_outline:arrow-uturn-left'"></mat-icon>
-                            <span class="ml-2 mr-1">Regresar</span>
-                        </button>
-                    </div> -->
+    
                 </div>
                 <div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
                     <div class="container overflow-y-auto">
@@ -242,7 +179,7 @@
                                                 <div class="mt-8">
                                                     <ng-container [ngSwitch]="selectedPanel">
                                                         <!-- Del Predio -->
-                                                        <ng-container *ngSwitchCase="'datos_generales'">
+                                                        <ng-container *ngSwitchCase="'predio_datos_generales'">
                                                             <margesi-datos-generales></margesi-datos-generales>
                                                         </ng-container>
                                                         <!-- De los Datos Legales -->
@@ -298,24 +235,24 @@
                                             </div>
                                             <!-- Panel links -->
                                             <div class="flex flex-col divide-y border-t border-b">
-                                                <ng-container *ngFor="let panel of panels_delosdatoslegales; trackBy: trackByFn">
+                                                <ng-container *ngFor="let panel2 of panels_delosdatoslegales; trackBy: trackByFn">
                                                     <div
                                                         class="flex px-8 py-5 cursor-pointer"
-                                                        [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel || selectedPanel !== panel.id,
-                                                                    'bg-primary-50 dark:bg-hover': selectedPanel && selectedPanel === panel.id}"
-                                                        (click)="goToPanel(panel.id)">
+                                                        [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel2 || selectedPanel2 !== panel2.id,
+                                                                    'bg-primary-50 dark:bg-hover': selectedPanel2 && selectedPanel2 === panel2.id}"
+                                                        (click)="goToPanelInfoDatosLegales(panel2.id)">
                                                         <mat-icon
-                                                            [ngClass]="{'text-hint': !selectedPanel || selectedPanel !== panel.id,
-                                                                        'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}"
-                                                            [svgIcon]="panel.icon"></mat-icon>
+                                                            [ngClass]="{'text-hint': !selectedPanel2 || selectedPanel2 !== panel2.id,
+                                                                        'text-primary dark:text-primary-500': selectedPanel2 && selectedPanel2 === panel2.id}"
+                                                            [svgIcon]="panel2.icon"></mat-icon>
                                                         <div class="ml-3">
                                                             <div
                                                                 class="font-medium leading-6"
-                                                                [ngClass]="{'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}">
-                                                                {{panel.title}}
+                                                                [ngClass]="{'text-primary dark:text-primary-500': selectedPanel2 && selectedPanel2 === panel2.id}">
+                                                                {{panel2.title}}
                                                             </div>
                                                             <div class="mt-0.5 text-secondary">
-                                                                {{panel.description}}
+                                                                {{panel2.description}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -342,24 +279,24 @@
 
                                                     <!-- Panel title -->
                                                     <div class="ml-2 lg:ml-0 text-3xl font-bold tracking-tight leading-none">
-                                                        {{getPanelDelosLegales(selectedPanel).title}}
+                                                        {{getPanelInfoDatosLegales(selectedPanel2).title}}
                                                     </div>
                                                 </div>
 
-                                                <!-- Load settings panel -->
+                                                <!-- Load settings panel2 -->
                                                 <div class="mt-8">
-                                                    <ng-container [ngSwitch]="selectedPanel">
+                                                    <ng-container [ngSwitch]="selectedPanel2">
                                                         <!-- Del Predio -->
-                                                        <ng-container *ngSwitchCase="'datos_generales'">
-                                                            <margesi-delosdatostecnicos-aspectos-generales></margesi-delosdatostecnicos-aspectos-generales>
+                                                        <ng-container *ngSwitchCase="'de_los_datos_legales_datos_generales'">
+                                                            <margesi-delosdatoslegales-datosgenerales></margesi-delosdatoslegales-datosgenerales>
                                                         </ng-container>
                                                         <!-- De los Datos Legales -->
-                                                        <ng-container *ngSwitchCase="'aspectos-culturales'">
-                                                            <margesi-ubicacion></margesi-ubicacion>
+                                                        <ng-container *ngSwitchCase="'aspectos_culturales'">
+                                                            <margesi-delosdatoslegales-aspectos-culturales></margesi-delosdatoslegales-aspectos-culturales>
                                                         </ng-container>
                                                         <!-- Plan & Billing -->
                                                         <ng-container *ngSwitchCase="'cargas'">
-                                                            <incorporacion-delosdatostecnicos></incorporacion-delosdatostecnicos>
+                                                            <margesi-delosdatoslegales-cargas></margesi-delosdatoslegales-cargas>
                                                         </ng-container>
 
 
@@ -403,24 +340,24 @@
                                             </div>
                                             <!-- Panel links -->
                                             <div class="flex flex-col divide-y border-t border-b">
-                                                <ng-container *ngFor="let panel of panels_delosdatostecnicos; trackBy: trackByFn">
+                                                <ng-container *ngFor="let panel3 of panels_delosdatostecnicos; trackBy: trackByFn">
                                                     <div
                                                         class="flex px-8 py-5 cursor-pointer"
-                                                        [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel || selectedPanel !== panel.id,
-                                                                    'bg-primary-50 dark:bg-hover': selectedPanel && selectedPanel === panel.id}"
-                                                        (click)="goToPanel(panel.id)">
+                                                        [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel3 || selectedPanel3 !== panel3.id,
+                                                                    'bg-primary-50 dark:bg-hover': selectedPanel3 && selectedPanel3 === panel3.id}"
+                                                        (click)="goToPanelInfoDatosTecnicos(panel3.id)">
                                                         <mat-icon
-                                                            [ngClass]="{'text-hint': !selectedPanel || selectedPanel !== panel.id,
-                                                                        'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}"
-                                                            [svgIcon]="panel.icon"></mat-icon>
+                                                            [ngClass]="{'text-hint': !selectedPanel3 || selectedPanel3 !== panel3.id,
+                                                                        'text-primary dark:text-primary-500': selectedPanel3 && selectedPanel3 === panel3.id}"
+                                                            [svgIcon]="panel3.icon"></mat-icon>
                                                         <div class="ml-3">
                                                             <div
                                                                 class="font-medium leading-6"
-                                                                [ngClass]="{'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}">
-                                                                {{panel.title}}
+                                                                [ngClass]="{'text-primary dark:text-primary-500': selectedPanel3 && selectedPanel3 === panel3.id}">
+                                                                {{panel3.title}}
                                                             </div>
                                                             <div class="mt-0.5 text-secondary">
-                                                                {{panel.description}}
+                                                                {{panel3.description}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -447,15 +384,16 @@
 
                                                     <!-- Panel title -->
                                                     <div class="ml-2 lg:ml-0 text-3xl font-bold tracking-tight leading-none">
-                                                        {{getPanelDelosDatosTecnicos(selectedPanel).title}}
+
+                                                        {{getPanelInfoDatosTecnicos(selectedPanel3).title}}
                                                     </div>
                                                 </div>
 
-                                                <!-- Load settings panel -->
+                                                <!-- Load settings panel3 -->
                                                 <div class="mt-8">
-                                                    <ng-container [ngSwitch]="selectedPanel">
+                                                    <ng-container [ngSwitch]="selectedPanel3">
                                                         <!-- Del Predio -->
-                                                        <ng-container *ngSwitchCase="'datos_generales'">
+                                                        <ng-container *ngSwitchCase="'de_los_datos_tecnicos_datos_generales'">
                                                             <margesi-delosdatostecnicos-aspectos-generales></margesi-delosdatostecnicos-aspectos-generales>
                                                         </ng-container>
                                                         <!-- De los Datos Legales -->
@@ -497,12 +435,204 @@
 
                             <mat-tab label="De las Unidades Inmobiliarias">
                                 <ng-template matTabContent>
-                                    <h2>Aprobaciones de Aprobaciones</h2>
+                                    <mat-drawer-container class="flex-auto sm:h-full">
+
+                                        <!-- Drawer -->
+                                        <mat-drawer
+                                            class="sm:w-96 dark:bg-gray-900"
+                                            [autoFocus]="false"
+                                            [mode]="drawerMode"
+                                            [opened]="drawerOpened"
+                                            #drawer>
+                                            <!-- Header -->
+                                            <div class="flex items-center justify-between m-8 mr-6 sm:my-10">
+                                                <!-- Title -->
+                                                <div class="font-extrabold tracking-tight leading-none">Detalle Antecedentes</div>
+                                                <!-- Close button -->
+                                                <div class="lg:hidden">
+                                                    <button
+                                                        mat-icon-button
+                                                        (click)="drawer.close()">
+                                                        <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Panel links -->
+                                            <div class="flex flex-col divide-y border-t border-b">
+                                                <ng-container *ngFor="let panel4 of panels_delosinmobiliarios; trackBy: trackByFn">
+                                                    <div
+                                                        class="flex px-8 py-5 cursor-pointer"
+                                                        [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel4 || selectedPanel4 !== panel4.id,
+                                                                    'bg-primary-50 dark:bg-hover': selectedPanel4 && selectedPanel4 === panel4.id}"
+                                                        (click)="goToPanelInfoDatosInmobiliarios(panel4.id)">
+                                                        <mat-icon
+                                                            [ngClass]="{'text-hint': !selectedPanel4 || selectedPanel4 !== panel4.id,
+                                                                        'text-primary dark:text-primary-500': selectedPanel4 && selectedPanel4 === panel4.id}"
+                                                            [svgIcon]="panel4.icon"></mat-icon>
+                                                        <div class="ml-3">
+                                                            <div
+                                                                class="font-medium leading-6"
+                                                                [ngClass]="{'text-primary dark:text-primary-500': selectedPanel4 && selectedPanel4 === panel4.id}">
+                                                                {{panel4.title}}
+                                                            </div>
+                                                            <div class="mt-0.5 text-secondary">
+                                                                {{panel4.description}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </mat-drawer>
+
+                                        <!-- Drawer content -->
+                                        <mat-drawer-content class="flex flex-col">
+
+                                            <!-- Main -->
+                                            <div class="flex-auto px-6 pt-9 pb-12 md:p-8 md:pb-12 lg:p-12">
+
+                                                <!-- Panel header -->
+                                                <div class="flex items-center">
+
+                                                    <!-- Drawer toggle -->
+                                                    <button
+                                                        class="lg:hidden -ml-2"
+                                                        mat-icon-button
+                                                        (click)="drawer.toggle()">
+                                                        <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+                                                    </button>
+
+                                                    <!-- Panel title -->
+                                                    <div class="ml-2 lg:ml-0 text-3xl font-bold tracking-tight leading-none">
+
+                                                        {{getPanelInfoDatosInmobiliarios(selectedPanel4).title}}
+                                                    </div>
+                                                </div>
+
+                                                <!-- Load settings panel4 -->
+                                                <div class="mt-8">
+                                                    <ng-container [ngSwitch]="selectedPanel4">
+                                                        <!-- Del Predio -->
+                                                        <ng-container *ngSwitchCase="'de_los_datos_lista_inmobiliarios'">
+                                                            <margesi-lista-delas-unidades-inmobiliarias></margesi-lista-delas-unidades-inmobiliarias>
+                                                        </ng-container>
+                                                        <!-- De los Datos Legales -->
+                                                        <ng-container *ngSwitchCase="'de_los_datos_datos_inmobiliarios'">
+                                                            <margesi-datos-delas-unidades-inmobiliarias></margesi-datos-delas-unidades-inmobiliarias>
+                                                        </ng-container>
+                                
+                                                        <!-- Team
+                                                        <ng-container *ngSwitchCase="'team'">
+                                                            <settings-team></settings-team>
+                                                        </ng-container>-->
+                                                    </ng-container>
+                                                </div>
+
+                                            </div>
+
+                                        </mat-drawer-content>
+
+                                    </mat-drawer-container>     
                                 </ng-template>
                             </mat-tab>
                             <mat-tab label="Actos sobre le Predio">
                                 <ng-template matTabContent>
-                                    <h2>Aprobaciones de Aprobaciones</h2>
+                                    <mat-drawer-container class="flex-auto sm:h-full">
+
+                                        <!-- Drawer -->
+                                        <mat-drawer
+                                            class="sm:w-96 dark:bg-gray-900"
+                                            [autoFocus]="false"
+                                            [mode]="drawerMode"
+                                            [opened]="drawerOpened"
+                                            #drawer>
+                                            <!-- Header -->
+                                            <div class="flex items-center justify-between m-8 mr-6 sm:my-10">
+                                                <!-- Title -->
+                                                <div class="font-extrabold tracking-tight leading-none">Detalle Antecedentes</div>
+                                                <!-- Close button -->
+                                                <div class="lg:hidden">
+                                                    <button
+                                                        mat-icon-button
+                                                        (click)="drawer.close()">
+                                                        <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Panel links -->
+                                            <div class="flex flex-col divide-y border-t border-b">
+                                                <ng-container *ngFor="let panel5 of panels_delosactospredio_lista; trackBy: trackByFn">
+                                                    <div
+                                                        class="flex px-8 py-5 cursor-pointer"
+                                                        [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel5 || selectedPanel5 !== panel5.id,
+                                                                    'bg-primary-50 dark:bg-hover': selectedPanel5 && selectedPanel5 === panel5.id}"
+                                                        (click)="goToPanelInfoActosPredio(panel5.id)">
+                                                        <mat-icon
+                                                            [ngClass]="{'text-hint': !selectedPanel5 || selectedPanel5 !== panel5.id,
+                                                                        'text-primary dark:text-primary-500': selectedPanel5 && selectedPanel5 === panel5.id}"
+                                                            [svgIcon]="panel5.icon"></mat-icon>
+                                                        <div class="ml-3">
+                                                            <div
+                                                                class="font-medium leading-6"
+                                                                [ngClass]="{'text-primary dark:text-primary-500': selectedPanel5 && selectedPanel5 === panel5.id}">
+                                                                {{panel5.title}}
+                                                            </div>
+                                                            <div class="mt-0.5 text-secondary">
+                                                                {{panel5.description}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </mat-drawer>
+
+                                        <!-- Drawer content -->
+                                        <mat-drawer-content class="flex flex-col">
+
+                                            <!-- Main -->
+                                            <div class="flex-auto px-6 pt-9 pb-12 md:p-8 md:pb-12 lg:p-12">
+
+                                                <!-- Panel header -->
+                                                <div class="flex items-center">
+
+                                                    <!-- Drawer toggle -->
+                                                    <button
+                                                        class="lg:hidden -ml-2"
+                                                        mat-icon-button
+                                                        (click)="drawer.toggle()">
+                                                        <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+                                                    </button>
+
+                                                    <!-- Panel title -->
+                                                    <div class="ml-2 lg:ml-0 text-3xl font-bold tracking-tight leading-none">
+
+                                                        {{getPanelInfoActosPredios(selectedPanel5).title}}
+                                                    </div>
+                                                </div>
+
+                                                <!-- Load settings panel5 -->
+                                                <div class="mt-8">
+                                                    <ng-container [ngSwitch]="selectedPanel5">
+                                                        <!-- Del Predio -->
+                                                        <ng-container *ngSwitchCase="'de_los_actos_predios_lista'">
+                                                            <margesi-lista-actos-sobre-predio></margesi-lista-actos-sobre-predio>
+                                                        </ng-container>
+                                                        <!-- De los Datos Legales -->
+                                                        <ng-container *ngSwitchCase="'de_los_datos_datos_inmobiliarios'">
+                                                            <margesi-datos-delas-unidades-inmobiliarias></margesi-datos-delas-unidades-inmobiliarias>
+                                                        </ng-container>
+                                
+                                                        <!-- Team
+                                                        <ng-container *ngSwitchCase="'team'">
+                                                            <settings-team></settings-team>
+                                                        </ng-container>-->
+                                                    </ng-container>
+                                                </div>
+
+                                            </div>
+
+                                        </mat-drawer-content>
+
+                                    </mat-drawer-container>     
                                 </ng-template>
                             </mat-tab>
                             <mat-tab label="Control de Pagos">

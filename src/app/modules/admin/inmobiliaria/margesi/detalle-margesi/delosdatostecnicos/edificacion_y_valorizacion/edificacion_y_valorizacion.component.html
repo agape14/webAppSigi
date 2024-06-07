@@ -81,6 +81,84 @@
                     </div>
                     <hr class="sm:col-span-4">
 
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 overflow-x-auto " matSort (matSortChange)="announceOrdenarCambio($event)">
+
+                        <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
+                
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="piso">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fecha"> Cod piso </th>
+                            <td mat-cell *matCellDef="let element"> {{element.piso}} </td>
+                            </ng-container>
+              
+
+                        <ng-container matColumnDef="estructura_muro">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Muro">Muro</th>
+                                <td mat-cell *matCellDef="let element"> {{element.estructura_muro}} </td>
+                        </ng-container>
+
+
+                        <ng-container matColumnDef="estructura_techo">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Techo">Techo </th>
+                            <td mat-cell *matCellDef="let element"> {{element.estructura_techo}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="acabados_pisos">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pisos">Pisos</th>
+                            <td mat-cell *matCellDef="let element"> {{element.acabados_pisos}} </td>
+                    </ng-container>
+
+                    
+                    <ng-container matColumnDef="acabados_puertas">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Puertas">Puertas</th>
+                        <td mat-cell *matCellDef="let element"> {{element.acabados_puertas}} </td>
+                </ng-container>
+
+                    <ng-container matColumnDef="acabados_revest">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Revest">Revest</th>
+                        <td mat-cell *matCellDef="let element"> {{element.acabados_revest}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="acabados_bano">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Acabados Bano">Bano </th>
+                    <td mat-cell *matCellDef="let element"> {{element.acabados_bano}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="area_const_veri">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Area Const Veri">Area Const Veri</th>
+                    <td mat-cell *matCellDef="let element"> {{element.area_const_veri}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="valor_estimado">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Valor Estimado">Valor Estimado</th>
+                    <td mat-cell *matCellDef="let element"> {{element.valor_estimado}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="valor_piso">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Valor Piso">Valor Piso</th>
+                    <td mat-cell *matCellDef="let element"> {{element.valor_piso}} </td>
+                </ng-container>
+    
+
+                
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                
+                
+                
+                    <mat-paginator [length]="20"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]"
+                    aria-label="Select page">
+                    </mat-paginator>
+
                     <div>
                         <h1 class="sm:col-span-4">Estructura</h1>
 
@@ -174,16 +252,6 @@
                                 </mat-form-field>
                             </div>
 
-                            <div class="sm:col-span-1">
-                                <mat-form-field
-                                class="w-full"
-                                [subscriptSizing]="'dynamic'">
-                                <mat-label>Inst. Elect y Sanit.</mat-label>
-                                <input
-                                matInput
-                                formControlName="instalacion_elect_y_sanit">
-                                </mat-form-field>
-                            </div>
                             <div class="sm:col-span-1">
                                 <mat-form-field
                                 class="w-full"

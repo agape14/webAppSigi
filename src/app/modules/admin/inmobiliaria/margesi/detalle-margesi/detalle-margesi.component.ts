@@ -29,6 +29,10 @@ import { DelosDatosTecnicosOcupacionMargesi } from './delosdatostecnicos/ocupaci
 import { DelosDatosTecnicosCaractUsosDelSuelo } from './delosdatostecnicos/caract_usos_del_suelo/caract_usos_del_suelo.component';
 import { DelosDatosTecnicosEdificacionValorizacion } from './delosdatostecnicos/edificacion_y_valorizacion/edificacion_y_valorizacion.component';
 import { DelosDatosTecnicosServiciosBasicosMargesi } from './delosdatostecnicos/servicios_basicos/servicios_basicos.component';
+import { DelosDatosLegalesCargasMargesi } from './delosdatoslegales/cargas/cargas.component';
+import { MargesiListaDeLaUnidadesInmobiliarias } from './delasunidadesinmobiliarias/lista_delas_unidades_inmobiliarias/lista_delas_unidades_inmobiliarias.component.';
+import { MargesiDatosDeLaUnidadesInmobiliarias } from './delasunidadesinmobiliarias/datos_delas_unidades_inmobiliarias/datos_delas_unidades_inmobiliarias.component';
+import { MargesiListaActosdePredios } from './actos_sobre_predio/lista_actos_sobre_predio/lista_actos_sobre_predio.component';
 
 @Component({
   selector: 'app-detalle-margesi',
@@ -39,7 +43,8 @@ import { DelosDatosTecnicosServiciosBasicosMargesi } from './delosdatostecnicos/
     MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe,
     CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase, DatosGeneralesMargesi, UbicacionMargesi, FotosMargesi, DelosDatosLegalesDatosGeneralesMargesi, DelosDatosLegalesAspectosCulturalesMargesi,
     DelosDatosTecnicosLinderosMargesi, DelosDatosTecnicosDatosGenerales, DelosDatosTecnicosReferenciasMargesi, DelosDatosTecnicosOcupacionMargesi, DelosDatosTecnicosCaractUsosDelSuelo, DelosDatosTecnicosEdificacionValorizacion,
-    DelosDatosTecnicosServiciosBasicosMargesi
+    DelosDatosTecnicosServiciosBasicosMargesi, DelosDatosLegalesCargasMargesi, MargesiListaDeLaUnidadesInmobiliarias, MargesiDatosDeLaUnidadesInmobiliarias,
+    MargesiListaActosdePredios
  ],
 })
 export class DetalleMargesiComponent implements OnInit{
@@ -47,13 +52,21 @@ export class DetalleMargesiComponent implements OnInit{
   panels: any[] = [];
   panels_delosdatoslegales: any[] = [];
   panels_delosdatostecnicos: any[] = [];
+  panels_delosinmobiliarios: any[] = [];
+  panels_delosactospredio_lista: any[] = [];
+
   myForm: FormGroup;
 
   @ViewChild('drawer') drawer: MatDrawer;
     drawerMode: 'over' | 'side' = 'side';
     drawerOpened: boolean = true;
-    selectedPanel: string = 'datos_generales';
-  private _unsubscribeAll: Subject<any> = new Subject<any>();
+    selectedPanel: string = 'predio_datos_generales';
+    selectedPanel2: string = 'de_los_datos_legales_datos_generales';
+    selectedPanel3: string = 'de_los_datos_tecnicos_datos_generales';
+    selectedPanel4: string = 'de_los_datos_lista_inmobiliarios';
+    selectedPanel5: string = 'de_los_actos_predios_lista';
+
+    private _unsubscribeAll: Subject<any> = new Subject<any>();
   
   constructor(private _formBuilder: UntypedFormBuilder,private formBuilder: FormBuilder,
     private _changeDetectorRef: ChangeDetectorRef,
@@ -67,7 +80,7 @@ export class DetalleMargesiComponent implements OnInit{
       // Setup available panels
       this.panels = [
         {
-            id         : 'datos_generales',
+            id         : 'predio_datos_generales',
             icon       : 'heroicons_outline:user-circle',
             title      : 'Datos Generales',
             description: 'Ver datos generales.',
@@ -94,10 +107,10 @@ export class DetalleMargesiComponent implements OnInit{
 
       this.panels_delosdatoslegales = [
         {
-            id         : 'datos_generales',
+            id         : 'de_los_datos_legales_datos_generales',
             icon       : 'heroicons_outline:user-circle',
-            title      : 'Datos Generales',
-            description: 'Ver datos generales.',
+            title      : 'De los Datos Legales, Datos Generales',
+            description: 'Ver datos legales generales.',
         },
         {
             id         : 'aspectos_culturales',
@@ -116,10 +129,10 @@ export class DetalleMargesiComponent implements OnInit{
 
       this.panels_delosdatostecnicos = [
         {
-            id         : 'datos_generales',
+            id         : 'de_los_datos_tecnicos_datos_generales',
             icon       : 'heroicons_outline:user-circle',
             title      : 'Datos Generales',
-            description: 'Ver datos generales.',
+            description: 'Ver datos tecnicos generales.',
         },
         {
             id         : 'linderos',
@@ -157,8 +170,36 @@ export class DetalleMargesiComponent implements OnInit{
             title      : 'Servicios Basicos',
             description: 'Ver Servicios Basicos',
         },
+      ];
 
-
+      this.panels_delosinmobiliarios = [
+        {
+            id         : 'de_los_datos_lista_inmobiliarios',
+            icon       : 'heroicons_outline:user-circle',
+            title      : 'Lista de los Datos Inmobiliarios',
+            description: 'Ver listado inmobiliarios.',
+        },
+        {
+            id         : 'de_los_datos_datos_inmobiliarios',
+            icon       : 'heroicons_outline:lock-closed',
+            title      : 'Datos de los Datos Inmobiliarios',
+            description: 'Ver datos inmobiliarios',
+        },
+   
+      ];
+      this.panels_delosactospredio_lista = [
+        {
+            id         : 'de_los_actos_predios_lista',
+            icon       : 'heroicons_outline:user-circle',
+            title      : 'Lista de los Datos Inmobiliarios',
+            description: 'Ver listado Actos Predios.',
+        },
+        {
+            id         : 'de_los_actos_predios_datos',
+            icon       : 'heroicons_outline:lock-closed',
+            title      : 'Datos de los Datos Inmobiliarios',
+            description: 'Ver datos actos predios',
+        },
       ];
 
       this._fuseMediaWatcherService.onMediaChange$
@@ -225,19 +266,74 @@ export class DetalleMargesiComponent implements OnInit{
         }
     }
 
-    getPanelInfo(id: string): any
+    goToPanelInfoDatosLegales(panel: string): void
     {
-        return this.panels.find(panel => panel.id === id) ;
+        this.selectedPanel2 = panel;
+
+        // Close the drawer on 'over' mode
+        if ( this.drawerMode === 'over' )
+        {
+            this.drawer.close();
+        }
     }
 
-    getPanelDelosLegales(id: string): any
+    goToPanelInfoDatosTecnicos(panel: string): void
+    {
+        this.selectedPanel3 = panel;
+
+        // Close the drawer on 'over' mode
+        if ( this.drawerMode === 'over' )
+        {
+            this.drawer.close();
+        }
+    }
+
+
+    goToPanelInfoDatosInmobiliarios(panel: string): void
+    {
+        this.selectedPanel4 = panel;
+
+        // Close the drawer on 'over' mode
+        if ( this.drawerMode === 'over' )
+        {
+            this.drawer.close();
+        }
+    }
+
+    goToPanelInfoActosPredio(panel: string): void
+    {
+        this.selectedPanel5 = panel;
+
+        // Close the drawer on 'over' mode
+        if ( this.drawerMode === 'over' )
+        {
+            this.drawer.close();
+        }
+    }
+
+    getPanelInfo(id: string): any
+    {
+        return this.panels.find(panel => panel.id === id);
+    }
+
+    getPanelInfoDatosLegales(id: string): any
     {
         return this.panels_delosdatoslegales.find(panel => panel.id === id);
     }
 
-    getPanelDelosDatosTecnicos(id: string): any
+    getPanelInfoDatosTecnicos(id: string): any
     {
         return this.panels_delosdatostecnicos.find(panel => panel.id === id);
+    }
+
+    getPanelInfoDatosInmobiliarios(id: string): any
+    {
+        return this.panels_delosinmobiliarios.find(panel => panel.id === id);
+    }
+
+    getPanelInfoActosPredios(id: string): any
+    {
+        return this.panels_delosactospredio_lista.find(panel => panel.id === id);
     }
 
     trackByFn(index: number, item: any): any

@@ -1,0 +1,82 @@
+
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Lista de las actos sobre predio</div>
+            <div class="text-secondary">Descripcion de la lista de actos sobre predio</div>
+        </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="cum">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Cum"> Cod Cum </th>
+        <td mat-cell *matCellDef="let element"> {{element.cum}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="cuim">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por cuim"> Cuim </th>
+        <td mat-cell *matCellDef="let element"> {{element.cuim}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="acto_administracion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Interior">Interior </th>
+        <td mat-cell *matCellDef="let element"> {{element.acto_administracion}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nro_doc_aprob">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Nro Doc Aprob">nro_doc_aprob </th>
+            <td mat-cell *matCellDef="let element"> {{element.nro_doc_aprob}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha_opinion_legal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fecha Opinion Legal">Fecha Opinion Legal </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha_opinion_legal}} </td>
+        </ng-container>
+        <ng-container matColumnDef="inicio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Inicio">Inicio </th>
+            <td mat-cell *matCellDef="let element"> {{element.inicio}} </td>
+        </ng-container>
+        <ng-container matColumnDef="fin">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fin">Fin </th>
+            <td mat-cell *matCellDef="let element"> {{element.fin}} </td>
+        </ng-container>
+        <ng-container matColumnDef="administrado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Adminstrado">Administrado </th>
+            <td mat-cell *matCellDef="let element"> {{element.administrado}} </td>
+        </ng-container>
+        <ng-container matColumnDef="fecha_conclusion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fecha Conclusion">Fecha Conclusoin </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha_conclusion}} </td>
+        </ng-container>
+        <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Estado">Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+    <mat-paginator [length]="20"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page">
+    </mat-paginator>
+
+</div>

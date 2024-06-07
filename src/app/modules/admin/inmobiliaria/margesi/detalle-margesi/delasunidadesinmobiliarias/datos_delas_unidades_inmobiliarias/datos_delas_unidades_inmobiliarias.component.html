@@ -1,0 +1,892 @@
+
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosDelasUnidadesInmobiliariasForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos de la unidades inmobiliarias</div>
+            <div class="text-secondary">Descripcion de la lista de inmobiliarias</div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>CUIM</mat-label>
+                <input
+                [formControlName]="'cuim'"
+                matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Interior</mat-label>
+                <input
+                [formControlName]="'interior'"
+                matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        </form>
+
+        <mat-tab-group>
+            <mat-tab label="Datos Generales">
+                <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Independizado</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Puerta a la calle</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Area Total m2</mat-label>
+                            <input
+                            matInput>
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Area Techada m2</mat-label>
+                            <input
+                            matInput>
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Area Libre m2</mat-label>
+                            <input
+                            matInput>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Nivel de uso</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Total'">Total</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Uso Genérico</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Total'">Total</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+
+                            <mat-label>Uso Específico</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Total'">Total</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Linderos">
+                <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                        class="w-full"
+                        [subscriptSizing]="'dynamic'">
+                        <mat-label>Linderos</mat-label>
+                        <mat-icon
+                            class="icon-size-5"
+                            [svgIcon]="'heroicons_solid:map-pin'"
+                            matPrefix></mat-icon>
+                        <mat-select>
+                            <mat-option [value]="'derecha'">Derecha</mat-option>
+                            <mat-option [value]="'izquierda'">Izquierda</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="w-full">
+                            <mat-form-field class="fuse-mat-emphasized-affix w-full" [subscriptSizing]="'dynamic'">
+                                <mat-label>Colindancia Registral</mat-label>
+                                <input matInput >
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Tramos  </mat-label>
+
+                            <input
+                                matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Distancia (ml) </mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:building-office-2'"
+                                matPrefix></mat-icon>
+                            <input
+                                matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="fuse-mat-emphasized-affix w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Nro. Municipal  </mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:building-office-2'"
+                                matPrefix></mat-icon>
+                            <input
+                                matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Ocupacion">
+                    <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Ocupacion</mat-label>
+
+                                <mat-select>
+                                    <mat-option [value]="'disponible'">Disponible</mat-option>
+                                    <mat-option [value]="'ocupado'">Ocupado</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Situación Legal</mat-label>
+
+                                <mat-select>
+                                    <mat-option [value]="'disponible'">Con Contrato</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Nivel Ocupación</mat-label>
+
+                                <mat-select>
+                                    <mat-option [value]="'total'">Total</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>% Area Ocupada</mat-label>
+                                <input
+                                maxlength="3"
+
+                                matInput>
+
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <hr class="sm:col-span-3">
+
+                    <div class="grid sm:grid-cols-3 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>DNI</mat-label>
+
+                                <mat-select>
+                                    <mat-option [value]="'DNI'">DNI</mat-option>
+                                    <mat-option [value]="'Pasaporte'">Pasaporte</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Numero</mat-label>
+
+                                <input
+
+                                matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Nombre Completo</mat-label>
+
+                                <input
+
+                                matInput>
+                           
+                            </mat-form-field>
+                        </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Direccion</mat-label>
+                                <input
+
+                                matInput>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Email</mat-label>
+                                <input
+
+                                matInput>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Telefono</mat-label>
+                                <input
+
+                                matInput>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Movil</mat-label>
+                                <input
+
+                                matInput>
+
+                            </mat-form-field>
+                        </div>
+                    </div>
+            </mat-tab>
+            <mat-tab label="edificacion y valorizacion">
+                <section>
+                    <section>
+                        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Tipo edificación</mat-label>
+                                <mat-select >
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>N pisos</mat-label>
+                                <mat-select >
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Construcción Mes:</mat-label>
+                                <input
+                                matInput
+                              >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Construcción Año:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Material Predominante:</mat-label>
+                                <mat-select >
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Estado Conservación:</mat-label>
+                                <mat-select >
+                                    <mat-option [value]="'Medicina General'">Medicina General</mat-option>
+                                    <mat-option [value]="'Traumatologo'">Traumatologo</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                            </div>
+                            </div>
+                            <hr class="sm:col-span-4">
+        
+                            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 overflow-x-auto " matSort (matSortChange)="announceOrdenarCambio($event)">
+        
+                                <!--- Note that these columns can be defined in any order.
+                                    The actual rendered columns are set as a property on the row definition" -->
+                        
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+                                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                </ng-container>
+        
+                                <ng-container matColumnDef="piso">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fecha"> Cod piso </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.piso}} </td>
+                                    </ng-container>
+                      
+        
+                                <ng-container matColumnDef="estructura_muro">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Muro">Muro</th>
+                                        <td mat-cell *matCellDef="let element"> {{element.estructura_muro}} </td>
+                                </ng-container>
+        
+        
+                                <ng-container matColumnDef="estructura_techo">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Techo">Techo </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.estructura_techo}} </td>
+                                </ng-container>
+        
+                                <ng-container matColumnDef="acabados_pisos">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Pisos">Pisos</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.acabados_pisos}} </td>
+                            </ng-container>
+        
+                            
+                            <ng-container matColumnDef="acabados_puertas">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Puertas">Puertas</th>
+                                <td mat-cell *matCellDef="let element"> {{element.acabados_puertas}} </td>
+                        </ng-container>
+        
+                            <ng-container matColumnDef="acabados_revest">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Revest">Revest</th>
+                                <td mat-cell *matCellDef="let element"> {{element.acabados_revest}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="acabados_bano">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Acabados Bano">Bano </th>
+                            <td mat-cell *matCellDef="let element"> {{element.acabados_bano}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="area_const_veri">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Area Const Veri">Area Const Veri</th>
+                            <td mat-cell *matCellDef="let element"> {{element.area_const_veri}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="valor_estimado">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Valor Estimado">Valor Estimado</th>
+                            <td mat-cell *matCellDef="let element"> {{element.valor_estimado}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="valor_piso">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Valor Piso">Valor Piso</th>
+                            <td mat-cell *matCellDef="let element"> {{element.valor_piso}} </td>
+                        </ng-container>
+            
+        
+                        
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                        
+                        
+                        
+                            <mat-paginator [length]="20"
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                            </mat-paginator>
+        
+                            <div>
+                                <h1 class="sm:col-span-4">Estructura</h1>
+        
+                                <div
+                                class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+        
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Piso:</mat-label>
+                                        <input
+                                        matInput
+                                         >
+                                        </mat-form-field>
+                                    </div>
+        
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Estructura Muro:</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-2">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Estructura Techo:</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+        
+        
+                                    <h1 class="sm:col-span-4">Acabados</h1>
+        
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Acabados Pisos:</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Acabados Puertas:</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Acabados Revest:</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Acabados Baño:</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+        
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Inst. Elect y Sanit.</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+        
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Area const. Verifi</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Valor estimado</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+        
+                                    <div class="sm:col-span-1">
+                                        <mat-form-field
+                                        class="w-full"
+                                        [subscriptSizing]="'dynamic'">
+                                        <mat-label>Valor Total Area</mat-label>
+                                        <input
+                                        matInput
+                                        >
+                                        </mat-form-field>
+                                    </div>
+             
+                                </div>
+                            </div>
+        
+        
+        
+        
+                            <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+        
+        
+        
+                            <hr class="sm:col-span-4">
+        
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Moneda:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Tipo de Cambio:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Valor de terreno:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Valor de edificación:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Valor Comercial:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Valor Dolares:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Valor por m2 Terreno:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Valor de Arrendamiento:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Fecha valorización:</mat-label>
+                                <input
+                                matInput
+                                [matDatepicker]="fecha_valorizacion">
+                            <mat-datepicker-toggle
+                                matSuffix
+                                [for]="fecha_valorizacion"></mat-datepicker-toggle>
+                            <mat-datepicker #fecha_valorizacion></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <mat-form-field
+                                class="w-full"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-label>Informe de valorización:</mat-label>
+                                <input
+                                matInput
+                                >
+                                </mat-form-field>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <!-- Descargar -->
+                                <button
+                                    class="m-2"
+                                    mat-stroked-button
+                                    [color]="'primary'"
+                                    >
+                                    <mat-icon
+                                        class="icon-size-5"
+                                        [svgIcon]="'heroicons_outline:inbox-arrow-down'"></mat-icon>
+                                    <span class="ml-2">Descargar</span>
+                                </button>
+                                <!-- Adjuntar -->
+                 
+                            </div>
+                        </div>
+                    </section>
+                </section>
+        
+            </mat-tab>
+            <mat-tab label="Servicios Basicos">
+                <section>
+                    <div class="grid sm:grid-cols-3 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Desague ¿Instalado?:</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Desague ¿Fact. Servicios:</mat-label>
+                            <mat-select>
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+        
+        
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Agua ¿Instalado?:</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Agua ¿Fact. Servicios:</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Agua Suministro:</mat-label>
+                            <input
+                            matInput
+                            >
+                            </mat-form-field>
+                        </div>
+        
+                        <div class="sm:col-span-3">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Proveedor:</mat-label>
+                            <textarea matInput  rows="4" cols="50"></textarea>
+                            </mat-form-field>
+                        </div>
+        
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]=" 'dynamic'">
+                            <mat-label>Luz ¿Instalado?:</mat-label>
+                            <mat-select>
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Luz ¿Fact. Servicios:</mat-label>
+                            <mat-select>
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Luz Suministro:</mat-label>
+                            <input
+                            matInput
+                            >
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Proveedor:</mat-label>
+                            <textarea matInput rows="4" cols="50"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+        
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]=" 'dynamic'">
+                            <mat-label>Observaciones técnicas Agua:</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="sm:col-span-1">
+        
+                            <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]=" 'dynamic'">
+                            <mat-label>Observaciones técnicas Luz:</mat-label>
+                            <mat-select >
+                                <mat-option [value]="'Si'">Si</mat-option>
+                                <mat-option [value]="'No'">No</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </section>
+            </mat-tab>
+
+        </mat-tab-group>
+</div>
