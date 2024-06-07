@@ -1,0 +1,97 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datos_generales">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos Generales</div>
+            <div class="text-secondary">Descripcion de los datos generales</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>CUM</mat-label>
+                    <input
+                    [formControlName]="'CUM'"
+                    matInput>
+                </mat-form-field>
+            </div>
+             <!-- Estado Provisional -->
+             <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Estado</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'Estado'">
+                        <mat-option [value]="'porsanear'">POR SANEAR</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            
+            <!-- Tipo Inmueble-->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo Inmueble</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'tipoinmueble'">
+                        <mat-option [value]="'unico'">Unico</mat-option>
+                        <mat-option [value]="'matriz'">Matriz</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div> 
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Denominacion del Predio</mat-label>
+                        <input
+                        [formControlName]="'denominacionpredio'"
+                        matInput>
+                </mat-form-field>
+            </div> 
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripcion del Predio</mat-label>
+                        <input
+                        [formControlName]="'descripcionpredio'"
+                        matInput>
+                </mat-form-field>
+            </div> 
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripcion del Predio</mat-label>
+                        <input
+                        [formControlName]="'descripcionpredio'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                 <mat-label>Fotos de la inspeccion</mat-label>
+                 <input matInput type="text" >
+        <button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>download</mat-icon>
+         </button>
+                 </mat-form-field>
+        </div>
+        </div>
+    </form>
+</div>

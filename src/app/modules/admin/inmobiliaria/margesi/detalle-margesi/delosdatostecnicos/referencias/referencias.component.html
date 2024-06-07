@@ -1,0 +1,81 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAspectosTecnicosReferenciasForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos Generales</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nombre de la Via</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'nombre_via'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Proximidad Esquina</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'proximidad_esquina'">
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Ml Orientacion hacia esquina</mat-label>
+                    <mat-select [formControlName]="'ml__orientacion_hacia_esquina'">
+                        <mat-option [value]="'Derecha'">Derecha</mat-option>
+                        <mat-option [value]="'Izquierda'">Izquierda</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nombre de la via</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'nombre_via__2'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Distancia a la via principal</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'distancia_via'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Ml Orientacion hacia esquina</mat-label>
+                    <mat-select [formControlName]="'ml__orientacion_hacia_esquina2'">
+                        <mat-option [value]="'Derecha'">Derecha</mat-option>
+                        <mat-option [value]="'Izquierda'">Izquierda</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Acceso</mat-label>
+                    <textarea matInput 
+                    [formControlName]="'acceso'"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

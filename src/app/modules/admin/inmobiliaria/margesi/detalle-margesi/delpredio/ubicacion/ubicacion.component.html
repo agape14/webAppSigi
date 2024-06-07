@@ -1,0 +1,171 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="ubicacion">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Ubicacion</div>
+            <div class="text-secondary">Descripcion de los datos generales</div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+            <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Habilitacion</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'habilitacion'">
+                        <mat-option [value]="'CENTRO HISOTRICO'">Unico</mat-option>
+                        <mat-option [value]="'N/A'">N/A</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+             <!-- Estado Provisional -->
+             <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripcion</mat-label>
+                    <input
+                    [formControlName]="'descr_habilitacion'"
+                    matInput>
+                </mat-form-field>
+            </div>
+            
+            <!-- Tipo Inmueble-->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo de via</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'tipo_via'">
+                        <mat-option [value]="'Avenida'">Avenida</mat-option>
+                        <mat-option [value]="'Calle'">cALLE</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div> 
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripcion Via</mat-label>
+                        <input
+                        [formControlName]="'descr_via'"
+                        matInput>
+                </mat-form-field>
+            </div> 
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Num. Municipal</mat-label>
+                        <input
+                        [formControlName]="'num_municipal'"
+                        matInput>
+                </mat-form-field>
+            </div> 
+  
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Manzana</mat-label>
+                        <input
+                        [formControlName]="'manzana'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Lotes</mat-label>
+                        <input
+                        [formControlName]="'lotes'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nro. Interior</mat-label>
+                        <input
+                        [formControlName]="'nro_interior'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Distrito</mat-label>
+                        <input
+                        [formControlName]="'distrito'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Zona</mat-label>
+                        <input
+                        [formControlName]="'zona'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Abcisa</mat-label>
+                        <input
+                        [formControlName]="'abcisa'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Norte</mat-label>
+                        <input
+                        [formControlName]="'Norte'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Altitud</mat-label>
+                        <input
+                        [formControlName]="'Altitud'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Latitud</mat-label>
+                        <input
+                        [formControlName]="'Latitud'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+    </form>
+</div>

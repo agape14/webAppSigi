@@ -55,7 +55,7 @@ export class DetalleIncorporacionComponent implements OnInit{
       // Setup available panels
       this.panels = [
         {
-            id         : 'delpredio',
+            id         : 'delpredio/datos_generales',
             icon       : 'heroicons_outline:user-circle',
             title      : 'Del Predio',
             description: 'Ver datos generales, ubicacion y mapa.',

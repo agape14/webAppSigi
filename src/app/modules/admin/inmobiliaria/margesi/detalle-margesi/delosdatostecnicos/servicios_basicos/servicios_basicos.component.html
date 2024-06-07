@@ -1,0 +1,147 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAspectosTecnicosServiciosBasicosForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Servicios Basicos</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <section>
+            <div class="grid sm:grid-cols-3 gap-6 w-full mt-8">
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Desague ¿Instalado?:</mat-label>
+                    <mat-select [formControlName]="'desague_instalado'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Desague ¿Fact. Servicios:</mat-label>
+                    <mat-select [formControlName]="'desague_factura_servicios'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Agua ¿Instalado?:</mat-label>
+                    <mat-select [formControlName]="'agua_instalada'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-2">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Agua ¿Fact. Servicios:</mat-label>
+                    <mat-select [formControlName]="'agua_factura_servicios'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Agua Suministro:</mat-label>
+                    <input
+                    matInput
+                    formControlName="agua_suministro">
+                    </mat-form-field>
+                </div>
+
+                <div class="sm:col-span-3">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Proveedor:</mat-label>
+                    <textarea matInput formControlName="proveedor_agua" rows="4" cols="50"></textarea>
+                    </mat-form-field>
+                </div>
+
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]=" 'dynamic'">
+                    <mat-label>Luz ¿Instalado?:</mat-label>
+                    <mat-select [formControlName]="'luz_instalada'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Luz ¿Fact. Servicios:</mat-label>
+                    <mat-select [formControlName]="'luz_factura_servicios'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Luz Suministro:</mat-label>
+                    <input
+                    matInput
+                    formControlName="luz_suministro">
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-3">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Proveedor:</mat-label>
+                    <textarea matInput formControlName="proveedor_luz" rows="4" cols="50"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-1">
+
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]=" 'dynamic'">
+                    <mat-label>Observaciones técnicas Agua:</mat-label>
+                    <mat-select [formControlName]="'agua_observacion_tecnica'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="sm:col-span-1">
+
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]=" 'dynamic'">
+                    <mat-label>Observaciones técnicas Luz:</mat-label>
+                    <mat-select [formControlName]="'luz_observacion_tecnica'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </section>
+    </form>
+</div>
+        

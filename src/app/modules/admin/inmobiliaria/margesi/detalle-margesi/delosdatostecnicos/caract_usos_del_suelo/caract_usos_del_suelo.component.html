@@ -1,0 +1,103 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAspectosCaractUsosDelSueloForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Caracteristicas y Usos del Suelo</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Topografia</mat-label>
+        
+                    <mat-select [formControlName]="'topografia'">
+                        <mat-option [value]="'PLANO'">PLANO</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Tipo de suelo</mat-label>
+                    <mat-select [formControlName]="'tipo_de_suelo'">
+                        <mat-option [value]="'AFRIMADO'">AFIRMADO</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo de predio</mat-label>
+                    <mat-select [formControlName]="'tipo_de_predio'">
+                        <mat-option [value]="'URBANO'">URBANO</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Detalle</mat-label>
+                    <mat-select [formControlName]="'detalle'">
+                        <mat-option [value]="'URBANO'">URBANO</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nivel de uso</mat-label> 
+                    <mat-select [formControlName]="'nivel_de_uso'">
+                        <mat-option [value]="'TOTAL'">TOTAL</mat-option>
+                    </mat-select>
+              
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Uso Generico</mat-label> 
+                    <mat-select [formControlName]="'uso_generico'">
+                        <mat-option [value]="'INSTITUCIONAL'">INSTITUCIONAL</mat-option>
+                    </mat-select>
+     
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Uso Especifico</mat-label> 
+                    <mat-select [formControlName]="'uso_especifico'">
+                        <mat-option [value]="'OFICINAS'">OFICINAS</mat-option>
+                        </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Otra informacion</mat-label> 
+                    <textarea matInput 
+                    [formControlName]="'otra_informacion'"></textarea>
+                </mat-form-field>
+            </div>
+
+        </div>
+    </form>
+</div>
