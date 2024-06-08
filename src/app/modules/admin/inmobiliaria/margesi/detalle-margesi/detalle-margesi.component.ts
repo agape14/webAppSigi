@@ -33,6 +33,7 @@ import { DelosDatosLegalesCargasMargesi } from './delosdatoslegales/cargas/carga
 import { MargesiListaDeLaUnidadesInmobiliarias } from './delasunidadesinmobiliarias/lista_delas_unidades_inmobiliarias/lista_delas_unidades_inmobiliarias.component.';
 import { MargesiDatosDeLaUnidadesInmobiliarias } from './delasunidadesinmobiliarias/datos_delas_unidades_inmobiliarias/datos_delas_unidades_inmobiliarias.component';
 import { MargesiListaActosdePredios } from './actos_sobre_predio/lista_actos_sobre_predio/lista_actos_sobre_predio.component';
+import { MargesiDatosdePredios } from './actos_sobre_predio/datos_actos_sobre_predio/datos_actos_sobre_predio.component';
 
 @Component({
   selector: 'app-detalle-margesi',
@@ -44,7 +45,7 @@ import { MargesiListaActosdePredios } from './actos_sobre_predio/lista_actos_sob
     CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase, DatosGeneralesMargesi, UbicacionMargesi, FotosMargesi, DelosDatosLegalesDatosGeneralesMargesi, DelosDatosLegalesAspectosCulturalesMargesi,
     DelosDatosTecnicosLinderosMargesi, DelosDatosTecnicosDatosGenerales, DelosDatosTecnicosReferenciasMargesi, DelosDatosTecnicosOcupacionMargesi, DelosDatosTecnicosCaractUsosDelSuelo, DelosDatosTecnicosEdificacionValorizacion,
     DelosDatosTecnicosServiciosBasicosMargesi, DelosDatosLegalesCargasMargesi, MargesiListaDeLaUnidadesInmobiliarias, MargesiDatosDeLaUnidadesInmobiliarias,
-    MargesiListaActosdePredios
+    MargesiListaActosdePredios, MargesiDatosdePredios
  ],
 })
 export class DetalleMargesiComponent implements OnInit{
@@ -191,11 +192,11 @@ export class DetalleMargesiComponent implements OnInit{
         {
             id         : 'de_los_actos_predios_lista',
             icon       : 'heroicons_outline:user-circle',
-            title      : 'Lista de los Datos Inmobiliarios',
+            title      : 'Lista de los Actos de Predio',
             description: 'Ver listado Actos Predios.',
         },
         {
-            id         : 'de_los_actos_predios_datos',
+            id         : 'de_los_datos_actos_predios_datos',
             icon       : 'heroicons_outline:lock-closed',
             title      : 'Datos de los Datos Inmobiliarios',
             description: 'Ver datos actos predios',

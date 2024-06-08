@@ -1,0 +1,158 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="Formcontrato">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Del Contrato</div>
+            <div class="text-secondary">Descripcion del Contrato</div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+   
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Numero Contrato</mat-label>
+                    <input matInput 
+                    [formControlName]="'numero_contrato'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Numero de Adenda</mat-label>
+                    <input matInput 
+                    [formControlName]="'numero_de_adenda'">
+                    </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Fecha Inicio</mat-label>
+                    <input
+                    matInput
+                    [matDatepicker]="fecha_ini">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="fecha_ini"></mat-datepicker-toggle>
+                <mat-datepicker #fecha_ini></mat-datepicker>
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Fecha Fin</mat-label> 
+                    <input
+                    matInput
+                    [matDatepicker]="fecha_fin">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="fecha_fin"></mat-datepicker-toggle>
+                <mat-datepicker #fecha_fin></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Renta</mat-label>
+                    <input matInput 
+                    [formControlName]="'renta'">
+
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Garantia</mat-label>
+                    <input matInput 
+                    [formControlName]="'garantia'">
+
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Saldo Garantia</mat-label>
+                    <input matInput 
+                    [formControlName]="'saldo_garantia'">
+
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Uso Generico</mat-label> 
+                    <input matInput 
+                    [formControlName]="'uso_generico'">
+     
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Especifico</mat-label> 
+                    <input matInput 
+                    [formControlName]="'uso_especifico'">
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Num Fisico</mat-label> 
+                    <input matInput 
+                    [formControlName]="'num_fisico'">
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Fecha Firma Contrato</mat-label> 
+                    <input
+                    matInput
+                    [matDatepicker]="fecha_firma_contrato">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="fecha_firma_contrato"></mat-datepicker-toggle>
+                <mat-datepicker #fecha_firma_contrato></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Contrato Firmado</mat-label> 
+                    <input matInput 
+                    [formControlName]="'contrato_firmado'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

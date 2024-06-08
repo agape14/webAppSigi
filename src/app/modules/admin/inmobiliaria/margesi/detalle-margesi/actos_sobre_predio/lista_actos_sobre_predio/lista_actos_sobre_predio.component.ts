@@ -114,14 +114,13 @@ const ELEMENT_DATA: DataExample[] = [
     MatPaginatorModule, MatPaginator, MatSortModule, MatSort, MatTableModule],
       })
   export class MargesiListaActosdePredios{
-    datosAspectosEdificacionForm: UntypedFormGroup;
     _formBuilder = inject(FormBuilder);
     _liveAnnouncer = inject(LiveAnnouncer);
     pagination: IncorporacionPagination;
     dataSource = new MatTableDataSource<DataExample>(ELEMENT_DATA);
     @ViewChild(MatSort) sort: MatSort;
     displayedColumns: string[] = ['position','cum','cuim','acto_administracion','nro_doc_aprob','fecha_opinion_legal',
-    'inicio','fin','fecha_opinion_legal','inicio','administrado','fecha_conclusion', 'estado'
+    'inicio','fin','administrado','fecha_conclusion', 'estado'
  
      ];
     announceOrdenarCambio(ordenarEstado: Sort) {

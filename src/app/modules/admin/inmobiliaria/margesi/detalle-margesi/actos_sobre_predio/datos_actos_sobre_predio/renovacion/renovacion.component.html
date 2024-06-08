@@ -1,0 +1,256 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="renovacion">
+      
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Renovacion/Resolucion</div>
+            <div class="text-secondary">Descripcion del Renovacion/Resolucion</div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Solicitud de renovacion de contrato</mat-label> 
+                    <input
+                    matInput
+                    [matDatepicker]="solic_renov_contrato_fech">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="solic_renov_contrato_fech"></mat-datepicker-toggle>
+                <mat-datepicker #solic_renov_contrato_fech></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Solicitud de Renovacion</mat-label>
+                    <input matInput 
+                    [formControlName]="'solic_renov_contrato_texto'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+                    </mat-form-field>
+
+            </div>
+            <div class="sm:col-span-1">
+                    <mat-form-field
+                        class="w-full"
+                        [subscriptSizing]="'dynamic'">
+                        <mat-label>Respuesta del Arrendatario</mat-label>
+                        <input
+                        matInput
+                        [matDatepicker]="respuesta_arrendatario_fech">
+                    <mat-datepicker-toggle
+                        matSuffix
+                        [for]="respuesta_arrendatario_fech"></mat-datepicker-toggle>
+                    <mat-datepicker #respuesta_arrendatario_fech></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Respuesta de Arrendatario Texto</mat-label>
+                    <input matInput 
+                    [formControlName]="'respuesta_arrendatario_texto'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Manifiesta</mat-label> 
+                    <mat-select [formControlName]="'manifiesta_arrendatario'">
+                        <mat-option [value]="'Manifiesta voluntad de renovacion'">Manifiesta voluntad de renovacion</mat-option>
+                        <mat-option [value]="'No desee renovar contrato'">No desee renovar contrato</mat-option>
+                    </mat-select>
+              
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Notificacion de Resolucion de contrato</mat-label> 
+                    <input
+                    matInput
+                    [matDatepicker]="notif_reso_contrato_fech">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="notif_reso_contrato_fech"></mat-datepicker-toggle>
+                <mat-datepicker #notif_reso_contrato_fech></mat-datepicker>
+     
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Notificacion de Resolucion Contrato Texto</mat-label> 
+                    <input matInput 
+                    [formControlName]="'notif_reso_contrato_texto'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Solicita conciliacion</mat-label> 
+                    <input
+                    matInput
+                    [matDatepicker]="solicita_conciliacion_fech">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="solicita_conciliacion_fech"></mat-datepicker-toggle>
+                <mat-datepicker #solicita_conciliacion_fech></mat-datepicker>
+     
+                </mat-form-field>
+            </div>
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Solicita conciliacion texto</mat-label> 
+                    <input matInput 
+                    [formControlName]="'solic_renov_contrato_texto'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Acta conciliacion</mat-label> 
+                    <input
+                    matInput
+                    [matDatepicker]="acta_conciliacion_fech">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="acta_conciliacion_fech"></mat-datepicker-toggle>
+                <mat-datepicker #acta_conciliacion_fech></mat-datepicker>
+     
+                </mat-form-field>
+            </div>
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Acta conciliacion de Conciliacion Texto</mat-label> 
+                    <input
+                    matInput
+                    [formControlName]="'acta_conciliacion_texto'"> 
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+     
+                </mat-form-field>
+            </div>
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Apto para renovacion de contrato?</mat-label> 
+                    <mat-select [formControlName]="'apto_renov_contrato'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+              
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Acciones legales de recperacion del inmuebles?</mat-label> 
+                    <mat-select [formControlName]="'acciones_legales_inmueble'">
+                        <mat-option [value]="'Si'">Si</mat-option>
+                        <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+              
+                </mat-form-field>
+            </div>
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Resolucion de contrato</mat-label> 
+                    <input
+                    matInput
+                    [matDatepicker]="resolucion_contrato_fech">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="resolucion_contrato_fech"></mat-datepicker-toggle>
+                <mat-datepicker #resolucion_contrato_fech></mat-datepicker>
+     
+                </mat-form-field>
+            </div>
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Resolucion de contrato texto</mat-label> 
+                    <input
+                    matInput
+                    [formControlName]="'resolucion_contrato_texto'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+     
+                </mat-form-field>
+            </div>
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Causales de resolucion</mat-label> 
+                    <textarea
+                    matInput
+                    [formControlName]="'causales_Resolucion'">
+                    </textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
