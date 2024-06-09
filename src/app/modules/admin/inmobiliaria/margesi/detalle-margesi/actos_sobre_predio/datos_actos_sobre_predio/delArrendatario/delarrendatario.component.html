@@ -1,0 +1,86 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="arrendatario">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Persona Natural</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>DNI</mat-label>
+        
+                    <mat-select [formControlName]="'dni'">
+                        <mat-option [value]="'DNI'">DNI</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Numero</mat-label>
+                    <input matInput 
+                    [formControlName]="'dni_numero'">
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput 
+                    [formControlName]="'nombre'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Direccion</mat-label>
+                    <input matInput 
+                    [formControlName]="'direccion'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Email</mat-label> 
+                    <input matInput 
+                    [formControlName]="'email'">
+              
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Telefono</mat-label> 
+                    <input matInput 
+                    [formControlName]="'telefono'">
+     
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Movil</mat-label> 
+                    <input matInput 
+                    [formControlName]="'movil'">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

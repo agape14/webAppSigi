@@ -1,0 +1,65 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAspectosTecnicosLinderosForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos Generales</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Linderos</mat-label>
+        
+                    <mat-select [formControlName]="'linderos'">
+                        <mat-option [value]="'Frente'">Frente</mat-option>
+                        <mat-option [value]="'Derecha'">Derecha</mat-option>
+                        <mat-option [value]="'Izquierda'">Izquierda</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Conlindancia Registral</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'colidancia_registral'">
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tramos</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'tramos'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Distancia (ml)</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'distancia'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nro. Municipal</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'nro_municipal'">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,157 @@
+
+<div class="w-full max-w-8xl">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Estado de Cuenta</div>
+            <div class="text-secondary">Descripcion de los estado de cuenta</div>
+        </div>
+
+        <table mat-table [dataSource]="dataArray1" class="mat-elevation-z8" matSort (matSortChange)="announceOrdenarCambio($event)">
+
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por No."> No. </th>
+              <td mat-cell *matCellDef="let element"> {{ element.position }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="concepto">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Concepto">Concepto</th>
+              <td mat-cell *matCellDef="let element"> {{ element.concepto }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="cuota">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Cuota">Cuota</th>
+              <td mat-cell *matCellDef="let element"> {{ element.cuota }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="ano">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Año">Año</th>
+              <td mat-cell *matCellDef="let element"> {{ element.ano }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="mes">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Mes">Mes</th>
+              <td mat-cell *matCellDef="let element"> {{ element.mes }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="importe">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Importe">Importe</th>
+              <td mat-cell *matCellDef="let element"> {{ element.importe }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="interes_diario">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Interés Diario">Int. Diario</th>
+              <td mat-cell *matCellDef="let element"> {{ element.interes_diario }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="interes_atraso">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Interés Atraso">Int. Atraso</th>
+                <td mat-cell *matCellDef="let element"> 
+                  {{ showMore(element.interes_atraso) }}
+                  <button mat-icon-button *ngIf="element.interes_atraso.length > textLimit" (click)="showFullInteresAtraso(element)">
+                    <mat-icon>expand_more</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="interes_acum">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Interés Acumulado">Int. Acumulado</th>
+                <td mat-cell *matCellDef="let element"> 
+                  {{ showMore(element.interes_acum) }}
+                  <button mat-icon-button *ngIf="element.interes_acum.length > textLimit" (click)="showFullInteresAcum(element)">
+                    <mat-icon>expand_more</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Total">Total</th>
+                <td mat-cell *matCellDef="let element"> {{ element.total }} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Estado">Estado</th>
+                <td mat-cell *matCellDef="let element"> 
+                  {{ showMore(element.estado) }}
+                  <button mat-icon-button *ngIf="element.estado.length > textLimit" (click)="showFullEstado(element)">
+                    <mat-icon>expand_more</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="emitido">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Emitido">Emitido</th>
+                <td mat-cell *matCellDef="let element"> 
+                  {{ showMore(element.emitido) }}
+                  <button mat-icon-button *ngIf="element.emitido.length > textLimit" (click)="showFullEmitido(element)">
+                    <mat-icon>expand_more</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="cancelado">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Cancelado">Cancelado</th>
+                <td mat-cell *matCellDef="let element"> {{ element.cancelado }} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="ticket">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Ticket">Ticket</th>
+                <td mat-cell *matCellDef="let element"> {{ element.ticket }} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="fecha_pago">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fecha Pago">Fecha Pago</th>
+                <td mat-cell *matCellDef="let element"> 
+                  {{ element.fecha_pago }}</td>
+              </ng-container>
+              
+              <ng-container matColumnDef="documento_pago">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Documento Pago">Documento Pago</th>
+                <td mat-cell *matCellDef="let element"> 
+                  {{ element.documento_pago }}
+                </td>
+            </ng-container>
+
+                  
+                  <ng-container matColumnDef="fecha_vence">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fecha Vencimiento">Fecha Vencimiento</th>
+                    <td mat-cell *matCellDef="let element"> 
+                      {{ element.fecha_vence }}
+                    </td>
+                  </ng-container>
+                  
+                  <ng-container matColumnDef="fecha_registro">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Fecha Registro">Fecha Registro</th>
+                    <td mat-cell *matCellDef="let element"> 
+                      {{ element.fecha_registro }}
+                     
+                    </td>
+                  </ng-container>
+                  
+                  <ng-container matColumnDef="inicio_banco">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Inicio Banco">Inicio Banco</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.inicio_banco }} </td>
+                  </ng-container>
+                  
+                  <ng-container matColumnDef="vence_banco">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por Vencimiento Banco">Vencimiento Banco</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.vence_banco }} </td>
+                  </ng-container>
+                  
+
+           
+          
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+    <mat-paginator [length]="20"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page">
+    </mat-paginator>
+
+</div>

@@ -1,0 +1,185 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosGeneralesForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos Generales Legales</div>
+            <div class="text-secondary">Descripcion de los datos generales</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Forma de Adquisicion</mat-label>
+        
+                    <mat-select [formControlName]="'forma_adquisicion'">
+                        <mat-option [value]="'adjudicacion'">Adjudicacion</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Detalle</mat-label>
+                    <input
+                    [formControlName]="'detalle'"
+                    matInput>
+                </mat-form-field>
+            </div>
+             <!-- Estado Provisional -->
+             <div class="sm:col-span-2">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Titulo Registral</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                    <mat-select [formControlName]="'titulo_Registral'">
+                        <mat-option [value]="'Otros'">Otros</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            
+            <!-- Tipo Inmueble-->
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Dispositivo Legal</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:map-pin'"
+                        matPrefix></mat-icon>
+                        <input
+                        [formControlName]="'dispositivo__Legal'"
+                        matInput>
+                </mat-form-field>
+            </div> 
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Antecedentes registrales Tomo - Foja</mat-label>
+                <mat-icon
+                    class="icon-size-5"
+                    [svgIcon]="'heroicons_solid:map-pin'"
+                    matPrefix></mat-icon>
+                    <input
+                    [formControlName]="'antecedentes_registrales_tomo_foja'"
+                    matInput>
+            </mat-form-field>
+            </div> 
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Ficha</mat-label>
+                        <input
+                        [formControlName]="'ficha'"
+                        matInput>
+                </mat-form-field>
+            </div> 
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Partida</mat-label>
+                        <input
+                        [formControlName]="'partida'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Titular Registral Acutal</mat-label>
+                        <input
+                        [formControlName]="'titular_registral'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Fecha Inscripcion</mat-label>
+                    <input
+                    matInput
+                    [formControlName]="'fecha_inscripcion'"
+
+                    [matDatepicker]="fecha_inscripcion">
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="fecha_inscripcion"></mat-datepicker-toggle>
+                <mat-datepicker #fecha_inscripcion></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Area Registral</mat-label>
+                        <input
+                        [formControlName]="'area_Registral'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>M2 Fabrinca Inscrita</mat-label>
+                        <input
+                        [formControlName]="'m2fabricainscrita'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Fecha Fabrica</mat-label>
+                        <input
+                        [formControlName]="'fechafabrica'"
+                        matInput
+                        [matDatepicker]="fechafabrica"> 
+                    <mat-datepicker-toggle
+                        matSuffix
+                        [for]="fechafabrica"></mat-datepicker-toggle>
+                    <mat-datepicker #fechafabrica></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Dominio</mat-label>
+                    <mat-select [formControlName]="'dominio'">
+                        <mat-option [value]="'PRIVADO'">PRIVADO</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Partida</mat-label>
+                        <input
+                        [formControlName]="'partida'"
+                        matInput>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

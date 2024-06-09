@@ -1,0 +1,90 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delfiador">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Del Fiador</div>
+            <div class="text-secondary">Descripcion del Fiador / Letra Cambio</div>
+        </div>
+        <div class="grid sm:grid-cols-1 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <h1><b>De la Letra de Cambio</b></h1>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Archivo</mat-label>
+                    <input matInput 
+                    [formControlName]="'archivo'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+
+            <h1><b>Del Fiador</b></h1>
+
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>NRO_DOC</mat-label>
+                    <input matInput 
+                    [formControlName]="'nro_doc'">
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nombre Completo</mat-label>
+                    <input matInput 
+                    [formControlName]="'nombre_completo'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Direccion</mat-label>
+                    <input matInput 
+                    [formControlName]="'direccion'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Email</mat-label> 
+                    <input matInput 
+                    [formControlName]="'email'">
+              
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Telefono</mat-label> 
+                    <input matInput 
+                    [formControlName]="'telefono'">
+     
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Movil</mat-label> 
+                    <input matInput 
+                    [formControlName]="'movil'">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

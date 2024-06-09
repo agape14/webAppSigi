@@ -5,7 +5,7 @@
 
         <!-- Title -->
         <div>
-            <div class="text-4xl font-extrabold tracking-tight leading-none">Incorporacion</div>
+            <div class="text-4xl font-extrabold tracking-tight leading-none">Margesi</div>
             <div class="ml-0.5 font-medium text-secondary">
                 <ng-container *ngIf="contactsCount > 0">
                     {{contactsCount}}
@@ -17,22 +17,32 @@
             <!-- Main actions -->
             <div class="flex flex-auto flex-wrap mt-4">
                 <!-- Name, SKU & etc. -->
-                <div class="flex flex-col w-full lg:w-2/4 sm:pl-8">
+                <div class="flex flex-col w-full lg:w-4/4 sm:pl-8">
                     
                     
                     <!-- SKU and Barcode -->
                     <div class="flex">
                         <mat-form-field class="w-1/3 pr-2">
-                            <mat-label>Prov.</mat-label>
+                            <mat-label>CUM.</mat-label>
                             <input
                                 matInput
                                 formControlName="prov">
                         </mat-form-field>
-                        <mat-form-field class="w-2/3 pl-2">
+                        <mat-form-field class="w-full pl-2">
                             <mat-label>Descripción del predio</mat-label>
                             <input
                                 matInput
                                 formControlName="descripcion">
+                        </mat-form-field>
+                        <mat-form-field class="w-2/3 pl-2">
+                            <mat-label>Distrito</mat-label>
+                            <mat-select formControlName="brand">
+                                <ng-container *ngFor="let brand of brands">
+                                    <mat-option [value]="brand.id">
+                                        {{brand.name}}
+                                    </mat-option>
+                                </ng-container>
+                            </mat-select>
                         </mat-form-field>
                     </div>
 
@@ -70,19 +80,10 @@
 
 
                 <!-- Cost, Base price, Tax & Price -->
-                <div class="flex flex-col w-full lg:w-1/4 sm:pl-8">
-                    <mat-form-field class="w-full">
-                        <mat-label>Distrito</mat-label>
-                        <mat-select formControlName="brand">
-                            <ng-container *ngFor="let brand of brands">
-                                <mat-option [value]="brand.id">
-                                    {{brand.name}}
-                                </mat-option>
-                            </ng-container>
-                        </mat-select>
-                    </mat-form-field>
+                <div class="flex flex-col w-full lg:w-2/4 sm:pl-8">
+      
                     <div class="flex">
-                        <mat-form-field class="w-2/3 pl-2">
+                        <mat-form-field class="w-2/3 pr-2">
                             <mat-label>Habilitación </mat-label>
                             <mat-select formControlName="estadoprovisional">
                                 <ng-container *ngFor="let vendor of vendors">
@@ -94,22 +95,18 @@
                         </mat-form-field>
                         <mat-form-field class="w-1/3 pl-2">
                             <mat-label>Descripcion </mat-label>
-                            <mat-select formControlName="generarenta">
-                                <ng-container *ngFor="let vendor of vendors">
-                                    <mat-option [value]="vendor.id">
-                                        {{vendor.name}}
-                                    </mat-option>
-                                </ng-container>
-                            </mat-select>
+                            <input
+                            matInput
+                            formControlName="descripcion">
                         </mat-form-field>
                     </div>
                 </div>
 
                 <!-- Weight & Tags -->
-                <div class="flex flex-col w-full lg:w-1/4 sm:pl-8">
+                <div class="flex flex-col w-full lg:w-2/4 sm:pl-8">
                     <div class="flex">
-                        <mat-form-field class="w-2/3 pl-2">
-                            <mat-label>Estado </mat-label>
+                        <mat-form-field class="w-2/3 ">
+                            <mat-label>Vía  </mat-label>
                             <mat-select formControlName="estadoprovisional">
                                 <ng-container *ngFor="let vendor of vendors">
                                     <mat-option [value]="vendor.id">
@@ -119,26 +116,10 @@
                             </mat-select>
                         </mat-form-field>
                         <mat-form-field class="w-1/3 pl-2">
-                            <mat-label>Genera Renta </mat-label>
-                            <mat-select formControlName="generarenta">
-                                <ng-container *ngFor="let vendor of vendors">
-                                    <mat-option [value]="vendor.id">
-                                        {{vendor.name}}
-                                    </mat-option>
-                                </ng-container>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div class="flex">
-                        <mat-form-field class="w-2/3 pl-2">
-                            <mat-label>Vía  </mat-label>
-                            <mat-select formControlName="estadoprovisional">
-                                <ng-container *ngFor="let vendor of vendors">
-                                    <mat-option [value]="vendor.id">
-                                        {{vendor.name}}
-                                    </mat-option>
-                                </ng-container>
-                            </mat-select>
+                            <mat-label>Descripcion via</mat-label>
+                            <input
+                            matInput
+                            formControlName="desc_via">
                         </mat-form-field>
                         <!--<mat-form-field class="w-1/3 pl-2">
                             <mat-label>Descripcion </mat-label>
@@ -157,7 +138,7 @@
                             (click)="redirectToOtraVista()"
                             >
                             <mat-icon [svgIcon]="'heroicons_outline:magnifying-glass'"></mat-icon>
-                            <span class="ml-2 mr-1">Buscar</span>
+                            <span class="ml-2 mr-1">Buscar Margesi</span>
                         </button>
                     </div>
                 </div>

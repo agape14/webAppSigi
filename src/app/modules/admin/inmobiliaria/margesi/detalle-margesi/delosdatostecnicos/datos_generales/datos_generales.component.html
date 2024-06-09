@@ -1,0 +1,63 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAspectosCulturalesForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos Generales</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Zonificacion</mat-label>
+        
+                    <mat-select [formControlName]="'zonificacion'">
+                        <mat-option [value]="'Tratamientos'">Tratamientos</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'zonificacion_descripcion'"
+                    >
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Area Total</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'area_total'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Area Tachada</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'area_tachada'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Area Libre</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'area_libre'">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

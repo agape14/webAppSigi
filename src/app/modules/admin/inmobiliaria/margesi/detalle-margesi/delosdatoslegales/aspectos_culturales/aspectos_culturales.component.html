@@ -1,0 +1,60 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAspectosCulturalesForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Aspecots Culturales</div>
+            <div class="text-secondary">Descripcion de los datos culturales</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo de Bien cultural</mat-label>
+        
+                    <mat-select [formControlName]="'tipo_de_bien_cultural'">
+                        <mat-option [value]="'VALOR DE ENTORNO'">VALOR DE ENTORNO</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Adjunto</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'adjunto'"
+                    >
+           <button matSuffix mat-icon-button aria-label="Clear">
+               <mat-icon>attachment</mat-icon>
+            </button>
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Microzona</mat-label>
+        
+                    <mat-select [formControlName]="'microzona'">
+                        <mat-option [value]="'Microzona AIV'">Microzona Aiv</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo de Intervencion</mat-label>
+        
+                    <mat-select [formControlName]="'adjunto'">
+                        <mat-option [value]="'NINGUNO'">Ninguno</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,60 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAspectosTecnicosOcupacionForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Ocupacion</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Ocupacion</mat-label>
+        
+                    <mat-select [formControlName]="'ocupacion'">
+                        <mat-option [value]="'OCUPADO'">OCUPADO</mat-option>
+                        <mat-option [value]="'DISPONIBLE'">DISPONIBLE</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Situacion Legal</mat-label>
+                    <mat-select [formControlName]="'situacion_legal'">
+                        <mat-option [value]="'CON CONTRATO'">CON CONTRATO</mat-option>
+                        <mat-option [value]="'DESEMPLEADO'">DESEMPLEADO</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nivel Ocupacion</mat-label>
+                    <mat-select [formControlName]="'nivel_ocupacion'">
+                        <mat-option [value]="'TOTAL'">TOTAL</mat-option>
+                        <mat-option [value]="'PARCIAL'">PARCIAL</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label># Area Ocupada</mat-label>
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'areaocupada'">
+                </mat-form-field>
+            </div>
+
+        </div>
+    </form>
+</div>
