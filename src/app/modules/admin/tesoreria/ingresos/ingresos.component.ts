@@ -9,7 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import {  MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { IncorporacionPagination } from '../../inmobiliaria/incorporacion/incorporacion.types';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
@@ -136,7 +136,7 @@ const ELEMENT_DATA_PLANILLA_LISTADO: Listados[] = [
     MatIconModule,
     FormsModule,
     MatTabsModule,
-    MatPaginatorModule, MatPaginator, MatSortModule, MatSort, MatTableModule, MatIconButton,
+    MatPaginatorModule,  MatSortModule, MatSort, MatTableModule, MatIconButton,
   ]
 })
 export class IngresosComponent {

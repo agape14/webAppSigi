@@ -56,7 +56,7 @@ export class ImportardatosbancoComponent implements OnInit, AfterViewInit, OnDes
 
     
 
-    @ViewChild(MatPaginator) private _paginator: MatPaginator;
+    @ViewChild(MatPaginator) private _paginator;
     @ViewChild(MatSort) private _sort: MatSort;
     data: any;
     recentTransactionsDataSource: MatTableDataSource<any> = new MatTableDataSource();

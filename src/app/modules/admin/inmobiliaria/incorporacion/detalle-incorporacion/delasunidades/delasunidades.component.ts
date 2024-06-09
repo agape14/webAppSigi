@@ -12,7 +12,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTabsModule } from '@angular/material/tabs';
 import { IncorporacionPagination } from '../../incorporacion.types';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import {  MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { ViewChild} from '@angular/core';
@@ -68,7 +68,7 @@ const ELEMENT_DATA: DataExample[] = [
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule,
             MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, MatDatepickerModule, NgClass, NgFor, NgIf, MatTabsModule,
-            MatPaginatorModule, MatPaginator, MatSortModule, MatSort, MatTableModule],
+            MatPaginatorModule,  MatSortModule, MatSort, MatTableModule],
 })
 export class DelasunidadesComponent {
     _liveAnnouncer = inject(LiveAnnouncer);
