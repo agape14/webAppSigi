@@ -1,0 +1,403 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Control de Pagos</div>
+            <div class="text-secondary">Descripcion de las Control de Pagos</div>
+        </div>
+
+ 
+        <div class="grid sm:grid-cols-1 gap-6 w-full mt-8">
+
+            <form [formGroup]="datosDelasUnidadesInmobiliariasForm">
+
+                <!-- Section -->
+                <div class="w-full">
+                    <div class="text-xl">Datos de la unidades inmobiliarias</div>
+                    <div class="text-secondary">Descripcion de la lista de inmobiliarias</div>
+                </div>
+        
+                <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                        class="w-full"
+                        [subscriptSizing]="'dynamic'">
+                        <mat-label>CUIM</mat-label>
+                        <input
+                        [formControlName]="'cuim'"
+                        matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                        class="w-full"
+                        [subscriptSizing]="'dynamic'">
+                        <mat-label>Interior</mat-label>
+                        <input
+                        [formControlName]="'interior'"
+                        matInput>
+                        </mat-form-field>
+                    </div>
+                <div class="sm:col-span-1">
+                    <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Interior</mat-label>
+                    <input
+                    [formControlName]="'area'"
+                    matInput>
+                    </mat-form-field>
+                </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                        class="w-full"
+                        [subscriptSizing]="'dynamic'">
+                        <mat-label>Reponsable del Gasto</mat-label>
+                        <input
+                        [formControlName]="'responsable_del_gasto'"
+                        matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Periodo del</mat-label> 
+                            <input
+                            matInput
+                            [matDatepicker]="fecha_inicio">
+                        <mat-datepicker-toggle
+                            matSuffix
+                            [for]="fecha_inicio"></mat-datepicker-toggle>
+                        <mat-datepicker #fecha_inicio></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <mat-form-field
+                            class="w-full"
+                            [subscriptSizing]="'dynamic'">
+                            <mat-label>Al </mat-label> 
+                            <input
+                            matInput
+                            [matDatepicker]="fecha_final">
+                        <mat-datepicker-toggle
+                            matSuffix
+                            [for]="fecha_final"></mat-datepicker-toggle>
+                        <mat-datepicker #fecha_final></mat-datepicker>
+                        <button matSuffix mat-icon-button aria-label="Clear">
+                            <mat-icon>search</mat-icon>
+                         </button>
+
+                        </mat-form-field>
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <button >
+                            <mat-icon>attach_file</mat-icon>
+                            <span>Generar Gastos</span>
+                        </button>
+                     </div>
+                </div>
+            </form>
+        
+            <mat-tab-group>
+                <mat-tab label="Luz">
+                    <div class="grid sm:grid-cols-5 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>edit</mat-icon>
+                                    <span>Actualizar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Pagar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>delete</mat-icon>
+                                    <span>Debe</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Ver Documento</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                            <button  aria-label="Clear">
+                                <mat-icon>attached</mat-icon>
+                                <span>Adjuntar Documento</span>
+                            </button>
+                    </div>
+        
+        
+                </div>
+        
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr>
+                            <th class="border border-gray-300 px-4 py-2">CUM</th>
+                            <th class="border border-gray-300 px-4 py-2">CUIM</th>
+                            <th class="border border-gray-300 px-4 py-2">Fecha Limite</th>
+                            <th class="border border-gray-300 px-4 py-2">Ano</th>
+                            <th class="border border-gray-300 px-4 py-2">Periodo</th>
+                            <th class="border border-gray-300 px-4 py-2">Total Deuda</th>
+                            <th class="border border-gray-300 px-4 py-2">Pagado</th>
+                            <th class="border border-gray-300 px-4 py-2">Documento</th>
+                            <th class="border border-gray-300 px-4 py-2">Estado</th>
+
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+
+                                           
+                        </tr>
+                        <!-- Puedes agregar más filas según sea necesario -->
+                    </tbody>
+                </table>
+                </mat-tab>
+                <mat-tab label="Agua">
+                    <div class="grid sm:grid-cols-5 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>edit</mat-icon>
+                                    <span>Actualizar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Pagar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>delete</mat-icon>
+                                    <span>Debe</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Ver Documento</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                            <button  aria-label="Clear">
+                                <mat-icon>attached</mat-icon>
+                                <span>Adjuntar Documento</span>
+                            </button>
+                    </div>
+        
+        
+                </div>
+        
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr>
+                            <th class="border border-gray-300 px-4 py-2">CUM</th>
+                            <th class="border border-gray-300 px-4 py-2">CUIM</th>
+                            <th class="border border-gray-300 px-4 py-2">Fecha Limite</th>
+                            <th class="border border-gray-300 px-4 py-2">Ano</th>
+                            <th class="border border-gray-300 px-4 py-2">Periodo</th>
+                            <th class="border border-gray-300 px-4 py-2">Total Deuda</th>
+                            <th class="border border-gray-300 px-4 py-2">Pagado</th>
+                            <th class="border border-gray-300 px-4 py-2">Documento</th>
+                            <th class="border border-gray-300 px-4 py-2">Estado</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+         
+                        </tr>
+                        <!-- Puedes agregar más filas según sea necesario -->
+                    </tbody>
+                </table>
+                </mat-tab>
+                <mat-tab label="Impuesto Predial">
+                    <div class="grid sm:grid-cols-5 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>edit</mat-icon>
+                                    <span>Actualizar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Pagar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>delete</mat-icon>
+                                    <span>Debe</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Ver Documento</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                            <button  aria-label="Clear">
+                                <mat-icon>attached</mat-icon>
+                                <span>Adjuntar Documento</span>
+                            </button>
+                    </div>
+        
+        
+                </div>
+        
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr>
+                            <th class="border border-gray-300 px-4 py-2">CUM</th>
+                            <th class="border border-gray-300 px-4 py-2">CUIM</th>
+                            <th class="border border-gray-300 px-4 py-2">Ano</th>
+                            <th class="border border-gray-300 px-4 py-2">Periodo</th>
+                            <th class="border border-gray-300 px-4 py-2">Total Deuda</th>
+                            <th class="border border-gray-300 px-4 py-2">Pagado</th>
+                            <th class="border border-gray-300 px-4 py-2">Documento</th>
+                            <th class="border border-gray-300 px-4 py-2">Estado</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>                                              
+                        </tr>
+                        <!-- Puedes agregar más filas según sea necesario -->
+                    </tbody>
+                </table>
+                </mat-tab>
+                <mat-tab label="Arbitrios">
+                    <div class="grid sm:grid-cols-5 gap-6 w-full mt-8">
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>edit</mat-icon>
+                                    <span>Actualizar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Pagar</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>delete</mat-icon>
+                                    <span>Debe</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                                <button  aria-label="Clear">
+                                    <mat-icon>download</mat-icon>
+                                    <span>Ver Documento</span>
+                                </button>
+                        </div>
+                        <div class="sm:col-span-1">
+                        
+                            <button  aria-label="Clear">
+                                <mat-icon>attached</mat-icon>
+                                <span>Adjuntar Documento</span>
+                            </button>
+                    </div>
+        
+        
+                </div>
+        
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr>
+                            <th class="border border-gray-300 px-4 py-2">CUM</th>
+                            <th class="border border-gray-300 px-4 py-2">CUIM</th>
+                            <th class="border border-gray-300 px-4 py-2">Ano</th>
+                            <th class="border border-gray-300 px-4 py-2">Periodo</th>
+                            <th class="border border-gray-300 px-4 py-2">Total Deuda</th>
+                            <th class="border border-gray-300 px-4 py-2">Pagado</th>
+                            <th class="border border-gray-300 px-4 py-2">Documento</th>
+                            <th class="border border-gray-300 px-4 py-2">Estado</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí puedes iterar sobre tus datos y mostrarlos en filas -->
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>
+                            <td class="border border-gray-300 px-4 py-2"></td>                                              
+                        </tr>
+                        <!-- Puedes agregar más filas según sea necesario -->
+                    </tbody>
+                </table>
+                </mat-tab>
+                </mat-tab-group>
+            <!-- Cód. Prov. Inmueble -->
+
+           
+</div>

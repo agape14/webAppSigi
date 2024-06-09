@@ -34,6 +34,9 @@ import { MargesiListaDeLaUnidadesInmobiliarias } from './delasunidadesinmobiliar
 import { MargesiDatosDeLaUnidadesInmobiliarias } from './delasunidadesinmobiliarias/datos_delas_unidades_inmobiliarias/datos_delas_unidades_inmobiliarias.component';
 import { MargesiListaActosdePredios } from './actos_sobre_predio/lista_actos_sobre_predio/lista_actos_sobre_predio.component';
 import { MargesiDatosdePredios } from './actos_sobre_predio/datos_actos_sobre_predio/datos_actos_sobre_predio.component';
+import { MargesiDatosControldePagos } from './control_de_pagos/control_de_pagos.component';
+import { MargesiDatosProcesosJudiciales } from './procesos_judiciales_y_arbitrajes/procesos_judiciales_y_arbitrajes.component';
+import { MargesiDatositls } from './itls/itls.component';
 
 @Component({
   selector: 'app-detalle-margesi',
@@ -45,7 +48,8 @@ import { MargesiDatosdePredios } from './actos_sobre_predio/datos_actos_sobre_pr
     CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase, DatosGeneralesMargesi, UbicacionMargesi, FotosMargesi, DelosDatosLegalesDatosGeneralesMargesi, DelosDatosLegalesAspectosCulturalesMargesi,
     DelosDatosTecnicosLinderosMargesi, DelosDatosTecnicosDatosGenerales, DelosDatosTecnicosReferenciasMargesi, DelosDatosTecnicosOcupacionMargesi, DelosDatosTecnicosCaractUsosDelSuelo, DelosDatosTecnicosEdificacionValorizacion,
     DelosDatosTecnicosServiciosBasicosMargesi, DelosDatosLegalesCargasMargesi, MargesiListaDeLaUnidadesInmobiliarias, MargesiDatosDeLaUnidadesInmobiliarias,
-    MargesiListaActosdePredios, MargesiDatosdePredios
+    MargesiListaActosdePredios, MargesiDatosdePredios, MargesiDatosControldePagos,
+    MargesiDatosProcesosJudiciales, MargesiDatositls
  ],
 })
 export class DetalleMargesiComponent implements OnInit{
@@ -55,6 +59,10 @@ export class DetalleMargesiComponent implements OnInit{
   panels_delosdatostecnicos: any[] = [];
   panels_delosinmobiliarios: any[] = [];
   panels_delosactospredio_lista: any[] = [];
+  panel_controldepagos: any[] = [];
+  panel_judiciales: any[] = [];
+  panel_inspecciones: any[] = [];
+  panel_itls: any[] = [];
 
   myForm: FormGroup;
 
@@ -66,6 +74,11 @@ export class DetalleMargesiComponent implements OnInit{
     selectedPanel3: string = 'de_los_datos_tecnicos_datos_generales';
     selectedPanel4: string = 'de_los_datos_lista_inmobiliarios';
     selectedPanel5: string = 'de_los_actos_predios_lista';
+    selectedPanel6: string = 'control_de_pago_luz';
+    selectedPanel7: string = 'panel_judiciales';
+    selectedPanel8: string = 'inspecciones';
+    selectedPanel9: string = 'itls';
+
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
   
@@ -201,7 +214,47 @@ export class DetalleMargesiComponent implements OnInit{
             title      : 'Datos de los Datos Inmobiliarios',
             description: 'Ver datos actos predios',
         },
-      ];
+        
+    ];
+      this.panel_controldepagos = [
+        {
+            id         : 'control_de_pago_luz',
+            icon       : 'heroicons_outline:user-circle',
+            title      : 'Control de pago Luz',
+            description: 'Ver listado Control de Pago Luz.',
+        },
+    ]
+
+    this.panel_judiciales = [
+        {
+            id         : 'panel_judiciales',
+            icon       : 'heroicons_outline:user-circle',
+            title      : 'Procesos Judiciales y Arbitrajes',
+            description: 'Ver Procesos Judiciales y Arbitrajes.',
+        },
+
+
+    ]
+
+    this.panel_inspecciones= [
+        {
+            id         : 'inspecciones',
+            icon       : 'heroicons_outline:user-circle',
+            title      : 'Inspecciones',
+            description: 'Ver Inspecciones.',
+        },
+    ]
+
+    
+    this.panel_itls= [
+        {
+            id         : 'itls',
+            icon       : 'heroicons_outline:user-circle',
+            title      : 'itls',
+            description: 'Ver itls.',
+        },
+    ]
+
 
       this._fuseMediaWatcherService.onMediaChange$
             .pipe(takeUntil(this._unsubscribeAll))
@@ -311,6 +364,41 @@ export class DetalleMargesiComponent implements OnInit{
             this.drawer.close();
         }
     }
+    
+    goToPanelControldePago(panel: string): void{{
+        this.selectedPanel6 = panel;
+        if ( this.drawerMode === 'over' )
+            {
+                this.drawer.close();
+            }
+    }}
+
+    goToPanelProcesosJudicial(panel: string): void{
+        {
+        this.selectedPanel7 = panel;
+        if ( this.drawerMode === 'over' )
+            {
+                this.drawer.close();
+            }
+    }}
+
+    goToPanelInspecciones(panel: string): void{
+        {
+        this.selectedPanel8 = panel;
+        if ( this.drawerMode === 'over' )
+            {
+                this.drawer.close();
+            }
+    }}
+
+    goToPanelITLS(panel: string): void{
+        {
+        this.selectedPanel9 = panel;
+        if ( this.drawerMode === 'over' )
+            {
+                this.drawer.close();
+            }
+    }}
 
     getPanelInfo(id: string): any
     {
@@ -336,6 +424,25 @@ export class DetalleMargesiComponent implements OnInit{
     {
         return this.panels_delosactospredio_lista.find(panel => panel.id === id);
     }
+
+    getPanelControldePagos(id: string): any
+    {
+        return this.panel_controldepagos.find(panel => panel.id === id);
+    }
+    getPanelProcesosJudiciales(id: string): any
+    {
+        return this.panel_judiciales.find(panel => panel.id === id);
+    }
+    getPanelInspecciones(id: string): any
+    {
+        return this.panel_inspecciones.find(panel => panel.id === id);
+    }
+
+    getPanelITS(id: string): any
+    {
+        return this.panel_itls.find(panel => panel.id === id);
+    }
+
 
     trackByFn(index: number, item: any): any
     {
