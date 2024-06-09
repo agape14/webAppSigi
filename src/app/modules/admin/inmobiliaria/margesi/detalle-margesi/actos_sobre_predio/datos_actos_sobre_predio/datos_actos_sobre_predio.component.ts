@@ -5,11 +5,11 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild, ViewE
 import { FormBuilder, FormsModule, ReactiveFormsModule, UntypedFormGroup } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatOptionModule } from "@angular/material/core";
-import { MatDatepicker, MatDatepickerModule, MatDatepickerToggle } from "@angular/material/datepicker";
+import {  MatDatepickerModule } from "@angular/material/datepicker";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
-import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
+import {  MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatSort, MatSortModule, Sort } from "@angular/material/sort";
@@ -121,9 +121,9 @@ const ELEMENT_DATA: DataExample[] = [
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
-        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, MatDatepicker, MatDatepickerToggle,
+        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
     MatDatepickerModule, CommonModule, 
-    MatPaginatorModule, MatPaginator, MatSortModule, MatSort, MatTableModule,
+    MatPaginatorModule,  MatSortModule, MatSort, MatTableModule,
 MatTabsModule, MatTabGroup, MatDrawer, MatSidenavModule,
 MargesiActosSobrePredioDelArrendatario, MargesiActosSobrePredioDelContrato, MargesiActosSobrePredioDelFiador,
 MargesiActosSobrePredioCronograma, MargesiActosSobrePredioEstadoCuenta,
@@ -160,7 +160,7 @@ MargesiActosSobrePredioAplicacionGarantia
         }
       }
 
-    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatPaginator) paginator;
     ngOnInit(): void
     {
         this.datos_actos_sobre_predioForm = this._formBuilder.group({
