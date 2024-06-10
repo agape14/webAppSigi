@@ -1,0 +1,111 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delosDatosITLAntecedentesDelArrendatario">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Del arrendamiento</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>NATURAL</mat-label>
+                    <mat-select [formControlName]="'documento'">
+                        <mat-option [value]="'NATURAL'">NATURAL</mat-option>
+                        <mat-option [value]="'JURIDICO'">JURIDICO</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!-- Cód. Prov. Inmueble -->
+            <!-- tipo_arrendatario: [],
+            documento: [],
+            doc_num: [],
+            doc_nombre: [],
+            direccion: [],
+            email: [],
+            telefono: [],
+            movil: [] -->
+
+            <div class="w-full">
+                <div class="text-xl">Persona Natural</div>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>DNI</mat-label>
+                    <mat-select [formControlName]="'documento'">
+                        <mat-option [value]="'DNI'">DNI</mat-option>
+                        <mat-option [value]="'PASARPOTE'">PASARPOTE</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Documento Numero</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'doc_num'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Documento Nombre</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'doc_nombre'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Direccion</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'direccion'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'email'">
+
+                </mat-form-field>
+            </div>       <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Telefono</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'telefono'">
+
+                </mat-form-field>
+            </div>       <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Movil</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'movil'">
+
+                </mat-form-field>
+            </div>
+
+        </div>
+    </form>
+</div>

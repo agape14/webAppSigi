@@ -1,0 +1,110 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delosDatosITLAntecedentesDelPredio">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Datos del Predio</div>
+            <div class="text-secondary">Descripcion del Predio</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>CUM</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'cum'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>CUIM</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'cuim'">
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>N Interior</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'n_interior'">
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Denominacion</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'denominacion'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Titular Registral Actual</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'titular_registral_actual'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-2">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha Creacion:</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fecha_inscripcion">
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="fecha_inscripcion"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_inscripcion></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Area Registral</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'area_registral'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>#Tomo-Foja</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'tomo_fija'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>#Ficha</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'ficha'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>#Partida</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'partida'">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

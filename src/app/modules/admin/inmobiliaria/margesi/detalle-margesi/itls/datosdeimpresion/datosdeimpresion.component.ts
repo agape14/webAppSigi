@@ -19,33 +19,20 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { FuseMediaWatcherService } from "@fuse/services/media-watcher";
 import { IncorporacionPagination } from "app/modules/admin/inmobiliaria/incorporacion/incorporacion.types";
 import { Subject, takeUntil } from "rxjs";
-import { DelosDatosITLAntecedentesDelPredio } from "./antecedentes/delpredio/delpredio.component";
-import { DelosDatosITLAntecedentesDelArrendatario } from "./antecedentes/delarrendatario/delarrendatario.component";
-import { DelosDatosITLAntecedentesDelArrendatarioDirecto } from "./antecedentes/delarrendetariodirecto/delarrendatario.directo.component";
-import { DelosDatosITLAntecedentesDelContrato } from "./antecedentes/delcontrato/delcontrato.component";
-import { DelosDatosITLAntecedentesDelFiador } from "./antecedentes/delfiador/delfiador.component";
-import { DelosDatosITLAntecedentesDelosDatosCobranzas } from "./antecedentes/delosdatoscobranza/delosdatoscobranza.component";
-import { MargesiDatosAprobacionesitls } from "./aprobaciones/aprobaciones.component";
-import { MargesiDatosDeImpresionitls } from "./datosdeimpresion/datosdeimpresion.component";
-
-
-
 
 @Component({
-    selector: 'margesi-datos-itls',
-    templateUrl: './itls.component.html',
+    selector: 'margesi-datos-itls-datosdeimpresion',
+    templateUrl: './datosdeimpresion.component.html',
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
         MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
     MatDatepickerModule, CommonModule, MatTabsModule, MatPaginatorModule,  MatSortModule, MatTableModule, MatTabsModule, MatSidenavModule,
-    DelosDatosITLAntecedentesDelPredio, DelosDatosITLAntecedentesDelArrendatario,DelosDatosITLAntecedentesDelArrendatarioDirecto,
-    DelosDatosITLAntecedentesDelContrato, DelosDatosITLAntecedentesDelFiador, DelosDatosITLAntecedentesDelosDatosCobranzas, MargesiDatosAprobacionesitls,
-    MargesiDatosDeImpresionitls
+  
 ],
       })
-  export class MargesiDatositls{
+  export class MargesiDatosDeImpresionitls{
     panels: any[] = [];
     selectedPanel: string = 'delarrendatario';
     drawerOpened: boolean = true;
@@ -74,70 +61,14 @@ import { MargesiDatosDeImpresionitls } from "./datosdeimpresion/datosdeimpresion
     ngOnInit(): void
     {
       this.datosAdministracioniTILForm = this._formBuilder.group({
-        n_itil: [],
-        descripcion_itil: [],
-        cum: [],
-        cuim: [],
-        direccion: [],
-        area: [],
-        situacion_legal: [],
-        nivel_ocupacion: [],
-        areaocupada: [],
-        fecha_creacion: [],
-        delapersona:[],
-        para:[],
-        estado_itl: [],
-        acto: [],
-        asunto: [],
-        motivo: []
-
+        opinion_legal:[],
+        numdoc: [],
+        fecha:[],
+        estadoacto: [],
+        fechaaprobacion: [],
+        observaciones: []
       });
-      this.panels = [
-        {
-          id         : 'delpredio',
-          icon       : 'heroicons_outline:user-circle',
-          title      : 'Del Predio',
-          description: 'Ver Del Predio.',
-        },
-        {
-          id         : 'delarrendatariodirecto',
-          icon       : 'heroicons_outline:user-circle',
-          title      : 'Del Arrendatario directo',
-          description: 'Ver Arrendatario directo.',
-        },
-        {
-          id         : 'delarrendatario',
-          icon       : 'heroicons_outline:user-circle',
-          title      : 'Del Arrendatario',
-          description: 'Ver Arrendatario',
-        },
 
-        {
-            id         : 'contrato',
-            icon       : 'heroicons_outline:lock-closed',
-            title      : 'Del Contrato',
-            description: 'Ver Contrato',
-        },
-        {
-            id         : 'delfiador',
-            icon       : 'heroicons_outline:lock-closed',
-            title      : 'Del Fiador / Letra de Cambio',
-            description: 'Ver Fiador / Letra de Cambio',
-        },
-        {
-            id         : 'delosdatoscobranzas',
-            icon       : 'heroicons_outline:lock-closed',
-            title      : 'De los Datos Cobranzas',
-            description: 'Ver De los Datos Cobranzas',
-        },
-        {
-            id         : 'antecedentes_del_caso',
-            icon       : 'heroicons_outline:lock-closed',
-            title      : 'Antecedentes del Caso',
-            description: 'Ver Antecedentes del Caso',
-        },
-
-      ];
   
       this._fuseMediaWatcherService.onMediaChange$
       .pipe(takeUntil(this._unsubscribeAll))

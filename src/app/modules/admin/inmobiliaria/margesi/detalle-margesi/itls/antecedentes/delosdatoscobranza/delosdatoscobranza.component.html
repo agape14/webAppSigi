@@ -1,0 +1,59 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delosDatosITLAntecedentesDelosDatosCobranzas">
+    
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">De los datos Cobranzas</div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Tipo Comprobante (*)</mat-label>
+                    <mat-select [formControlName]="'tipo_comprobante'">
+                        <mat-option [value]="'BOLETA'">BOLETA</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+
+
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Comprobante a nombre de (*)</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'comprobante_nombre'">
+     
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>RUC (solo si es factura) (*)</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'ruc_factura'">
+  
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Motivo Ingreso (*)</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'motivo_ingreso'">
+  
+                </mat-form-field>
+            </div>
+           
+
+        </div>
+    </form>
+</div>
