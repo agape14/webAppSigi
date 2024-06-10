@@ -124,7 +124,7 @@ const ELEMENT_DATA: DataExample[] = [
         MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
     MatDatepickerModule, CommonModule, 
     MatPaginatorModule,  MatSortModule, MatTableModule,
-MatTabsModule, MatTabGroup, MatDrawer, MatSidenavModule,
+MatTabsModule, MatSidenavModule,
 MargesiActosSobrePredioDelArrendatario, MargesiActosSobrePredioDelContrato, MargesiActosSobrePredioDelFiador,
 MargesiActosSobrePredioCronograma, MargesiActosSobrePredioEstadoCuenta,
 MargesiActosSobrePredioInspecciones, MargesiActosSobrePredioRenovacion,

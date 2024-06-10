@@ -29,7 +29,7 @@ import { IncorporacionPagination } from "app/modules/admin/inmobiliaria/incorpor
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
         MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
     MatDatepickerModule, CommonModule, MatTabsModule,
-    MatPaginatorModule,  MatSortModule, MatSort, MatTableModule
+    MatPaginatorModule,  MatSortModule, MatTableModule
 ],
       })
   export class MargesiDatosProcesosJudiciales{
