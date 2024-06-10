@@ -136,7 +136,7 @@ const ELEMENT_DATA_PLANILLA_LISTADO: Listados[] = [
     MatIconModule,
     FormsModule,
     MatTabsModule,
-    MatPaginatorModule,  MatSortModule, MatSort, MatTableModule, MatIconButton,
+    MatPaginatorModule,  MatSortModule, MatTableModule,
   ]
 })
 export class IngresosComponent {
@@ -151,9 +151,9 @@ export class IngresosComponent {
   dataSourcePlanillaGuiadeRemision = new MatTableDataSource<GuiadeRemision>(ELEMENT_DATA_PLANILLA_GUIA_DE_REMISION)
   dataSourcePlanillaListado = new MatTableDataSource<Listados>(ELEMENT_DATA_PLANILLA_LISTADO)
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort) sort;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator;
 
   maxHeight: number;
   constructor()

@@ -123,7 +123,7 @@ const ELEMENT_DATA: DataExample[] = [
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
         MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
     MatDatepickerModule, CommonModule, 
-    MatPaginatorModule,  MatSortModule, MatSort, MatTableModule,
+    MatPaginatorModule,  MatSortModule, MatTableModule,
 MatTabsModule, MatTabGroup, MatDrawer, MatSidenavModule,
 MargesiActosSobrePredioDelArrendatario, MargesiActosSobrePredioDelContrato, MargesiActosSobrePredioDelFiador,
 MargesiActosSobrePredioCronograma, MargesiActosSobrePredioEstadoCuenta,
