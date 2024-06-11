@@ -1,0 +1,126 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delosDatosITLAntecedentesDelContrato">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Del arrendamiento directo por proyectos de inversion publica con fin social</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Numero Contrato</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'numero_contrato'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Numero Adenda</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'numero_adenda'">
+  
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha de Inicio:</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fecha_inicio">
+            <mat-datepicker-toggle matSuffix [for]="fecha_inicio"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_inicio></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha de Fin:</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fecha_fin">
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="fecha_fin"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_fin></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>mes</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'mes'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>search</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Renta</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'renta'">
+          
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Garantia</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'garantia'">
+          
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Uso Generico</mat-label>
+                    <mat-select [formControlName]="'uso_generico'">
+                        <mat-option [value]="'VIVIENDA'">VIVIENDA</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Uso Especifico</mat-label>
+                    <mat-select [formControlName]="'uso_especifico'">
+                        <mat-option [value]="'CASA HABITACION'">CASA HABITACION</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>F. Aprobacion ITL</mat-label>
+                    <input
+                    matInput
+                    [matDatepicker]="f_aprobacion_itl">
+                <mat-datepicker-toggle matSuffix [for]="f_aprobacion_itl"></mat-datepicker-toggle>
+                <mat-datepicker #f_aprobacion_itl></mat-datepicker>
+                <button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon>search</mat-icon>
+                 </button>
+
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>

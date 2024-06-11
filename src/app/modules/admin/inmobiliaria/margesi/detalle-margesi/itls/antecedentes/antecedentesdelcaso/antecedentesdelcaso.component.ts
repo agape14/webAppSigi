@@ -14,21 +14,25 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 
 @Component({
-    selector: 'margesi-actos-sobre-predio-aplicacion_garantia',
-    templateUrl: './aplicacion_garantia.component.html',
+    selector: 'margesi-itls-antecedentes-del-caso',
+    templateUrl: './antecedentesdelcaso.component.html',
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
-        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
-    MatDatepickerModule],
+        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule,   MatDatepickerModule],
       })
-  export class MargesiActosSobrePredioAplicacionGarantia{
+  export class DelosDatosITLAntecedentesDelCaso{
+    delosDatosITLAntecedentesDElCaso: UntypedFormGroup;
     _formBuilder = inject(FormBuilder);
 
     ngOnInit(): void
     {
-        // Create the form
+        this.delosDatosITLAntecedentesDElCaso = this._formBuilder.group({
+            texto: [],
 
+
+
+        });
     }
 }

@@ -14,21 +14,26 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 
 @Component({
-    selector: 'margesi-actos-sobre-predio-aplicacion_garantia',
-    templateUrl: './aplicacion_garantia.component.html',
+    selector: 'margesi-itls-antecedentes-del-los-datos-cobranza',
+    templateUrl: './delosdatoscobranza.component.html',
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
-        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
-    MatDatepickerModule],
+        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule,   MatDatepickerModule],
       })
-  export class MargesiActosSobrePredioAplicacionGarantia{
+  export class DelosDatosITLAntecedentesDelosDatosCobranzas{
+    delosDatosITLAntecedentesDelosDatosCobranzas: UntypedFormGroup;
     _formBuilder = inject(FormBuilder);
 
     ngOnInit(): void
     {
-        // Create the form
+        this.delosDatosITLAntecedentesDelosDatosCobranzas = this._formBuilder.group({
+            tipo_comprobante: [],
+            comprobante_nombre: [],
+            ruc_factura: [],
+            motivo_ingreso: [],
 
+        });
     }
 }

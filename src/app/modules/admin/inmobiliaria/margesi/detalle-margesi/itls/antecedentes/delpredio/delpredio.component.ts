@@ -14,21 +14,32 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 
 @Component({
-    selector: 'margesi-actos-sobre-predio-aplicacion_garantia',
-    templateUrl: './aplicacion_garantia.component.html',
+    selector: 'margesi-itls-antecedentes-del-predio',
+    templateUrl: './delpredio.component.html',
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
-        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
-    MatDatepickerModule],
+        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule,   MatDatepickerModule],
       })
-  export class MargesiActosSobrePredioAplicacionGarantia{
+  export class DelosDatosITLAntecedentesDelPredio{
+    delosDatosITLAntecedentesDelPredio: UntypedFormGroup;
     _formBuilder = inject(FormBuilder);
 
     ngOnInit(): void
     {
-        // Create the form
-
+        this.delosDatosITLAntecedentesDelPredio = this._formBuilder.group({
+            cum: [],
+            cuim: [],
+            n_interior: [],
+            denominacion: [],
+            direccion: [],
+            titular_registral_actual: [],
+            fecha_inscripcion: [],
+            area_registral: [],
+            tomo_fija: [],
+            ficha: [],
+            partida: [],
+        });
     }
 }

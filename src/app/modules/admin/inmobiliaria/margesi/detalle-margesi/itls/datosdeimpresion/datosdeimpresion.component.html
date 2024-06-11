@@ -1,0 +1,49 @@
+
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+   
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">ETIL Datos de Impresion</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+
+        <div class="sm:col-span-1">
+            <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Referencias</mat-label>
+    
+                <input matInput type="text" maxlength="3"
+                >
+    
+            </mat-form-field>
+        </div>
+
+        <div class="sm:col-span-1">
+            <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Adjuntos</mat-label>
+    
+                <input matInput type="text" maxlength="3"
+                >
+    
+            </mat-form-field>
+        </div>
+
+        <div class="sm:col-span-1">
+            <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Derivar</mat-label>
+                <mat-select >
+                    <mat-option [value]="'APROBADO'">APROBADO</mat-option>
+                </mat-select>
+                <button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon>print</mat-icon>
+                 </button>
+            </mat-form-field>
+        </div>
+</div>

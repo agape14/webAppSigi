@@ -68,7 +68,7 @@ const ELEMENT_DATA: DataExample[] = [
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule,
             MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, MatDatepickerModule, NgClass, NgFor, NgIf, MatTabsModule,
-            MatPaginatorModule,  MatSortModule, MatSort, MatTableModule],
+            MatPaginatorModule,  MatSortModule, MatTableModule],
 })
 export class DelasunidadesComponent {
     _liveAnnouncer = inject(LiveAnnouncer);

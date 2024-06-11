@@ -54,7 +54,7 @@ export interface DataExample {
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
         MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
-        MatPaginatorModule,  MatSortModule, MatSort, MatTableModule, CommonModule],
+        MatPaginatorModule,  MatSortModule, MatTableModule, CommonModule],
       })
   export class MargesiActosSobrePredioEstadoCuenta{
     dataArray1: DataExample[] = [

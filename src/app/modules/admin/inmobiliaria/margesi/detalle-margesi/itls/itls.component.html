@@ -53,5 +53,378 @@
                     <!-- Puedes agregar más filas según sea necesario -->
                 </tbody>
             </table>
-           
+
+
+           <div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAdministracioniTILForm">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">ETIL Administracion</div>
+            <div class="text-secondary">Descripcion de los datos tecnicos</div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>N de ITIL</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'n_itil'">
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Descripcion ITIL</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'descripcion_itil'">
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>CUM</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'cum'">
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>CUIM</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'cuim'">
+                </mat-form-field>
+            </div>
+
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Direccion</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'direccion'">
+                </mat-form-field>
+            </div>
+
+            
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Area m2</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'area'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Situacion Legal</mat-label>
+                    <mat-select [formControlName]="'situacion_legal'">
+                        <mat-option [value]="'CON CONTRATO'">CON CONTRATO</mat-option>
+                        <mat-option [value]="'DESEMPLEADO'">DESEMPLEADO</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Nivel Ocupacion</mat-label>
+                    <mat-select [formControlName]="'nivel_ocupacion'">
+                        <mat-option [value]="'TOTAL'">TOTAL</mat-option>
+                        <mat-option [value]="'PARCIAL'">PARCIAL</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label># Area Ocupada</mat-label>
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'areaocupada'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha Creacion:</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fecha_creacion">
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="fecha_creacion"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_creacion></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>De la Persona:</mat-label>
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'delapersona'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Para:</mat-label>
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'para'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Estado ITL:</mat-label>
+                    <mat-select [formControlName]="'estado_itl'">
+                        <mat-option [value]="'APROBADO'">APROBADO</mat-option>
+                        <mat-option [value]="'DESAPROBADO'">DESAPROBADO</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Acto:</mat-label>
+                    <mat-select [formControlName]="'acto'">
+                        <mat-option [value]="'Arrendamiento Directo'">Arrendamiento Directo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Asunto:</mat-label>
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'asunto'">
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Motivo:</mat-label>
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'motivo'">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+
+
 </div>
+
+    <div class="w-full">
+        <div class="text-xl">Acciones</div>
+    </div>
+
+    <div class="grid sm:grid-cols-6 gap-6 w-full mt-8">
+
+        <div class="sm:col-span-1">
+            <button >
+                <mat-icon>save</mat-icon>
+                <span>Grabar</span>
+            </button>
+        </div>
+        <div class="sm:col-span-1">
+            <button >
+                <mat-icon>print</mat-icon>
+                <span>Imprimir</span>
+            </button>
+        </div>
+        <div class="sm:col-span-1">
+            <button >
+                <mat-icon>check</mat-icon>
+                <span>Aprobar</span>
+            </button>
+        </div>
+        <div class="sm:col-span-1">
+            <button >
+                <mat-icon>check</mat-icon>
+                <span>Editar ITL</span>
+            </button>
+        </div>
+        <div class="sm:col-span-1">
+            <button >
+                <mat-icon>delete</mat-icon>
+                <span>Anular ITL</span>
+            </button>
+        </div>
+        <div class="sm:col-span-1">
+            <button >
+                <mat-icon>forward</mat-icon>
+                <span>Ir al Margesi</span>
+            </button>
+        </div>
+        <div class="sm:col-span-1">
+            <button >
+                <mat-icon>forward</mat-icon>
+                <span>Ir a opinion legal</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<mat-tab-group>
+    <mat-tab label="II.Antecedentes">
+
+        <mat-drawer-container class="flex-auto sm:h-full">
+
+            <!-- Drawer -->
+            <mat-drawer
+                class="sm:w-96 dark:bg-gray-900"
+                [autoFocus]="false"
+                [mode]="drawerMode"
+                [opened]="drawerOpened"
+                #drawer>
+                <!-- Header -->
+                <div class="flex items-center justify-between m-8 mr-6 sm:my-10">
+                    <!-- Title -->
+                    <div class="font-extrabold tracking-tight leading-none">Detalle Antecedentes</div>
+                    <!-- Close button -->
+                    <div class="lg:hidden">
+                        <button
+                            mat-icon-button
+                            (click)="drawer.close()">
+                            <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <!-- Panel links -->
+                <div class="flex flex-col divide-y border-t border-b">
+                    <ng-container *ngFor="let panel of panels; trackBy: trackByFn">
+                        <div
+                            class="flex px-8 py-5 cursor-pointer"
+                            [ngClass]="{'hover:bg-gray-100 dark:hover:bg-hover': !selectedPanel || selectedPanel !== panel.id,
+                                        'bg-primary-50 dark:bg-hover': selectedPanel && selectedPanel === panel.id}"
+                            (click)="goToPanel(panel.id)">
+                            <mat-icon
+                                [ngClass]="{'text-hint': !selectedPanel || selectedPanel !== panel.id,
+                                            'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}"
+                                [svgIcon]="panel.icon"></mat-icon>
+                            <div class="ml-3">
+                                <div
+                                    class="font-medium leading-6"
+                                    [ngClass]="{'text-primary dark:text-primary-500': selectedPanel && selectedPanel === panel.id}">
+                                    {{panel.title}}
+                                </div>
+                                <div class="mt-0.5 text-secondary">
+                                    {{panel.description}}
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </mat-drawer>
+            <mat-drawer-content class="flex flex-col">
+        
+                <!-- Main -->
+                <div class="flex-auto px-6 pt-9 pb-12 md:p-8 md:pb-12 lg:p-12">
+        
+                    <!-- Panel header -->
+                    <div class="flex items-center">
+        
+                        <!-- Drawer toggle -->
+                        <button
+                            class="lg:hidden -ml-2"
+                            mat-icon-button
+                            (click)="drawer.toggle()">
+                            <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+                        </button>
+        
+                        <!-- Panel title -->
+                        <div class="ml-2 lg:ml-0 text-3xl font-bold tracking-tight leading-none">
+                            {{getPanelInfo(selectedPanel).title}}
+                        </div>
+                    </div>
+        
+                    <!-- Load settings panel -->
+                    <div class="mt-8">
+                        <ng-container [ngSwitch]="selectedPanel">
+                            <!-- Del Predio -->
+                            <ng-container *ngSwitchCase="'delpredio'">
+                                <margesi-itls-antecedentes-del-predio></margesi-itls-antecedentes-del-predio>
+                            </ng-container>
+     
+                            <ng-container *ngSwitchCase="'delarrendatariodirecto'">
+                                <margesi-itls-antecedentes-del-arrendatario-directo></margesi-itls-antecedentes-del-arrendatario-directo>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'delarrendatario'">
+                                <margesi-itls-antecedentes-del-arrendatario></margesi-itls-antecedentes-del-arrendatario>
+                            </ng-container>
+
+                          
+                            <!-- De los Datos Legales -->
+                            <ng-container *ngSwitchCase="'contrato'">
+                                <margesi-itls-antecedentes-del-contrato></margesi-itls-antecedentes-del-contrato>
+                            </ng-container>
+                            <!-- Plan & Billing -->
+                            <ng-container *ngSwitchCase="'delfiador'">
+                                <margesi-itls-antecedentes-del-fiador></margesi-itls-antecedentes-del-fiador>
+                            </ng-container>
+                            <!-- Notifications -->
+                            <ng-container *ngSwitchCase="'delosdatoscobranzas'">
+                                <margesi-itls-antecedentes-del-los-datos-cobranza></margesi-itls-antecedentes-del-los-datos-cobranza>
+                            </ng-container>
+        
+                            <ng-container *ngSwitchCase="'antecedentes_del_caso'">
+                                <margesi-actos-sobre-predio-estado-cuenta></margesi-actos-sobre-predio-estado-cuenta>
+                            </ng-container>
+
+                            <!-- Team
+                            <ng-container *ngSwitchCase="'team'">
+                                <settings-team></settings-team>
+                            </ng-container>-->
+                        </ng-container>
+                    </div>
+        
+                </div>
+        
+            </mat-drawer-content>
+        
+        </mat-drawer-container>    
+    </mat-tab>
+    <mat-tab label="III.Analisis">
+
+    </mat-tab>
+    <mat-tab label="IV.Conclusiones">
+
+    </mat-tab>
+    <mat-tab label="Aprobaciones">
+        <margesi-datos-itls-aprobaciones></margesi-datos-itls-aprobaciones>
+    </mat-tab>
+    <mat-tab label="Datos de Impresion">
+        <margesi-datos-itls-datosdeimpresion></margesi-datos-itls-datosdeimpresion>
+    </mat-tab>
+</mat-tab-group>
+

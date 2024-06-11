@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation, inject } from "@
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, UntypedFormGroup } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatOptionModule } from "@angular/material/core";
-import { MatDatepicker, MatDatepickerModule, MatDatepickerToggle } from "@angular/material/datepicker";
+import {  MatDatepickerModule } from "@angular/material/datepicker";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
@@ -20,7 +20,7 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
-        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, MatDatepicker, MatDatepickerToggle,
+        MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
     MatDatepickerModule],
       })
   export class MargesiActosSobrePredioDelContrato{

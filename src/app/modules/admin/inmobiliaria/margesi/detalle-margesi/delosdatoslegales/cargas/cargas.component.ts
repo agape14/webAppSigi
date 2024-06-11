@@ -109,7 +109,7 @@ const ELEMENT_DATA: DataExample[] = [
     standalone: true,
     imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatIconModule, MatInputModule, TextFieldModule, 
         MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule, 
-        MatPaginatorModule,  MatSortModule, MatSort, MatTableModule],
+        MatPaginatorModule,  MatSortModule, MatTableModule],
       })
   export class DelosDatosLegalesCargasMargesi{
     datosGeneralesForm: UntypedFormGroup;

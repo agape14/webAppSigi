@@ -1,0 +1,88 @@
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="delosDatosITLAntecedentesDelArrendatario">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Del arrendamiento directo por proyectos de inversion publica con fin social</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>informe alcance</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'informe_alcance'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attached</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>delete</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field   class="w-full"    >   
+                    <mat-label>Acta de entrega</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'acta_de_entrega'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attached</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>delete</mat-icon>
+                     </button>
+                    </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Numero de informe</mat-label>
+                    <input matInput type="text" 
+                    [formControlName]="'numero_informe'">
+
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha de Informe:</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fecha_informe">
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="fecha_informe"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_informe></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha de Acta:</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fecha_acta">
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="fecha_acta"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_acta></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
