@@ -27,6 +27,9 @@ import { DelosDatosITLAntecedentesDelFiador } from "./antecedentes/delfiador/del
 import { DelosDatosITLAntecedentesDelosDatosCobranzas } from "./antecedentes/delosdatoscobranza/delosdatoscobranza.component";
 import { MargesiDatosAprobacionesitls } from "./aprobaciones/aprobaciones.component";
 import { MargesiDatosDeImpresionitls } from "./datosdeimpresion/datosdeimpresion.component";
+import { DelosDatosITLAntecedentesDelCaso } from "./antecedentes/antecedentesdelcaso/antecedentesdelcaso.component";
+import { DelosDatosITLAnalisis } from "./analisis/analisis.component";
+import { DelosDatosITLConclusiones } from "./conclusiones/conclusiones.component";
 
 
 
@@ -42,7 +45,7 @@ import { MargesiDatosDeImpresionitls } from "./datosdeimpresion/datosdeimpresion
     MatDatepickerModule, CommonModule, MatTabsModule, MatPaginatorModule,  MatSortModule, MatTableModule, MatTabsModule, MatSidenavModule,
     DelosDatosITLAntecedentesDelPredio, DelosDatosITLAntecedentesDelArrendatario,DelosDatosITLAntecedentesDelArrendatarioDirecto,
     DelosDatosITLAntecedentesDelContrato, DelosDatosITLAntecedentesDelFiador, DelosDatosITLAntecedentesDelosDatosCobranzas, MargesiDatosAprobacionesitls,
-    MargesiDatosDeImpresionitls
+    MargesiDatosDeImpresionitls, DelosDatosITLAntecedentesDelCaso, DelosDatosITLAnalisis, DelosDatosITLConclusiones
 ],
       })
   export class MargesiDatositls{

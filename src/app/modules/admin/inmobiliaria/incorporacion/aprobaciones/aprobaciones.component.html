@@ -1,0 +1,163 @@
+
+<div class="w-full max-w-8xl">
+
+    <!-- Form -->
+    <form [formGroup]="datosAdministracioniForm">
+   
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Administracion</div>
+            <div class="text-secondary">Descripcion de los datos de aprobacion</div>
+        </div>
+        <div class="grid sm:grid-cols-1 gap-6 w-full mt-8">
+            <!-- Cód. Prov. Inmueble -->
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Opinion Legal</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'opinion_legal'">
+                    <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>download</mat-icon>
+                     </button>
+                     <button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>attach_file</mat-icon>
+                     </button>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Num Doc. OL(*)</mat-label>
+        
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'numdoc'">
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha OL (*):</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fecha">
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="fecha"></mat-datepicker-toggle>
+            <mat-datepicker #fecha></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Estado de acto</mat-label>
+        
+                    <mat-select [formControlName]="'estadoacto'">
+                        <mat-option [value]="'APROBADO'">APROBADO</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                class="w-full"
+                [subscriptSizing]="'dynamic'">
+                <mat-label>Fecha Aprobacion (*):</mat-label>
+                <input
+                matInput
+                [matDatepicker]="fechaaprobacion">
+                <mat-datepicker-toggle
+                matSuffix
+                [for]="fechaaprobacion"></mat-datepicker-toggle>
+                <mat-datepicker #fechaaprobacion></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-1">
+                <mat-form-field
+                    class="w-full"
+                    [subscriptSizing]="'dynamic'">
+                    <mat-label>Observaciones</mat-label>
+                    <input matInput type="text" maxlength="3"
+                    [formControlName]="'observaciones'">
+                </mat-form-field>
+            </div>
+
+        </div>
+    </form>
+</div>
+        
+
+<div class="grid sm:grid-cols-3 gap-6 w-full mt-8">
+
+    <div class="sm:col-span-1">
+        <button >
+            <mat-icon>save</mat-icon>
+            <span>Grabar datos de la opinion legal</span>
+        </button>
+    </div>
+    <div class="sm:col-span-1">
+        <button >
+            <mat-icon>delete</mat-icon>
+            <span>Observar Acto</span>
+        </button>
+    </div>
+    <div class="sm:col-span-1">
+        <button >
+            <mat-icon>check</mat-icon>
+            <span>Visar Acto</span>
+        </button>
+    </div>
+
+  
+</div>
+
+<div class="grid sm:grid-cols-1 gap-6 w-full mt-8">
+
+    <div class="sm:col-span-1">
+        <mat-form-field
+            class="w-full"
+            [subscriptSizing]="'dynamic'">
+            <mat-label>Resolucion GG (*)</mat-label>
+            <input matInput type="text" maxlength="3"
+            [formControlName]="'observaciones'">
+            <button matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon>download</mat-icon>
+             </button>
+             <button matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon>attach_file</mat-icon>
+             </button>
+        </mat-form-field>
+    </div>
+
+    <div class="sm:col-span-1">
+        <mat-form-field
+            class="w-full"
+            [subscriptSizing]="'dynamic'">
+            <mat-label>Num Resolucion GG (*)</mat-label>
+            <input matInput type="text" maxlength="3"
+            [formControlName]="'observaciones'">
+        </mat-form-field>
+    </div>
+
+    <div class="sm:col-span-1">
+        <button >
+            <mat-icon>check</mat-icon>
+            <span>Aprobar Acto</span>
+        </button>
+    </div>
+</div>
+
+
+

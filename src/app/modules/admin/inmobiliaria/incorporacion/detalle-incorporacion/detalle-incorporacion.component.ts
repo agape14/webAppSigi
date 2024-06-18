@@ -21,6 +21,7 @@ import { DelpredioComponent } from './delpredio/delpredio.component';
 import { DelosdatoslegalesComponent } from './delosdatoslegales/delosdatoslegales.component';
 import { DelosdatostecnicosComponent } from './delosdatostecnicos/delosdatostecnicos.component';
 import { DelasunidadesComponent } from './delasunidades/delasunidades.component';
+import { DelasunidadesAprobaciones } from '../aprobaciones/aprobaciones.component';
 
 
 @Component({
@@ -30,7 +31,7 @@ import { DelasunidadesComponent } from './delasunidades/delasunidades.component'
   standalone: true,
   imports : [MatIconModule, FormsModule, ReactiveFormsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule,
     MatButtonModule, MatCheckboxModule, MatRadioModule, NgClass, MatDatepickerModule, MatSlideToggleModule, MatTabsModule,MatSidenavModule,AsyncPipe,
-    CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase,DelpredioComponent, DelosdatoslegalesComponent,DelosdatostecnicosComponent ,DelasunidadesComponent ],
+    CurrencyPipe, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase,DelpredioComponent, DelosdatoslegalesComponent,DelosdatostecnicosComponent ,DelasunidadesComponent, DelasunidadesAprobaciones ],
 })
 export class DetalleIncorporacionComponent implements OnInit{
   formFieldHelpers: string[] = [''];
@@ -55,7 +56,7 @@ export class DetalleIncorporacionComponent implements OnInit{
       // Setup available panels
       this.panels = [
         {
-            id         : 'delpredio/datos_generales',
+            id         : 'delpredio',
             icon       : 'heroicons_outline:user-circle',
             title      : 'Del Predio',
             description: 'Ver datos generales, ubicacion y mapa.',

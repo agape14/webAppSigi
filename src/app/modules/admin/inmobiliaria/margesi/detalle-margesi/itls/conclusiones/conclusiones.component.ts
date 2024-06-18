@@ -15,8 +15,8 @@ import Quill from "quill";
 
 
 @Component({
-    selector: 'margesi-itls-antecedentes-del-caso',
-    templateUrl: './antecedentesdelcaso.component.html',
+    selector: 'margesi-itls-conclusiones',
+    templateUrl: './conclusiones.component.html',
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
@@ -24,16 +24,16 @@ import Quill from "quill";
         MatSelectModule, MatOptionModule, MatButtonModule, MatSlideToggleModule,   MatDatepickerModule, 
 ],
       })
-  export class DelosDatosITLAntecedentesDelCaso{
+  export class DelosDatosITLConclusiones{
     @ViewChild('editor') editor: ElementRef;
     public QuillElement: Quill;
 
-    delosDatosITLAntecedentesDElCaso: UntypedFormGroup;
+    delosDatosITLConclusiones: UntypedFormGroup;
     _formBuilder = inject(FormBuilder);
 
     ngOnInit(): void
     {
-        this.delosDatosITLAntecedentesDElCaso = this._formBuilder.group({
+        this.delosDatosITLConclusiones = this._formBuilder.group({
             texto: [],
 
 
